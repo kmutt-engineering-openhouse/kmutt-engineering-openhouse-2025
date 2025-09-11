@@ -7,7 +7,10 @@
     "cf:dev": "wrangler pages dev dist",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "prettier --write .",
+    "prepare": "husky install",
+    "lint": "lint-staged"
   },
   "dependencies": {
     "@astrojs/image": "^0.18.0",
@@ -19,5 +22,12 @@
     "astro": "^5.13.7",
     "tailwindcss": "^4.1.13",
     "zod": "^4.1.7"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.6",
+    "prettier": "^3.6.2",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.14"
   }
 }

@@ -3,10 +3,28 @@ import { Image } from "astro:assets";
 import OPH_Logo from "../../assets/logo/oph2025.webp";
 const { ...attrs } = Astro.props;
 ---
+
 <style>
-  #oph-logo{animation:pulse 3s linear infinite; will-change: transform}
-  @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.05)}100%{transform:scale(1)}}
-  @media (prefers-reduced-motion: reduce){#oph-logo{animation:none}}
+  #oph-logo {
+    animation: pulse 3s linear infinite;
+    will-change: transform;
+  }
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #oph-logo {
+      animation: none;
+    }
+  }
 </style>
 
 <div class="flex flex-col items-center" {...attrs}>
@@ -14,7 +32,7 @@ const { ...attrs } = Astro.props;
     id="oph-logo"
     src={OPH_Logo}
     alt="KMUTT Engineering Open House 2025 Logo"
-    class="max-h-[56vh] sm:max-h-[400px] w-auto aspect-square select-none"
+    class="aspect-square max-h-[56vh] w-auto select-none sm:max-h-[400px]"
     width={400}
     height={400}
     sizes="(max-width:640px) 70vw, (max-width:1024px) 400px, 400px"

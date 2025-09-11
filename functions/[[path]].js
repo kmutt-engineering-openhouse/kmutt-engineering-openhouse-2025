@@ -11,9 +11,7 @@ export const onRequest = async (ctx) => {
     let lang = saved;
     if (!lang) {
       // Otherwise detect from Accept-Language
-      const al = (
-        ctx.request.headers.get("Accept-Language") || ""
-      ).toLowerCase();
+      const al = (ctx.request.headers.get("Accept-Language") || "").toLowerCase();
       const primary = al.split(",")[0]?.split("-")[0] || "";
       lang = primary === "en" ? "en" : "th"; // default is TH
     }
@@ -32,10 +30,7 @@ export const onRequest = async (ctx) => {
 
     const res = await ctx.next();
     try {
-      res.headers.append(
-        "Set-Cookie",
-        `lang=${lang}; Path=/; Max-Age=31536000; SameSite=Lax`
-      );
+      res.headers.append("Set-Cookie", `lang=${lang}; Path=/; Max-Age=31536000; SameSite=Lax`);
     } catch {}
     return res;
   }

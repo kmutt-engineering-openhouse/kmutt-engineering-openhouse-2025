@@ -1,23 +1,29 @@
 ---
 const isDev = import.meta.env.DEV;
 ---
+
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     {isDev && <meta name="robots" content="noindex, nofollow" />}
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-    {isDev && (
-      <script is:inline>
-        (function () {
-          var supported = ["th","en"];
-          var lang = (navigator.language||"th").split("-")[0].toLowerCase();
-          if (supported.indexOf(lang) === -1) lang = "th";
-          location.replace("/" + lang + "/");
-        })();
-      </script>
-    )}
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    {
+      isDev && (
+        <script is:inline>
+          {`
+          (function () {
+            var supported = ["th", "en"];
+            var lang = (navigator.language || "th").split("-")[0].toLowerCase();
+            if (supported.indexOf(lang) === -1) lang = "th";
+            location.replace("/" + lang + "/");
+          })();
+        `}
+        </script>
+      )
+    }
     <noscript><meta http-equiv="refresh" content="0;url=/th/" /></noscript>
   </head>
   <body></body>

@@ -13,14 +13,14 @@ const isDev = import.meta.env.DEV;
     {
       isDev && (
         <script is:inline>
-          {`
+          {
           (function () {
             var supported = ["th", "en"];
             var lang = (navigator.language || "th").split("-")[0].toLowerCase();
             if (supported.indexOf(lang) === -1) lang = "th";
             location.replace("/" + lang + "/");
           })();
-        `}
+        }
         </script>
       )
     }

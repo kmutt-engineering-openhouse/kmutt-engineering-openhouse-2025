@@ -7,8 +7,9 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-  site: 'https://bangmod.engineer',
+  site: "https://bangmod.engineer",
   compressHTML: true,
+  prefetch: true,
 
   vite: {
     plugins: [tailwindcss()],

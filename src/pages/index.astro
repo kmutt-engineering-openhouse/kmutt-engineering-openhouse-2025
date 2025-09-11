@@ -5,17 +5,20 @@ const isDev = import.meta.env.DEV;
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="robots" content="noindex" />
-    <link rel="icon" type="image/svg" href="../../favicon.svg">
+    {isDev && <meta name="robots" content="noindex, nofollow" />}
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     {isDev && (
       <script is:inline>
-        (function(){
-        const supported = ["th","en"];
-        let lang = (navigator.language || "th").split("-")[0].toLowerCase();
-        if (!supported.includes(lang)) lang = "th";
-        location.replace("/" + lang + "/");
+        (function () {
+          var supported = ["th","en"];
+          var lang = (navigator.language||"th").split("-")[0].toLowerCase();
+          if (supported.indexOf(lang) === -1) lang = "th";
+          location.replace("/" + lang + "/");
         })();
       </script>
     )}
+    <noscript><meta http-equiv="refresh" content="0;url=/th/" /></noscript>
   </head>
+  <body></body>
 </html>

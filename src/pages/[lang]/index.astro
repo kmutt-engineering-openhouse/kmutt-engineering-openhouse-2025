@@ -1,7 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { getDict } from "../../i18n/getDict";
-import HeroSection from "../../components/hero/HeroSection.astro";
+import HeroSection from "../../components/home/hero/HeroSection.astro";
 
 export function getStaticPaths() {
   return ["th", "en"].map((lang) => ({ params: { lang } }));

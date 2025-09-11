@@ -1,7 +1,20 @@
 @import "tailwindcss";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
+@theme {
+  /* Colors */
+  --color-primary: #3a3e94;
+  --color-primary-hover: #69357c;
+  --color-sub-dark: #2c2f70;
+  --color-sub-light: #e7cce9;
+
+  /* Fonts */
+  --font-sans: "Prompt", "Bai Jamjuree", ui-sans-serif, system-ui, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans Thai", sans-serif;
+
+  /* (optional) font aliases if you want utility classes like font-prompt */
+  --font-prompt: "Prompt", sans-serif;
+  --font-jamjuree: "Bai Jamjuree", sans-serif;
+}
 
 /* Reset */
 body {
@@ -9,13 +22,12 @@ body {
   padding: 0;
 }
 
-/* Font utilities */
+/* Optional helpers (you can keep them if you’re already using them) */
 .font-prompt {
-  font-family: "Prompt", sans-serif !important;
+  font-family: var(--font-prompt) !important;
 }
-
 .font-jamjuree {
-  font-family: "Bai Jamjuree", sans-serif !important;
+  font-family: var(--font-jamjuree) !important;
 }
 
 /* Global fade-in animation */
@@ -30,8 +42,6 @@ body {
     transform: translateY(0);
   }
 }
-
-/* Respect prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
   [data-fade] {
     animation: none;

@@ -10,11 +10,14 @@ export default defineConfig({
   site: "https://bangmod.engineer",
   compressHTML: true,
   prefetch: true,
-
+  image: {
+    service: {
+      entrypoint: "astro/assets/services/sharp",
+    },
+  },
   vite: {
     plugins: [tailwindcss()],
   },
-
   integrations: [mdx(), sitemap()],
   trailingSlash: "always",
 });

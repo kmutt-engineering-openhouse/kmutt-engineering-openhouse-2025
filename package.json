@@ -13,13 +13,13 @@
     "lint": "lint-staged"
   },
   "dependencies": {
-    "@astrojs/image": "^0.18.0",
     "@astrojs/mdx": "^4.3.5",
     "@astrojs/og": "^0.0.4",
     "@astrojs/sitemap": "^3.5.1",
     "@motionone/dom": "^10.18.0",
     "@tailwindcss/vite": "^4.1.13",
     "astro": "^5.13.7",
+    "sharp": "^0.34.3",
     "tailwindcss": "^4.1.13",
     "zod": "^4.1.7"
   },

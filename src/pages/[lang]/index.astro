@@ -1,9 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { getDict } from "../../i18n/getDict";
-import { Image } from "astro:assets";
-import KMUTT_Logo from "../../assets/logo/kmutt+65+eng+smo.webp";
-import AnimatedLogo from "../../components/AnimatedLogo.astro";
+import HeroSection from "../../components/hero/HeroSection.astro";
 
 export function getStaticPaths() {
   return ["th", "en"].map((lang) => ({ params: { lang } }));
@@ -11,32 +9,7 @@ export function getStaticPaths() {
 const { lang } = Astro.params;
 const t = getDict(lang === "en" ? "en" : "th");
 ---
-<Layout>
-  <section class="max-w-7xl mx-auto px-4 pt-16 pb-8">
-    <div class="flex flex-col items-center gap-4">
-      <div class="flex flex-col items-center gap-0">
-        <Image
-          src={KMUTT_Logo}
-          alt="KMUTT Logo"
-          class="px-6 sm:px-0"
-          width={360}
-          height={360}
-          sizes="360px"
-          format="webp"
-          loading="eager"
-          decoding="async"
-          fetchpriority="high"
-          data-fade
-        />
-        <AnimatedLogo data-fade />
-      </div>
 
-      <h1
-        class="text-2xl sm:text-3xl font-prompt font-[800] text-center"
-        data-fade
-      >
-        {t.heroHeading}
-      </h1>
-    </div>
-  </section>
+<Layout>
+  <HeroSection t={t}/>
 </Layout>

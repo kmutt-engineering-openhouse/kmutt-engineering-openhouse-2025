@@ -1,31 +1,57 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { getDict } from "../../i18n/getDict";
+import KMUTT_Logo from "../../assets/logo/kmutt+65+eng+smo.webp";
+import { Image } from "astro:assets";
+import AnimatedLogo from "../../components/AnimatedLogo.astro";
 
 export function getStaticPaths() {
   return ["th", "en"].map((lang) => ({ params: { lang } }));
 }
-
 const { lang } = Astro.params;
 const t = getDict(lang === "en" ? "en" : "th");
 ---
 <Layout>
-  <main class="mx-auto max-w-5xl px-4 py-10">
-    <h1 class="text-3xl font-bold">{t.heroHeading}</h1>
+  <section class="max-w-7xl px-4 pt-19 pb-8">
+    <div class="flex flex-col items-center gap-4">
+      <div class="flex flex-col items-center gap-0">
+        <Image
+          src={KMUTT_Logo}
+          alt="KMUTT Logo"
+          class="max-h-[8vw] min-h-14 w-auto"
+          width={320}
+          height={320}
+          sizes="(max-width: 640px) 96px, (max-width: 1024px) 128px, 128px"
+          format="webp"
+          loading="eager"
+          decoding="sync"
+          data-fade
+        />
+        <AnimatedLogo client:load data-fade />
+      </div>
+      <h1 class="text-2xl sm:text-3xl font-bold text-center" data-fade>
+        {t.heroHeading}
+      </h1>
+    </div>
+  </section>
 
-    <nav class="mt-2 text-sm flex gap-2">
-      <a
-        href="/th/"
-        class={`underline ${lang === "th" ? "font-bold text-blue-600" : "opacity-60"}`}
-      >
-        TH
-      </a>
-      <a
-        href="/en/"
-        class={`underline ${lang === "en" ? "font-bold text-blue-600" : "opacity-60"}`}
-      >
-        EN
-      </a>
-    </nav>
-  </main>
+  <script>
+    import { animate, stagger } from "@motionone/dom";
+
+    const items = document.querySelectorAll("[data-fade]");
+    items.forEach((el) => {
+      (el as HTMLElement).style.opacity = "0";
+      (el as HTMLElement).style.transform = "translateY(-8px)";
+    });
+
+    animate(
+      items,
+      { opacity: 1, transform: "translateY(0px)" },
+      {
+        duration: 0.5,
+        easing: "ease-out",
+        delay: stagger(0.12),
+      }
+    );
+  </script>
 </Layout>

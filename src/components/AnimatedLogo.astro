@@ -1,0 +1,41 @@
+---
+import { Image } from "astro:assets";
+import OPH_Logo from "../assets/logo/oph2025.webp";
+
+const { ...attrs } = Astro.props;
+---
+<div class="flex flex-col items-center" {...attrs}>
+  <Image
+    id="oph-logo"
+    src={OPH_Logo}
+    alt="KMUTT Engineering Open House 2025 Logo"
+    class="max-h-[56vh] sm:max-h-[400px] w-auto aspect-square will-change-transform"
+    width={800}
+    height={800}
+    sizes="(max-width: 640px) 70vw, (max-width: 1024px) 50vw, 400px"
+    loading="eager"
+    decoding="sync"
+    format="webp"
+  />
+</div>
+
+<script>
+  import { animate, inView } from "@motionone/dom";
+
+  const logo = document.getElementById("oph-logo");
+
+  if (logo) {
+    inView(
+      logo,
+      ({ target }) => {
+        const controls = animate(
+          target,
+          { scale: [1, 1.05, 1] },
+          { duration: 3, easing: "linear", repeat: Infinity }
+        );
+        return () => controls.cancel();
+      },
+      { amount: 0.6 }
+    );
+  }
+</script>

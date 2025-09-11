@@ -1,3 +1,3 @@
 export default {
-  heroHeading: "ยินดีต้อนรับสู่ KMUTT Engineering Open House 2025",
+  heroHeading: "เร็ว ๆ นี้...",
 };

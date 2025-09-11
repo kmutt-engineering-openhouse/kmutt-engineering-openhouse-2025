@@ -11,6 +11,8 @@ const { title = "KMUTT Engineering Open House 2025" } = Astro.props;
     <title>{title}</title>
   </head>
   <body class="antialiased">
-    <main><slot /></main>
+    <main class="flex justify-center">
+  		<slot />
+	</main>
   </body>
 </html>

@@ -34,15 +34,20 @@ body {
 /* Global fade-in animation */
 [data-fade] {
   opacity: 0;
-  transform: translateY(-8px);
+  transform: translateY(8px);
   animation: fadeIn 0.6s ease-out forwards;
+  --fade-start: 0ms;
+  --fade-step: 140ms;
+  animation-delay: calc(var(--fade-start) + var(--fade-step) * var(--i, 0));
 }
+
 @keyframes fadeIn {
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
 @media (prefers-reduced-motion: reduce) {
   [data-fade] {
     animation: none;

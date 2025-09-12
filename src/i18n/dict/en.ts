@@ -33,12 +33,30 @@ export default {
   },
   nav: {
     menu: {
-      highlight: "Highlights",
-      departments: "Departments",
-      activities: "Activities",
-      competitions: "Competitions",
-      venue: "Venue",
-      faq: "FAQ",
+      highlight: {
+        title: "Highlight",
+        href: "#highlight",
+      },
+      departments: {
+        title: "Department",
+        href: "#department",
+      },
+      inside: {
+        title: "Inside",
+        href: "#inside",
+      },
+      competitions: {
+        title: "Competition",
+        href: "#competition",
+      },
+      map: {
+        title: "Location",
+        href: "#map",
+      },
+      faq: {
+        title: "FAQ",
+        href: "#faq",
+      },
     },
     language: {
       th: "TH",

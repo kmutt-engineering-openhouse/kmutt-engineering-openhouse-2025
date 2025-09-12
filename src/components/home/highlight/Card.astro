@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 
 interface Props {
-  src: any;
+  src: any; // keep 'any' to avoid asset typing friction
   alt: string;
   href?: string;
   title?: string;
@@ -12,40 +12,23 @@ const { src, alt, href, title, description } = Astro.props as Props;
 ---
 
 <article
-  class="flex flex-col overflow-hidden rounded-xl bg-white shadow-md transition-all hover:scale-[1.01] hover:shadow-xl lg:h-full lg:max-w-sm"
+  class="flex flex-col overflow-hidden rounded-xl bg-white shadow-sm transition-transform motion-safe:hover:scale-[1.01] motion-safe:hover:shadow-md lg:h-full"
 >
   <figure class="relative aspect-[3/4] w-full overflow-hidden">
-    {
-      href ? (
-        <a
-          href={href}
-          class="block rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
-        >
-          <Image
-            src={src}
-            alt={alt}
-            class="h-full w-full object-cover select-none"
-            loading="lazy"
-            decoding="async"
-            sizes="(min-width:1024px) 260px, 70vw"
-            fetchpriority="low"
-          />
-        </a>
-      ) : (
-        <div class="block">
-          <Image
-            src={src}
-            alt={alt}
-            class="h-full w-full object-cover select-none"
-            loading="lazy"
-            decoding="async"
-            sizes="(min-width:1024px) 260px, 70vw"
-            fetchpriority="low"
-          />
-        </div>
-      )
-    }
-
+    <a
+      href={href}
+      class="block focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+    >
+      <Image
+        src={src}
+        alt={alt}
+        class="h-full w-full object-cover select-none"
+        decoding="async"
+        sizes="(min-width:1024px) 25vw, 70vw"
+        fetchpriority="low"
+        draggable="false"
+      />
+    </a>
     {
       (title || description) && (
         <figcaption class="sr-only">

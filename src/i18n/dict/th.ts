@@ -24,6 +24,8 @@ import iconINC from "../../assets/icons/department/INC.svg";
 import iconENV from "../../assets/icons/department/ENV.svg";
 import iconENE from "../../assets/icons/department/ENE.svg";
 import iconPE from "../../assets/icons/department/PE.svg";
+import iconFacebook from "../../assets/icons/facebook.svg";
+import iconInstagram from "../../assets/icons/instagram.svg";
 
 export default {
   hero: {

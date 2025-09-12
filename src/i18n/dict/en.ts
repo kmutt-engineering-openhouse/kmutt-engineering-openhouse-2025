@@ -24,7 +24,8 @@ import iconINC from "../../assets/icons/department/INC.svg";
 import iconENV from "../../assets/icons/department/ENV.svg";
 import iconENE from "../../assets/icons/department/ENE.svg";
 import iconPE from "../../assets/icons/department/PE.svg";
-import { map } from "zod";
+import iconFacebook from "../../assets/icons/facebook.svg";
+import iconInstagram from "../../assets/icons/instagram.svg";
 
 export default {
   hero: {
@@ -198,5 +199,22 @@ export default {
         answer: "Register via the Admission website.",
       },
     ],
+  },
+  footer: {
+    university: "Faculty of Engineering, King Mongkut's University of Technology Thonburi (Bangmod)",
+    address: "126 Pracha Uthit Road, Bangmod, Thung Khru, Bangkok 10140",
+    copyright: "Copyright © 2025 King Mongkut's University of Technology Thonburi. All rights reserved.",
+    social: {
+      facebook: {
+        icon: iconFacebook,
+        href: "https://www.facebook.com/kmutt.eng",
+        alt: "Facebook"
+      },
+      instagram: {
+        icon: iconInstagram,
+        href: "https://www.instagram.com/kmutt.eng",
+        alt: "Instagram"
+      }
+    }
   },
 };

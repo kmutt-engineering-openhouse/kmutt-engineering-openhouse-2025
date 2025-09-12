@@ -12,11 +12,9 @@
     "Prompt", "Bai Jamjuree", ui-sans-serif, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial,
     "Noto Sans Thai", sans-serif;
 
-  /* (optional) font aliases if you want utility classes like font-prompt */
+  /* Font aliases for easy use */
   --font-prompt: "Prompt", sans-serif;
   --font-jamjuree: "Bai Jamjuree", sans-serif;
-  --font-display: "Bai Jamjuree", sans-serif;
-
 }
 
 /* Reset */
@@ -25,36 +23,57 @@ body {
   padding: 0;
 }
 
-/* Optional helpers (you can keep them if you’re already using them) */
+/* Optional helpers */
 .font-prompt {
   font-family: var(--font-prompt) !important;
 }
 .font-jamjuree {
   font-family: var(--font-jamjuree) !important;
 }
-.font-display {
-  font-family: var(--font-display) !important;
-}
 
-/* Global fade-in animation */
-[data-fade] {
+/* ============================= */
+/* Global animations              */
+/* ============================= */
+
+/* Shared fade config */
+[data-fade],
+[data-fade-up] {
   opacity: 0;
-  transform: translateY(8px);
   animation: fadeIn 0.6s ease-out forwards;
   --fade-start: 0ms;
   --fade-step: 140ms;
   animation-delay: calc(var(--fade-start) + var(--fade-step) * var(--i, 0));
 }
 
+/* Fade only */
+[data-fade] {
+  transform: none;
+  animation-name: fadeIn;
+}
+
+/* Fade and up */
+[data-fade-up] {
+  transform: translateY(8px);
+  animation-name: fadeUp;
+}
+
 @keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeUp {
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
+/* Accessibility: disable motion */
 @media (prefers-reduced-motion: reduce) {
-  [data-fade] {
+  [data-fade],
+  [data-fade-up] {
     animation: none;
     opacity: 1;
     transform: none;

@@ -1,0 +1,21 @@
+---
+import { Image } from "astro:assets";
+import OPH_Logo from "../../assets/logo/oph2025.webp";
+
+const { ...attrs } = Astro.props;
+---
+
+<div class="flex items-center" {...attrs}>
+  <Image
+    src={OPH_Logo}
+    alt="KMUTT Engineering Open House 2025 Logo"
+    class="h-12 w-auto select-none"
+    width={120}
+    height={48}
+    sizes="120px"
+    format="webp"
+    loading="eager"
+    decoding="async"
+    fetchpriority="high"
+  />
+</div>

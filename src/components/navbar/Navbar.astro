@@ -1,0 +1,170 @@
+---
+import NavbarLogo from "./NavbarLogo.astro";
+const { t, currentLang } = Astro.props;
+
+const menu = [
+  t.nav.menu.highlight,
+  t.nav.menu.departments,
+  t.nav.menu.inside,
+  t.nav.menu.competitions,
+  t.nav.menu.map,
+  t.nav.menu.faq,
+];
+---
+
+<nav
+  id="site-nav"
+  class="fixed inset-x-0 top-0 z-50 translate-y-0 border-b border-gray-200 bg-white/80 backdrop-blur transition-transform duration-300 will-change-transform supports-[backdrop-filter]:bg-white/60"
+>
+  <div class="mx-auto flex h-14 max-w-7xl items-center justify-between px-4 lg:h-16">
+    <!-- Logo -->
+    <a href="/" aria-label="Home" class="flex-shrink-0">
+      <NavbarLogo />
+    </a>
+
+    <!-- Desktop Menu -->
+    <div class="hidden items-center gap-6 lg:flex">
+      {
+        menu.map((m) => (
+          <a
+            href={m.href}
+            class="font-prompt text-base leading-none font-bold text-[var(--color-primary)] hover:text-[var(--color-primary-hover)]"
+          >
+            {m.title}
+          </a>
+        ))
+      }
+    </div>
+
+    <!-- Lang + Mobile button -->
+    <div class="flex items-center gap-2">
+      <a
+        href={currentLang === "th" ? "/en/" : "/th/"}
+        class="font-prompt flex items-center gap-2 text-base leading-none font-bold"
+        aria-label="Switch language"
+      >
+        <span class={currentLang === "th" ? "text-[var(--color-primary)]" : "text-gray-500"}>
+          {t.nav.language.th}
+        </span>
+        <span class="text-gray-300">|</span>
+        <span class={currentLang === "en" ? "text-[var(--color-primary)]" : "text-gray-500"}>
+          {t.nav.language.en}
+        </span>
+      </a>
+
+      <button
+        id="menu-btn"
+        class="p-2 text-[var(--color-primary)] hover:text-[var(--color-primary-hover)] focus:ring-2 focus:ring-[var(--color-primary)] focus:outline-none focus:ring-inset lg:hidden"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-label="Toggle menu"
+        type="button"
+      >
+        <svg
+          data-icn="hamburger"
+          class="h-6 w-6"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <svg
+          data-icn="close"
+          class="hidden h-6 w-6"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="max-h-0 overflow-hidden transition-all duration-300 lg:hidden">
+    <div class="px-4 pb-4">
+      <div class="flex flex-col gap-2">
+        {
+          menu.map((m) => (
+            <a
+              href={m.href}
+              class="font-prompt block rounded-lg px-4 py-2 text-center text-base leading-none font-bold text-[var(--color-primary)] hover:text-[var(--color-primary-hover)]"
+            >
+              {m.title}
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Spacer to offset fixed nav -->
+<div class="h-14 lg:h-16"></div>
+
+<script is:inline>
+  (() => {
+    const nav = document.getElementById("site-nav");
+    const btn = document.getElementById("menu-btn");
+    const menu = document.getElementById("mobile-menu");
+    const openIcon = btn?.querySelector('[data-icn="hamburger"]');
+    const closeIcon = btn?.querySelector('[data-icn="close"]');
+
+    // Hide-on-scroll
+    let lastY = window.scrollY;
+    let pinned = true;
+    const threshold = 8;
+
+    window.addEventListener(
+      "scroll",
+      () => {
+        const y = window.scrollY;
+        const down = y > lastY + threshold;
+        const up = y < lastY - threshold;
+
+        if (down && pinned) {
+          nav.classList.add("-translate-y-full");
+          pinned = false;
+        } else if (up && !pinned) {
+          nav.classList.remove("-translate-y-full");
+          pinned = true;
+        }
+        if (y < 4) {
+          nav.classList.remove("-translate-y-full");
+          pinned = true;
+        }
+        lastY = y;
+      },
+      { passive: true }
+    );
+
+    // Mobile toggle
+    let isOpen = false;
+    const setOpen = (open) => {
+      isOpen = open;
+      btn?.setAttribute("aria-expanded", String(open));
+      if (menu) {
+        menu.style.maxHeight = open ? menu.scrollHeight + "px" : "0px";
+      }
+      openIcon?.classList.toggle("hidden", open);
+      closeIcon?.classList.toggle("hidden", !open);
+      document.documentElement.classList.toggle("overflow-hidden", open);
+    };
+
+    btn?.addEventListener("click", () => setOpen(!isOpen));
+    menu?.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setOpen(false)));
+    window.matchMedia("(min-width: 1024px)").addEventListener("change", (e) => {
+      if (e.matches) setOpen(false);
+    });
+  })();
+</script>

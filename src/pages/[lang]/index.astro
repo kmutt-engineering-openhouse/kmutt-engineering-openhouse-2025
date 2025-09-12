@@ -1,7 +1,11 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { getDict } from "../../i18n/getDict";
-import HeroSection from "../../components/hero/HeroSection.astro";
+import HeroSection from "../../components/home/hero/HeroSection.astro";
+import HighlightSection from "../../components/home/highlight/HighlightSection.astro";
+import DepartmentSection from "../../components/home/department/DepartmentSection.astro";
+import MapSection from "../../components/home/map/MapSection.astro";
+import FAQSection from "../../components/home/faq/FAQSection.astro";
 import ContestSection from "../../components/contest/ContestSection.astro";
 
 export function getStaticPaths() {
@@ -11,7 +15,11 @@ const { lang } = Astro.params;
 const t = getDict(lang === "en" ? "en" : "th");
 ---
 
-<Layout>
+<Layout t={t} currentLang={lang}>
   <HeroSection t={t} />
+  <HighlightSection t={t} />
+  <DepartmentSection t={t} />
   <ContestSection t={t} />
+  <MapSection t={t} />
+  <FAQSection t={t} />
 </Layout>

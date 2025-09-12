@@ -1,0 +1,92 @@
+---
+import { Image } from "astro:assets";
+import OPH_Logo from "../../assets/logo/oph2025.webp";
+
+const { t } = Astro.props;
+---
+
+<footer class="bg-gray-100 py-6 sm:py-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Main Footer Content -->
+    <div class="flex flex-col items-center text-center lg:flex-row lg:items-start lg:text-left lg:justify-between gap-6 mb-6">
+      
+      <!-- Logo Section -->
+      <div class="flex-shrink-0">
+        <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+          <!-- KMUTT ENG Logo -->
+          <Image
+            src={OPH_Logo}
+            alt="KMUTT Engineering Open House 2025 Logo"
+            class="select-none w-32 h-32 sm:w-40 sm:h-40 lg:w-44 lg:h-44"
+            width={177}
+            height={177}
+            sizes="(max-width: 640px) 128px, (max-width: 1024px) 160px, 177px"
+            format="webp"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+          />
+          
+          <!-- University Info with Social Icons -->
+          <div class="text-gray-800">
+            <!-- Social Media Icons -->
+            <div class="flex items-center justify-center lg:justify-start space-x-4 mb-3">
+              <!-- Facebook -->
+              <a 
+                href={t.footer.social.facebook.href} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="w-10 h-10 sm:w-9 sm:h-9 hover:scale-110 transition-transform duration-200"
+                aria-label={t.footer.social.facebook.alt}
+              >
+                <Image
+                  src={t.footer.social.facebook.icon}
+                  alt={t.footer.social.facebook.alt}
+                  width={36}
+                  height={36}
+                  class="w-full h-full"
+                />
+              </a>
+              
+              <!-- Instagram -->
+              <a 
+                href={t.footer.social.instagram.href} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="w-10 h-10 sm:w-9 sm:h-9 hover:scale-110 transition-transform duration-200"
+                aria-label={t.footer.social.instagram.alt}
+              >
+                <Image
+                  src={t.footer.social.instagram.icon}
+                  alt={t.footer.social.instagram.alt}
+                  width={36}
+                  height={36}
+                  class="w-full h-full"
+                />
+              </a>
+            </div>
+            
+            <!-- University Info -->
+            <div class="font-prompt font-medium text-sm sm:text-base leading-tight mb-2">
+              {t.footer.university}
+            </div>
+            <div class="font-prompt text-xs sm:text-sm text-gray-600 leading-relaxed max-w-sm mx-auto lg:mx-0">
+              {t.footer.address}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Divider -->
+    <div class="border-t border-gray-300 pt-4">
+      <!-- Copyright -->
+      <div class="text-center">
+        <p class="text-xs sm:text-sm text-gray-500 font-prompt leading-relaxed px-4">
+          {t.footer.copyright}
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+

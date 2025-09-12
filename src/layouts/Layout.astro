@@ -1,5 +1,9 @@
 ---
 import "../styles/global.css";
+import Navbar from "../components/navbar/Navbar.astro";
+import Footer from "../components/footer/Footer.astro";
+
+const { t, currentLang } = Astro.props;
 ---
 
 <!doctype html>
@@ -17,8 +21,10 @@ import "../styles/global.css";
     <title>KMUTT Engineering Open House 2025</title>
   </head>
   <body class="antialiased">
+    <Navbar t={t} currentLang={currentLang} />
     <main class="flex flex-col justify-center">
       <slot />
     </main>
+    <Footer t={t} />
   </body>
 </html>

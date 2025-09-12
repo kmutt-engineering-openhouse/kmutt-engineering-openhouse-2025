@@ -50,9 +50,9 @@ export default {
         title: "Inside",
         href: "#inside",
       },
-      competitions: {
-        title: "Competition",
-        href: "#competition",
+      contests: {
+        title: "Contest",
+        href: "#contest",
       },
       map: {
         title: "Location",
@@ -186,6 +186,7 @@ export default {
         description:
           "First, xxx teams, then 50 teams, and lastly, the top 5. On October 11, 2025, you can watch the semi-final and final rounds of the Engineering Academic Quiz Competition for students in high school or its equivalent in the Academic Year 2025. The competition will be live-streamed on the KMUTT Engineering Open House 2025 Facebook page, so you may follow, cheer, and support throughout.",
         image: imgEQ,
+        href: "https://www.facebook.com/share/1BZD9tJbzG/?mibextid=wwXIfr ",
         location: [
           {
             text: "Preliminary Round: Classroom Building 2 (N17)",
@@ -202,6 +203,7 @@ export default {
         description:
           "Bangmod Hackathon is a computer programming competition that allows high school and vocational students (or equivalents) to compete in a team-based C/C++ programming contest. The event's goal is to improve programming abilities, build teamwork, and provide participants with practical experience through real-world situations.",
         image: imgBH,
+        href: "https://bangmodhackathon.com/",
         location: [
           {
             text: "Wissawa Wattana Building (S4), 11th Floor, King Mongkut’s University of Technology Thonburi",

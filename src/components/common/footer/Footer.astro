@@ -1,0 +1,78 @@
+---
+import { Image } from "astro:assets";
+import OPH_Logo from "../../../assets/logo/oph2025.webp";
+
+const { t } = Astro.props;
+---
+
+<footer class="bg-gray-100 py-6 sm:py-8">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div
+      class="mb-6 flex flex-col items-center gap-6 text-center lg:flex-row lg:items-start lg:justify-between lg:text-left"
+    >
+      <div class="flex flex-shrink-0 flex-col items-center gap-4 lg:flex-row lg:gap-6">
+        <Image
+          src={OPH_Logo}
+          alt="KMUTT Engineering Open House 2025 Logo"
+          class="h-32 w-32 select-none sm:h-40 sm:w-40 lg:h-44 lg:w-44"
+          width={177}
+          height={177}
+          sizes="(max-width: 640px) 128px, (max-width: 1024px) 160px, 177px"
+          format="webp"
+          loading="lazy"
+          decoding="async"
+          fetchpriority="high"
+        />
+        <div class="text-gray-800">
+          <div class="mb-3 flex items-center justify-center gap-2 lg:justify-start">
+            <a
+              href={t.footer.social.facebook.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="h-10 w-10 transition-transform duration-200 hover:scale-110 sm:h-9 sm:w-9"
+              aria-label={t.footer.social.facebook.alt}
+            >
+              <Image
+                src={t.footer.social.facebook.icon}
+                alt={t.footer.social.facebook.alt}
+                width={36}
+                height={36}
+                class="h-full w-full"
+              />
+            </a>
+            <a
+              href={t.footer.social.instagram.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="h-10 w-10 transition-transform duration-200 hover:scale-110 sm:h-9 sm:w-9"
+              aria-label={t.footer.social.instagram.alt}
+            >
+              <Image
+                src={t.footer.social.instagram.icon}
+                alt={t.footer.social.instagram.alt}
+                width={36}
+                height={36}
+                class="h-full w-full"
+              />
+            </a>
+          </div>
+          <div class="font-jamjuree text-sm leading-tight font-medium sm:text-base">
+            {t.footer.university}
+          </div>
+          <div
+            class="font-jamjuree mx-auto max-w-sm text-sm leading-relaxed text-gray-800 sm:text-sm lg:mx-0"
+          >
+            {t.footer.address}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-gray-300 pt-4">
+      <div class="text-center">
+        <p class="font-prompt px-4 text-[6px] leading-relaxed text-gray-500 sm:text-sm">
+          {t.footer.copyright}
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>

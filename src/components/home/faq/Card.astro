@@ -1,13 +1,14 @@
 ---
-type Props = { question: string; answer: string; open?: boolean };
-const { question, answer, open = false } = Astro.props as Props;
+const { question, answer, open = false } = Astro.props;
 ---
 
-<details class="group rounded-2xl border border-gray-300 bg-white" {...open ? { open: true } : {}}>
+<details class="group rounded-2xl border border-gray-300 bg-white" open={open}>
   <summary
     class="flex w-full cursor-pointer list-none items-center justify-between gap-3 p-3 sm:p-4"
   >
-    <h3 class="font-prompt text-left text-base leading-tight font-semibold">{question}</h3>
+    <h3 class="font-prompt text-left text-sm leading-tight font-semibold sm:text-base">
+      {question}
+    </h3>
     <svg
       viewBox="0 0 20 20"
       aria-hidden="true"
@@ -17,6 +18,6 @@ const { question, answer, open = false } = Astro.props as Props;
     </svg>
   </summary>
   <div class="px-3 pb-3 text-gray-700 sm:px-4 sm:pb-4">
-    <p class="font-jamjuree leading-relaxed whitespace-pre-line">{answer}</p>
+    <p class="font-jamjuree text-sm leading-relaxed whitespace-pre-line sm:text-base">{answer}</p>
   </div>
 </details>

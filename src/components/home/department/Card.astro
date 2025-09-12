@@ -1,32 +1,20 @@
 ---
 import { Image } from "astro:assets";
 
-type T = {
-  image: any;
-  icon?: any;
-  title: string;
-  href: string;
-  alt?: string;
-  iconAlt?: string;
-};
-
-const { t } = Astro.props as { t: T };
-
-const imgAlt = t.alt ?? t.title;
-const iconAlt = t.iconAlt ?? "";
+const { image, icon, title, href, alt, iconAlt } = Astro.props.t;
 ---
 
 <article
   class="flex w-full min-w-0 flex-col overflow-hidden rounded-2xl border border-gray-300 bg-white transition-shadow hover:shadow-lg"
 >
   <a
-    href={t.href}
+    href={href}
     class="block w-full focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
   >
     <div class="relative aspect-[2/1] w-full overflow-hidden">
       <Image
-        src={t.image}
-        alt={imgAlt}
+        src={image}
+        alt={alt ?? title}
         class="absolute inset-0 h-full w-full object-cover"
         loading="lazy"
         decoding="async"
@@ -35,21 +23,17 @@ const iconAlt = t.iconAlt ?? "";
     </div>
 
     <div class="flex items-center gap-3 p-4 pt-3">
-      {
-        t.icon && (
-          <Image
-            src={t.icon}
-            alt={iconAlt}
-            width={24}
-            height={24}
-            class="h-6 w-6 object-contain"
-            loading="lazy"
-            decoding="async"
-          />
-        )
-      }
+      <Image
+        src={icon}
+        alt={iconAlt ?? ""}
+        width={24}
+        height={24}
+        class="h-6 w-6 object-contain"
+        loading="lazy"
+        decoding="async"
+      />
       <h3 class="font-prompt text-base leading-tight font-semibold">
-        {t.title}
+        {title}
       </h3>
     </div>
   </a>

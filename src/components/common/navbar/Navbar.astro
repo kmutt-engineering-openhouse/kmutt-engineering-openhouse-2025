@@ -15,22 +15,33 @@ const menu = [
 <nav
   id="site-nav"
   class="fixed inset-x-0 top-0 z-50 border-b border-gray-200 bg-white/80 backdrop-blur transition-transform duration-300 will-change-transform supports-[backdrop-filter]:bg-white/60"
+  data-fade
+  style="--i: 0;"
 >
-  <div class="mx-auto flex h-14 max-w-7xl items-center justify-between px-4 lg:h-16 lg:justify-between relative">
+  <div
+    class="relative mx-auto flex h-14 max-w-7xl items-center justify-between px-4 lg:h-16 lg:justify-between"
+  >
     <button
       id="back-btn"
-      class="absolute left-4 flex items-center justify-center w-10 h-10 text-purple-600 hover:text-purple-700 focus:outline-none border-0 transition-all duration-200 hidden lg:hidden"
+      class="absolute left-4 flex hidden h-10 w-10 items-center justify-center border-0 text-purple-600 transition-all duration-200 hover:text-purple-700 focus:outline-none lg:hidden"
       aria-label="Go back"
       style="display: none;"
     >
-      <img src="/src/assets/icons/back-arrow.svg" alt="Back" class="w-3.5 h-6" />
+      <img src="/src/assets/icons/back-arrow.svg" alt="Back" class="h-6 w-3.5" />
     </button>
 
-    <a href="/" aria-label="Home" class="flex-shrink-0 lg:flex-shrink-0 transition-transform duration-1000 ease-in-out" id="logo-link">
+    <a
+      href="/"
+      aria-label="Home"
+      class="flex-shrink-0 transition-transform duration-1000 ease-in-out lg:flex-shrink-0"
+      id="logo-link"
+    >
       <NavbarLogo />
     </a>
 
-    <div class="hidden lg:flex lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:items-center lg:gap-6">
+    <div
+      class="hidden lg:absolute lg:left-1/2 lg:flex lg:-translate-x-1/2 lg:transform lg:items-center lg:gap-6"
+    >
       {
         menu.map((m) => (
           <a
@@ -43,7 +54,7 @@ const menu = [
       }
     </div>
 
-    <div class="flex items-center gap-2 absolute right-4 lg:relative lg:right-auto">
+    <div class="absolute right-4 flex items-center gap-2 lg:relative lg:right-auto">
       <a
         href={currentLang === "th" ? "/en/" : "/th/"}
         class="flex items-center gap-0.5 text-xs leading-none font-normal"
@@ -61,7 +72,7 @@ const menu = [
 
       <button
         id="menu-btn"
-        class="p-2 text-[var(--color-primary)] hover:text-[var(--color-primary-hover)] focus:bg-gray-300 focus:rounded-md focus:outline-none border-0 lg:hidden"
+        class="border-0 p-2 text-[var(--color-primary)] hover:text-[var(--color-primary-hover)] focus:rounded-md focus:bg-gray-300 focus:outline-none lg:hidden"
         aria-expanded="false"
         aria-controls="mobile-menu"
         aria-label="Toggle menu"
@@ -104,7 +115,7 @@ const menu = [
           menu.map((m) => (
             <a
               href={m.href}
-              class="font-prompt block rounded-lg px-4 py-2 text-center text-base leading-none font-bold text-[var(--color-primary)] hover:text-[var(--color-primary-hover)] focus:bg-gray-300 focus:outline-none border-0"
+              class="font-prompt block rounded-lg border-0 px-4 py-2 text-center text-base leading-none font-bold text-[var(--color-primary)] hover:text-[var(--color-primary-hover)] focus:bg-gray-300 focus:outline-none"
             >
               {m.title}
             </a>
@@ -127,50 +138,51 @@ const menu = [
     const closeIcon = btn?.querySelector('[data-icn="close"]');
 
     const showBackButton = () => {
-      const isHomePage = window.location.pathname === '/' || 
-                        window.location.pathname === '/th/' || 
-                        window.location.pathname === '/en/';
+      const isHomePage =
+        window.location.pathname === "/" ||
+        window.location.pathname === "/th/" ||
+        window.location.pathname === "/en/";
       const isDesktop = window.innerWidth >= 1024;
-      const logoLink = document.getElementById('logo-link');
-      
+      const logoLink = document.getElementById("logo-link");
+
       if (backBtn) {
         if (isDesktop) {
-          backBtn.style.display = 'none';
+          backBtn.style.display = "none";
         } else {
           if (isHomePage) {
-            backBtn.style.display = 'none';
+            backBtn.style.display = "none";
           } else {
-            backBtn.style.display = 'flex';
+            backBtn.style.display = "flex";
           }
         }
       }
-      
+
       if (logoLink && !isDesktop) {
         if (isHomePage) {
-          logoLink.style.transform = 'translateX(0)';
+          logoLink.style.transform = "translateX(0)";
         } else {
-          logoLink.style.transform = 'translateX(calc(50vw - 50% - 2rem))';
+          logoLink.style.transform = "translateX(calc(50vw - 50% - 2rem))";
         }
       }
     };
 
-    backBtn?.addEventListener('click', () => {
-      const logoLink = document.getElementById('logo-link');
-      
+    backBtn?.addEventListener("click", () => {
+      const logoLink = document.getElementById("logo-link");
+
       if (logoLink) {
-        logoLink.style.transform = 'translateX(0)';
+        logoLink.style.transform = "translateX(0)";
       }
-      
+
       setTimeout(() => {
         if (backBtn) {
-          backBtn.style.display = 'none';
+          backBtn.style.display = "none";
         }
-        
+
         window.scrollTo({
           top: 0,
-          behavior: 'smooth'
+          behavior: "smooth",
         });
-        
+
         setTimeout(() => {
           isFirstBack = true;
           history.back();
@@ -181,7 +193,7 @@ const menu = [
     setTimeout(() => {
       showBackButton();
     }, 100);
-    
+
     let lastY = window.scrollY;
     let isHidden = false;
     let isFirstBack = true;
@@ -209,12 +221,10 @@ const menu = [
         if (currentY < 20) {
           nav.classList.remove("-translate-y-full");
           isHidden = false;
-        }
-        else if (scrollingDown && !isHidden && currentY > 50) {
+        } else if (scrollingDown && !isHidden && currentY > 50) {
           nav.classList.add("-translate-y-full");
           isHidden = true;
-        }
-        else if (scrollingUp && isHidden) {
+        } else if (scrollingUp && isHidden) {
           nav.classList.remove("-translate-y-full");
           isHidden = false;
         }
@@ -235,34 +245,34 @@ const menu = [
 
     btn?.addEventListener("click", () => setOpen(!isOpen));
     menu?.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setOpen(false)));
-    
+
     document.addEventListener("click", (e) => {
       if (isOpen && !nav?.contains(e.target)) {
         setOpen(false);
       }
     });
-    
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
+
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
         e.preventDefault();
-        const targetId = this.getAttribute('href');
+        const targetId = this.getAttribute("href");
         const target = document.querySelector(targetId);
-        
+
         if (target) {
           const navHeight = nav?.offsetHeight || 0;
           const targetPosition = target.offsetTop - navHeight - 20;
           window.scrollTo({
             top: targetPosition,
-            behavior: 'smooth'
+            behavior: "smooth",
           });
         } else {
-          const currentLang = window.location.pathname.startsWith('/en/') ? 'en' : 'th';
-          const homeUrl = currentLang === 'en' ? '/en/' : '/th/';
+          const currentLang = window.location.pathname.startsWith("/en/") ? "en" : "th";
+          const homeUrl = currentLang === "en" ? "/en/" : "/th/";
           window.location.href = homeUrl + targetId;
         }
       });
     });
-    
+
     window.matchMedia("(min-width: 1024px)").addEventListener("change", (e) => {
       if (e.matches) setOpen(false);
       showBackButton();

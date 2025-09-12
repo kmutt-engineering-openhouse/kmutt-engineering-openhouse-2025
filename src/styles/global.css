@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/* Theme variables */
 @theme {
   /* Colors */
   --color-primary: #3a3e94;
@@ -16,18 +17,23 @@
   --font-jamjuree: "Bai Jamjuree", sans-serif;
 }
 
+/* Reset */
 body {
   margin: 0;
   padding: 0;
+  font-family: var(--font-sans);
 }
 
+/* Font utilities */
 .font-prompt {
   font-family: var(--font-prompt) !important;
 }
+
 .font-jamjuree {
   font-family: var(--font-jamjuree) !important;
 }
 
+/* Prevent image dragging */
 img {
   -webkit-user-drag: none;
   -khtml-user-drag: none;
@@ -69,6 +75,7 @@ img {
   }
 }
 
+/* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   [data-fade],
   [data-fade-up] {

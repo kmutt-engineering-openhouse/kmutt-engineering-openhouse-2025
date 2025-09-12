@@ -1,8 +1,29 @@
+// Highlight Section
 import enWorkshop from "../../assets/images/highlight/en/workshop.png";
 import enExhibition from "../../assets/images/highlight/en/exhibition.png";
 import enJourney from "../../assets/images/highlight/en/engi-journey.png";
 import enIdol from "../../assets/images/highlight/en/idol.png";
-import { de } from "zod/locales";
+// Department Section
+import imgCPE from "../../assets/images/department/CPE.png";
+import imgCHE from "../../assets/images/department/CHE.png";
+import imgME from "../../assets/images/department/ME.png";
+import imgTME from "../../assets/images/department/TME.png";
+import imgEE from "../../assets/images/department/EE.png";
+import imgCE from "../../assets/images/department/CE.png";
+import imgINC from "../../assets/images/department/INC.png";
+import imgENV from "../../assets/images/department/ENV.png";
+import imgENE from "../../assets/images/department/ENE.png";
+import imgPE from "../../assets/images/department/PE.png";
+import iconCPE from "../../assets/icons/department/CPE.svg";
+import iconCHE from "../../assets/icons/department/CHE.svg";
+import iconME from "../../assets/icons/department/ME.svg";
+import iconTME from "../../assets/icons/department/TME.svg";
+import iconEE from "../../assets/icons/department/EE.svg";
+import iconCE from "../../assets/icons/department/CE.svg";
+import iconINC from "../../assets/icons/department/INC.svg";
+import iconENV from "../../assets/icons/department/ENV.svg";
+import iconENE from "../../assets/icons/department/ENE.svg";
+import iconPE from "../../assets/icons/department/PE.svg";
 
 export default {
   hero: {
@@ -35,6 +56,71 @@ export default {
         description:
           "Students will get to sit down and talk, ask for advice and techniques for creating a portfolio, and prepare for entrance exams for various fields in the Faculty of Engineering from senior students from all 10 departments, one-on-one.",
         image: enIdol,
+      },
+    ],
+  },
+  department: {
+    title: "Departments",
+    department: [
+      {
+        title: "Computer",
+        href: "/department/cpe",
+        image: imgCPE,
+        icon: iconCPE,
+      },
+      {
+        title: "Chemical",
+        href: "/department/che",
+        image: imgCHE,
+        icon: iconCHE,
+      },
+      {
+        title: "Mechanical",
+        href: "/department/me",
+        image: imgME,
+        icon: iconME,
+      },
+      {
+        title: "Tool and Materials",
+        href: "/department/tme",
+        image: imgTME,
+        icon: iconTME,
+      },
+      {
+        title: "Electrical",
+        href: "/department/ee",
+        image: imgEE,
+        icon: iconEE,
+      },
+      {
+        title: "Civil",
+        href: "/department/ce",
+        image: imgCE,
+        icon: iconCE,
+      },
+      {
+        title: "Instrumentation and Control Systems",
+        href: "/department/inc",
+        image: imgINC,
+        icon: iconINC,
+      },
+      {
+        title: "Environmental",
+        href: "/department/env",
+        image: imgENV,
+        icon: iconENV,
+      },
+      {
+        title: "Electronics and Telecommunication",
+        href: "/department/ene",
+        image: imgENE,
+        icon: iconENE,
+      },
+      {
+        title: "Production",
+        href: "/department/pe",
+        image: imgPE,
+        icon: iconPE,
       },
     ],
   },

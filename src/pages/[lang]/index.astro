@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import { getDict } from "../../i18n/getDict";
 import HeroSection from "../../components/hero/HeroSection.astro";
+import ContestSection from "../../components/contest/ContestSection.astro";
 
 export function getStaticPaths() {
   return ["th", "en"].map((lang) => ({ params: { lang } }));
@@ -12,4 +13,5 @@ const t = getDict(lang === "en" ? "en" : "th");
 
 <Layout>
   <HeroSection t={t} />
+  <ContestSection t={t} />
 </Layout>

@@ -1,0 +1,46 @@
+---
+// import KMUTTLogo from "./KMUTTLogo.astro";
+// import AnimatedLogo from "./AnimatedLogo.astro";
+import { Image } from "astro:assets";
+import IDEA_CONTEST from "../../assets/contest/idea_contest.jpg";
+
+const { t } = Astro.props;
+---
+
+<section class="w-full px-4 py-16">
+  <div class="max-w-256 mx-auto">
+    <div
+      class="w-full flex-col rounded-t-2xl border border-gray-300 p-4 opacity-100 shadow-md"
+    >
+      <div class="flex flex-col gap-2">
+        <h4
+          class="font-jamjuree text-primary-hover align-middle text-xl leading-6 font-bold tracking-normal"
+        >
+          Science & Technology Idea Contest Engineering KMUTT
+        </h4>
+        <div class="font-jamjuree align-middle text-base leading-6 font-normal tracking-normal">
+          <p class="indent-4">
+            โครงการแข่งขันนวัตกรรม สิ่งประดิษฐ์ทางด้านวิทยาศาสตร์และเทคโนโลยี
+            ระดับมัธยมศึกษาตอนปลายหรือเทียบเท่าภายใต้แนวคิด ”วิศวกรรมเพื่อความยั่งยืน“ 
+            เชิญชวนร่วมชมการแสดงผลงานและแข่งขันรอบชิงชนะเลิศตลอดทั้งวัน ทั้ง
+          </p>
+          <ul class="list-disc pl-5">
+            <li>ชมการจัดแสดงแนวคิดโปรเจกต์ด้านนวัตกรรมและสิ่งประดิษฐ์จาก 40 ทีม</li>
+            <li>โหวต Popular Vote ให้กับผลงานของทีมที่ชอบ</li>
+            <li>ฟังการนำเสนอผลงานของ 5 ทีมที่ทำคะแนนสูงสุด เพื่อหาผู้ชนะในวันที่ 10 ตุลาคม 2568</li>
+          </ul>
+        </div>
+        <div>icon</div>
+      </div>
+    </div>
+    <Image
+      src={IDEA_CONTEST}
+      alt="Science & Technology Idea Contest Engineering KMUTT"
+      class="aspect-auto w-full  h-38 sm:h-76  rounded-b-xl object-cover select-none"
+      format="jpg"
+      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 800px, 1200px"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+</section>

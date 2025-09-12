@@ -1,157 +1,170 @@
 ---
 import NavbarLogo from "./NavbarLogo.astro";
-
 const { t, currentLang } = Astro.props;
+
+const menu = [
+  t.nav.menu.highlight,
+  t.nav.menu.departments,
+  t.nav.menu.inside,
+  t.nav.menu.competitions,
+  t.nav.menu.map,
+  t.nav.menu.faq,
+];
 ---
 
-<nav class="bg-white relative">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center h-16">
-      
-      <!-- Logo -->
-      <div class="flex-shrink-0">
-        <NavbarLogo />
-      </div>
-      
-      <!-- Desktop Menu (มากกว่าเท่ากับ1024px) -->
-      <div class="hidden lg:block">
-        <div class="ml-10 flex items-baseline space-x-8">
-          <a href="#highlight" class="text-[#3A3E94] hover:text-[#69357c] px-3 py-2 font-prompt font-bold text-base leading-none transition-colors">
-            {t.nav.menu.highlight}
+<nav
+  id="site-nav"
+  class="fixed inset-x-0 top-0 z-50 translate-y-0 border-b border-gray-200 bg-white/80 backdrop-blur transition-transform duration-300 will-change-transform supports-[backdrop-filter]:bg-white/60"
+>
+  <div class="mx-auto flex h-14 max-w-7xl items-center justify-between px-4 lg:h-16">
+    <!-- Logo -->
+    <a href="/" aria-label="Home" class="flex-shrink-0">
+      <NavbarLogo />
+    </a>
+
+    <!-- Desktop Menu -->
+    <div class="hidden items-center gap-6 lg:flex">
+      {
+        menu.map((m) => (
+          <a
+            href={m.href}
+            class="font-prompt text-base leading-none font-bold text-[var(--color-primary)] hover:text-[var(--color-primary-hover)]"
+          >
+            {m.title}
           </a>
-          <a href="#departments" class="text-[#3A3E94] hover:text-[#69357c] px-3 py-2 font-prompt font-bold text-base leading-none transition-colors">
-            {t.nav.menu.departments}
-          </a>
-          <a href="#activities" class="text-[#3A3E94] hover:text-[#69357c] px-3 py-2 font-prompt font-bold text-base leading-none transition-colors">
-            {t.nav.menu.activities}
-          </a>
-          <a href="#competitions" class="text-[#3A3E94] hover:text-[#69357c] px-3 py-2 font-prompt font-bold text-base leading-none transition-colors">
-            {t.nav.menu.competitions}
-          </a>
-          <a href="#venue" class="text-[#3A3E94] hover:text-[#69357c] px-3 py-2 font-prompt font-bold text-base leading-none transition-colors">
-            {t.nav.menu.venue}
-          </a>
-          <a href="#faq" class="text-[#3A3E94] hover:text-[#69357c] px-3 py-2 font-prompt font-bold text-base leading-none transition-colors">
-            {t.nav.menu.faq}
-          </a>
-        </div>
-      </div>
-      
-      <!-- Language Switcher & Mobile menu button -->
-      <div class="flex items-center space-x-2">
-        <!-- Language Switcher -->
-        <a
-          href={currentLang === "th" ? "/en/" : "/th/"}
-          class="flex items-center space-x-2 font-prompt font-bold text-base leading-none"
+        ))
+      }
+    </div>
+
+    <!-- Lang + Mobile button -->
+    <div class="flex items-center gap-2">
+      <a
+        href={currentLang === "th" ? "/en/" : "/th/"}
+        class="font-prompt flex items-center gap-2 text-base leading-none font-bold"
+        aria-label="Switch language"
+      >
+        <span class={currentLang === "th" ? "text-[var(--color-primary)]" : "text-gray-500"}>
+          {t.nav.language.th}
+        </span>
+        <span class="text-gray-300">|</span>
+        <span class={currentLang === "en" ? "text-[var(--color-primary)]" : "text-gray-500"}>
+          {t.nav.language.en}
+        </span>
+      </a>
+
+      <button
+        id="menu-btn"
+        class="p-2 text-[var(--color-primary)] hover:text-[var(--color-primary-hover)] focus:ring-2 focus:ring-[var(--color-primary)] focus:outline-none focus:ring-inset lg:hidden"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-label="Toggle menu"
+        type="button"
+      >
+        <svg
+          data-icn="hamburger"
+          class="h-6 w-6"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
         >
-          <span class={`px-2 py-1 ${currentLang === "th" ? "text-[#3A3E94]" : "text-gray-500"}`}>
-            {t.nav.language.th}
-          </span>
-          <span class="text-gray-300">|</span>
-          <span class={`px-2 py-1 ${currentLang === "en" ? "text-[#3A3E94]" : "text-gray-500"}`}>
-            {t.nav.language.en}
-          </span>
-        </a>
-        
-        <!-- Mobile menu button (น้อยกว่า1024px) -->
-        <button type="button" data-mobile-menu-button class="lg:hidden text-[#3A3E94] hover:text-[#69357c] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#3A3E94] p-2">
-          <span class="sr-only">Open main menu</span>
-          <svg class="h-6 w-6 hamburger-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-          <svg class="h-6 w-6 close-icon hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <svg
+          data-icn="close"
+          class="hidden h-6 w-6"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
     </div>
   </div>
-  
-  <!-- Mobile menu dropdown (น้อยกว่า1024px) -->
-  <div class="lg:hidden hidden absolute top-full left-0 right-0 z-50 bg-white/90 shadow-lg border border-gray-200 transform transition-all duration-300 ease-out opacity-0 -translate-y-2" id="mobile-menu">
-    <div class="w-[361px] mx-auto">
-      <div class="flex flex-col gap-2 p-2">
-        <a href="#highlight" class="text-[#3A3E94] hover:text-[#69357c] block px-4 py-2 font-prompt font-bold text-base leading-none transition-colors rounded-lg text-center">
-          {t.nav.menu.highlight}
-        </a>
-        <a href="#departments" class="text-[#3A3E94] hover:text-[#69357c] block px-4 py-2 font-prompt font-bold text-base leading-none transition-colors rounded-lg text-center">
-          {t.nav.menu.departments}
-        </a>
-        <a href="#activities" class="text-[#3A3E94] hover:text-[#69357c] block px-4 py-2 font-prompt font-bold text-base leading-none transition-colors rounded-lg text-center">
-          {t.nav.menu.activities}
-        </a>
-        <a href="#competitions" class="text-[#3A3E94] hover:text-[#69357c] block px-4 py-2 font-prompt font-bold text-base leading-none transition-colors rounded-lg text-center">
-          {t.nav.menu.competitions}
-        </a>
-        <a href="#venue" class="text-[#3A3E94] hover:text-[#69357c] block px-4 py-2 font-prompt font-bold text-base leading-none transition-colors rounded-lg text-center">
-          {t.nav.menu.venue}
-        </a>
-        <a href="#faq" class="text-[#3A3E94] hover:text-[#69357c] block px-4 py-2 font-prompt font-bold text-base leading-none transition-colors rounded-lg text-center">
-          {t.nav.menu.faq}
-        </a>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="max-h-0 overflow-hidden transition-all duration-300 lg:hidden">
+    <div class="px-4 pb-4">
+      <div class="flex flex-col gap-2">
+        {
+          menu.map((m) => (
+            <a
+              href={m.href}
+              class="font-prompt block rounded-lg px-4 py-2 text-center text-base leading-none font-bold text-[var(--color-primary)] hover:text-[var(--color-primary-hover)]"
+            >
+              {m.title}
+            </a>
+          ))
+        }
       </div>
     </div>
   </div>
 </nav>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuButton = document.querySelector('[data-mobile-menu-button]');
-    const mobileMenuClose = document.querySelector('[data-mobile-menu-close]');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
-    if (mobileMenuButton && mobileMenu) {
-      mobileMenuButton.addEventListener('click', function() {
-        const isCurrentlyHidden = mobileMenu.classList.contains('hidden');
-        
-        if (isCurrentlyHidden) {
-          mobileMenu.classList.remove('hidden');
-          setTimeout(() => {
-            mobileMenu.classList.remove('opacity-0', '-translate-y-2');
-            mobileMenu.classList.add('opacity-100', 'translate-y-0');
-          }, 10);
-        } else {
-          mobileMenu.classList.remove('opacity-100', 'translate-y-0');
-          mobileMenu.classList.add('opacity-0', '-translate-y-2');
-          setTimeout(() => {
-            mobileMenu.classList.add('hidden');
-          }, 300);
+<!-- Spacer to offset fixed nav -->
+<div class="h-14 lg:h-16"></div>
+
+<script is:inline>
+  (() => {
+    const nav = document.getElementById("site-nav");
+    const btn = document.getElementById("menu-btn");
+    const menu = document.getElementById("mobile-menu");
+    const openIcon = btn?.querySelector('[data-icn="hamburger"]');
+    const closeIcon = btn?.querySelector('[data-icn="close"]');
+
+    // Hide-on-scroll
+    let lastY = window.scrollY;
+    let pinned = true;
+    const threshold = 8;
+
+    window.addEventListener(
+      "scroll",
+      () => {
+        const y = window.scrollY;
+        const down = y > lastY + threshold;
+        const up = y < lastY - threshold;
+
+        if (down && pinned) {
+          nav.classList.add("-translate-y-full");
+          pinned = false;
+        } else if (up && !pinned) {
+          nav.classList.remove("-translate-y-full");
+          pinned = true;
         }
-        
-        const hamburgerIcon = mobileMenuButton.querySelector('.hamburger-icon');
-        const closeIcon = mobileMenuButton.querySelector('.close-icon');
-        
-        if (hamburgerIcon && closeIcon) {
-          if (isCurrentlyHidden) {
-            hamburgerIcon.classList.add('hidden');
-            closeIcon.classList.remove('hidden');
-          } else {
-            hamburgerIcon.classList.remove('hidden');
-            closeIcon.classList.add('hidden');
-          }
+        if (y < 4) {
+          nav.classList.remove("-translate-y-full");
+          pinned = true;
         }
-      });
-    }
-    
-    if (mobileMenu) {
-      mobileMenu.addEventListener('click', function(e) {
-        if (e.target === mobileMenu) {
-          mobileMenu.classList.remove('opacity-100', 'translate-y-0');
-          mobileMenu.classList.add('opacity-0', '-translate-y-2');
-          setTimeout(() => {
-            mobileMenu.classList.add('hidden');
-          }, 300);
-          
-          if (mobileMenuButton) {
-            const hamburgerIcon = mobileMenuButton.querySelector('.hamburger-icon');
-            const closeIcon = mobileMenuButton.querySelector('.close-icon');
-            if (hamburgerIcon && closeIcon) {
-              hamburgerIcon.classList.remove('hidden');
-              closeIcon.classList.add('hidden');
-            }
-          }
-        }
-      });
-    }
-  });
+        lastY = y;
+      },
+      { passive: true }
+    );
+
+    // Mobile toggle
+    let isOpen = false;
+    const setOpen = (open) => {
+      isOpen = open;
+      btn?.setAttribute("aria-expanded", String(open));
+      if (menu) {
+        menu.style.maxHeight = open ? menu.scrollHeight + "px" : "0px";
+      }
+      openIcon?.classList.toggle("hidden", open);
+      closeIcon?.classList.toggle("hidden", !open);
+      document.documentElement.classList.toggle("overflow-hidden", open);
+    };
+
+    btn?.addEventListener("click", () => setOpen(!isOpen));
+    menu?.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setOpen(false)));
+    window.matchMedia("(min-width: 1024px)").addEventListener("change", (e) => {
+      if (e.matches) setOpen(false);
+    });
+  })();
 </script>

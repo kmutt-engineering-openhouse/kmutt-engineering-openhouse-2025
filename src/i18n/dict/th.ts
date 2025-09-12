@@ -32,12 +32,30 @@ export default {
   },
   nav: {
     menu: {
-      highlight: "ไฮไลท์",
-      departments: "ภาควิชา",
-      activities: "กิจกรรม",
-      competitions: "การแข่งขัน",
-      venue: "สถานที่จัดงาน",
-      faq: "คำถามที่พบบ่อย",
+      highlight: {
+        title: "ไฮไลท์",
+        href: "#highlight",
+      },
+      departments: {
+        title: "ภาควิชา",
+        href: "#department",
+      },
+      inside: {
+        title: "ภายในงาน",
+        href: "#inside",
+      },
+      competitions: {
+        title: "การแข่งขัน",
+        href: "#competition",
+      },
+      map: {
+        title: "สถานที่จัดงาน",
+        href: "#map",
+      },
+      faq: {
+        title: "คำถามที่พบบ่อย",
+        href: "#faq",
+      },
     },
     language: {
       th: "TH",

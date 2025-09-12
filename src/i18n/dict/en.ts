@@ -128,4 +128,43 @@ export default {
   map: {
     title: "Location",
   },
+  faq: {
+    title: "FAQ",
+    questions: [
+      {
+        question: "Where is the KMUTT Engineering Open House held?",
+        answer:
+          "The event is held at King Mongkut’s University of Technology Thonburi (KMUTT), Bangmod campus only.",
+      },
+      {
+        question: "What can I do at the event?",
+        answer:
+          "KMUTT Engineering Open House 2025 features a variety of activities, including department exhibitions, hands-on workshops where you can try things yourself, and Engi’s Journey, which guides you to learn more about the Faculty of Engineering at KMUTT.",
+      },
+      {
+        question: "What should I bring?",
+        answer:
+          "A mobile phone with internet access. We collect E-stamps via the website for issuing certificates.",
+      },
+      {
+        question: "What should I wear?",
+        answer:
+          "School uniform or smart attire (long trousers and closed-toe shoes). Please avoid sleeveless shirts, spaghetti straps, crop tops, short shorts, or flip-flops. Wear something comfortable for active participation.",
+      },
+      {
+        question: "Can parents or teachers join?",
+        answer:
+          "Yes. Parents, teachers, and interested visitors can register to join the activities.",
+      },
+      {
+        question: "Are certificates provided?",
+        answer:
+          "Certificates are available in 3 types:\n1) Event Participation Certificate — awarded when you collect at least 5 points via E-stamps, as follows:\n- Exhibitions from 10 departments (total 10 stamps): 1 point/stamp\n- Workshops from 10 departments and INNO-X (total 11 stamps): 3 points/stamp\n- Engi’s Journey (3 stamps): 3 points/stamp\n- Engineering Quest 2025 (1 stamp): 1 point/stamp\n- Science & Technology Idea Contest Engineering KMUTT (1 stamp): 1 point/stamp\n2) Workshop Participation Certificate — awarded upon attending any department or INNO-X workshop.\n3) Academic Competition Certificate — awarded according to each competition’s rules.",
+      },
+      {
+        question: "How do I register?",
+        answer: "Register via the Admission website.",
+      },
+    ],
+  },
 };

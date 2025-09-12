@@ -24,6 +24,7 @@ import iconINC from "../../assets/icons/department/INC.svg";
 import iconENV from "../../assets/icons/department/ENV.svg";
 import iconENE from "../../assets/icons/department/ENE.svg";
 import iconPE from "../../assets/icons/department/PE.svg";
+import { map } from "zod";
 
 export default {
   hero: {
@@ -123,5 +124,8 @@ export default {
         icon: iconPE,
       },
     ],
+  },
+  map: {
+    title: "Location",
   },
 };

@@ -5,6 +5,7 @@ import { getDict } from "../../i18n/getDict";
 import HeroSection from "../../components/home/hero/HeroSection.astro";
 import HighlightSection from "../../components/home/highlight/HighlightSection.astro";
 import DepartmentSection from "../../components/home/department/DepartmentSection.astro";
+import MapSection from "../../components/home/map/MapSection.astro";
 
 export function getStaticPaths() {
   return ["th", "en"].map((lang) => ({ params: { lang } }));
@@ -17,4 +18,5 @@ const t = getDict(lang === "en" ? "en" : "th");
   <HeroSection t={t} />
   <HighlightSection t={t} />
   <DepartmentSection t={t} />
+  <MapSection t={t} />
 </Layout>

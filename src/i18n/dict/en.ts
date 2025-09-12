@@ -26,6 +26,10 @@ import iconENE from "../../assets/icons/department/ENE.svg";
 import iconPE from "../../assets/icons/department/PE.svg";
 import iconFacebook from "../../assets/icons/facebook.svg";
 import iconInstagram from "../../assets/icons/instagram.svg";
+import imgIC from "../../assets/contest/ic.png";
+import imgEQ from "../../assets/contest/eq.png";
+import imgBH from "../../assets/contest/bh.png";
+import iconLOC from "../../assets/icons/location.svg";
 
 export default {
   hero: {
@@ -46,9 +50,9 @@ export default {
         title: "Inside",
         href: "#inside",
       },
-      competitions: {
-        title: "Competition",
-        href: "#competition",
+      contests: {
+        title: "Contest",
+        href: "#contest",
       },
       map: {
         title: "Location",
@@ -159,6 +163,57 @@ export default {
         href: "/department/pe",
         image: imgPE,
         icon: iconPE,
+      },
+    ],
+  },
+  contest: {
+    title: "Contest",
+    contest: [
+      {
+        title: "Science & Technology Idea Contest Engineering KMUTT",
+        description: `a competition for high school students or their equivalents to submit scientific and technological inventions under the theme "Engineering for Sustainability."On October 10, 2025, you have been invited to participate in the final round competition and all-day exhibition.`,
+        points: [
+          "Seeing 40 teams' innovative project concepts and inventions",
+          "Vote for your preferred team in the popular vote",
+          "Listening to presentations from the top five teams to decide the winner",
+        ],
+        image: imgIC,
+        location: [
+          {
+            text: "KMUTT Library Building (N10), King Mongkut's University of Technology Thonburi",
+            icon: iconLOC,
+          },
+        ],
+      },
+      {
+        title: "Engineering Quest 2025",
+        description:
+          "First, xxx teams, then 50 teams, and lastly, the top 5. On October 11, 2025, you can watch the semi-final and final rounds of the Engineering Academic Quiz Competition for students in high school or its equivalent in the Academic Year 2025. The competition will be live-streamed on the KMUTT Engineering Open House 2025 Facebook page, so you may follow, cheer, and support throughout.",
+        image: imgEQ,
+        href: "https://www.facebook.com/share/1BZD9tJbzG/?mibextid=wwXIfr ",
+        location: [
+          {
+            text: "Preliminary Round: Classroom Building 2 (N17)",
+            icon: iconLOC,
+          },
+          {
+            text: "Semi-Final & Final Rounds: King Mongkut’s 190th Anniversary Memorial Building (S14)",
+            icon: iconLOC,
+          },
+        ],
+      },
+      {
+        title: "Bangmod Hackathon 2025",
+        description:
+          "Bangmod Hackathon is a computer programming competition that allows high school and vocational students (or equivalents) to compete in a team-based C/C++ programming contest. The event's goal is to improve programming abilities, build teamwork, and provide participants with practical experience through real-world situations.",
+        image: imgBH,
+        href: "https://bangmodhackathon.com/",
+        location: [
+          {
+            text: "Wissawa Wattana Building (S4), 11th Floor, King Mongkut’s University of Technology Thonburi",
+            icon: iconLOC,
+          },
+        ],
       },
     ],
   },

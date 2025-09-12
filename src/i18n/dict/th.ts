@@ -26,6 +26,10 @@ import iconENE from "../../assets/icons/department/ENE.svg";
 import iconPE from "../../assets/icons/department/PE.svg";
 import iconFacebook from "../../assets/icons/facebook.svg";
 import iconInstagram from "../../assets/icons/instagram.svg";
+import imgIC from "../../assets/contest/ic.png";
+import imgEQ from "../../assets/contest/eq.png";
+import imgBH from "../../assets/contest/bh.png";
+import iconLOC from "../../assets/icons/location.svg";
 
 export default {
   hero: {
@@ -46,9 +50,9 @@ export default {
         title: "ภายในงาน",
         href: "#inside",
       },
-      competitions: {
+      contests: {
         title: "การแข่งขัน",
-        href: "#competition",
+        href: "#contest",
       },
       map: {
         title: "สถานที่จัดงาน",
@@ -159,6 +163,58 @@ export default {
         href: "/department/pe",
         image: imgPE,
         icon: iconPE,
+      },
+    ],
+  },
+  contest: {
+    title: "การแข่งขัน",
+    contest: [
+      {
+        title: "Science & Technology Idea Contest Engineering KMUTT",
+        description:
+          "โครงการแข่งขันนวัตกรรม สิ่งประดิษฐ์ทางด้านวิทยาศาสตร์และเทคโนโลยี ระดับมัธยมศึกษาตอนปลายหรือเทียบเท่าภายใต้แนวคิด ”วิศวกรรมเพื่อความยั่งยืน“ เชิญชวนร่วมชมการแสดงผลงานและแข่งขันรอบชิงชนะเลิศตลอดทั้งวัน ทั้ง",
+        points: [
+          "ชมการจัดแสดงแนวคิดโปรเจกต์ด้านนวัตกรรมและสิ่งประดิษฐ์จาก 40 ทีม",
+          "โหวต Popular Vote ให้กับผลงานของทีมที่ชอบ",
+          "ฟังการนำเสนอผลงานของ 5 ทีมที่ทำคะแนนสูงสุด เพื่อหาผู้ชนะในวันที่ 10 ตุลาคม 2568",
+        ],
+        image: imgIC,
+        location: [
+          {
+            text: "อาคารสำนักงานหอสมุด (N10) มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี",
+            icon: iconLOC,
+          },
+        ],
+      },
+      {
+        title: "Engineering Quest 2025",
+        description:
+          "จาก xxx ทีม สู่ 50 ทีม และสุดท้าย 5 ทีมสุดท้ายร่วมชมการแข่งขันรอบรองชนะเลิศ  และรอบชิงชนะเลิศ การแข่งขันตอบปัญหาวิชาการทางด้านวิศวกรรม ระดับมัธยมศึกษาตอนปลายหรือเทียบเท่า ปีการศึกษา 2568 ในวันที่ 11 ตุลาคม 2568 ภายใต้โจทย์ปัญหาที่ใช้เนื้อหาเกี่ยวกับ วิทยาศาสตร์และคณิตศาสตร์ ผ่านทางการถ่ายทดสดที่ เพจ Facebook KMUTT Engineering Open House 2025 สามารถช่วยลุ้น ร่วมเชียร์ และให้กำลังใจได้ตลอดทั้งวัน",
+        image: imgEQ,
+        href: "https://www.facebook.com/share/1BZD9tJbzG/?mibextid=wwXIfr ",
+        location: [
+          {
+            text: "รอบคัดเลือก: อาคารเรียนรวม 2 (N17)",
+            icon: iconLOC,
+          },
+          {
+            text: "รอบรองชนะเลิศ & รอบชิงชนะเลิศ: โรงพละศึกษา อาคารพระจอมเกล้าราชานุสรณ์ 190 ปี (S14)",
+            icon: iconLOC,
+          },
+        ],
+      },
+      {
+        title: "Bangmod Hackathon 2025",
+        description:
+          "โครงการแข่งขันการเขียนโปรแกรมคอมพิวเตอร์ Bangmod Hackathon เป็นโครงการที่เปิดโอกาสให้นักเรียนมัธยมปลาย และนักศึกษาอาชีวะระดับปวช. หรือเทียบเท่า ได้เข้าร่วมการแข่งขัน เขียนโปรแกรมด้วยภาษา C/C++ ในรูปแบบทีม เพื่อเสริมสร้างทักษะการเขียนโปรแกรม พร้อมทั้งฝึกการทำงานร่วมกันและเก็บเกี่ยวประสบการณ์จากการลงสนามจริง",
+        image: imgBH,
+        href: "https://bangmodhackathon.com/",
+        location: [
+          {
+            text: "อาคารวิศววัฒนะ (S4) ชั้น 11  มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี",
+            icon: iconLOC,
+          },
+        ],
       },
     ],
   },

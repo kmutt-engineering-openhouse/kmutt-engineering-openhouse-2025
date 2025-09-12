@@ -1,0 +1,27 @@
+---
+import KMUTTLogo from "./KMUTTLogo.astro";
+import AnimatedLogo from "./AnimatedLogo.astro";
+
+const { t } = Astro.props;
+---
+
+<section id="hero" class="mx-auto max-w-7xl px-4 pt-16 pb-8">
+  <div class="flex flex-col items-center gap-4">
+    <div class="flex flex-col items-center gap-0">
+      <KMUTTLogo data-fade style="--i: 0;" />
+      <AnimatedLogo data-fade style="--i: 0.5;" />
+    </div>
+    <div class="flex flex-col items-center gap-2">
+      <h1 class="font-prompt text-center text-2xl font-[800] sm:text-3xl" data-fade style="--i: 1;">
+        {t.hero.date}
+      </h1>
+      <p
+        class="font-jamjuree text-center text-base whitespace-pre-line"
+        data-fade
+        style="--i: 1.5;"
+      >
+        {t.hero.place}
+      </p>
+    </div>
+  </div>
+</section>

@@ -21,7 +21,7 @@ const { t, currentLang } = Astro.props;
   </head>
   <body class="antialiased">
     <Navbar t={t} currentLang={currentLang} />
-    <main class="flex justify-center">
+    <main class="flex flex-col justify-center">
       <slot />
     </main>
   </body>

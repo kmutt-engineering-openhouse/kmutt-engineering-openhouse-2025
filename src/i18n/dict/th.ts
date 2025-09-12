@@ -207,17 +207,16 @@ export default {
   footer: {
     university: "คณะวิศวกรรมศาสตร์ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี (บางมด)",
     address: "126 ถนนประชาอุทิศ แขวงบางมด เขตทุ่งครุ กรุงเทพฯ 10140",
-    copyright:
-      "Copyright © 2025 King Mongkut's University of Technology Thonburi. All rights reserved.",
+    copyright: "Copyright © KMUTT Engineering Open House 2025. All rights reserved.",
     social: {
       facebook: {
         icon: iconFacebook,
-        href: "https://www.facebook.com/kmutt.eng",
+        href: "https://www.facebook.com/100087709743668",
         alt: "Facebook",
       },
       instagram: {
         icon: iconInstagram,
-        href: "https://www.instagram.com/kmutt.eng",
+        href: "https://www.instagram.com/samovidva_bangmod",
         alt: "Instagram",
       },
     },

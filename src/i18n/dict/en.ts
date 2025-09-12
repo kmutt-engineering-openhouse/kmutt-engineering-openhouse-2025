@@ -208,17 +208,16 @@ export default {
     university:
       "Faculty of Engineering, King Mongkut's University of Technology Thonburi (Bangmod)",
     address: "126 Pracha Uthit Road, Bangmod, Thung Khru, Bangkok 10140",
-    copyright:
-      "Copyright © 2025 King Mongkut's University of Technology Thonburi. All rights reserved.",
+    copyright: "Copyright © 2025 KMUTT Engineering Open House 2025. All rights reserved.",
     social: {
       facebook: {
         icon: iconFacebook,
-        href: "https://www.facebook.com/kmutt.eng",
+        href: "https://www.facebook.com/100087709743668",
         alt: "Facebook",
       },
       instagram: {
         icon: iconInstagram,
-        href: "https://www.instagram.com/kmutt.eng",
+        href: "https://www.instagram.com/samovidva_bangmod",
         alt: "Instagram",
       },
     },

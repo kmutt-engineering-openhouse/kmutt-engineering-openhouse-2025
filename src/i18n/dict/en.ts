@@ -102,7 +102,7 @@ export default {
     department: [
       {
         title: "Computer",
-        href: "/department/cpe",
+        href: "/test/", // href: "/en/departments/cpe/",
         image: imgCPE,
         icon: iconCPE,
       },

@@ -15,7 +15,7 @@ const { lang } = Astro.params;
 const t = getDict(lang === "en" ? "en" : "th");
 ---
 
-<Layout>
+<Layout t={t} currentLang={lang}>
   <HeroSection t={t} />
   <HighlightSection t={t} />
   <DepartmentSection t={t} />

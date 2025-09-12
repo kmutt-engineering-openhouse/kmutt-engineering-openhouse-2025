@@ -1,7 +1,29 @@
+// Highlight Section
 import thWorkshop from "../../assets/images/highlight/th/workshop.png";
 import thExhibition from "../../assets/images/highlight/th/exhibition.png";
 import thJourney from "../../assets/images/highlight/th/engi-journey.png";
 import thIdol from "../../assets/images/highlight/th/idol.png";
+// Department Section
+import imgCPE from "../../assets/images/department/CPE.png";
+import imgCHE from "../../assets/images/department/CHE.png";
+import imgME from "../../assets/images/department/ME.png";
+import imgTME from "../../assets/images/department/TME.png";
+import imgEE from "../../assets/images/department/EE.png";
+import imgCE from "../../assets/images/department/CE.png";
+import imgINC from "../../assets/images/department/INC.png";
+import imgENV from "../../assets/images/department/ENV.png";
+import imgENE from "../../assets/images/department/ENE.png";
+import imgPE from "../../assets/images/department/PE.png";
+import iconCPE from "../../assets/icons/department/CPE.svg";
+import iconCHE from "../../assets/icons/department/CHE.svg";
+import iconME from "../../assets/icons/department/ME.svg";
+import iconTME from "../../assets/icons/department/TME.svg";
+import iconEE from "../../assets/icons/department/EE.svg";
+import iconCE from "../../assets/icons/department/CE.svg";
+import iconINC from "../../assets/icons/department/INC.svg";
+import iconENV from "../../assets/icons/department/ENV.svg";
+import iconENE from "../../assets/icons/department/ENE.svg";
+import iconPE from "../../assets/icons/department/PE.svg";
 
 export default {
   hero: {
@@ -34,6 +56,71 @@ export default {
         description:
           "น้อง ๆ จะได้จับเข่าคุย ขอคำปรึกษา และเทคนิคการจัดทำ Portfolio การเตรียมตัวสอบเข้าสาขาวิชาต่าง ๆ ในคณะวิศวกรรมศาสตร์ จากรุ่นพี่นักศึกษาจากทั้ง 10 ภาควิชา แบบ one-on-one ",
         image: thIdol,
+      },
+    ],
+  },
+  department: {
+    title: "ภาควิชา",
+    department: [
+      {
+        title: "คอมพิวเตอร์",
+        href: "/department/cpe",
+        image: imgCPE,
+        icon: iconCPE,
+      },
+      {
+        title: "เคมี",
+        href: "/department/che",
+        image: imgCHE,
+        icon: iconCHE,
+      },
+      {
+        title: "เครื่องกล",
+        href: "/department/me",
+        image: imgME,
+        icon: iconME,
+      },
+      {
+        title: "เครื่องมือและวัสดุ",
+        href: "/department/tme",
+        image: imgTME,
+        icon: iconTME,
+      },
+      {
+        title: "ไฟฟ้า",
+        href: "/department/ee",
+        image: imgEE,
+        icon: iconEE,
+      },
+      {
+        title: "โยธา",
+        href: "/department/ce",
+        image: imgCE,
+        icon: iconCE,
+      },
+      {
+        title: "ระบบควบคุมและอัตโนมัติ",
+        href: "/department/inc",
+        image: imgINC,
+        icon: iconINC,
+      },
+      {
+        title: "สิ่งแวดล้อม",
+        href: "/department/env",
+        image: imgENV,
+        icon: iconENV,
+      },
+      {
+        title: "อิเล็กทรอนิกส์และโทรคมนาคม",
+        href: "/department/ene",
+        image: imgENE,
+        icon: iconENE,
+      },
+      {
+        title: "อุตสาหการ",
+        href: "/department/pe",
+        image: imgPE,
+        icon: iconPE,
       },
     ],
   },

@@ -1,0 +1,58 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  src: any;
+  alt: string;
+  href?: string;
+  title?: string;
+  description?: string;
+}
+const { src, alt, href, title, description } = Astro.props as Props;
+---
+
+<article
+  class="flex flex-col overflow-hidden rounded-xl bg-white shadow-md transition-all hover:scale-[1.01] hover:shadow-xl lg:h-full lg:max-w-sm"
+>
+  <figure class="relative aspect-[3/4] w-full overflow-hidden">
+    {
+      href ? (
+        <a
+          href={href}
+          class="block rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+        >
+          <Image
+            src={src}
+            alt={alt}
+            class="h-full w-full object-cover select-none"
+            loading="lazy"
+            decoding="async"
+            sizes="(min-width:1024px) 260px, 70vw"
+            fetchpriority="low"
+          />
+        </a>
+      ) : (
+        <div class="block">
+          <Image
+            src={src}
+            alt={alt}
+            class="h-full w-full object-cover select-none"
+            loading="lazy"
+            decoding="async"
+            sizes="(min-width:1024px) 260px, 70vw"
+            fetchpriority="low"
+          />
+        </div>
+      )
+    }
+
+    {
+      (title || description) && (
+        <figcaption class="sr-only">
+          {title}
+          {description ? ` — ${description}` : ""}
+        </figcaption>
+      )
+    }
+  </figure>
+</article>

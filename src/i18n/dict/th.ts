@@ -96,7 +96,7 @@ export default {
     department: [
       {
         title: "คอมพิวเตอร์",
-        href: "/department/cpe",
+        href: "/test/", // href: "/th/departments/cpe/",
         image: imgCPE,
         icon: iconCPE,
       },

@@ -8,20 +8,21 @@ const contestData = t.contest.contest;
 
 <section id="contest" class="mx-auto flex w-full max-w-7xl flex-col gap-4 py-16">
   <Heading t={t?.contest?.title} class="pt-16" />
-  <div class="px-4 flex flex-col gap-4">
+  <div class="flex flex-col gap-4 px-4">
     {
-      contestData.map((c:any) => (
+      contestData.map((c: any) => (
         <Card
-          title={c.title}
-          description={c.description}
-          points={c.points}
-          image={c.image}
-          alt={c.title}
-          location={c.location}
-          href={c.href}
+          t={{
+            title: c.title,
+            description: c.description,
+            points: c.points,
+            image: c.image,
+            location: c.location,
+            alt: c.title,
+            href: c.href,
+          }}
         />
       ))
-
     }
   </div>
 </section>

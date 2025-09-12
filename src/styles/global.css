@@ -12,18 +12,15 @@
     "Prompt", "Bai Jamjuree", ui-sans-serif, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial,
     "Noto Sans Thai", sans-serif;
 
-  /* Font aliases for easy use */
   --font-prompt: "Prompt", sans-serif;
   --font-jamjuree: "Bai Jamjuree", sans-serif;
 }
 
-/* Reset */
 body {
   margin: 0;
   padding: 0;
 }
 
-/* Optional helpers */
 .font-prompt {
   font-family: var(--font-prompt) !important;
 }
@@ -31,11 +28,7 @@ body {
   font-family: var(--font-jamjuree) !important;
 }
 
-/* ============================= */
-/* Global animations              */
-/* ============================= */
-
-/* Shared fade config */
+/* Fade animations */
 [data-fade],
 [data-fade-up] {
   opacity: 0;
@@ -45,13 +38,11 @@ body {
   animation-delay: calc(var(--fade-start) + var(--fade-step) * var(--i, 0));
 }
 
-/* Fade only */
 [data-fade] {
   transform: none;
   animation-name: fadeIn;
 }
 
-/* Fade and up */
 [data-fade-up] {
   transform: translateY(8px);
   animation-name: fadeUp;
@@ -70,7 +61,6 @@ body {
   }
 }
 
-/* Accessibility: disable motion */
 @media (prefers-reduced-motion: reduce) {
   [data-fade],
   [data-fade-up] {

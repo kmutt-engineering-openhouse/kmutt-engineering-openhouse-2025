@@ -7,23 +7,21 @@ const items = t.department.department;
 ---
 
 <section id="department" class="mx-auto flex w-full max-w-7xl flex-col gap-4 py-16">
-  <Heading t={t?.department?.title ?? "Departments"} />
+  <Heading t={t.department.title || "Departments"} />
   <div class="grid grid-cols-1 gap-4 px-4 sm:auto-rows-fr sm:grid-cols-2 lg:gap-6">
     {
       items.map((c: any) => (
-        <div class="sm:h-full">
-          <Card
-            class="w-full sm:h-full"
-            t={{
-              image: c.image,
-              icon: c.icon,
-              title: c.title,
-              alt: c.title,
-              href: c.href,
-              description: c.description,
-            }}
-          />
-        </div>
+        <Card
+          class="w-full sm:h-full"
+          t={{
+            image: c.image,
+            icon: c.icon,
+            title: c.title,
+            alt: c.title,
+            href: c.href,
+            description: c.description,
+          }}
+        />
       ))
     }
   </div>

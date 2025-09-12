@@ -1,0 +1,18 @@
+---
+import CardContent from "./CardContent.astro";
+const t = Astro.props.t;
+---
+
+<div class="rounded-2xl border border-gray-300 shadow-md hover:shadow-2xl">
+  {
+    t?.href ? (
+      <a href={t.href} target="_blank" class="block">
+        <CardContent t={t} />
+      </a>
+    ) : (
+      <div>
+        <CardContent t={t} />
+      </div>
+    )
+  }
+</div>

@@ -26,9 +26,9 @@ import iconENE from "../../assets/icons/department/ENE.svg";
 import iconPE from "../../assets/icons/department/PE.svg";
 import iconFacebook from "../../assets/icons/facebook.svg";
 import iconInstagram from "../../assets/icons/instagram.svg";
-import imgIC from "../../assets/contest/ic.png";
-import imgEQ from "../../assets/contest/eq.png";
-import imgBH from "../../assets/contest/bh.png";
+import imgIC from "../../assets/images/contest/ic.png";
+import imgEQ from "../../assets/images/contest/eq.png";
+import imgBH from "../../assets/images/contest/bh.png";
 import iconLOC from "../../assets/icons/location.svg";
 
 export default {

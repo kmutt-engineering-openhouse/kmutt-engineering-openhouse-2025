@@ -200,4 +200,21 @@ export default {
       },
     ],
   },
+  footer: {
+    university: "คณะวิศวกรรมศาสตร์ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี (บางมด)",
+    address: "126 ถนนประชาอุทิศ แขวงบางมด เขตทุ่งครุ กรุงเทพฯ 10140",
+    copyright: "Copyright © 2025 King Mongkut's University of Technology Thonburi. All rights reserved.",
+    social: {
+      facebook: {
+        icon: iconFacebook,
+        href: "https://www.facebook.com/kmutt.eng",
+        alt: "Facebook"
+      },
+      instagram: {
+        icon: iconInstagram,
+        href: "https://www.instagram.com/kmutt.eng",
+        alt: "Instagram"
+      }
+    }
+  },
 };

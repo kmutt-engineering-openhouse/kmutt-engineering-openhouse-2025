@@ -1,58 +1,40 @@
 import { defineCollection, z } from "astro:content";
-import { SOCIAL_TYPES } from "../constants";
 
-// Schema for social contact items
 const contractItemSchema = z.object({
-  type: z.enum(SOCIAL_TYPES),
-  title: z.string().min(1),
+  type: z.enum(["facebook", "instagram", "website", "email", "tiktok"]),
+  title: z.string(),
   link: z.string().url(),
 });
 
-// Union schema for different section types
-const sectionSchema = z
-  .discriminatedUnion("type", [
-    // Text section with body content
-    z.object({
-      type: z.literal("text").optional(),
-      heading: z.string().min(1),
-      body: z.string().min(1),
-    }),
+const sectionSchema = z.union([
+  z.object({
+    heading: z.string(),
+    body: z.string(),
+    list: z.undefined().optional(),
+    contract: z.undefined().optional(),
+  }),
+  z.object({
+    heading: z.string(),
+    body: z.undefined().optional(),
+    list: z.array(z.string()),
+    contract: z.undefined().optional(),
+  }),
+  z.object({
+    heading: z.string(),
+    body: z.undefined().optional(),
+    list: z.undefined().optional(),
+    contract: z.array(contractItemSchema),
+  }),
+]);
 
-    // List section with bullet points
-    z.object({
-      type: z.literal("list"),
-      heading: z.string().min(1),
-      list: z.array(z.string().min(1)).min(1),
-    }),
-
-    // Contact section with social links
-    z.object({
-      type: z.literal("contact"),
-      heading: z.string().min(1),
-      contract: z.array(contractItemSchema).min(1),
-    }),
-  ])
-  .or(
-    // Backward compatibility - will be transformed to discriminated union
-    z.object({
-      heading: z.string().min(1),
-      body: z.string().optional(),
-      list: z.array(z.string()).optional(),
-      contract: z.array(contractItemSchema).optional(),
-    })
-  );
-
-// Department collection schema
 const departments = defineCollection({
   type: "content",
   schema: z.object({
-    title: z.string().min(1),
-    description: z.string().min(1),
+    title: z.string(),
+    description: z.string(),
     image: z.string().optional(),
-    sections: z.array(sectionSchema).optional(),
+    sections: z.array(sectionSchema),
   }),
 });
 
-export const collections = {
-  departments,
-} as const;
+export const collections = { departments };

@@ -1,39 +1,5 @@
 {
   "extends": "astro/tsconfigs/strict",
   "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist", "node_modules", ".astro", "src/components/common/OptimizedImage.astro"],
-  "compilerOptions": {
-    // Performance optimizations
-    "incremental": true,
-    "tsBuildInfoFile": ".astro/.tsbuildinfo",
-
-    // Modern target for better performance
-    "target": "ES2022",
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
-    "moduleResolution": "bundler",
-
-    // Strict type checking for better code quality
-    "strict": true,
-    "noUncheckedIndexedAccess": true,
-
-    // Better tree shaking
-    "verbatimModuleSyntax": true,
-
-    // Path mapping for cleaner imports
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"],
-      "@/components/*": ["src/components/*"],
-      "@/layouts/*": ["src/layouts/*"],
-      "@/utils/*": ["src/utils/*"],
-      "@/types/*": ["src/types/*"],
-      "@/constants/*": ["src/constants/*"],
-      "@/assets/*": ["src/assets/*"]
-    },
-
-    // Better error reporting
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
-  }
+  "exclude": ["dist"]
 }

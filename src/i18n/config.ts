@@ -1,5 +1,3 @@
-import { SUPPORTED_LOCALES, DEFAULT_LOCALE, type Locale } from "../constants";
-
-export const locales = SUPPORTED_LOCALES;
-export type { Locale };
-export const defaultLocale = DEFAULT_LOCALE;
+export const locales = ["th", "en"] as const;
+export type Locale = (typeof locales)[number];
+export const defaultLocale: Locale = "th";

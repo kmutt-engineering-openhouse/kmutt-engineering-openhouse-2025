@@ -31,6 +31,7 @@ import imgEQ from "../../assets/images/contest/eq.png";
 import imgBH from "../../assets/images/contest/bh.png";
 import imgINNOX from "../../assets/images/insight/innox.png";
 import iconLOC from "../../assets/icons/location.svg";
+import { fa } from "zod/locales";
 
 export default {
   hero: {
@@ -336,8 +337,8 @@ export default {
     ],
   },
   footer: {
-    university:
-      "Faculty of Engineering, King Mongkut's University of Technology Thonburi (Bangmod)",
+    faculty: "Faculty of Engineering,",
+    university: "King Mongkut's University of Technology Thonburi (Bangmod)",
     address: "126 Pracha Uthit Road, Bangmod, Thung Khru, Bangkok 10140",
     copyright: "Copyright © 2025 KMUTT Engineering Open House 2025. All rights reserved.",
     social: {

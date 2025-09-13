@@ -337,7 +337,8 @@ export default {
     ],
   },
   footer: {
-    university: "คณะวิศวกรรมศาสตร์ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี (บางมด)",
+    facualty: "คณะวิศวกรรมศาสตร์",
+    university: "มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี (บางมด)",
     address: "126 ถนนประชาอุทิศ แขวงบางมด เขตทุ่งครุ กรุงเทพฯ 10140",
     copyright: "Copyright © KMUTT Engineering Open House 2025. All rights reserved.",
     social: {

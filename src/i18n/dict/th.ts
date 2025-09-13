@@ -34,7 +34,7 @@ import iconLOC from "../../assets/icons/location.svg";
 
 export default {
   hero: {
-    date: "10-12 ตุลาคม 2025",
+    date: "10-12 ตุลาคม 2568",
     place: "ณ คณะวิศวกรรมศาสตร์\nมหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี",
   },
   nav: {

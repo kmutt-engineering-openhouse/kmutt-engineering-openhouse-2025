@@ -4,26 +4,26 @@ import enExhibition from "../../assets/images/highlight/en/exhibition.png";
 import enJourney from "../../assets/images/highlight/en/engi-journey.png";
 import enIdol from "../../assets/images/highlight/en/idol.png";
 // Department Section
-import imgCPE from "../../assets/images/department/CPE.png";
-import imgCHE from "../../assets/images/department/CHE.png";
-import imgME from "../../assets/images/department/ME.png";
-import imgTME from "../../assets/images/department/TME.png";
-import imgEE from "../../assets/images/department/EE.png";
-import imgCE from "../../assets/images/department/CE.png";
-import imgINC from "../../assets/images/department/INC.png";
-import imgENV from "../../assets/images/department/ENV.png";
-import imgENE from "../../assets/images/department/ENE.png";
-import imgPE from "../../assets/images/department/PE.png";
-import iconCPE from "../../assets/icons/department/CPE.svg";
-import iconCHE from "../../assets/icons/department/CHE.svg";
-import iconME from "../../assets/icons/department/ME.svg";
-import iconTME from "../../assets/icons/department/TME.svg";
-import iconEE from "../../assets/icons/department/EE.svg";
-import iconCE from "../../assets/icons/department/CE.svg";
-import iconINC from "../../assets/icons/department/INC.svg";
-import iconENV from "../../assets/icons/department/ENV.svg";
-import iconENE from "../../assets/icons/department/ENE.svg";
-import iconPE from "../../assets/icons/department/PE.svg";
+import imgCPE from "../../assets/images/departments/CPE.png";
+import imgCHE from "../../assets/images/departments/CHE.png";
+import imgME from "../../assets/images/departments/ME.png";
+import imgTME from "../../assets/images/departments/TME.png";
+import imgEE from "../../assets/images/departments/EE.png";
+import imgCE from "../../assets/images/departments/CE.png";
+import imgINC from "../../assets/images/departments/INC.png";
+import imgENV from "../../assets/images/departments/ENV.png";
+import imgENE from "../../assets/images/departments/ENE.png";
+import imgPE from "../../assets/images/departments/PE.png";
+import iconCPE from "../../assets/icons/departments/CPE.svg";
+import iconCHE from "../../assets/icons/departments/CHE.svg";
+import iconME from "../../assets/icons/departments/ME.svg";
+import iconTME from "../../assets/icons/departments/TME.svg";
+import iconEE from "../../assets/icons/departments/EE.svg";
+import iconCE from "../../assets/icons/departments/CE.svg";
+import iconINC from "../../assets/icons/departments/INC.svg";
+import iconENV from "../../assets/icons/departments/ENV.svg";
+import iconENE from "../../assets/icons/departments/ENE.svg";
+import iconPE from "../../assets/icons/departments/PE.svg";
 import iconFacebook from "../../assets/icons/facebook.svg";
 import iconInstagram from "../../assets/icons/instagram.svg";
 import imgIC from "../../assets/images/contest/ic.png";
@@ -43,8 +43,8 @@ export default {
         href: "#highlight",
       },
       departments: {
-        title: "Department",
-        href: "#department",
+        title: "Departments",
+        href: "#departments",
       },
       inside: {
         title: "Inside",
@@ -101,66 +101,66 @@ export default {
       },
     ],
   },
-  department: {
+  departments: {
     title: "Departments",
-    department: [
+    departments: [
       {
         title: "Computer",
-        href: "/test/", // href: "/en/departments/cpe/",
+        href: "departments/cpe/",
         image: imgCPE,
         icon: iconCPE,
       },
       {
         title: "Chemical",
-        href: "/department/che",
+        href: "departments/che/",
         image: imgCHE,
         icon: iconCHE,
       },
       {
         title: "Mechanical",
-        href: "/department/me",
+        href: "departments/me/",
         image: imgME,
         icon: iconME,
       },
       {
         title: "Tool and Materials",
-        href: "/department/tme",
+        href: "departments/tme/",
         image: imgTME,
         icon: iconTME,
       },
       {
         title: "Electrical",
-        href: "/department/ee",
+        href: "departments/ee/",
         image: imgEE,
         icon: iconEE,
       },
       {
         title: "Civil",
-        href: "/department/ce",
+        href: "departments/ce/",
         image: imgCE,
         icon: iconCE,
       },
       {
         title: "Instrumentation and Control Systems",
-        href: "/department/inc",
+        href: "departments/inc/",
         image: imgINC,
         icon: iconINC,
       },
       {
         title: "Environmental",
-        href: "/department/env",
+        href: "departments/env/",
         image: imgENV,
         icon: iconENV,
       },
       {
         title: "Electronics and Telecommunication",
-        href: "/department/ene",
+        href: "departments/ene/",
         image: imgENE,
         icon: iconENE,
       },
       {
         title: "Production",
-        href: "/department/pe",
+        href: "departments/pe/",
         image: imgPE,
         icon: iconPE,
       },

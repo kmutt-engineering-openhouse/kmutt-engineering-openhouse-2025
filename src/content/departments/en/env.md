@@ -1,0 +1,30 @@
+---
+title: "Environmental"
+description: "🌎✨ Ever wondered what it’s like to study Environmental Engineering and become a cool, eco-loving engineer? 😎\nThen don’t miss the KMUTT Engineering Open House 2025 at the Department of Environmental Engineering! 🚀\nWe’ve got exciting hands-on activities 👩‍🔬, fun and interactive workshops 🔧, and booths that will show you that “the environment” isn’t all doom and gloom 🌱 — it's exciting, impactful, and totally worth exploring.\nYou’ll also get to meet our seniors — real students, real stories — ready to share what it’s like to study and have fun in our department! 🍀\n📌 Spoiler alert: You’ll leave with knowledge, laughs, snacks, and maybe even a surprise or two 😉"
+image: "ENV.png"
+sections:
+  - heading: "Learning"
+    body: "Overview of courses, labs, and learning experiences..."
+  - heading: "Scholarship"
+    body: "Scholarship opportunities and how to apply..."
+  - heading: "Career Path"
+    list:
+      - "Environmental Researcher / Scholar"
+      - "Environmental Engineer"
+      - "Teacher / Lecturer"
+      - "Others"
+  - heading: "Follow us"
+    contract:
+      - type: "facebook"
+        title: "Environmental Engineering, KMUTT"
+        link: "https://www.facebook.com/inckmutt"
+      - type: "instagram"
+        title: "envkmutt"
+        link: "https://www.instagram.com/envkmutt"
+      - type: "instagram"
+        title: "admission.envkmutt"
+        link: "https://www.instagram.com/admission.envkmutt"
+      - type: "tiktok"
+        title: "envkmutt"
+        link: "https://www.tiktok.com/@envkmutt"
+---

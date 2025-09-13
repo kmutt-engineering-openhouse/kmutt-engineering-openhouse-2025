@@ -3,11 +3,11 @@ import Heading from "../../common/Heading.astro";
 import Card from "./Card.astro";
 
 const { t } = Astro.props;
-const items = t.department.department;
+const items = t.departments.departments;
 ---
 
-<section id="department" class="mx-auto flex w-full max-w-7xl flex-col gap-4 py-16">
-  <Heading t={t.department.title || "Departments"} />
+<section id="departments" class="mx-auto flex w-full max-w-7xl flex-col gap-4 py-16">
+  <Heading t={t.departments.title || "Departments"} />
   <div class="grid grid-cols-1 gap-4 px-4 sm:auto-rows-fr sm:grid-cols-2 lg:gap-6">
     {
       items.map((c: any) => (

@@ -2,20 +2,24 @@
 import { Image } from "astro:assets";
 import KMUTT_Logo from "../../../assets/logo/kmutt+65+eng+smo.webp";
 
-const { ...attrs } = Astro.props;
+interface Props {
+  class?: string;
+  [key: string]: any;
+}
+
+const { class: className = "", ...attrs } = Astro.props;
 ---
 
 <Image
   src={KMUTT_Logo}
   alt="KMUTT Logo"
-  class="px-6 select-none sm:px-0"
+  class={`px-6 select-none object-cover sm:px-0 ${className}`}
   width={360}
   height={360}
-  sizes="360px"
-  format="webp"
+  sizes="(max-width: 360px) 100vw, 360px"
   loading="eager"
-  decoding="async"
   fetchpriority="high"
-  data-fade
+  format="webp"
+  quality={100}
   {...attrs}
 />

@@ -198,7 +198,7 @@ export default {
       {
         title: "INNO-X",
         description:
-          "พื้นที่สร้างสรรค์ชิ้นงานต้นแบบ นวัตกรรม และสิ่งประดิษฐ์ ด้วยเครื่องมือสุดล้ำอย่าง 3D Printer, Laser Cutter และ Mini CNC  โดยในกิจกรรมเวิร์กช็อปน้อง ๆ จะได้สัมผัสการใช้งาน 3D Printer และ Laser Cutter แบบใกล้ชิด พร้อมลงมือทำของจริงด้วยตัวเองสถานที่ ",
+          "creative space for prototyping, innovation, and invention, equipped with cutting-edge tools such as 3D Printers, Laser Cutters, and Mini CNC machines. In the workshop, you will get hands-on experience using the 3D Printer and Laser Cutter up close and even create their own projects for real!",
         image: imgINNOX,
         href: "https://www.facebook.com/p/Innovation-Exchange-KMUTT-100064519611257",
         location: [

@@ -1,26 +1,26 @@
 ---
 import { Image } from "astro:assets";
 
-const { src, alt, title, description } = Astro.props;
-const dialogId = `popup-${title
-  .replace(/[^a-zA-Z0-9]/g, "-")
-  .replace(/-+/g, "-")
-  .replace(/^-|-$/g, "")}`;
+const { src, alt, title, description, index } = Astro.props;
+const dialogId =
+  index !== undefined
+    ? `highlight-modal-${index}`
+    : `highlight-modal-${Math.random().toString(36).substr(2, 9)}`;
 ---
 
 <article
-  class="flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm transition-transform motion-safe:hover:scale-[1.01] motion-safe:hover:shadow-md lg:h-full"
+  class="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-300 hover:shadow-xl lg:h-full"
 >
   <button
     type="button"
     onclick={`document.getElementById('${dialogId}').showModal()`}
-    class="card-button relative aspect-[3/4] w-full overflow-hidden focus:outline-none"
+    class="card-button relative aspect-[3/4] w-full overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2"
     aria-label={`View details for ${title}`}
   >
     <Image
       src={src}
       alt={alt}
-      class="h-full w-full object-cover"
+      class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
       sizes="(min-width:1024px) 25vw, (min-width:768px) 50vw, 70vw"
       loading="lazy"
       width={400}
@@ -30,39 +30,51 @@ const dialogId = `popup-${title
   </button>
 </article>
 
+<!-- Enhanced Modal Popup -->
 <dialog
   id={dialogId}
-  class="modal h-full w-full p-4 sm:p-6"
+  class="popup-modal backdrop:bg-black/50 backdrop:backdrop-blur-sm"
   onclick="if (event.target === this) this.close()"
 >
-  <div
-    class="modal-content h-auto max-h-[90vh] w-full max-w-md overflow-y-auto rounded-2xl bg-white shadow-xl"
-  >
-    <div class="p-6">
-      <div class="mb-2 flex items-center justify-between">
-        <h2 class="font-prompt pr-4 text-2xl font-bold text-[var(--color-primary)]">{title}</h2>
-        <form method="dialog">
-          <button
-            type="submit"
-            class="inline-flex h-10 w-10 items-center justify-center rounded-full text-gray-400 hover:bg-gray-100 hover:text-gray-600"
-            aria-label="Close dialog"
-          >
-            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-          </button>
-        </form>
+  <div class="popup-content">
+    <!-- Header with Image -->
+    <div class="popup-header">
+      <div class="popup-image-container">
+        <Image
+          src={src}
+          alt={alt}
+          class="popup-image"
+          sizes="(max-width: 640px) 100vw, 600px"
+          loading="eager"
+          width={600}
+          height={400}
+          quality={90}
+        />
+        <div class="popup-gradient"></div>
+        <button
+          onclick={`document.getElementById('${dialogId}').close()`}
+          class="popup-close-btn"
+          aria-label="Close dialog"
+        >
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+        <h2 class="popup-title">{title}</h2>
       </div>
+    </div>
+
+    <!-- Content -->
+    <div class="popup-body">
       {
         description && (
-          <>
-            <hr class="mb-4 border-gray-200" />
+          <div class="popup-description">
             <p class="font-jamjuree leading-relaxed text-gray-700">{description}</p>
-          </>
+          </div>
         )
       }
     </div>

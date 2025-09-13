@@ -28,17 +28,12 @@ if (!entry) throw new Error(`Department not found: ${lang}/${slug}`);
 
 const { data } = entry;
 
+const images = import.meta.glob("../../../assets/images/departments/*", { eager: true });
+
 let imageSrc = null;
 if (data.image) {
-  try {
-    imageSrc = (
-      await import(
-        /* @vite-ignore */ `../../../assets/images/departments/${data.image.split("/").pop()}`
-      )
-    ).default;
-  } catch {
-    imageSrc = null;
-  }
+  const imagePath = `../../../assets/images/departments/${data.image.split("/").pop()}`;
+  imageSrc = (images[imagePath] as any)?.default || null;
 }
 ---
 

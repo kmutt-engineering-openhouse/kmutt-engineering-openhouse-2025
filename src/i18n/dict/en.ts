@@ -29,6 +29,7 @@ import iconInstagram from "../../assets/icons/instagram.svg";
 import imgIC from "../../assets/images/contest/ic.png";
 import imgEQ from "../../assets/images/contest/eq.png";
 import imgBH from "../../assets/images/contest/bh.png";
+import imgINNOX from "../../assets/images/insight/innox.png";
 import iconLOC from "../../assets/icons/location.svg";
 
 export default {
@@ -198,7 +199,7 @@ export default {
         title: "INNO-X",
         description:
           "พื้นที่สร้างสรรค์ชิ้นงานต้นแบบ นวัตกรรม และสิ่งประดิษฐ์ ด้วยเครื่องมือสุดล้ำอย่าง 3D Printer, Laser Cutter และ Mini CNC  โดยในกิจกรรมเวิร์กช็อปน้อง ๆ จะได้สัมผัสการใช้งาน 3D Printer และ Laser Cutter แบบใกล้ชิด พร้อมลงมือทำของจริงด้วยตัวเองสถานที่ ",
-        image: imgEQ,
+        image: imgINNOX,
         href: "https://www.facebook.com/p/Innovation-Exchange-KMUTT-100064519611257",
         location: [
           {

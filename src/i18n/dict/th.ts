@@ -29,7 +29,7 @@ import iconInstagram from "../../assets/icons/instagram.svg";
 import imgIC from "../../assets/images/contest/ic.png";
 import imgEQ from "../../assets/images/contest/eq.png";
 import imgBH from "../../assets/images/contest/bh.png";
-import imgINNOX from "../../assets/images/insight/innox.jpeg";
+import imgINNOX from "../../assets/images/insight/innox.png";
 import iconLOC from "../../assets/icons/location.svg";
 
 export default {

@@ -18,6 +18,18 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  integrations: [mdx(), sitemap()],
+  integrations: [
+    mdx(),
+    sitemap({
+      i18n: {
+        defaultLocale: "th",
+        locales: {
+          th: "th-TH",
+          en: "en-US",
+        },
+      },
+      customPages: ["https://bangmod.engineer/"],
+    }),
+  ],
   trailingSlash: "always",
 });

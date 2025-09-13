@@ -1,0 +1,47 @@
+# Robots.txt for KMUTT Engineering Open House 2025
+# https://bangmod.engineer
+
+User-agent: *
+Allow: /
+
+# Allow access to all content
+Allow: /th/
+Allow: /en/
+Allow: /assets/
+Allow: /images/
+Allow: /_astro/
+
+# Block access to development and admin areas
+Disallow: /admin/
+Disallow: /dev/
+Disallow: /.env
+Disallow: /package.json
+Disallow: /astro.config.mjs
+
+# Crawl delay to be respectful to server resources
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://bangmod.engineer/sitemap-index.xml
+
+# Preferred crawling times
+# Visit-time: 0100-0800
+
+# Additional directives for specific search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Social media crawlers
+User-agent: facebookexternalhit/*
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /

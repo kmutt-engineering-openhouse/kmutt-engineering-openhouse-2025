@@ -3,22 +3,214 @@ import "../styles/global.css";
 import Navbar from "../components/common/navbar/Navbar.astro";
 import Footer from "../components/common/footer/Footer.astro";
 
-const { t, currentLang } = Astro.props;
+interface Props {
+  t: any;
+  currentLang: string;
+  seo?: {
+    title?: string;
+    description?: string;
+    keywords?: string;
+    image?: string;
+    type?: string;
+    noIndex?: boolean;
+    canonicalUrl?: string;
+  };
+}
+
+const { t, currentLang, seo } = Astro.props;
+
+const siteName = "KMUTT Engineering Open House 2025";
+const defaultTitle = "KMUTT Engineering Open House 2025";
+
+const defaultDescription = currentLang === "en"
+  ? "Join KMUTT Engineering Open House 2025 on October 10-12, 2025. Explore 10 engineering departments, workshops, exhibitions, and competitions at King Mongkut's University of Technology Thonburi (Bangmod Campus)."
+  : "ร่วมงานเปิดบ้านคณะวิศวกรรมศาสตร์ มจธ. 2568 วันที่ 10-12 ตุลาคม 2568 สำรวจ 10 ภาควิชาวิศวกรรม เวิร์คช็อป นิทรรศการ และการแข่งขันที่มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี (บางมด)";
+
+const defaultKeywords = currentLang === "en"
+  ? "KMUTT, Engineering, Open House 2025, Faculty of Engineering, Bangmod, Workshop, Exhibition, Competition"
+  : "มจธ, คณะวิศวกรรมศาสตร์, เปิดบ้าน, 2568, บางมด, เวิร์คช็อป, นิทรรศการ, การแข่งขัน";
+
+// SEO values (use provided or fallback to defaults)
+const title = seo?.title || defaultTitle;
+const description = seo?.description || defaultDescription;
+const keywords = seo?.keywords || defaultKeywords;
+const ogImage = seo?.image || "https://bangmod.engineer/favicon.ico";
+const ogType = seo?.type || "website";
+const noIndex = seo?.noIndex || false;
+
+// URL construction
+const baseUrl = "https://bangmod.engineer";
+const currentPath = Astro.url.pathname;
+const canonicalUrl = seo?.canonicalUrl || `${baseUrl}${currentPath}`;
+const altLang = currentLang === "en" ? "th" : "en";
+const altUrl = currentPath.replace(`/${currentLang}/`, `/${altLang}/`);
+
+// Language-specific locale
+const locale = currentLang === "en" ? "en_US" : "th_TH";
+const altLocale = currentLang === "en" ? "th_TH" : "en_US";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={currentLang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Preconnect to external domains for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="KMUTT Engineering Faculty" />
+    <meta name="robots" content={noIndex ? "noindex, nofollow" : "index, follow"} />
+    <meta name="googlebot" content={noIndex ? "noindex, nofollow" : "index, follow"} />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalUrl} />
+    
+    <!-- Hreflang Tags for Internationalization -->
+    <link rel="alternate" hreflang="th" href={`${baseUrl}/th${currentPath.replace(/^\/(th|en)/, '')}`} />
+    <link rel="alternate" hreflang="en" href={`${baseUrl}/en${currentPath.replace(/^\/(th|en)/, '')}`} />
+    <link rel="alternate" hreflang="x-default" href={`${baseUrl}${currentPath.replace(/^\/(th|en)/, '')}`} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content={title} />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:locale" content={locale} />
+    <meta property="og:locale:alternate" content={altLocale} />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalUrl} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={title} />
+    
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#1e40af" />
+    <meta name="application-name" content={siteName} />
+    <meta name="msapplication-TileColor" content="#1e40af" />
+    
+    <!-- Geo Tags for Location -->
+    <meta name="geo.region" content="TH-10" />
+    <meta name="geo.placename" content="Bangkok, Thailand" />
+    <meta name="geo.position" content="13.6518;100.4933" />
+    <meta name="ICBM" content="13.6518, 100.4933" />
+    
+    <!-- Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;700&family=Prompt:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    
+    <!-- Favicons -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-    <title>KMUTT Engineering Open House 2025</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico" />
+    
+    <!-- Event-specific structured data for pages with event information -->
+    {currentPath === `/${currentLang}/` && (
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": ["Event", "EducationalEvent"],
+          "name": currentLang === "en" ? "KMUTT Engineering Open House 2025" : "งานเปิดบ้านคณะวิศวกรรมศาสตร์ มจธ. 2568",
+          "alternateName": currentLang === "en" ? "งานเปิดบ้านคณะวิศวกรรมศาสตร์ มจธ. 2568" : "KMUTT Engineering Open House 2025",
+          "description": description,
+          "startDate": "2025-10-10T09:00:00+07:00",
+          "endDate": "2025-10-12T17:00:00+07:00",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "location": {
+            "@type": "Place",
+            "name": "King Mongkut's University of Technology Thonburi",
+            "alternateName": "มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "126 Pracha Uthit Road, Bangmod",
+              "addressLocality": "Thung Khru",
+              "addressRegion": "Bangkok",
+              "postalCode": "10140",
+              "addressCountry": "TH"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 13.6518,
+              "longitude": 100.4933
+            }
+          },
+          "organizer": {
+            "@type": "Organization",
+            "name": "Faculty of Engineering, KMUTT",
+            "alternateName": "คณะวิศวกรรมศาสตร์ มจธ.",
+            "url": "https://bangmod.engineer",
+            "sameAs": [
+              "https://www.facebook.com/100087709743668",
+              "https://www.instagram.com/samovidva_bangmod"
+            ],
+            "logo": "https://bangmod.engineer/favicon.ico"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "THB",
+            "availability": "https://schema.org/InStock",
+            "validFrom": "2025-01-01T00:00:00+07:00"
+          },
+          "image": [ogImage],
+          "url": canonicalUrl,
+          "inLanguage": currentLang === "en" ? "en-US" : "th-TH",
+          "audience": {
+            "@type": "EducationalAudience",
+            "educationalRole": "student",
+            "audienceType": "high school students, parents, teachers"
+          }
+        })}
+      </script>
+    )}
+    
+    <!-- Website/Organization structured data -->
+    <script type="application/ld+json">
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Faculty of Engineering, KMUTT",
+        "alternateName": "คณะวิศวกรรมศาสตร์ มจธ.",
+        "url": "https://bangmod.engineer",
+        "logo": "https://bangmod.engineer/favicon.ico",
+        "description": currentLang === "en" 
+          ? "Faculty of Engineering at King Mongkut's University of Technology Thonburi (KMUTT) - Leading engineering education in Thailand"
+          : "คณะวิศวกรรมศาสตร์ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี - การศึกษาวิศวกรรมชั้นนำของประเทศไทย",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "126 Pracha Uthit Road, Bangmod",
+          "addressLocality": "Thung Khru",
+          "addressRegion": "Bangkok",
+          "postalCode": "10140",
+          "addressCountry": "TH"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "availableLanguage": ["Thai", "English"]
+        },
+        "sameAs": [
+          "https://www.facebook.com/100087709743668",
+          "https://www.instagram.com/samovidva_bangmod"
+        ]
+      })}
+    </script>
   </head>
   <body class="antialiased">
     <Navbar t={t} currentLang={currentLang} />

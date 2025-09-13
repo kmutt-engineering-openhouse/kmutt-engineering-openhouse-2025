@@ -48,7 +48,7 @@ export default {
         href: "#departments",
       },
       insight: {
-        title: "Insight",
+        title: "Faculty Insight",
         href: "#insight",
       },
       contests: {

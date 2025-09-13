@@ -47,6 +47,11 @@ if (data.image) {
           alt={data.title}
           class="aspect-[2/1] w-full rounded-2xl object-cover select-none sm:aspect-[16/6]"
           loading="eager"
+          decoding="async"
+          quality={100}
+          format="webp"
+          width={1280}
+          sizes="(max-width: 1280px) 100vw, (max-width: 1280px) 100vw, 1280px"
         />
       )
     }

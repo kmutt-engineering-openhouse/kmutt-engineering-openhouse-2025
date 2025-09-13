@@ -9,13 +9,16 @@ const { ...attrs } = Astro.props;
   <Image
     src={OPH_Logo}
     alt="KMUTT Engineering Open House 2025 Logo"
-    class="h-12 w-auto select-none"
-    width={120}
+    class="image-crisp block select-none"
+    width={48}
     height={48}
-    sizes="120px"
+    sizes="48px"
+    widths={[48, 96]}
     format="webp"
+    quality={100}
     loading="eager"
-    decoding="async"
+    decoding="sync"
     fetchpriority="high"
+    style="width: 48px; height: 48px;"
   />
 </div>

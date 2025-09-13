@@ -1,28 +1,43 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import { getDict } from "../../i18n/getDict";
-import HeroSection from "../../components/home/hero/HeroSection.astro";
-import HighlightSection from "../../components/home/highlight/HighlightSection.astro";
-import DepartmentSection from "../../components/home/department/DepartmentSection.astro";
-import MapSection from "../../components/home/map/MapSection.astro";
-import FAQSection from "../../components/home/faq/FAQSection.astro";
-import ContestSection from "../../components/home/contest/ContestSection.astro";
-import InsightSection from "../../components/home/insight/InsightSection.astro";
-import ActivitySection from "../../components/home/activity/ActivitySection.astro";
+import Layout from "@/layouts/Layout.astro";
+import { getDict } from "@/i18n/getDict";
+import HeroSection from "@/components/home/hero/HeroSection.astro";
+import HighlightSection from "@/components/home/highlight/HighlightSection.astro";
+import DepartmentSection from "@/components/home/department/DepartmentSection.astro";
+import MapSection from "@/components/home/map/MapSection.astro";
+import FAQSection from "@/components/home/faq/FAQSection.astro";
+import ContestSection from "@/components/home/contest/ContestSection.astro";
+import InsightSection from "@/components/home/insight/InsightSection.astro";
+import { isSupportedLocale } from "@/utils";
+import type { Locale } from "@/constants";
 
 export function getStaticPaths() {
   return ["th", "en"].map((lang) => ({ params: { lang } }));
 }
+
 const { lang } = Astro.params;
-const t = getDict(lang === "en" ? "en" : "th");
+
+// Validate and normalize language
+const currentLang: Locale = isSupportedLocale(lang) ? lang : "th";
+const t = getDict(currentLang);
+
+// Generate page title and description based on language
+const pageTitle =
+  currentLang === "en"
+    ? "KMUTT Engineering Open House 2025"
+    : "งานเปิดบ้านคณะวิศวกรรมศาสตร์ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี 2025";
+
+const pageDescription =
+  currentLang === "en"
+    ? "Join us for KMUTT Engineering Open House 2025 from October 10-12, 2025. Explore 10 engineering departments, workshops, exhibitions, and more!"
+    : "ร่วมงานเปิดบ้านคณะวิศวกรรมศาสตร์ มจธ. 2025 วันที่ 10-12 ตุลาคม 2025 สำรวจ 10 ภาควิชาวิศวกรรม เวิร์กช็อป นิทรรศการ และอีกมากมาย!";
 ---
 
-<Layout t={t} currentLang={lang}>
+<Layout title={pageTitle} description={pageDescription} t={t} currentLang={currentLang}>
   <HeroSection t={t} />
   <HighlightSection t={t} />
   <DepartmentSection t={t} />
   <InsightSection t={t} />
-  <!-- <ActivitySection t={t} /> -->
   <ContestSection t={t} />
   <MapSection t={t} />
   <FAQSection t={t} />

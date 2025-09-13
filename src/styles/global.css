@@ -1,59 +1,112 @@
 @import "tailwindcss";
 
-/* Theme variables */
-@theme {
-  /* Colors */
-  --color-primary: #3a3e94;
-  --color-primary-hover: #69357c;
-  --color-sub-dark: #2c2f70;
-  --color-sub-light: #e7cce9;
+/* CSS Custom Properties - Using oklch for better color accuracy */
+:root {
+  /* Colors - Using oklch color space for better consistency */
+  --color-primary: oklch(0.4 0.15 264.5);
+  --color-primary-hover: oklch(0.35 0.12 308);
+  --color-sub-dark: oklch(0.3 0.13 264.5);
+  --color-sub-light: oklch(0.9 0.03 308);
 
-  /* Fonts */
+  /* Typography scale */
   --font-sans:
     "Prompt", "Bai Jamjuree", ui-sans-serif, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial,
     "Noto Sans Thai", sans-serif;
+  --font-prompt: "Prompt", system-ui, sans-serif;
+  --font-jamjuree: "Bai Jamjuree", system-ui, sans-serif;
 
-  --font-prompt: "Prompt", sans-serif;
-  --font-jamjuree: "Bai Jamjuree", sans-serif;
+  /* Spacing and timing */
+  --transition-fast: 150ms ease-out;
+  --transition-normal: 250ms ease-out;
+  --transition-slow: 400ms ease-out;
+  --blur-backdrop: blur(8px);
+
+  /* Z-index scale */
+  --z-modal: 1000;
+  --z-overlay: 999;
+  --z-dropdown: 100;
 }
 
-/* Reset */
+/* Reset and base styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
-/* Font utilities */
+/* Font utilities with system fallbacks */
 .font-prompt {
-  font-family: var(--font-prompt) !important;
+  font-family: var(--font-prompt);
 }
 
 .font-jamjuree {
-  font-family: var(--font-jamjuree) !important;
+  font-family: var(--font-jamjuree);
 }
 
-/* Prevent image dragging */
+/* Image optimization */
 img {
+  max-width: 100%;
+  height: auto;
   -webkit-user-drag: none;
   -khtml-user-drag: none;
   -moz-user-drag: none;
   -o-user-drag: none;
-  user-drag: none;
+  user-select: none;
+  pointer-events: none;
 }
 
-/* Fade animations */
+/* Crisp image rendering for logos and icons */
+.image-crisp {
+  /* High-quality rendering for sharp edges */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  image-rendering: high-quality;
+
+  /* Hardware acceleration for smooth performance */
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -ms-transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+
+  /* Prevent subpixel rendering blur */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Force pixel-perfect alignment */
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+
+  /* Disable interpolation scaling */
+  -ms-interpolation-mode: nearest-neighbor;
+
+  /* Ensure exact dimensions are maintained */
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+/* Performance-optimized animations */
 [data-fade],
 [data-fade-up] {
   opacity: 0;
-  animation: fadeIn 0.6s ease-out forwards;
-  --fade-start: 0ms;
-  --fade-step: 140ms;
-  animation-delay: calc(var(--fade-start) + var(--fade-step) * var(--i, 0));
+  will-change: opacity, transform;
+  animation: fadeIn 0.6s var(--transition-normal) forwards;
+  animation-delay: calc(var(--fade-start, 0ms) + var(--fade-step, 140ms) * var(--i, 0));
 }
 
 [data-fade] {
-  transform: none;
   animation-name: fadeIn;
 }
 
@@ -65,6 +118,7 @@ img {
 @keyframes fadeIn {
   to {
     opacity: 1;
+    will-change: auto;
   }
 }
 
@@ -72,11 +126,20 @@ img {
   to {
     opacity: 1;
     transform: translateY(0);
+    will-change: auto;
   }
 }
 
-/* Reduced motion support */
+/* Accessibility and performance */
 @media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
   [data-fade],
   [data-fade-up] {
     animation: none;
@@ -85,14 +148,24 @@ img {
   }
 }
 
-/* Modal styles */
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --color-primary: oklch(0.2 0.2 264.5);
+    --color-primary-hover: oklch(0.15 0.18 308);
+  }
+}
+
+/* Modal system with optimized performance */
 dialog.modal {
   border: none;
   padding: 0;
   background: transparent;
   opacity: 0;
   transform: scale(0.95);
-  transition: all 0.2s ease-out;
+  transition: all var(--transition-normal);
+  z-index: var(--z-modal);
+  contain: layout style paint;
 }
 
 dialog.modal[open] {
@@ -108,37 +181,48 @@ dialog.modal[open] {
 }
 
 dialog.modal::backdrop {
-  background: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(4px);
-  transition: all 0.2s ease-out;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: var(--blur-backdrop);
+  transition: all var(--transition-normal);
 }
 
-/* Card hover effects */
+/* Interactive elements */
 .card-button {
   position: relative;
   overflow: hidden;
+  transform: translateZ(0); /* Force hardware acceleration */
+  will-change: transform;
+  transition: transform var(--transition-fast);
 }
 
 .card-button::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(58, 62, 148, 0.1);
+  inset: 0;
+  background: var(--color-primary);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity var(--transition-fast);
   pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: multiply;
+}
+
+.card-button:hover {
+  transform: translateY(-2px);
 }
 
 .card-button:hover::before {
-  opacity: 1;
+  opacity: 0.1;
 }
 
-/* Modal content animation */
+.card-button:active {
+  transform: translateY(0);
+}
+
+/* Modal content with performance optimization */
 dialog.modal[open] .modal-content {
-  animation: modalSlideIn 0.3s ease-out;
+  animation: modalSlideIn var(--transition-normal) ease-out;
+  contain: layout style paint;
 }
 
 @keyframes modalSlideIn {
@@ -150,4 +234,23 @@ dialog.modal[open] .modal-content {
     transform: translateY(0);
     opacity: 1;
   }
+}
+
+/* Focus styles for accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Loading states */
+.loading {
+  opacity: 0.7;
+  pointer-events: none;
+  cursor: wait;
+}
+
+/* Performance hint for heavy elements */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
 }

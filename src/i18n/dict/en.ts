@@ -46,9 +46,9 @@ export default {
         title: "Departments",
         href: "#departments",
       },
-      inside: {
-        title: "Inside",
-        href: "#inside",
+      insight: {
+        title: "Insight",
+        href: "#insight",
       },
       contests: {
         title: "Contest",

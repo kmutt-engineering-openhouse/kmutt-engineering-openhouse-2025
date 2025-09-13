@@ -45,11 +45,11 @@ export default {
       },
       departments: {
         title: "ภาควิชา",
-        href: "#department",
+        href: "#departments",
       },
-      inside: {
-        title: "ภายในงาน",
-        href: "#inside",
+      insight: {
+        title: "อินไซต์คณะ",
+        href: "#insight",
       },
       contests: {
         title: "การแข่งขัน",

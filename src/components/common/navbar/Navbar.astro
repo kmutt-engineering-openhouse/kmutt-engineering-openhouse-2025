@@ -260,11 +260,18 @@ const menu = [
         const target = document.querySelector(targetId);
 
         if (target) {
-          const navHeight = nav?.offsetHeight || 0;
-          const targetPosition = target.offsetTop - navHeight - 20;
-          window.scrollTo({
-            top: targetPosition,
+          if (nav && isHidden) {
+            nav.classList.remove("-translate-y-full");
+            isHidden = false;
+          }
+
+          if (isOpen) {
+            setOpen(false);
+          }
+
+          target.scrollIntoView({
             behavior: "smooth",
+            block: "start",
           });
         } else {
           const currentLang = window.location.pathname.startsWith("/en/") ? "en" : "th";

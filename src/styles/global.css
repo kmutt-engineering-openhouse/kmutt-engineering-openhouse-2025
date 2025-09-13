@@ -42,6 +42,16 @@ img {
   user-drag: none;
 }
 
+/* Scroll offset for smooth navigation */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 1rem; /* Global scroll padding */
+}
+
+section[id] {
+  scroll-margin-top: 1rem; /* Account for navbar height + padding */
+}
+
 /* Fade animations */
 [data-fade],
 [data-fade-up] {

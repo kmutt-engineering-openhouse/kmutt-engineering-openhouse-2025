@@ -1,7 +1,7 @@
 ---
 title: "Mechanical"
 description: "✨ ME OPEN HOUSE 2025 ✨\nHey high schoolers! 🚀 Welcome to the Mechanical Engineering Open House ⚙️\nLet’s explore the engineering world together and see if you’ve got that mechanical spirit in you!\n🔥 Loads of cool stuff to try out!"
-image: "ME.png"
+image: "ME.webp"
 sections:
   - heading: "Learning"
     body: "Overview of courses, labs, and learning experiences..."

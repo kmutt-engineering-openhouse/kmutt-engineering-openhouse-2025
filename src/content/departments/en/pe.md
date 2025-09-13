@@ -1,7 +1,7 @@
 ---
 title: "Production"
 description: "🎉 PRO(DUCT)X1E 1st MINI ALBUM 🎶\nAre you ready to hit the stage with us?\nJoin the special live concert from the Department of Industrial Engineering at KMUTT Engineering Open House 2025 🎤✨\n✨ Get ready to be the fans of PRO(DUCT)X1E!\nBecause this mini concert is all about fun and knowledge combined 🎤🧑‍🔧\nSee you there! 🎶"
-image: "PE.png"
+image: "PE.webp"
 sections:
   - heading: "Learning"
     body: "Overview of courses, labs, and learning experiences..."

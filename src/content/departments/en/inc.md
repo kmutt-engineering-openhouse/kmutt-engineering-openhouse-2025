@@ -1,7 +1,7 @@
 ---
 title: "Instrumentation and Control Systems"
 description: "🎤✨ Open House 2025 : Autonova Music Lab ✨🎤\n\nWhen the Department of Automation transforms into a band,\nevery workshop becomes a rehearsal session,\nand every participant is a musician in training,\nready to perform the symphony of automation together.\nThis is the stage where music meets the world of innovation and automation. 🎶"
-image: "INC.png"
+image: "INC.webp"
 sections:
   - heading: "Learning"
     body: "Overview of courses, labs, and learning experiences..."

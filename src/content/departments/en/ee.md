@@ -1,7 +1,7 @@
 ---
 title: "Electrical"
 description: "✨ Exotic Electrical (EE) Workshops ✨\nWe’re back again with a special event that lets you experience the real world of Electrical Engineering ⚡\nGet ready to practice, learn, and take home knowledge and skills that truly matter! 🚀"
-image: "EE.png"
+image: "EE.webp"
 sections:
   - heading: "Learning"
     body: "Overview of courses, labs, and learning experiences..."

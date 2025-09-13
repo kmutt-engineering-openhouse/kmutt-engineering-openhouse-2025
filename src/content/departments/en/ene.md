@@ -1,7 +1,7 @@
 ---
 title: "Electronics"
 description: "✨🎶 Awaken the music of innovation within you and step into the world of Electronics Engineering at KMUTT. Create melodies with code, explore how electric circuits work, discover amazing innovations, and find new sources of inspiration. Here, you’ll see that everyday technology can become a stage for your dreams. 📡✨"
-image: "ENE.png"
+image: "ENE.webp"
 sections:
   - heading: "Learning"
     body: "Overview of courses, labs, and learning experiences..."

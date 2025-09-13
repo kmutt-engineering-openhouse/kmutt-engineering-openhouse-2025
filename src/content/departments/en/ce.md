@@ -1,7 +1,7 @@
 ---
 title: "Civil"
 description: "Discover a new experience with the Civil Engineering Workshop Series at KMUTT. Explore five specialized fields where you can learn by doing, gain hands-on experience, and understand civil engineering from fundamental principles to practical applications, while getting an up-close look at career paths in each discipline."
-image: "CE.png"
+image: "CE.webp"
 sections:
   - heading: "Learning"
     body: "Overview of courses, labs, and learning experiences..."

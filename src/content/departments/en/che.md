@@ -1,7 +1,7 @@
 ---
 title: "Chemical"
 description: "🎉 Welcome, Trainees!\nReady to debut as CHEMTRIX together? Our department welcomes you to Open House 2025 with hands-on workshops and fun activities. Let’s explore! 🧪⚙️✨"
-image: "CHE.png"
+image: "CHE.webp"
 sections:
   - heading: "Learning"
     body: "Overview of courses, labs, and learning experiences..."

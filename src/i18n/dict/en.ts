@@ -166,6 +166,81 @@ export default {
       },
     ],
   },
+  insight: {
+    title: "Faculty Insight",
+    insight: [
+      {
+        title: "Admission",
+        description:
+          "Whether you are an undergraduate or graduate student, get information on scholarships, application schedules (TCAS 69), English development activities, and opportunities for international exchanges. Exclusive privileges for participants of KMUTT Engineering Open House 2025.",
+        points: [
+          "Undergraduate students: Prepare your portfolio to apply for Early Admission (International Programs)",
+          "Graduate students: Register your intention to continue your studies immediately",
+        ],
+        location: [
+          {
+            text: "Learning Building 4 (S12), 1st Floor, in front of ICE Center",
+            icon: iconLOC,
+          },
+          {
+            text: "ICE KMUTT",
+            href: "https://www.facebook.com/InternationalCenterforEngineeringKMUTT",
+            icon: iconFacebook,
+          },
+          {
+            text: "kmutt.ice",
+            href: "https://www.instagram.com/kmutt.ice/",
+            icon: iconInstagram,
+          },
+        ],
+      },
+      {
+        title: "INNO-X",
+        description:
+          "พื้นที่สร้างสรรค์ชิ้นงานต้นแบบ นวัตกรรม และสิ่งประดิษฐ์ ด้วยเครื่องมือสุดล้ำอย่าง 3D Printer, Laser Cutter และ Mini CNC  โดยในกิจกรรมเวิร์กช็อปน้อง ๆ จะได้สัมผัสการใช้งาน 3D Printer และ Laser Cutter แบบใกล้ชิด พร้อมลงมือทำของจริงด้วยตัวเองสถานที่ ",
+        image: imgEQ,
+        href: "https://www.facebook.com/p/Innovation-Exchange-KMUTT-100064519611257",
+        location: [
+          {
+            text: "Wissawa Wattana Building (S4)",
+            icon: iconLOC,
+          },
+          {
+            text: "Innovation Exchange KMUTT ",
+            href: "https://www.facebook.com/p/Innovation-Exchange-KMUTT-100064519611257",
+            icon: iconFacebook,
+          },
+        ],
+      },
+    ],
+  },
+  activity: {
+    title: "Activity",
+    seeAll: "See All Activities",
+    card: [
+      {
+        title: "Workshop",
+        description:
+          "An exciting workshop that gives you a full-scale view of Engineering Bangmod This is an exclusive chance to learn by doing rather than simply sitting to lectures. You will get to interact with professors, real staff, and university students from many departments of the institution. They'll be sharing knowledge, tips, and demonstrating cutting-edge tools that engineering students actually use.This is a perfect season to explore your passions, skills, and even fresh ideas that can impact your future. There is no reason why you can miss this event, which is full of fun, education, and a warm vibe!",
+        image: enWorkshop,
+        href: "/",
+      },
+      {
+        title: "Exhibition",
+        description:
+          "Get ready! We're taking you on a journey to explore the creative projects and innovations from the talented students of KMUTT Engineering. This event isn't just about checking out projects, you will also get a behind-the-scenes look at the thought process and development behind each one. You'll have the chance to discover all 10 departments, learn about their programs, study paths, and career opportunities after graduation, almost like experiencing life as an engineering student in advance. university students from every department will be sharing real experiences and answering all your questions about studies, activities, student life, and future opportunities. It's fun, informative, and full of inspiration, you won't want to miss it!",
+        image: enExhibition,
+        href: "/",
+      },
+      {
+        title: "Engi's Journey",
+        description:
+          "A special event you can't miss! From observing real laboratory settings and seeing the actual tools used in classes from actual engineering students, we're taking you on a tour to get a close-up look at every department at Bangmod Engineering. This is more than simply a department introduction; it's a chance to find your passion and your ideal career path. Expect a fun, warm atmosphere filled with knowledge, friendships, and unforgettable experiences.",
+        image: enJourney,
+        href: "/",
+      },
+    ],
+  },
   contest: {
     title: "Contest",
     contest: [

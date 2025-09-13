@@ -30,7 +30,7 @@ const { title, description, points, image, location, alt } = Astro.props.t;
         location &&
           location.length > 0 &&
           location.map((loc: any) => (
-            <div class="flex gap-2">
+            <a href={loc.href} target="_blank" class="flex gap-2">
               {loc.icon && (
                 <Image
                   src={loc.icon}
@@ -45,7 +45,7 @@ const { title, description, points, image, location, alt } = Astro.props.t;
                 />
               )}
               <span class="font-jamjuree text-sm font-medium">{loc.text}</span>
-            </div>
+            </a>
           ))
       }
     </div>
@@ -56,7 +56,7 @@ const { title, description, points, image, location, alt } = Astro.props.t;
     <Image
       src={image}
       alt={alt ?? title}
-      class="w-full rounded-b-xl object-cover select-none aspect-[3/1]"
+      class="aspect-[3/1] w-full rounded-b-xl object-cover select-none"
       format="png"
       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 800px, 1200px, "
       loading="lazy"

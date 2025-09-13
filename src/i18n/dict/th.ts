@@ -29,6 +29,7 @@ import iconInstagram from "../../assets/icons/instagram.svg";
 import imgIC from "../../assets/images/contest/ic.png";
 import imgEQ from "../../assets/images/contest/eq.png";
 import imgBH from "../../assets/images/contest/bh.png";
+import imgINNOX from "../../assets/images/insight/innox.jpeg";
 import iconLOC from "../../assets/icons/location.svg";
 
 export default {
@@ -163,6 +164,81 @@ export default {
         href: "/department/pe",
         image: imgPE,
         icon: iconPE,
+      },
+    ],
+  },
+  insight: {
+    title: "อินไซต์คณะ",
+    insight: [
+      {
+        title: "Admission",
+        description:
+          "ไม่ว่าจะเป็น ปริญญาตรีหรือบัณฑิตศึกษา ครอบคลุมเรื่องทุนการศึกษา กำหนดการรับสมัคร (TCAS 69) กิจกรรมพัฒนาภาษาอังกฤษ และโอกาสในการไปแลกเปลี่ยนที่ต่างประเทศ สิทธิพิเศษเฉพาะผู้ร่วมงาน KMUTT Engineering Open House 2025",
+        points: [
+          "ระดับปริญญาตรี: เตรียม Portfolio สมัคร Early Admission (หลักสูตรนานาชาติ)",
+          "ระดับบัณฑิตศึกษา: ลงทะเบียนแจ้งความประสงค์เข้าศึกษาต่อได้ทันที",
+        ],
+        location: [
+          {
+            text: "อาคารเรียนรวม 4 (S12) ชั้น 1 ด้านหน้าศูนย์ ICE",
+            icon: iconLOC,
+          },
+          {
+            text: "ICE KMUTT",
+            href: "https://www.facebook.com/InternationalCenterforEngineeringKMUTT",
+            icon: iconFacebook,
+          },
+          {
+            text: "kmutt.ice",
+            href: "https://www.instagram.com/kmutt.ice/",
+            icon: iconInstagram,
+          },
+        ],
+      },
+      {
+        title: "INNO-X",
+        description:
+          "พื้นที่สร้างสรรค์ชิ้นงานต้นแบบ นวัตกรรม และสิ่งประดิษฐ์ ด้วยเครื่องมือสุดล้ำอย่าง 3D Printer, Laser Cutter และ Mini CNC  โดยในกิจกรรมเวิร์กช็อปน้อง ๆ จะได้สัมผัสการใช้งาน 3D Printer และ Laser Cutter แบบใกล้ชิด พร้อมลงมือทำของจริงด้วยตัวเอง",
+        image: imgINNOX,
+        href: "https://www.facebook.com/p/Innovation-Exchange-KMUTT-100064519611257",
+        location: [
+          {
+            text: "อาคารวิศววัฒนะ (S4)",
+            icon: iconLOC,
+          },
+          {
+            text: "Innovation Exchange KMUTT ",
+            href: "https://www.facebook.com/p/Innovation-Exchange-KMUTT-100064519611257",
+            icon: iconFacebook,
+          },
+        ],
+      },
+    ],
+  },
+  activity: {
+    title: "กิจกรรม",
+    seeAll: "กิจกรรมทั้งหมด",
+    card: [
+      {
+        title: "Workshop",
+        description:
+          "An exciting workshop that gives you a full-scale view of Engineering Bangmod This is an exclusive chance to learn by doing rather than simply sitting to lectures. You will get to interact with professors, real staff, and university students from many departments of the institution. They'll be sharing knowledge, tips, and demonstrating cutting-edge tools that engineering students actually use.This is a perfect season to explore your passions, skills, and even fresh ideas that can impact your future. There is no reason why you can miss this event, which is full of fun, education, and a warm vibe!",
+        image: thWorkshop,
+        href: "/",
+      },
+      {
+        title: "Exhibition",
+        description:
+          "Get ready! We're taking you on a journey to explore the creative projects and innovations from the talented students of KMUTT Engineering. This event isn't just about checking out projects, you will also get a behind-the-scenes look at the thought process and development behind each one. You'll have the chance to discover all 10 departments, learn about their programs, study paths, and career opportunities after graduation, almost like experiencing life as an engineering student in advance. university students from every department will be sharing real experiences and answering all your questions about studies, activities, student life, and future opportunities. It's fun, informative, and full of inspiration, you won't want to miss it!",
+        image: thExhibition,
+        href: "/",
+      },
+      {
+        title: "Engi's Journey",
+        description:
+          "A special event you can't miss! From observing real laboratory settings and seeing the actual tools used in classes from actual engineering students, we're taking you on a tour to get a close-up look at every department at Bangmod Engineering. This is more than simply a department introduction; it's a chance to find your passion and your ideal career path. Expect a fun, warm atmosphere filled with knowledge, friendships, and unforgettable experiences.",
+        image: thJourney,
+        href: "/",
       },
     ],
   },

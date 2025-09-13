@@ -1,35 +1,70 @@
 ---
 import { Image } from "astro:assets";
 
-const { src, alt, href, title, description } = Astro.props;
+const { src, alt, title, description } = Astro.props;
+const dialogId = `popup-${title
+  .replace(/[^a-zA-Z0-9]/g, "-")
+  .replace(/-+/g, "-")
+  .replace(/^-|-$/g, "")}`;
 ---
 
 <article
   class="flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm transition-transform motion-safe:hover:scale-[1.01] motion-safe:hover:shadow-md lg:h-full"
 >
-  <figure class="relative aspect-[3/4] w-full overflow-hidden">
-    <a
-      href={href}
-      class="block focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
-    >
-      <Image
-        src={src}
-        alt={alt}
-        class="h-full w-full object-cover select-none"
-        decoding="async"
-        sizes="(min-width:1024px) 25vw, 70vw"
-        fetchpriority="low"
-        loading="eager"
-        draggable="false"
-      />
-    </a>
-    {
-      (title || description) && (
-        <figcaption class="sr-only">
-          {title}
-          {description ? ` — ${description}` : ""}
-        </figcaption>
-      )
-    }
-  </figure>
+  <button
+    type="button"
+    onclick={`document.getElementById('${dialogId}').showModal()`}
+    class="card-button relative aspect-[3/4] w-full overflow-hidden focus:outline-none"
+    aria-label={`View details for ${title}`}
+  >
+    <Image
+      src={src}
+      alt={alt}
+      class="h-full w-full object-cover"
+      sizes="(min-width:1024px) 25vw, (min-width:768px) 50vw, 70vw"
+      loading="lazy"
+      width={400}
+      height={533}
+      quality={80}
+    />
+  </button>
 </article>
+
+<dialog
+  id={dialogId}
+  class="modal h-full w-full p-4 sm:p-6"
+  onclick="if (event.target === this) this.close()"
+>
+  <div
+    class="modal-content h-auto max-h-[90vh] w-full max-w-md overflow-y-auto rounded-2xl bg-white shadow-xl"
+  >
+    <div class="p-6">
+      <div class="mb-2 flex items-center justify-between">
+        <h2 class="font-prompt pr-4 text-2xl font-bold text-[var(--color-primary)]">{title}</h2>
+        <form method="dialog">
+          <button
+            type="submit"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-full text-gray-400 hover:bg-gray-100 hover:text-gray-600"
+            aria-label="Close dialog"
+          >
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </form>
+      </div>
+      {
+        description && (
+          <>
+            <hr class="mb-4 border-gray-200" />
+            <p class="font-jamjuree leading-relaxed text-gray-700">{description}</p>
+          </>
+        )
+      }
+    </div>
+  </div>
+</dialog>

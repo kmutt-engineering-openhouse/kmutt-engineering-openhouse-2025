@@ -1,8 +1,8 @@
 // Highlight Section
-import enWorkshop from "../../assets/images/highlight/en/workshop.png";
-import enExhibition from "../../assets/images/highlight/en/exhibition.png";
-import enJourney from "../../assets/images/highlight/en/engi-journey.png";
-import enIdol from "../../assets/images/highlight/en/idol.png";
+import enWorkshop from "../../assets/images/highlight/en/workshop.webp";
+import enExhibition from "../../assets/images/highlight/en/exhibition.webp";
+import enJourney from "../../assets/images/highlight/en/engi-journey.webp";
+import enIdol from "../../assets/images/highlight/en/idol.webp";
 // Department Section
 import imgCPE from "../../assets/images/departments/CPE.png";
 import imgCHE from "../../assets/images/departments/CHE.png";

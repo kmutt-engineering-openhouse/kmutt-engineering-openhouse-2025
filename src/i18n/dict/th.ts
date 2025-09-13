@@ -24,12 +24,15 @@ import iconINC from "../../assets/icons/departments/INC.svg";
 import iconENV from "../../assets/icons/departments/ENV.svg";
 import iconENE from "../../assets/icons/departments/ENE.svg";
 import iconPE from "../../assets/icons/departments/PE.svg";
-import iconFacebook from "../../assets/icons/facebook.svg";
-import iconInstagram from "../../assets/icons/instagram.svg";
+// Insight Section
+import imgINNOX from "../../assets/images/insight/innox.png";
+// Contest Section
 import imgIC from "../../assets/images/contest/ic.png";
 import imgEQ from "../../assets/images/contest/eq.png";
 import imgBH from "../../assets/images/contest/bh.png";
-import imgINNOX from "../../assets/images/insight/innox.png";
+// Icons
+import iconFacebook from "../../assets/icons/facebook.svg";
+import iconInstagram from "../../assets/icons/instagram.svg";
 import iconLOC from "../../assets/icons/location.svg";
 
 export default {

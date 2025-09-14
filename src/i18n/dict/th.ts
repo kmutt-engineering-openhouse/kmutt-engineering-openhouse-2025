@@ -36,6 +36,7 @@ import iconFacebook from "../../assets/icons/facebook.svg";
 import iconInstagram from "../../assets/icons/instagram.svg";
 import iconLOC from "../../assets/icons/location.svg";
 import iconWebsite from "../../assets/icons/website.svg";
+import { deselectScripts } from "astro/virtual-modules/transitions-swap-functions.js";
 
 export default {
   hero: {
@@ -178,11 +179,13 @@ export default {
       {
         title: "Admission",
         description:
-          "ไม่ว่าจะเป็น ปริญญาตรีหรือบัณฑิตศึกษา ครอบคลุมเรื่องทุนการศึกษา กำหนดการรับสมัคร (TCAS 69) กิจกรรมพัฒนาภาษาอังกฤษ และโอกาสในการไปแลกเปลี่ยนที่ต่างประเทศ สิทธิพิเศษเฉพาะผู้ร่วมงาน KMUTT Engineering Open House 2025",
+          "ประชาสัมพันธ์และให้คำปรึกษาแก่น้อง ๆ นักเรียน คุณครู และผู้ปกครอง\nไม่ว่าจะเป็น ระดับปริญญาตรีหรือบัณฑิตศึกษา ครอบคลุมทั้งเรื่องทุนการศึกษา กำหนดการรับสมัคร (TCAS 69) กิจกรรมพัฒนาภาษาอังกฤษ และโอกาสในการไปแลกเปลี่ยนที่ต่างประเทศ\nสิทธิพิเศษเฉพาะผู้ร่วมงาน KMUTT Engineering Open House 2025",
         points: [
-          "ระดับปริญญาตรี: เตรียม Portfolio สมัคร Early Admission (หลักสูตรนานาชาติ)",
-          "ระดับบัณฑิตศึกษา: ลงทะเบียนแจ้งความประสงค์เข้าศึกษาต่อได้ทันที",
+          "ระดับปริญญาตรี : เตรียม Portfolio สมัคร Early Admission (หลักสูตรนานาชาติ)",
+          "ระดับบัณฑิตศึกษา : ลงทะเบียนแจ้งความประสงค์เข้าศึกษาต่อได้ทันที",
         ],
+        description2:
+          "รายละเอียดเพิ่มเติม\nสิทธิพิเศษเฉพาะผู้เข้าร่วม KMUTT Engineering Open House 2025\n\nสำหรับน้อง ๆ ที่สนใจสมัคร Early Admission for International Programs KMUTT (รับเฉพาะหลักสูตรนานาชาติ) สามารถเตรียม Portfolio และสมัครได้ทันที! ส่วนเกณฑ์การรับสมัครสามารถกดปุ่มด้านล่างเพื่อดูรายละเอียด พร้อมเตรียม Portfolio มาสมัครได้เลย \nสำหรับระดับบัณฑิตศึกษา เฉพาะผู้เข้าร่วมงานเท่านั้น หากสนใจเข้าศึกษาต่อ สามารถลงทะเบียนแจ้งความประสงค์ได้ทันที",
         image: imgAdmission,
         location: [
           {

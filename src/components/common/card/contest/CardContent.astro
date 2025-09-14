@@ -17,7 +17,7 @@ const { t } = Astro.props;
 
     <div class="mt-3 flex flex-col gap-3">
       <div class="font-jamjuree text-sm leading-6 font-normal tracking-normal">
-        <p class="indent-4 text-gray-800">
+        <p class="indent-4 whitespace-pre-line text-gray-800">
           {t.description}
         </p>
         {
@@ -27,6 +27,26 @@ const { t } = Astro.props;
                 <li class="text-gray-700">{point}</li>
               ))}
             </ul>
+          )
+        }
+        {
+          t.description2 && (
+            <div class="mt-4 space-y-3">
+              {t.description2.split("\n\n").map(
+                (paragraph: string) =>
+                  paragraph.trim() && (
+                    <div>
+                      {paragraph.split("\n").map((line: string, index: number) => (
+                        <p
+                          class={`text-gray-800 ${(index === 0 && line.includes("รายละเอียดเพิ่มเติม")) || line.includes("More details") ? "text-primary-hover mb-1 font-semibold" : index === 0 && (line.includes("สิทธิพิเศษ") || line.includes("Exclusive")) ? "mb-2 font-medium text-gray-900" : "mb-1"}`}
+                        >
+                          {line}
+                        </p>
+                      ))}
+                    </div>
+                  )
+              )}
+            </div>
           )
         }
       </div>

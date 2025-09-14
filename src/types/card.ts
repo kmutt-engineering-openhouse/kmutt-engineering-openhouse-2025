@@ -17,6 +17,7 @@ export interface ContestLocation {
 export interface ContestCardData extends BaseCard {
   description: string;
   points?: string[];
+  description2?: string;
   image?: ImageMetadata;
   location?: ContestLocation[];
 }

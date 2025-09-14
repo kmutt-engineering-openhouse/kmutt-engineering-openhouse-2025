@@ -178,11 +178,13 @@ export default {
       {
         title: "Admission",
         description:
-          "Whether you are an undergraduate or graduate student, get information on scholarships, application schedules (TCAS 69), English development activities, and opportunities for international exchanges. Exclusive privileges for participants of KMUTT Engineering Open House 2025.",
+          "Discover scholarships, application timelines (TCAS 69), English development activities, and international exchange opportunities—whether you're a student, teacher, or parent.\nExclusive privileges for participants of KMUTT Engineering Open House 2025:",
         points: [
           "Undergraduate students: Prepare your portfolio to apply for Early Admission (International Programs)",
-          "Graduate students: Register your intention to continue your studies immediately",
+          "Graduate students: Register your intention to enroll immediately",
         ],
+        description2:
+          "More details:\nExclusive benefits are available only to attendees of KMUTT Engineering Open House 2025.\n\nUndergraduates interested in Early Admission for International Programs at KMUTT (international programs only) can prepare their portfolio and apply on the spot! Admission criteria can be viewed via the button below, so you can get your portfolio ready.\n\nFor graduate students, participation in the event is required to register your intention to enroll immediately.",
         image: imgAdmission,
         location: [
           {

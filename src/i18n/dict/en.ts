@@ -256,9 +256,9 @@ export default {
     contest: [
       {
         title: "Science & Technology Idea Contest Engineering KMUTT",
-        description: `a competition for high school students or their equivalents to submit scientific and technological inventions under the theme "Engineering for Sustainability."On October 10, 2025, you have been invited to participate in the final round competition and all-day exhibition.`,
+        description: `a competition for high school students or their equivalents to submit scientific and technological inventions under the theme "Engineering for Sustainability."\nOn October 10, 2025, you have been invited to participate in the final round of the competition and the all-day exhibition.`,
         points: [
-          "Seeing 40 teams' innovative project concepts and inventions",
+          "Seeing 40 teams’ innovative project concepts and inventions",
           "Vote for your preferred team in the popular vote",
           "Listening to presentations from the top five teams to decide the winner",
         ],

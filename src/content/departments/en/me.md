@@ -4,7 +4,7 @@ description: "✨ ME OPEN HOUSE 2025 ✨\nHey high schoolers! 🚀 Welcome to th
 image: "ME.webp"
 sections:
   - heading: "Learning"
-    body: "Overview of courses, labs, and learning experiences..."
+    body: "You will study subjects in mechanics, thermodynamics, fluid dynamics, and control systems. These principles are applied to design and develop various machines, automated tools, and industrial robots."
   - heading: "Scholarship"
     body: "Scholarship opportunities and how to apply..."
   - heading: "Career Path"

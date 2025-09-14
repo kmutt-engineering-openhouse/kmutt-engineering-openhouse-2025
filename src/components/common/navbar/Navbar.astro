@@ -23,7 +23,7 @@ const menu = [
   >
     <button
       id="back-btn"
-      class="absolute left-4 flex hidden h-10 w-10 items-center justify-center border-0 text-purple-600 transition-all duration-200 hover:text-purple-700 focus:outline-none lg:hidden"
+      class="text-primary hover:text-primary-hover absolute flex hidden h-10 w-10 items-center justify-center border-0 transition-all duration-200 focus:outline-none lg:hidden"
       aria-label="Go back"
       style="display: none;"
     >
@@ -170,31 +170,15 @@ const menu = [
     };
 
     backBtn?.addEventListener("click", () => {
-      const logoLink = document.getElementById("logo-link");
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
 
-      if (logoLink) {
-        logoLink.style.transform = "translateX(0)";
-      }
-
-      setTimeout(() => {
-        if (backBtn) {
-          backBtn.style.display = "none";
-        }
-
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-
-        setTimeout(() => {
-          history.back();
-        }, 300);
-      }, 500);
+      history.back();
     });
 
-    setTimeout(() => {
-      showBackButton();
-    }, 100);
+    showBackButton();
 
     let lastY = window.scrollY;
     let isHidden = false;

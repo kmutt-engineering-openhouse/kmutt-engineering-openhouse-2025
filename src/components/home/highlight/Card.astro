@@ -107,7 +107,6 @@ const dialogId =
     modals.forEach((modal) => {
       const dialog = modal as HTMLDialogElement;
 
-      // Handle escape key
       dialog.addEventListener("keydown", (e) => {
         if (e.key === "Escape") {
           dialog.close();

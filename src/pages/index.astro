@@ -1,7 +1,6 @@
 ---
 const isDev = import.meta.env.DEV;
 
-// SEO Configuration
 const seoTitle = "KMUTT Engineering Open House 2025";
 const seoDescription = "Join KMUTT Engineering Open House 2025 on October 10-12, 2025. Explore 10 engineering departments, workshops, exhibitions, and competitions at King Mongkut's University of Technology Thonburi (Bangmod Campus).";
 const seoKeywords = "KMUTT, Engineering, Open House 2025, มจธ, คณะวิศวกรรมศาสตร์, มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี, Workshop, Exhibition, Bangmod";
@@ -68,13 +67,11 @@ const canonicalURL = "https://bangmod.engineer/";
           var browserLang = (navigator.language || navigator.browserLanguage || "th").split("-")[0].toLowerCase();
           var lang = supported.indexOf(browserLang) !== -1 ? browserLang : "th";
           
-          // Check if user has a preference stored
           var storedLang = localStorage.getItem("preferred-language");
           if (storedLang && supported.indexOf(storedLang) !== -1) {
             lang = storedLang;
           }
           
-          // Redirect to the appropriate language version
           location.replace("/" + lang + "/");
         })();
       }

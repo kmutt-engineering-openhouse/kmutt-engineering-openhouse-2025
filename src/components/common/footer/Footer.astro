@@ -8,7 +8,6 @@ const { t } = Astro.props;
 <footer class="bg-gray-100 pt-8 pb-2 sm:pb-4">
   <div class="mx-auto max-w-7xl px-6">
     <div class="mb-6 flex flex-col items-center gap-6 lg:flex-row lg:items-center lg:gap-8">
-      <!-- Logo -->
       <Image
         src={OPH_Logo}
         alt="KMUTT Engineering Open House 2025 Logo"
@@ -18,9 +17,7 @@ const { t } = Astro.props;
         loading="lazy"
       />
 
-      <!-- Content -->
       <div class="flex-1 space-y-4 text-center lg:text-left">
-        <!-- Social Links -->
         <div class="flex justify-center gap-3 lg:justify-start">
           <a
             href={t.footer.social.facebook.href}
@@ -54,7 +51,6 @@ const { t } = Astro.props;
           </a>
         </div>
 
-        <!-- Organization Info -->
         <div class="space-y-2 text-gray-800">
           <div class="font-jamjuree font-medium">
             {t.footer.faculty}
@@ -68,7 +64,6 @@ const { t } = Astro.props;
       </div>
     </div>
 
-    <!-- Copyright -->
     <div class="border-t border-gray-300 pt-2 sm:pt-4">
       <p class="font-prompt text-center text-[6px] text-gray-500 sm:text-xs">
         {t.footer.copyright}

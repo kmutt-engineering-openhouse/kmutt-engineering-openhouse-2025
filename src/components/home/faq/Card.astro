@@ -41,14 +41,12 @@ const accordionId = `faq-${Math.random().toString(36).substr(2, 9)}`;
 </article>
 
 <script>
-  // Enhanced keyboard navigation for FAQ accordion
   document.addEventListener("DOMContentLoaded", function () {
     const summaries = document.querySelectorAll("details summary");
 
     summaries.forEach((summary) => {
       const details = summary.closest("details") as HTMLDetailsElement;
 
-      // Handle keyboard interaction
       summary.addEventListener("keydown", (e) => {
         const keyEvent = e as KeyboardEvent;
         if (keyEvent.key === "Enter" || keyEvent.key === " ") {
@@ -58,9 +56,7 @@ const accordionId = `faq-${Math.random().toString(36).substr(2, 9)}`;
         }
       });
 
-      // Update aria-expanded when clicked
       summary.addEventListener("click", () => {
-        // Use setTimeout to get the updated state after the click
         setTimeout(() => {
           summary.setAttribute("aria-expanded", String(details.open));
         }, 0);

@@ -30,7 +30,6 @@ const defaultKeywords = currentLang === "en"
   ? "KMUTT, Engineering, Open House 2025, Faculty of Engineering, Bangmod, Workshop, Exhibition, Competition"
   : "มจธ, คณะวิศวกรรมศาสตร์, เปิดบ้าน, 2568, บางมด, เวิร์คช็อป, นิทรรศการ, การแข่งขัน";
 
-// SEO values (use provided or fallback to defaults)
 const title = seo?.title || defaultTitle;
 const description = seo?.description || defaultDescription;
 const keywords = seo?.keywords || defaultKeywords;
@@ -38,14 +37,12 @@ const ogImage = seo?.image || "https://bangmod.engineer/favicon.ico";
 const ogType = seo?.type || "website";
 const noIndex = seo?.noIndex || false;
 
-// URL construction
 const baseUrl = "https://bangmod.engineer";
 const currentPath = Astro.url.pathname;
 const canonicalUrl = seo?.canonicalUrl || `${baseUrl}${currentPath}`;
 const altLang = currentLang === "en" ? "th" : "en";
 const altUrl = currentPath.replace(`/${currentLang}/`, `/${altLang}/`);
 
-// Language-specific locale
 const locale = currentLang === "en" ? "en_US" : "th_TH";
 const altLocale = currentLang === "en" ? "th_TH" : "en_US";
 ---

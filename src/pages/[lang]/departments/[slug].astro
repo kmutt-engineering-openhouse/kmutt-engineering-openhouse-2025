@@ -39,7 +39,6 @@ if (data.image) {
 
 <Layout t={dict} currentLang={lang}>
   <section class="mx-auto flex w-full max-w-7xl flex-col gap-4 px-4 py-4">
-    <!-- Hero Image -->
     {
       imageSrc && (
         <Image
@@ -56,7 +55,6 @@ if (data.image) {
       )
     }
 
-    <!-- Title -->
     {
       lang === "th" ? (
         <h1 class="font-prompt text-center text-xl">
@@ -75,12 +73,10 @@ if (data.image) {
       )
     }
 
-    <!-- Description -->
     <p class="font-jamjuree text-sm leading-relaxed whitespace-pre-line sm:text-base">
       {data.description}
     </p>
 
-    <!-- Sections -->
     <div class="mt-4 flex flex-col gap-4">
       {
         data.sections?.map((s) =>

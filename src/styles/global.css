@@ -46,14 +46,13 @@ img {
   user-select: none;
 }
 
-/* Scroll offset for smooth navigation */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 1rem; /* Global scroll padding */
+  scroll-padding-top: 1rem;
 }
 
 section[id] {
-  scroll-margin-top: 1rem; /* Account for navbar height + padding */
+  scroll-margin-top: 1rem;
 }
 
 /* Fade animations */
@@ -334,7 +333,6 @@ dialog.modal::backdrop {
 }
 
 /* Performance optimizations for card interactions */
-/* Hardware acceleration for smooth animations */
 .card-button,
 .group img,
 [class*="hover:shadow"],
@@ -359,7 +357,7 @@ dialog.modal::backdrop {
 .card-button {
   position: relative;
   overflow: hidden;
-  transform: translateZ(0); /* Force hardware acceleration */
+  transform: translateZ(0);
 }
 
 .card-button::before {
@@ -406,7 +404,7 @@ dialog.modal[open] .modal-content {
     bottom: 0;
     width: 100vw;
     height: 100vh;
-    height: 100dvh; /* Use dynamic viewport height when available */
+    height: 100dvh;
   }
 }
 
@@ -485,5 +483,4 @@ article,
 
 /* Prefers color scheme support */
 @media (prefers-color-scheme: dark) {
-  /* Removed dark mode styles to keep white background */
 }

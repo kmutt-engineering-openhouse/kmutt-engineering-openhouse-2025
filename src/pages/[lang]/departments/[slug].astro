@@ -44,7 +44,7 @@ if (data.image) {
         <Image
           src={imageSrc}
           alt={data.title}
-          class="aspect-[2/1] w-full rounded-2xl object-cover select-none sm:aspect-[16/6]"
+          class="aspect-[2/1] w-full select-none rounded-2xl object-cover sm:aspect-[16/6]"
           loading="eager"
           decoding="async"
           quality={100}
@@ -73,7 +73,7 @@ if (data.image) {
       )
     }
 
-    <p class="font-jamjuree text-center text-sm leading-relaxed whitespace-pre-line sm:text-base">
+    <p class="font-jamjuree whitespace-pre-line text-center text-sm leading-relaxed sm:text-base">
       {data.description}
     </p>
 
@@ -91,7 +91,12 @@ if (data.image) {
                     {item.type === "website" && <WebsiteIcon class="inline h-5 w-5" />}
                     {item.type === "email" && <EmailIcon class="inline h-5 w-5" />}
                     {item.type === "tiktok" && <TiktokIcon class="inline h-5 w-5" />}
-                    <a href={item.link} target="_blank">
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Visit ${item.title} - Opens in new window`}
+                    >
                       {item.title}
                     </a>
                   </li>
@@ -102,7 +107,7 @@ if (data.image) {
             <section class="rounded-2xl border border-gray-300 bg-white p-4">
               <h2 class="font-prompt text-primary text-lg font-semibold sm:text-xl">{s.heading}</h2>
               {s.body && (
-                <p class="font-jamjuree mt-2 text-sm leading-relaxed whitespace-pre-line sm:text-base">
+                <p class="font-jamjuree mt-2 whitespace-pre-line text-sm leading-relaxed sm:text-base">
                   {s.body}
                 </p>
               )}
@@ -119,6 +124,8 @@ if (data.image) {
                     <a
                       href={chip.link}
                       target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Visit ${chip.title} - Opens in new window`}
                       class="inline-flex items-center rounded-full bg-gray-100 px-3 py-2 text-xs font-medium no-underline transition-colors duration-200 hover:bg-gray-200"
                       style="color: var(--color-primary)"
                     >

@@ -4,7 +4,7 @@ description: "✨ Exotic Electrical (EE) Workshops ✨\nWe’re back again with 
 image: "EE.webp"
 sections:
   - heading: "Learning"
-    body: "Overview of courses, labs, and learning experiences..."
+    body: "You will learn to analyze and design power electronics systems, electrical networks, power systems, and power plants. The curriculum also covers renewable energy and high-voltage power systems, including electric vehicle (EV) drive and charging systems."
   - heading: "Scholarship"
     body: "Scholarship opportunities and how to apply..."
   - heading: "Career Path"

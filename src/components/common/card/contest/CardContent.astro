@@ -56,7 +56,7 @@ const { title, description, points, image, location, alt } = Astro.props.t;
     <Image
       src={image}
       alt={alt ?? title}
-      class="aspect-[3/1] w-full rounded-b-xl object-cover select-none"
+      class="aspect-[8/3] w-full rounded-b-xl object-cover select-none"
       format="png"
       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 800px, 1200px, "
       loading="lazy"

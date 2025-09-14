@@ -207,7 +207,7 @@ export default {
       {
         title: "INNO-X",
         description:
-          "creative space for prototyping, innovation, and invention, equipped with cutting-edge tools such as 3D Printers, Laser Cutters, and Mini CNC machines. In the workshop, you will get hands-on experience using the 3D Printer and Laser Cutter up close and even create their own projects for real!",
+          "Creative space for prototyping, innovation, and invention, equipped with cutting-edge tools such as 3D Printers, Laser Cutters, and Mini CNC machines. In the workshop, you will get hands-on experience using the 3D Printer and Laser Cutter up close and even create your own projects for real!",
         image: imgINNOX,
         location: [
           {

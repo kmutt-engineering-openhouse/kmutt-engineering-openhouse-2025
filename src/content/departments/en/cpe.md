@@ -4,9 +4,19 @@ description: "🌟 CPE48: 1st Generation 🌟\nWitness the special debut of “C
 image: "CPE.webp"
 sections:
   - heading: "Learning"
-    body: "Overview of courses, labs, and learning experiences..."
+    list:
+      - "<b>Computer Engineering</b>\nYou will learn to analyze, design, and develop computer systems, including hardware, software, databases, applications, and predictive computer networks. The focus is on creating innovations that solve problems in business and society, as well as analyzing and developing international communication."
+      - "<b>Health Data Science</b>\nThis is a program jointly offered by the Department of Computer Engineering and the Chulabhorn Royal Academy. It integrates knowledge from both health sciences and data science with the goal of producing health data scientists."
   - heading: "Scholarship"
-    body: "Scholarship opportunities and how to apply..."
+    list:
+      - "<b>Merit scholarship</b> A merit scholarship is a scholarship awarded to students who have the highest grade point average (GPA) or a GPA that meets or exceeds a specified standard."
+      - "<b>Petchre Pra Jom Klao Scholarship</b> The scholarships support outstanding students in academic, sports, arts, leadership, and creativity. They cover tuition, 30,000 baht for equipment, and a monthly allowance of 4,000 baht."
+      - "<b>Dhammaraksa Scholarship</b> Scholarships are available for the underprivileged in remote areas or those whose family has never studied at the tertiary level, who are ready and willing to help and support university activities by participating in and performing university-determined activities, including at least one volunteer activity each semester. Recipients will receive tuition fees according to the curriculum, a lump sum of 10,000 baht per year for educational equipment, a monthly accommodation fee of 1,500 baht, a monthly living allowance of 4,000 baht, and the right to stay in a KMUTT dormitory."
+    chips:
+      - title: "📄 Petchre Pra Jom Klao Scholarship Details"
+        link: "https://drive.google.com/file/d/1egA1_QG1SFhyMO6lX-BNID5oK5tFkDkN/view?usp=sharing"
+      - title: "📄 Dhammaraksa Scholarship Details"
+        link: "https://drive.google.com/file/d/1p-Q5hcWdyoSuA_0FxqcU7P9isiCcdSy3/view?usp=sharing"
   - heading: "Career Path"
     list:
       - "Computer Engineer"

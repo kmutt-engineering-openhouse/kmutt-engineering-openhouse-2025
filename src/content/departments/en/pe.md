@@ -4,9 +4,22 @@ description: "🎉 PRO(DUCT)X1E 1st MINI ALBUM 🎶\nAre you ready to hit the st
 image: "PE.webp"
 sections:
   - heading: "Learning"
-    body: "Overview of courses, labs, and learning experiences..."
+    list:
+      - "<b>Production Engineering</b>\nYou will learn to design and develop production processes using various technologies such as metallurgy, welding, machining, and automated production systems. The curriculum also covers quality control to improve efficiency and reduce waste and costs. Additionally, it includes organizational structure design, logistics and supply chain management, and data analysis using statistics and AI."
+      - "<b>Mechatronics Engineering</b>\nThis describes Mechatronics Engineering, which integrates knowledge from mechanical, electrical, electronics, and computer engineering. The field focuses on developing automated systems using sensors and control systems. The curriculum includes programming microcontrollers, AI, and data analysis to enable these systems to make intelligent decisions. It also covers the design of smart machines and products with integrated sensors."
   - heading: "Scholarship"
-    body: "Scholarship opportunities and how to apply..."
+    list:
+      - "<b>Department of Production Engineering Scholarship</b> This scholarship is for students in the Department of Production Engineering who are in financial need and have good conduct. Students must not have a history of misconduct. The scholarship covers registration fees for one academic year (at the discretion of the committee)."
+      - "<b>Production and Mechatronics Ants Club Scholarship</b> This is a continuous scholarship for students in the Department of Production Engineering, providing 25,000 Baht per semester until graduation."
+      - "<b>Assoc. Prof. Kitisak Ploypanichcharoen Education Fund Scholarship</b> This scholarship is for financially needy students in the Department of Production Engineering. Interested students can contact the Student Financial Aid Group at King Mongkut's University of Technology Thonburi. It covers registration fees for one academic year."
+      - "<b>Asst. Prof. Payoon Ketkrai Scholarship</b> This scholarship is for undergraduate students in the Department of Production Engineering who have good academic performance and/or are in financial need and have good conduct. It covers registration fees for one academic year."
+      - "<b>Petchre Pra Jom Klao Scholarship</b> The scholarships support outstanding students in academic, sports, arts, leadership, and creativity. They cover tuition, 30,000 baht for equipment, and a monthly allowance of 4,000 baht."
+      - "<b>Dhammaraksa Scholarship</b> Scholarships are available for the underprivileged in remote areas or those whose family has never studied at the tertiary level, who are ready and willing to help and support university activities by participating in and performing university-determined activities, including at least one volunteer activity each semester. Recipients will receive tuition fees according to the curriculum, a lump sum of 10,000 baht per year for educational equipment, a monthly accommodation fee of 1,500 baht, a monthly living allowance of 4,000 baht, and the right to stay in a KMUTT dormitory."
+    chips:
+      - title: "📄 Petchre Pra Jom Klao Scholarship Details"
+        link: "https://drive.google.com/file/d/1egA1_QG1SFhyMO6lX-BNID5oK5tFkDkN/view?usp=sharing"
+      - title: "📄 Dhammaraksa Scholarship Details"
+        link: "https://drive.google.com/file/d/1p-Q5hcWdyoSuA_0FxqcU7P9isiCcdSy3/view?usp=sharing"
   - heading: "Career Path"
     list:
       - "Quality Control Engineer (QC Engineer)"

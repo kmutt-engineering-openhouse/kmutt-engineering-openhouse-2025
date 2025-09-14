@@ -4,7 +4,7 @@ description: "🌎✨ Ever wondered what it’s like to study Environmental Engi
 image: "ENV.webp"
 sections:
   - heading: "Learning"
-    body: "Overview of courses, labs, and learning experiences..."
+    body: "You will learn to design, control, and select technologies for the treatment and disposal of pollution, waste, hazardous substances, and other environmental contaminants. This field also focuses on research into environmental sustainability, using a combination of engineering and management techniques."
   - heading: "Scholarship"
     body: "Scholarship opportunities and how to apply..."
   - heading: "Career Path"

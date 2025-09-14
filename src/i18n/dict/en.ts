@@ -274,16 +274,16 @@ export default {
       {
         title: "Engineering Quest 2025",
         description:
-          "First, 350 teams, then 50 teams, and lastly, the top 5. On October 11, 2025, you can watch the semi-final and final rounds of the Engineering Academic Quiz Competition for students in high school or its equivalent in the Academic Year 2025. The competition will be live-streamed on the KMUTT Engineering Open House 2025 Facebook page, so you may follow, cheer, and support throughout.",
+          "First, 350 teams, then 50 teams, and lastly, the top 5.\nOn October 11, 2025, you can watch the semi-final and final rounds of the Engineering Academic Quiz Competition for students in high school or its equivalent in the Academic Year 2025. The competition will be live-streamed on the KMUTT Engineering Open House 2025 Facebook page, so you may follow, cheer, and support throughout.",
         image: imgEQ,
         location: [
           {
-            text: "Preliminary Round: Classroom Building 2 (N17)",
+            text: "Preliminary Round:\nClassroom Building 2 (N17)",
             href: "https://maps.app.goo.gl/MXUNduPtscmUkYj59",
             icon: iconLOC,
           },
           {
-            text: "Semi-Final & Final Rounds: King Mongkut’s 190th Anniversary Memorial Building (S14)",
+            text: "Semi-Final & Final Rounds:\nKing Mongkut’s 190th Anniversary Memorial Building (S14)",
             href: "https://maps.app.goo.gl/3TsAguSd91EkBRA59",
             icon: iconLOC,
           },

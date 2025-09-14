@@ -109,7 +109,7 @@ if (data.image) {
               {s.list && (
                 <ul class="font-jamjuree mt-2 list-disc pl-5 text-sm leading-relaxed sm:text-base">
                   {s.list.map((li) => (
-                    <li>{li}</li>
+                    <li set:html={li} />
                   ))}
                 </ul>
               )}

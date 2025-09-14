@@ -25,7 +25,8 @@ import iconENV from "../../assets/icons/departments/ENV.svg";
 import iconENE from "../../assets/icons/departments/ENE.svg";
 import iconPE from "../../assets/icons/departments/PE.svg";
 // Insight Section
-import imgINNOX from "../../assets/images/insight/innox.png";
+import imgAdmission from "../../assets/images/insight/admission.webp";
+import imgINNOX from "../../assets/images/insight/innox.webp";
 // Contest Section
 import imgIC from "../../assets/images/contest/ic.png";
 import imgEQ from "../../assets/images/contest/eq.png";
@@ -181,6 +182,7 @@ export default {
           "Undergraduate students: Prepare your portfolio to apply for Early Admission (International Programs)",
           "Graduate students: Register your intention to continue your studies immediately",
         ],
+        image: imgAdmission,
         location: [
           {
             text: "Learning Building 4 (S12), 1st Floor, in front of ICE Center",

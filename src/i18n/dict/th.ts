@@ -25,7 +25,8 @@ import iconENV from "../../assets/icons/departments/ENV.svg";
 import iconENE from "../../assets/icons/departments/ENE.svg";
 import iconPE from "../../assets/icons/departments/PE.svg";
 // Insight Section
-import imgINNOX from "../../assets/images/insight/innox.png";
+import imgAdmission from "../../assets/images/insight/admission.webp";
+import imgINNOX from "../../assets/images/insight/innox.webp";
 // Contest Section
 import imgIC from "../../assets/images/contest/ic.png";
 import imgEQ from "../../assets/images/contest/eq.png";
@@ -181,6 +182,7 @@ export default {
           "ระดับปริญญาตรี: เตรียม Portfolio สมัคร Early Admission (หลักสูตรนานาชาติ)",
           "ระดับบัณฑิตศึกษา: ลงทะเบียนแจ้งความประสงค์เข้าศึกษาต่อได้ทันที",
         ],
+        image: imgAdmission,
         location: [
           {
             text: "อาคารเรียนรวม 4 (S12) ชั้น 1 ด้านหน้าศูนย์ ICE",

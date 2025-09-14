@@ -16,10 +16,10 @@ sections:
         link: "https://drive.google.com/file/d/1p-Q5hcWdyoSuA_0FxqcU7P9isiCcdSy3/view?usp=sharing"
   - heading: "Career Path"
     list:
-      - "Process Equipment Design Engineer"
-      - "Process/Production Engineer"
+      - "Chemical Equipment Design Engineer"
+      - "Production Engineer"
       - "Chemical Engineer"
-      - "Lecturer/Teacher"
+      - "Teacher / Instructor / Lecturer / Professor"
       - "Others"
   - heading: "Follow us"
     contract:

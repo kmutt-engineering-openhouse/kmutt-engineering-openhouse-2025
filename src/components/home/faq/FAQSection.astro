@@ -12,7 +12,7 @@ const items = Array.isArray(t?.faq?.questions) ? t.faq.questions : [];
   <div class="flex flex-col gap-3">
     {
       items.map((q: { question: string; answer: string }, i: number) => (
-        <FaqCard question={q.question} answer={q.answer} open={i === 0} data-delay={i + 1} />
+        <FaqCard question={q.question} answer={q.answer} data-delay={i + 1} />
       ))
     }
   </div>

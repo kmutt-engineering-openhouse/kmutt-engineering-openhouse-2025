@@ -4,7 +4,7 @@ description: "🎤✨ Open House 2025 : Autonova Music Lab ✨🎤\n\nWhen the D
 image: "INC.webp"
 sections:
   - heading: "Learning"
-    body: "Overview of courses, labs, and learning experiences..."
+    body: "You will learn to design and develop automated measurement and control systems using modern technologies. These systems are designed to operate independently or with minimal human intervention. This includes integrating technologies like Artificial Intelligence (AI), data management, robotics, cyber-physical systems, and system integration to solve problems in industry and society."
   - heading: "Scholarship"
     body: "Scholarship opportunities and how to apply..."
   - heading: "Career Path"

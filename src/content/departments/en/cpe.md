@@ -4,7 +4,9 @@ description: "🌟 CPE48: 1st Generation 🌟\nWitness the special debut of “C
 image: "CPE.webp"
 sections:
   - heading: "Learning"
-    body: "Overview of courses, labs, and learning experiences..."
+    list:
+      - "<b>Computer Engineering</b>\nYou will learn to analyze, design, and develop computer systems, including hardware, software, databases, applications, and predictive computer networks. The focus is on creating innovations that solve problems in business and society, as well as analyzing and developing international communication."
+      - "<b>Health Data Science</b>\nThis is a program jointly offered by the Department of Computer Engineering and the Chulabhorn Royal Academy. It integrates knowledge from both health sciences and data science with the goal of producing health data scientists."
   - heading: "Scholarship"
     body: "Scholarship opportunities and how to apply..."
   - heading: "Career Path"

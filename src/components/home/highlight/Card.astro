@@ -1,5 +1,8 @@
 ---
+import type { HighlightCardProps } from "../../../types/card.ts";
 import { Image } from "astro:assets";
+
+export interface Props extends HighlightCardProps {}
 
 const { src, alt, title, description, index } = Astro.props;
 const dialogId =
@@ -14,18 +17,20 @@ const dialogId =
   <button
     type="button"
     onclick={`document.getElementById('${dialogId}').showModal()`}
-    class="card-button relative aspect-[3/4] w-full overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2"
+    class="card-button relative aspect-[3/4] w-full overflow-hidden rounded-t-2xl focus:outline-none"
     aria-label={`View details for ${title}`}
+    aria-describedby={description ? `${dialogId}-description` : undefined}
   >
     <Image
       src={src}
       alt={alt}
-      class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-      sizes="(min-width:1024px) 25vw, (min-width:768px) 50vw, 70vw"
+      class="h-full w-full object-cover transition-transform duration-300 will-change-transform group-hover:scale-105"
+      sizes="(max-width: 640px) 70vw, (max-width: 768px) 50vw, (max-width: 1024px) 25vw, 400px"
       loading="lazy"
-      width={400}
-      height={533}
-      quality={80}
+      width={600}
+      height={800}
+      quality={95}
+      decoding="async"
     />
   </button>
 </article>
@@ -35,10 +40,14 @@ const dialogId =
   id={dialogId}
   class="popup-modal backdrop:bg-black/50 backdrop:backdrop-blur-sm"
   onclick="if (event.target === this) this.close()"
+  aria-labelledby={`${dialogId}-title`}
+  aria-describedby={description ? `${dialogId}-description` : undefined}
+  role="dialog"
+  aria-modal="true"
 >
-  <div class="popup-content">
+  <div class="popup-content" role="document">
     <!-- Header with Image -->
-    <div class="popup-header">
+    <header class="popup-header">
       <div class="popup-image-container">
         <Image
           src={src}
@@ -46,17 +55,24 @@ const dialogId =
           class="popup-image"
           sizes="(max-width: 640px) 100vw, 600px"
           loading="eager"
-          width={600}
-          height={400}
-          quality={90}
+          width={1200}
+          height={800}
+          quality={98}
         />
-        <div class="popup-gradient"></div>
+        <div class="popup-gradient" aria-hidden="true"></div>
         <button
           onclick={`document.getElementById('${dialogId}').close()`}
           class="popup-close-btn"
           aria-label="Close dialog"
+          type="button"
         >
-          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg
+            class="h-6 w-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -64,19 +80,63 @@ const dialogId =
               d="M6 18L18 6M6 6l12 12"></path>
           </svg>
         </button>
-        <h2 class="popup-title">{title}</h2>
+        <h2 id={`${dialogId}-title`} class="popup-title">{title}</h2>
       </div>
-    </div>
+    </header>
 
     <!-- Content -->
-    <div class="popup-body">
+    <main class="popup-body">
       {
         description && (
           <div class="popup-description">
-            <p class="font-jamjuree leading-relaxed text-gray-700">{description}</p>
+            <p id={`${dialogId}-description`} class="font-jamjuree leading-relaxed text-gray-700">
+              {description}
+            </p>
           </div>
         )
       }
-    </div>
+    </main>
   </div>
 </dialog>
+
+<script>
+  // Handle Escape key and improve modal accessibility
+  document.addEventListener("DOMContentLoaded", function () {
+    const modals = document.querySelectorAll('[id^="highlight-modal-"]');
+
+    modals.forEach((modal) => {
+      const dialog = modal as HTMLDialogElement;
+
+      // Handle escape key
+      dialog.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          dialog.close();
+        }
+      });
+
+      // Focus management
+      dialog.addEventListener("open", () => {
+        const closeButton = dialog.querySelector(".popup-close-btn") as HTMLElement;
+        if (closeButton) {
+          closeButton.focus();
+        }
+      });
+
+      // Return focus when closed
+      let previousFocus: HTMLElement | null = null;
+
+      const buttons = document.querySelectorAll(`button[onclick*="${dialog.id}"]`);
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          previousFocus = button as HTMLElement;
+        });
+      });
+
+      dialog.addEventListener("close", () => {
+        if (previousFocus) {
+          previousFocus.focus();
+        }
+      });
+    });
+  });
+</script>

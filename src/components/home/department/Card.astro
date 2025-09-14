@@ -1,40 +1,48 @@
 ---
+import type { DepartmentCardProps } from "../../../types/card.ts";
 import { Image } from "astro:assets";
 
-const { image, icon, title, href, alt, iconAlt } = Astro.props.t;
+export interface Props extends DepartmentCardProps {}
+
+const { t } = Astro.props;
 ---
 
 <article
-  class="flex w-full min-w-0 flex-col overflow-hidden rounded-2xl border border-gray-300 bg-white transition-shadow hover:shadow-lg"
+  class="flex w-full min-w-0 flex-col overflow-hidden rounded-2xl border border-gray-300 bg-white transition-shadow duration-300 hover:shadow-lg"
 >
   <a
-    href={href}
-    class="block w-full focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+    href={t.href}
+    class="block w-full rounded-2xl focus:outline-none"
+    aria-label={`View ${t.title} department details`}
   >
     <div class="relative aspect-[2/1] w-full overflow-hidden">
       <Image
-        src={image}
-        alt={alt ?? title}
-        class="absolute inset-0 h-full w-full object-cover"
+        src={t.image}
+        alt={t.alt ?? `${t.title} department`}
+        class="absolute inset-0 h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+        width={800}
+        height={400}
         loading="lazy"
         decoding="async"
-        sizes="(min-width:640px) 50vw, 100vw"
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
+        quality={95}
       />
     </div>
 
-    <div class="flex items-center gap-3 p-4 pt-3">
+    <header class="flex items-center gap-3 p-4 pt-3">
       <Image
-        src={icon}
-        alt={iconAlt ?? ""}
-        width={24}
-        height={24}
-        class="h-6 w-6 object-contain"
+        src={t.icon}
+        alt={t.iconAlt ?? ""}
+        width={48}
+        height={48}
+        class="h-6 w-6 flex-shrink-0 object-contain"
         loading="lazy"
         decoding="async"
+        role="presentation"
       />
-      <h3 class="font-prompt text-base leading-tight font-semibold">
-        {title}
+      <h3 class="font-prompt text-base leading-tight font-semibold text-gray-900">
+        {t.title}
       </h3>
-    </div>
+    </header>
   </a>
 </article>

@@ -1,12 +1,24 @@
 ---
+import type { ContestCardProps } from "../../../../types/card.ts";
 import CardContent from "./CardContent.astro";
-const t = Astro.props.t;
+
+export interface Props extends ContestCardProps {}
+
+const { t } = Astro.props;
 ---
 
-<div class="rounded-2xl border border-gray-300 shadow-md hover:shadow-2xl">
+<article
+  class="rounded-2xl border border-gray-300 bg-white shadow-md transition-shadow duration-300 hover:shadow-lg"
+>
   {
     t?.href ? (
-      <a href={t.href} target="_blank" class="block">
+      <a
+        href={t.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="block rounded-2xl focus:outline-none"
+        aria-label={`View details for ${t.title} (opens in new tab)`}
+      >
         <CardContent t={t} />
       </a>
     ) : (
@@ -15,4 +27,4 @@ const t = Astro.props.t;
       </div>
     )
   }
-</div>
+</article>

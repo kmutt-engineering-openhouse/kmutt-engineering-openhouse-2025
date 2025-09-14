@@ -89,17 +89,41 @@ section[id] {
   }
 }
 
-/* Reduced motion support */
+/* Reduced motion support with enhanced performance */
 @media (prefers-reduced-motion: reduce) {
   [data-fade],
-  [data-fade-up] {
-    animation: none;
+  [data-fade-up],
+  .popup-modal,
+  .popup-content,
+  [class*="transition"],
+  [class*="hover:scale"],
+  .card-button::before,
+  .group img {
+    animation: none !important;
+    transition: none !important;
     opacity: 1;
-    transform: none;
+    transform: none !important;
+    will-change: auto;
   }
 }
 
-/* Enhanced Modal Popup Styles */
+/* High contrast support */
+@media (prefers-contrast: high) {
+  .card-button::before {
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  .popup-modal::backdrop {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: none;
+  }
+
+  .border-gray-300 {
+    border-color: #000 !important;
+  }
+}
+
+/* Enhanced Modal Popup Styles with Performance Optimizations */
 .popup-modal {
   border: none;
   padding: 0;
@@ -109,6 +133,8 @@ section[id] {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   max-width: none;
   max-height: none;
+  will-change: transform, opacity;
+  contain: layout style;
 }
 
 .popup-modal[open] {
@@ -120,7 +146,7 @@ section[id] {
   align-items: center;
   justify-content: center;
   opacity: 1;
-  transform: scale(1) translateY(0);
+  transform: scale(1) translateY(0) translateZ(0);
   z-index: 50;
   padding: 1rem;
 }
@@ -129,6 +155,7 @@ section[id] {
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(8px);
   transition: all 0.3s ease-out;
+  will-change: opacity;
 }
 
 .popup-content {
@@ -143,8 +170,10 @@ section[id] {
   max-height: 85vh;
   display: flex;
   flex-direction: column;
-  transform: translateY(0);
+  transform: translateY(0) translateZ(0);
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  contain: layout style;
 }
 
 .popup-header {
@@ -304,10 +333,33 @@ dialog.modal::backdrop {
   transition: all 0.2s ease-out;
 }
 
-/* Card hover effects */
+/* Performance optimizations for card interactions */
+/* Hardware acceleration for smooth animations */
+.card-button,
+.group img,
+[class*="hover:shadow"],
+[class*="transition-transform"],
+[class*="hover:scale"] {
+  will-change: transform;
+}
+
+.popup-modal,
+.popup-content {
+  contain: layout style;
+  will-change: transform, opacity;
+}
+
+/* Optimize transform animations */
+.group-hover\:scale-105:hover {
+  transform: scale(1.05);
+  backface-visibility: hidden;
+}
+
+/* Card hover effects with performance optimization */
 .card-button {
   position: relative;
   overflow: hidden;
+  transform: translateZ(0); /* Force hardware acceleration */
 }
 
 .card-button::before {
@@ -321,6 +373,7 @@ dialog.modal::backdrop {
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
+  will-change: opacity;
 }
 
 .card-button:hover::before {
@@ -355,4 +408,82 @@ dialog.modal[open] .modal-content {
     height: 100vh;
     height: 100dvh; /* Use dynamic viewport height when available */
   }
+}
+
+/* Additional Performance and Accessibility Optimizations */
+
+/* Optimize image rendering for crisp quality */
+img,
+.astro-imagetools-img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: auto;
+}
+
+/* Ensure high-quality image rendering */
+img[src*="webp"],
+img[src*="jpg"],
+img[src*="jpeg"],
+img[src*="png"] {
+  image-rendering: high-quality;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+/* Prevent image blur on transforms */
+.hover\:scale-105:hover,
+.group-hover\:scale-105,
+[class*="scale-"] {
+  image-rendering: -webkit-optimize-contrast;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+/* Force GPU acceleration without blur */
+img[class*="transition-transform"] {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* High DPI display optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Content visibility optimization for off-screen cards */
+.card-container {
+  contain: layout style;
+}
+
+/* Skip to content for better accessibility */
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--color-primary);
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 1000;
+  transition: top 0.2s ease;
+}
+
+.skip-to-content:focus {
+  top: 6px;
+}
+
+/* Improve text legibility */
+article,
+.popup-description {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Prefers color scheme support */
+@media (prefers-color-scheme: dark) {
+  /* Removed dark mode styles to keep white background */
 }

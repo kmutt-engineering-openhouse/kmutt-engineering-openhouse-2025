@@ -35,6 +35,7 @@ import imgBH from "../../assets/images/contest/bh.webp";
 import iconFacebook from "../../assets/icons/facebook.svg";
 import iconInstagram from "../../assets/icons/instagram.svg";
 import iconLOC from "../../assets/icons/location.svg";
+import iconWebsite from "../../assets/icons/website.svg";
 
 export default {
   hero: {
@@ -206,7 +207,6 @@ export default {
         description:
           "พื้นที่สร้างสรรค์ชิ้นงานต้นแบบ นวัตกรรม และสิ่งประดิษฐ์ ด้วยเครื่องมือสุดล้ำอย่าง 3D Printer, Laser Cutter และ Mini CNC  โดยในกิจกรรมเวิร์กช็อปน้อง ๆ จะได้สัมผัสการใช้งาน 3D Printer และ Laser Cutter แบบใกล้ชิด พร้อมลงมือทำของจริงด้วยตัวเอง",
         image: imgINNOX,
-        href: "https://www.facebook.com/p/Innovation-Exchange-KMUTT-100064519611257",
         location: [
           {
             text: "อาคารวิศววัฒนะ (S4)",
@@ -275,7 +275,6 @@ export default {
         description:
           "จาก xxx ทีม สู่ 50 ทีม และสุดท้าย 5 ทีมสุดท้ายร่วมชมการแข่งขันรอบรองชนะเลิศ  และรอบชิงชนะเลิศ การแข่งขันตอบปัญหาวิชาการทางด้านวิศวกรรม ระดับมัธยมศึกษาตอนปลายหรือเทียบเท่า ปีการศึกษา 2568 ในวันที่ 11 ตุลาคม 2568 ภายใต้โจทย์ปัญหาที่ใช้เนื้อหาเกี่ยวกับ วิทยาศาสตร์และคณิตศาสตร์ ผ่านทางการถ่ายทดสดที่ เพจ Facebook KMUTT Engineering Open House 2025 สามารถช่วยลุ้น ร่วมเชียร์ และให้กำลังใจได้ตลอดทั้งวัน",
         image: imgEQ,
-        href: "https://www.facebook.com/share/1BZD9tJbzG/?mibextid=wwXIfr ",
         location: [
           {
             text: "รอบคัดเลือก: อาคารเรียนรวม 2 (N17)",
@@ -287,6 +286,11 @@ export default {
             href: "https://maps.app.goo.gl/3TsAguSd91EkBRA59",
             icon: iconLOC,
           },
+          {
+            text: "KMUTT Engineering Open House 2025",
+            href: "https://www.facebook.com/share/1BZD9tJbzG/?mibextid=wwXIfr",
+            icon: iconFacebook,
+          },
         ],
       },
       {
@@ -294,12 +298,16 @@ export default {
         description:
           "โครงการแข่งขันการเขียนโปรแกรมคอมพิวเตอร์ Bangmod Hackathon เป็นโครงการที่เปิดโอกาสให้นักเรียนมัธยมปลาย และนักศึกษาอาชีวะระดับปวช. หรือเทียบเท่า ได้เข้าร่วมการแข่งขัน เขียนโปรแกรมด้วยภาษา C/C++ ในรูปแบบทีม เพื่อเสริมสร้างทักษะการเขียนโปรแกรม พร้อมทั้งฝึกการทำงานร่วมกันและเก็บเกี่ยวประสบการณ์จากการลงสนามจริง",
         image: imgBH,
-        href: "https://bangmodhackathon.com/",
         location: [
           {
             text: "อาคารวิศววัฒนะ (S4) ชั้น 11  มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี",
             href: "https://maps.app.goo.gl/65YM3k6JdvKM1tLD8",
             icon: iconLOC,
+          },
+          {
+            text: "BangMod Hackathon 2025",
+            href: "https://bangmodhackathon.com/",
+            icon: iconWebsite,
           },
         ],
       },

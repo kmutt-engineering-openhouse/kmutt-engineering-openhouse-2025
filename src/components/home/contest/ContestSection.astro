@@ -10,7 +10,7 @@ const contestData = t.contest.contest;
   <Heading t={t?.contest?.title} class="pt-16" />
   <div class="flex flex-col gap-4 px-4">
     {
-      contestData.map((c: any) => (
+      contestData.map((c: any, index: number) => (
         <Card
           t={{
             title: c.title,
@@ -21,6 +21,7 @@ const contestData = t.contest.contest;
             alt: c.title,
             href: c.href,
           }}
+          data-delay={index + 1}
         />
       ))
     }

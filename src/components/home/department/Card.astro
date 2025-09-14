@@ -2,13 +2,16 @@
 import type { DepartmentCardProps } from "../../../types/card.ts";
 import { Image } from "astro:assets";
 
-export interface Props extends DepartmentCardProps {}
+export interface Props extends DepartmentCardProps {
+  "data-delay"?: number;
+}
 
-const { t } = Astro.props;
+const { t, "data-delay": dataDelay } = Astro.props;
 ---
 
 <article
-  class="flex w-full min-w-0 flex-col overflow-hidden rounded-2xl border border-gray-300 bg-white transition-shadow duration-300 hover:shadow-lg"
+  class="scroll-animate animate-fade-up flex w-full min-w-0 flex-col overflow-hidden rounded-2xl border border-gray-300 bg-white transition-shadow duration-300 hover:shadow-lg"
+  data-delay={dataDelay}
 >
   <a
     href={t.href}

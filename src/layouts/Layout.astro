@@ -53,11 +53,9 @@ const altLocale = currentLang === "en" ? "th_TH" : "en_US";
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     
-    <!-- Preconnect to external domains for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     
-    <!-- Primary Meta Tags -->
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
@@ -66,15 +64,12 @@ const altLocale = currentLang === "en" ? "th_TH" : "en_US";
     <meta name="robots" content={noIndex ? "noindex, nofollow" : "index, follow"} />
     <meta name="googlebot" content={noIndex ? "noindex, nofollow" : "index, follow"} />
     
-    <!-- Canonical URL -->
     <link rel="canonical" href={canonicalUrl} />
     
-    <!-- Hreflang Tags for Internationalization -->
     <link rel="alternate" hreflang="th" href={`${baseUrl}/th${currentPath.replace(/^\/(th|en)/, '')}`} />
     <link rel="alternate" hreflang="en" href={`${baseUrl}/en${currentPath.replace(/^\/(th|en)/, '')}`} />
     <link rel="alternate" hreflang="x-default" href={`${baseUrl}${currentPath.replace(/^\/(th|en)/, '')}`} />
     
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content={ogType} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
@@ -85,7 +80,6 @@ const altLocale = currentLang === "en" ? "th_TH" : "en_US";
     <meta property="og:locale" content={locale} />
     <meta property="og:locale:alternate" content={altLocale} />
     
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content={canonicalUrl} />
     <meta name="twitter:title" content={title} />
@@ -93,30 +87,25 @@ const altLocale = currentLang === "en" ? "th_TH" : "en_US";
     <meta name="twitter:image" content={ogImage} />
     <meta name="twitter:image:alt" content={title} />
     
-    <!-- Additional Meta Tags -->
     <meta name="theme-color" content="#1e40af" />
     <meta name="application-name" content={siteName} />
     <meta name="msapplication-TileColor" content="#1e40af" />
     
-    <!-- Geo Tags for Location -->
     <meta name="geo.region" content="TH-10" />
     <meta name="geo.placename" content="Bangkok, Thailand" />
     <meta name="geo.position" content="13.6518;100.4933" />
     <meta name="ICBM" content="13.6518, 100.4933" />
     
-    <!-- Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;700&family=Prompt:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     
-    <!-- Favicons -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico" />
     
-    <!-- Event-specific structured data for pages with event information -->
     {currentPath === `/${currentLang}/` && (
       <script type="application/ld+json">
         {JSON.stringify({
@@ -177,7 +166,6 @@ const altLocale = currentLang === "en" ? "th_TH" : "en_US";
       </script>
     )}
     
-    <!-- Website/Organization structured data -->
     <script type="application/ld+json">
       {JSON.stringify({
         "@context": "https://schema.org",
@@ -215,5 +203,188 @@ const altLocale = currentLang === "en" ? "th_TH" : "en_US";
       <slot />
     </main>
     <Footer t={t} />
+    
+    <!-- Scroll animations -->
+    <script>
+      // Scroll-based animations using Intersection Observer
+      interface ScrollAnimateOptions {
+        threshold?: number;
+        rootMargin?: string;
+        staggerDelay?: number;
+      }
+
+      class ScrollAnimationManager {
+        private observer: IntersectionObserver | null = null;
+        private options: ScrollAnimateOptions;
+        private animatedElements: Set<Element> = new Set();
+
+        constructor(options: ScrollAnimateOptions = {}) {
+          this.options = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px',
+            staggerDelay: 50,
+            ...options,
+          };
+        }
+
+        init(): void {
+          // Check if user prefers reduced motion
+          if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            this.showAllElements();
+            return;
+          }
+
+          // Initialize Intersection Observer for regular elements
+          this.observer = new IntersectionObserver(
+            (entries) => this.handleIntersection(entries),
+            {
+              threshold: this.options.threshold,
+              rootMargin: this.options.rootMargin,
+            }
+          );
+
+          // Initialize separate observer for early animation elements (highlights)
+          const earlyObserver = new IntersectionObserver(
+            (entries) => this.handleIntersection(entries),
+            {
+              threshold: this.options.threshold,
+              rootMargin: '0px 0px -200px 0px', // Trigger much earlier
+            }
+          );
+
+          // Observe all scroll-animate elements
+          this.observeElements(earlyObserver);
+
+          // Handle page visibility changes
+          document.addEventListener('visibilitychange', () => {
+            if (document.visibilityState === 'visible') {
+              this.observeElements(earlyObserver);
+            }
+          });
+        }
+
+        private observeElements(customObserver?: IntersectionObserver): void {
+          const elements = document.querySelectorAll('.scroll-animate:not(.in-view)');
+          const earlyElements = document.querySelectorAll('.scroll-animate-early:not(.in-view)');
+          
+          // Use regular observer for normal elements
+          elements.forEach((element) => {
+            if (!element.classList.contains('scroll-animate-early') && !this.animatedElements.has(element)) {
+              this.observer?.observe(element);
+            }
+          });
+
+          // For highlight cards, use sequential animation
+          if (customObserver) {
+            this.setupSequentialHighlightAnimation();
+          }
+        }
+
+        private setupSequentialHighlightAnimation(): void {
+          const highlightCards = document.querySelectorAll('.scroll-animate-early');
+          
+          if (highlightCards.length === 0) return;
+
+          // Create observer for the first card only
+          const sequentialObserver = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  this.triggerSequentialAnimation();
+                  sequentialObserver.disconnect(); // Only trigger once
+                }
+              });
+            },
+            {
+              threshold: 0.1,
+              rootMargin: '0px 0px -100px 0px', // Trigger when first card is approaching
+            }
+          );
+
+          // Only observe the first highlight card
+          const firstCard = highlightCards[0];
+          if (firstCard && !this.animatedElements.has(firstCard)) {
+            sequentialObserver.observe(firstCard);
+          }
+        }
+
+        private triggerSequentialAnimation(): void {
+          const highlightCards = document.querySelectorAll('.scroll-animate-early:not(.in-view)');
+          
+          highlightCards.forEach((card, index) => {
+            const htmlCard = card as HTMLElement;
+            const delay = index * 200; // 200ms between each card
+            
+            setTimeout(() => {
+              htmlCard.classList.add('in-view');
+              this.animatedElements.add(card);
+            }, delay);
+          });
+        }
+
+        private handleIntersection(entries: IntersectionObserverEntry[]): void {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              this.animateElement(entry.target);
+              this.observer?.unobserve(entry.target);
+              this.animatedElements.add(entry.target);
+            }
+          });
+        }
+
+        private animateElement(element: Element): void {
+          const htmlElement = element as HTMLElement;
+          
+          // Get delay from data attribute or default based on index
+          const delayAttr = htmlElement.dataset.delay;
+          const delay = delayAttr ? parseInt(delayAttr, 10) * 60 : 0;
+
+          // Apply animation with delay
+          setTimeout(() => {
+            htmlElement.classList.add('in-view');
+          }, delay);
+        }
+
+        private showAllElements(): void {
+          // For reduced motion users, show all elements immediately
+          const elements = document.querySelectorAll('.scroll-animate');
+          elements.forEach((element) => {
+            (element as HTMLElement).classList.add('in-view');
+            (element as HTMLElement).style.opacity = '1';
+            (element as HTMLElement).style.transform = 'none';
+          });
+        }
+
+        destroy(): void {
+          this.observer?.disconnect();
+          this.observer = null;
+          this.animatedElements.clear();
+        }
+      }
+
+      // Initialize scroll animations
+      let scrollAnimationManager: ScrollAnimationManager | null = null;
+
+      function initScrollAnimations(): void {
+        if (scrollAnimationManager) {
+          scrollAnimationManager.destroy();
+        }
+        
+        scrollAnimationManager = new ScrollAnimationManager({
+          threshold: 0.1,
+          rootMargin: '0px 0px -30px 0px',
+          staggerDelay: 60,
+        });
+        
+        scrollAnimationManager.init();
+      }
+
+      // Auto-initialize
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initScrollAnimations);
+      } else {
+        initScrollAnimations();
+      }
+    </script>
   </body>
 </html>

@@ -2,13 +2,16 @@
 import type { ContestCardProps } from "../../../../types/card.ts";
 import CardContent from "./CardContent.astro";
 
-export interface Props extends ContestCardProps {}
+export interface Props extends ContestCardProps {
+  "data-delay"?: number;
+}
 
-const { t } = Astro.props;
+const { t, "data-delay": dataDelay } = Astro.props;
 ---
 
 <article
-  class="rounded-2xl border border-gray-300 bg-white shadow-md transition-shadow duration-300 hover:shadow-lg"
+  class="scroll-animate animate-fade-up rounded-2xl border border-gray-300 bg-white shadow-md transition-shadow duration-300 hover:shadow-lg"
+  data-delay={dataDelay}
 >
   {
     t?.href ? (

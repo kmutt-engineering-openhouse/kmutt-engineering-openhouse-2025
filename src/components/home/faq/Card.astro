@@ -1,13 +1,18 @@
 ---
 import type { FAQCardProps } from "../../../types/card.ts";
 
-export interface Props extends FAQCardProps {}
+export interface Props extends FAQCardProps {
+  "data-delay"?: number;
+}
 
-const { question, answer, open = false } = Astro.props;
+const { question, answer, open = false, "data-delay": dataDelay } = Astro.props;
 const accordionId = `faq-${Math.random().toString(36).substr(2, 9)}`;
 ---
 
-<article class="group rounded-2xl border border-gray-300 bg-white">
+<article
+  class="scroll-animate animate-fade-up group rounded-2xl border border-gray-300 bg-white"
+  data-delay={dataDelay}
+>
   <details class="w-full" open={open}>
     <summary
       class="flex w-full cursor-pointer list-none items-center justify-between gap-3 rounded-2xl p-3 transition-colors duration-200 hover:bg-gray-50 focus:outline-none sm:p-4"

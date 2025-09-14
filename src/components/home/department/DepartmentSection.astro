@@ -10,19 +10,27 @@ const items = t.departments.departments;
   <Heading t={t.departments.title || "Departments"} />
   <div class="grid grid-cols-1 gap-4 px-4 sm:auto-rows-fr sm:grid-cols-2 lg:gap-6">
     {
-      items.map((c: any) => (
-        <Card
-          class="w-full sm:h-full"
-          t={{
-            image: c.image,
-            icon: c.icon,
-            title: c.title,
-            alt: c.title,
-            href: c.href,
-            description: c.description,
-          }}
-        />
-      ))
+      items.map((c: any, index: number) => {
+        // Calculate delay based on visual position in grid
+        // For mobile: sequential order (1 column)
+        // For desktop: row-wise order (2 columns) - left to right, top to bottom
+        const col = index % 2; // 0 for left column, 1 for right column
+        const row = Math.floor(index / 2); // row number
+        const visualDelay = row * 2 + col + 1; // ensures proper left-to-right, top-to-bottom order
+
+        return (
+          <Card
+            data-delay={visualDelay}
+            t={{
+              image: c.image,
+              icon: c.icon,
+              title: c.title,
+              alt: c.title,
+              href: c.href,
+            }}
+          />
+        );
+      })
     }
   </div>
 </section>

@@ -1,30 +1,24 @@
 @import "tailwindcss";
 
-/* Theme variables */
 @theme {
-  /* Colors */
   --color-primary: #3a3e94;
   --color-primary-hover: #69357c;
   --color-sub-dark: #2c2f70;
   --color-sub-light: #e7cce9;
 
-  /* Fonts */
   --font-sans:
     "Prompt", "Bai Jamjuree", ui-sans-serif, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial,
     "Noto Sans Thai", sans-serif;
-
   --font-prompt: "Prompt", sans-serif;
   --font-jamjuree: "Bai Jamjuree", sans-serif;
 }
 
-/* Reset */
 body {
   margin: 0;
   padding: 0;
   font-family: var(--font-sans);
 }
 
-/* Font utilities */
 .font-prompt {
   font-family: var(--font-prompt) !important;
 }
@@ -55,7 +49,62 @@ section[id] {
   scroll-margin-top: 1rem;
 }
 
-/* Fade animations */
+/* Scroll-based animations */
+.scroll-animate {
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-animate.animate-fade-up {
+  transform: translateY(30px);
+}
+
+.scroll-animate.animate-fade-left {
+  transform: translateX(-30px);
+}
+
+.scroll-animate.animate-fade-right {
+  transform: translateX(30px);
+}
+
+.scroll-animate.animate-fade-down {
+  transform: translateY(-30px);
+}
+
+.scroll-animate.in-view {
+  opacity: 1;
+  transform: translateY(0) translateX(0);
+}
+
+.scroll-animate-early {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-animate-early.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-animate[data-delay="1"] {
+  transition-delay: 0.06s;
+}
+.scroll-animate[data-delay="2"] {
+  transition-delay: 0.12s;
+}
+.scroll-animate[data-delay="3"] {
+  transition-delay: 0.18s;
+}
+.scroll-animate[data-delay="4"] {
+  transition-delay: 0.24s;
+}
+.scroll-animate[data-delay="5"] {
+  transition-delay: 0.3s;
+}
+
 [data-fade],
 [data-fade-up] {
   opacity: 0;
@@ -88,10 +137,11 @@ section[id] {
   }
 }
 
-/* Reduced motion support with enhanced performance */
+/* Accessibility and performance */
 @media (prefers-reduced-motion: reduce) {
   [data-fade],
   [data-fade-up],
+  .scroll-animate,
   .popup-modal,
   .popup-content,
   [class*="transition"],
@@ -100,13 +150,17 @@ section[id] {
   .group img {
     animation: none !important;
     transition: none !important;
-    opacity: 1;
+    opacity: 1 !important;
     transform: none !important;
     will-change: auto;
   }
+
+  .scroll-animate {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
-/* High contrast support */
 @media (prefers-contrast: high) {
   .card-button::before {
     background: rgba(0, 0, 0, 0.2);
@@ -122,7 +176,7 @@ section[id] {
   }
 }
 
-/* Enhanced Modal Popup Styles with Performance Optimizations */
+/* Modal components */
 .popup-modal {
   border: none;
   padding: 0;
@@ -251,7 +305,6 @@ section[id] {
   flex-direction: column;
 }
 
-/* Mobile responsive */
 @media (max-width: 640px) {
   .popup-modal[open] {
     padding: 0.5rem;
@@ -286,7 +339,6 @@ section[id] {
   }
 }
 
-/* Animation for modal open */
 .popup-modal[open] .popup-content {
   animation: popupSlideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -302,7 +354,6 @@ section[id] {
   }
 }
 
-/* Legacy modal styles for backward compatibility */
 dialog.modal {
   border: none;
   padding: 0;
@@ -332,7 +383,6 @@ dialog.modal::backdrop {
   transition: all 0.2s ease-out;
 }
 
-/* Performance optimizations for card interactions */
 .card-button,
 .group img,
 [class*="hover:shadow"],
@@ -347,13 +397,11 @@ dialog.modal::backdrop {
   will-change: transform, opacity;
 }
 
-/* Optimize transform animations */
 .group-hover\:scale-105:hover {
   transform: scale(1.05);
   backface-visibility: hidden;
 }
 
-/* Card hover effects with performance optimization */
 .card-button {
   position: relative;
   overflow: hidden;
@@ -378,7 +426,6 @@ dialog.modal::backdrop {
   opacity: 1;
 }
 
-/* Modal content animation */
 dialog.modal[open] .modal-content {
   animation: modalSlideIn 0.3s ease-out;
 }
@@ -394,7 +441,6 @@ dialog.modal[open] .modal-content {
   }
 }
 
-/* iOS Safari modal fixes */
 @supports (-webkit-touch-callout: none) {
   dialog.modal[open] {
     position: fixed;
@@ -408,9 +454,6 @@ dialog.modal[open] .modal-content {
   }
 }
 
-/* Additional Performance and Accessibility Optimizations */
-
-/* Optimize image rendering for crisp quality */
 img,
 .astro-imagetools-img {
   image-rendering: -webkit-optimize-contrast;
@@ -418,7 +461,6 @@ img,
   image-rendering: auto;
 }
 
-/* Ensure high-quality image rendering */
 img[src*="webp"],
 img[src*="jpg"],
 img[src*="jpeg"],
@@ -427,7 +469,6 @@ img[src*="png"] {
   image-rendering: -webkit-optimize-contrast;
 }
 
-/* Prevent image blur on transforms */
 .hover\:scale-105:hover,
 .group-hover\:scale-105,
 [class*="scale-"] {
@@ -436,13 +477,11 @@ img[src*="png"] {
   transform-style: preserve-3d;
 }
 
-/* Force GPU acceleration without blur */
 img[class*="transition-transform"] {
   transform: translateZ(0);
   backface-visibility: hidden;
 }
 
-/* High DPI display optimizations */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   img {
     image-rendering: -webkit-optimize-contrast;
@@ -450,12 +489,10 @@ img[class*="transition-transform"] {
   }
 }
 
-/* Content visibility optimization for off-screen cards */
 .card-container {
   contain: layout style;
 }
 
-/* Skip to content for better accessibility */
 .skip-to-content {
   position: absolute;
   top: -40px;
@@ -473,14 +510,9 @@ img[class*="transition-transform"] {
   top: 6px;
 }
 
-/* Improve text legibility */
 article,
 .popup-description {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-/* Prefers color scheme support */
-@media (prefers-color-scheme: dark) {
 }

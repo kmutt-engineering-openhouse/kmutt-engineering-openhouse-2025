@@ -2,9 +2,11 @@
 import type { HighlightCardProps } from "../../../types/card.ts";
 import { Image } from "astro:assets";
 
-export interface Props extends HighlightCardProps {}
+export interface Props extends HighlightCardProps {
+  "data-delay"?: number;
+}
 
-const { src, alt, title, description, index } = Astro.props;
+const { src, alt, title, description, index, "data-delay": dataDelay } = Astro.props;
 const dialogId =
   index !== undefined
     ? `highlight-modal-${index}`
@@ -12,7 +14,8 @@ const dialogId =
 ---
 
 <article
-  class="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-300 hover:shadow-xl lg:h-full"
+  class="scroll-animate scroll-animate-early animate-fade-right group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-300 hover:shadow-xl lg:h-full"
+  data-delay={dataDelay}
 >
   <button
     type="button"

@@ -28,9 +28,9 @@ import iconPE from "../../assets/icons/departments/PE.svg";
 import imgAdmission from "../../assets/images/insight/admission.webp";
 import imgINNOX from "../../assets/images/insight/innox.webp";
 // Contest Section
-import imgIC from "../../assets/images/contest/ic.png";
-import imgEQ from "../../assets/images/contest/eq.png";
-import imgBH from "../../assets/images/contest/bh.png";
+import imgIC from "../../assets/images/contest/ic.webp";
+import imgEQ from "../../assets/images/contest/eq.webp";
+import imgBH from "../../assets/images/contest/bh.webp";
 // Icons
 import iconFacebook from "../../assets/icons/facebook.svg";
 import iconInstagram from "../../assets/icons/instagram.svg";

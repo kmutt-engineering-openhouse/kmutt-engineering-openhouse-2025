@@ -4,7 +4,7 @@ description: "🎉Welcome, Trainees!\nAre you ready to debut as CHEMTRIX togethe
 image: "CHE.webp"
 sections:
   - heading: "Learning"
-    body: "Overview of courses, labs, and learning experiences..."
+    body: "You will learn to analyze and design tools and equipment for chemical production processes, as well as control production in the chemical industry."
   - heading: "Scholarship"
     body: "Scholarship opportunities and how to apply..."
   - heading: "Career Path"

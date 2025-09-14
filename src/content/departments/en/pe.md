@@ -4,7 +4,9 @@ description: "🎉 PRO(DUCT)X1E 1st MINI ALBUM 🎶\nAre you ready to hit the st
 image: "PE.webp"
 sections:
   - heading: "Learning"
-    body: "Overview of courses, labs, and learning experiences..."
+    list:
+      - "<b>Production Engineering</b>\nYou will learn to design and develop production processes using various technologies such as metallurgy, welding, machining, and automated production systems. The curriculum also covers quality control to improve efficiency and reduce waste and costs. Additionally, it includes organizational structure design, logistics and supply chain management, and data analysis using statistics and AI."
+      - "<b>Mechatronics Engineering</b>\nThis describes Mechatronics Engineering, which integrates knowledge from mechanical, electrical, electronics, and computer engineering. The field focuses on developing automated systems using sensors and control systems. The curriculum includes programming microcontrollers, AI, and data analysis to enable these systems to make intelligent decisions. It also covers the design of smart machines and products with integrated sensors."
   - heading: "Scholarship"
     body: "Scholarship opportunities and how to apply..."
   - heading: "Career Path"

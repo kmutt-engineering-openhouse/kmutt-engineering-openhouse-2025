@@ -99,9 +99,9 @@ export default {
         href: "/",
       },
       {
-        title: "Idol",
+        title: "Engi’s Idol Talk",
         description:
-          "Students will get to sit down and talk, ask for advice and techniques for creating a portfolio, and prepare for entrance exams for various fields in the Faculty of Engineering from senior students from all 10 departments, one-on-one.",
+          "Join us for one-on-one sessions with students from all 10 departments of the Faculty of Engineering! Get personalized advice and techniques on Portfolio preparation and university entrance exam strategies\nLearning Building 4 (S12), 1st Floor",
         image: enIdol,
         href: "/",
       },
@@ -307,7 +307,7 @@ export default {
             text: "BangMod Hackathon 2025",
             href: "https://bangmodhackathon.com/",
             icon: iconWebsite,
-          }
+          },
         ],
       },
     ],

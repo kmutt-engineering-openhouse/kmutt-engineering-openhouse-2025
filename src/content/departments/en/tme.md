@@ -4,7 +4,7 @@ description: "⭐️ TME STARLIGHT : THE IDOL DEBUT STAGE! ⭐️\nAre you ready
 image: "TME.webp"
 sections:
   - heading: "Learning"
-    body: "Overview of courses, labs, and learning experiences..."
+    body: "You will learn to analyze and solve problems for smart manufacturing engineering systems and processes, utilizing advanced tools. This includes controlling computer-controlled production machinery, designing tools for automated production systems, and analyzing and selecting materials for production."
   - heading: "Scholarship"
     body: "Scholarship opportunities and how to apply..."
   - heading: "Career Path"

@@ -4,7 +4,7 @@ description: "✨🎶 Awaken the music of innovation within you and step into th
 image: "ENE.webp"
 sections:
   - heading: "Learning"
-    body: "Overview of courses, labs, and learning experiences..."
+    body: "You will learn about hardware, software, electronic systems, communication systems, and reliable, secure, and fast data transmission. The curriculum covers networks of electronic devices and communication systems, related engineering design, and intelligent decision-making systems such as Machine Learning, Fiber Optic, Wireless Communication, and Embedded Systems to support the country's advanced technological development."
   - heading: "Scholarship"
     body: "Scholarship opportunities and how to apply..."
   - heading: "Career Path"

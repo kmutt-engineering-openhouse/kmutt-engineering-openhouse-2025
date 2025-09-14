@@ -186,6 +186,7 @@ export default {
         location: [
           {
             text: "อาคารเรียนรวม 4 (S12) ชั้น 1 ด้านหน้าศูนย์ ICE",
+            href: "https://maps.app.goo.gl/hfSeMHNDbkmEZfGU6",
             icon: iconLOC,
           },
           {
@@ -209,6 +210,7 @@ export default {
         location: [
           {
             text: "อาคารวิศววัฒนะ (S4)",
+            href: "https://maps.app.goo.gl/w1h5V5dBoTa3UNr87",
             icon: iconLOC,
           },
           {
@@ -263,6 +265,7 @@ export default {
         location: [
           {
             text: "อาคารสำนักงานหอสมุด (N10) มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี",
+            href: "https://maps.app.goo.gl/p1oFmS8yp9duxFRJA",
             icon: iconLOC,
           },
         ],
@@ -276,10 +279,12 @@ export default {
         location: [
           {
             text: "รอบคัดเลือก: อาคารเรียนรวม 2 (N17)",
+            href: "https://maps.app.goo.gl/MXUNduPtscmUkYj59",
             icon: iconLOC,
           },
           {
             text: "รอบรองชนะเลิศ & รอบชิงชนะเลิศ: โรงพละศึกษา อาคารพระจอมเกล้าราชานุสรณ์ 190 ปี (S14)",
+            href: "https://maps.app.goo.gl/3TsAguSd91EkBRA59",
             icon: iconLOC,
           },
         ],
@@ -293,6 +298,7 @@ export default {
         location: [
           {
             text: "อาคารวิศววัฒนะ (S4) ชั้น 11  มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี",
+            href: "https://maps.app.goo.gl/65YM3k6JdvKM1tLD8",
             icon: iconLOC,
           },
         ],

@@ -10,14 +10,14 @@ const { t } = Astro.props;
 <div class="flex w-full flex-col">
   <div class="flex flex-col p-4">
     <header class="flex flex-col gap-2">
-      <h3 class="font-jamjuree text-primary-hover text-xl leading-6 font-bold tracking-normal">
+      <h3 class="font-jamjuree text-xl font-bold leading-6 tracking-normal text-primary-hover">
         {t.title}
       </h3>
     </header>
 
     <div class="mt-3 flex flex-col gap-3">
-      <div class="font-jamjuree text-sm leading-6 font-normal tracking-normal">
-        <p class="indent-4 whitespace-pre-line text-gray-800">
+      <div class="font-jamjuree text-sm font-normal leading-6 tracking-normal">
+        <p class="whitespace-pre-line indent-4 text-gray-800">
           {t.description}
         </p>
         {
@@ -38,7 +38,7 @@ const { t } = Astro.props;
                     <div>
                       {paragraph.split("\n").map((line: string, index: number) => (
                         <p
-                          class={`text-gray-800 ${(index === 0 && line.includes("รายละเอียดเพิ่มเติม")) || line.includes("More details") ? "text-primary-hover mb-1 font-semibold" : index === 0 && (line.includes("สิทธิพิเศษ") || line.includes("Exclusive")) ? "mb-2 font-medium text-gray-900" : "mb-1"}`}
+                          class={`text-gray-800 ${(index === 0 && line.includes("รายละเอียดเพิ่มเติม")) || line.includes("More details") ? "mb-1 font-semibold text-primary-hover" : index === 0 && (line.includes("สิทธิพิเศษ") || line.includes("Exclusive")) ? "mb-2 font-medium text-gray-900" : "mb-1"}`}
                         >
                           {line}
                         </p>
@@ -59,7 +59,7 @@ const { t } = Astro.props;
                 href={loc.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="-m-1 flex items-center gap-2 rounded p-1 whitespace-pre-line transition-colors duration-200 hover:bg-gray-50 focus:outline-none"
+                class="-m-1 flex items-center gap-2 whitespace-pre-line rounded p-1 transition-colors duration-200 hover:bg-gray-50 focus:outline-none"
                 aria-label={`${loc.text} (opens in new tab)`}
               >
                 {loc.icon && (

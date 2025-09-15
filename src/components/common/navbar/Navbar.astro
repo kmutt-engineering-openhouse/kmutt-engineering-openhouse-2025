@@ -23,7 +23,7 @@ const menu = [
   >
     <button
       id="back-btn"
-      class="text-primary hover:text-primary-hover absolute flex hidden h-10 w-10 items-center justify-center border-0 transition-all duration-200 focus:outline-none lg:hidden"
+      class="absolute flex hidden h-10 w-10 items-center justify-center border-0 text-primary transition-all duration-200 hover:text-primary-hover focus:outline-none lg:hidden"
       aria-label="Go back"
       style="display: none;"
     >
@@ -49,7 +49,7 @@ const menu = [
         menu.map((m) => (
           <a
             href={m.href}
-            class="font-prompt text-primary hover:text-primary-hover text-base font-bold leading-none transition-colors duration-200"
+            class="font-prompt text-base font-bold leading-none text-primary transition-colors duration-200 hover:text-primary-hover"
           >
             {m.title}
           </a>
@@ -75,7 +75,7 @@ const menu = [
 
       <button
         id="menu-btn"
-        class="text-primary hover:text-primary-hover border-0 p-2 transition-all duration-200 focus:rounded-md focus:bg-gray-100 focus:outline-none lg:hidden"
+        class="border-0 p-2 text-primary transition-all duration-200 hover:text-primary-hover focus:rounded-md focus:bg-gray-100 focus:outline-none lg:hidden"
         aria-expanded="false"
         aria-controls="mobile-menu"
         aria-label="Toggle menu"
@@ -118,7 +118,7 @@ const menu = [
           menu.map((m) => (
             <a
               href={m.href}
-              class="font-prompt text-primary hover:text-primary-hover block rounded-lg border-0 px-4 py-2 text-center text-base font-bold leading-none transition-all duration-200 focus:bg-gray-100 focus:outline-none"
+              class="block rounded-lg border-0 px-4 py-2 text-center font-prompt text-base font-bold leading-none text-primary transition-all duration-200 hover:text-primary-hover focus:bg-gray-100 focus:outline-none"
             >
               {m.title}
             </a>

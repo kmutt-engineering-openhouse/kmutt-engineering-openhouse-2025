@@ -20,7 +20,7 @@ const accordionId = `faq-${Math.random().toString(36).substr(2, 9)}`;
       aria-controls={accordionId}
     >
       <h3
-        class="font-prompt text-left text-sm leading-tight font-semibold text-gray-900 sm:text-base"
+        class="text-left font-prompt text-sm font-semibold leading-tight text-gray-900 sm:text-base"
       >
         {question}
       </h3>
@@ -38,7 +38,7 @@ const accordionId = `faq-${Math.random().toString(36).substr(2, 9)}`;
       role="region"
       aria-labelledby={`${accordionId}-trigger`}
     >
-      <p class="font-jamjuree text-sm leading-relaxed whitespace-pre-line sm:text-base">
+      <p class="whitespace-pre-line font-jamjuree text-sm leading-relaxed sm:text-base">
         {answer}
       </p>
     </div>

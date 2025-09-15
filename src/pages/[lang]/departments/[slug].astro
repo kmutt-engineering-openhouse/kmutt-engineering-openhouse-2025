@@ -57,13 +57,13 @@ if (data.image) {
 
     {
       lang === "th" ? (
-        <h1 class="font-prompt text-center text-xl">
+        <h1 class="text-center font-prompt text-xl">
           วิศวกรรม
           <br />
           <span class="text-4xl font-extrabold">{data.title}</span>
         </h1>
       ) : (
-        <h1 class="font-prompt text-center text-xl">
+        <h1 class="text-center font-prompt text-xl">
           <>
             <span class="text-4xl font-extrabold">{data.title}</span>
             <br />
@@ -73,7 +73,7 @@ if (data.image) {
       )
     }
 
-    <p class="font-jamjuree whitespace-pre-line text-center text-sm leading-relaxed sm:text-base">
+    <p class="whitespace-pre-line text-center font-jamjuree text-sm leading-relaxed sm:text-base">
       {data.description}
     </p>
 
@@ -82,8 +82,8 @@ if (data.image) {
         data.sections?.map((s) =>
           s.contract ? (
             <section class="rounded-2xl border border-gray-300 bg-white p-4">
-              <h2 class="font-prompt text-primary text-lg font-semibold sm:text-xl">{s.heading}</h2>
-              <ul class="font-jamjuree mt-2 space-y-1 text-sm sm:text-base">
+              <h2 class="font-prompt text-lg font-semibold text-primary sm:text-xl">{s.heading}</h2>
+              <ul class="mt-2 space-y-1 font-jamjuree text-sm sm:text-base">
                 {s.contract.map((item) => (
                   <li class="flex items-center gap-2">
                     {item.type === "facebook" && <FacebookIcon class="inline h-5 w-5" />}
@@ -105,14 +105,14 @@ if (data.image) {
             </section>
           ) : (
             <section class="rounded-2xl border border-gray-300 bg-white p-4">
-              <h2 class="font-prompt text-primary text-lg font-semibold sm:text-xl">{s.heading}</h2>
+              <h2 class="font-prompt text-lg font-semibold text-primary sm:text-xl">{s.heading}</h2>
               {s.body && (
-                <p class="font-jamjuree mt-2 whitespace-pre-line text-sm leading-relaxed sm:text-base">
+                <p class="mt-2 whitespace-pre-line font-jamjuree text-sm leading-relaxed sm:text-base">
                   {s.body}
                 </p>
               )}
               {s.list && (
-                <ul class="font-jamjuree mt-2 list-disc pl-5 text-sm leading-relaxed sm:text-base">
+                <ul class="mt-2 list-disc pl-5 font-jamjuree text-sm leading-relaxed sm:text-base">
                   {s.list.map((li) => (
                     <li set:html={li} />
                   ))}

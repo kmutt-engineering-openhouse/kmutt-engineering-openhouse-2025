@@ -148,7 +148,7 @@ export default {
         icon: iconCE,
       },
       {
-        title: "ควบคุมและเครื่องมือวัด",
+        title: "ระบบควบคุมและเครื่องมือวัด",
         href: "/th/departments/inc/",
         image: imgINC,
         icon: iconINC,
@@ -160,7 +160,7 @@ export default {
         icon: iconENV,
       },
       {
-        title: "อิเล็กทรอนิกส์",
+        title: "อิเล็กทรอนิกส์และโทรคมนาคม",
         href: "/th/departments/ene/",
         image: imgENE,
         icon: iconENE,

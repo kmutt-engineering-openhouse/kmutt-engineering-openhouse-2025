@@ -1,0 +1,13 @@
+Contact: mailto:stdunion.eng@kmutt.ac.th
+Expires: 2025-12-31T23:59:59.000Z
+Preferred-Languages: th, en
+Canonical: https://bangmod.engineer/.well-known/security.txt
+
+# Security information for KMUTT Engineering Open House 2025
+# https://bangmod.engineer
+
+# This is an educational website for KMUTT Engineering Open House 2025.
+# For security issues, please contact us through the provided email.
+
+Policy: https://bangmod.engineer/
+Acknowledgments: https://bangmod.engineer/

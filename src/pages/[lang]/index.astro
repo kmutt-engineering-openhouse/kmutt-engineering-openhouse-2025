@@ -1,15 +1,43 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { getDict } from "../../i18n/getDict";
-import HeroSection from "../../components/hero/HeroSection.astro";
+import HeroSection from "../../components/home/hero/HeroSection.astro";
+import HighlightSection from "../../components/home/highlight/HighlightSection.astro";
+import DepartmentSection from "../../components/home/department/DepartmentSection.astro";
+import MapSection from "../../components/home/map/MapSection.astro";
+import FAQSection from "../../components/home/faq/FAQSection.astro";
+import ContestSection from "../../components/home/contest/ContestSection.astro";
+import InsightSection from "../../components/home/insight/InsightSection.astro";
+// import ActivitySection from "../../components/home/activity/ActivitySection.astro";
 
 export function getStaticPaths() {
   return ["th", "en"].map((lang) => ({ params: { lang } }));
 }
 const { lang } = Astro.params;
 const t = getDict(lang === "en" ? "en" : "th");
+
+const seo = {
+  title: "KMUTT Engineering Open House 2025",
+  description:
+    lang === "en"
+      ? "Join KMUTT Engineering Open House 2025 on October 10-12, 2025. Explore 10 engineering departments, workshops, exhibitions, and competitions at King Mongkut's University of Technology Thonburi (Bangmod Campus). Free registration for high school students, parents, and teachers."
+      : "ร่วมงานเปิดบ้านคณะวิศวกรรมศาสตร์ มจธ. 2568 วันที่ 10-12 ตุลาคม 2568 สำรวจ 10 ภาควิชาวิศวกรรม เวิร์คช็อป นิทรรศการ และการแข่งขันที่มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี (บางมด) ลงทะเบียนฟรีสำหรับนักเรียนมัธยมปลาย ผู้ปกครอง และครู",
+  keywords:
+    lang === "en"
+      ? "KMUTT Engineering Open House 2025, Faculty of Engineering, Bangmod, KMUTT, Workshop, Exhibition, Competition, University, Thailand, Engineering Departments, High School, Education"
+      : "งานเปิดบ้านคณะวิศวกรรมศาสตร์, มจธ, 2568, บางมด, เวิร์คช็อป, นิทรรศการ, การแข่งขัน, มหาวิทยาลัย, วิศวกรรม, นักเรียนมัธยมปลาย, การศึกษา",
+  image: "https://bangmod.engineer/src/assets/logo/oph2025.webp",
+  type: "website",
+};
 ---
 
-<Layout>
+<Layout t={t} currentLang={lang} seo={seo}>
   <HeroSection t={t} />
+  <HighlightSection t={t} />
+  <DepartmentSection t={t} />
+  <InsightSection t={t} />
+  <!-- <ActivitySection t={t} /> -->
+  <ContestSection t={t} />
+  <MapSection t={t} />
+  <FAQSection t={t} />
 </Layout>

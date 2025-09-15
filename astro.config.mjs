@@ -1,23 +1,66 @@
 // @ts-check
 import { defineConfig } from "astro/config";
-
-import tailwindcss from "@tailwindcss/vite";
-
-import mdx from "@astrojs/mdx";
-import sitemap from "@astrojs/sitemap";
+import tailwind from "@astrojs/tailwind";
 
 export default defineConfig({
-  site: "https://bangmod.engineer",
-  compressHTML: true,
-  prefetch: true,
-  image: {
-    service: {
-      entrypoint: "astro/assets/services/sharp",
+  integrations: [
+    tailwind({
+      applyBaseStyles: false,
+    }),
+  ],
+
+  vite: {
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            // Vendor dependencies
+            if (id.includes("node_modules")) {
+              if (id.includes("astro")) return "astro";
+              if (id.includes("tailwindcss")) return "tailwind";
+              return "vendor";
+            }
+
+            // Component groups
+            if (id.includes("src/components/")) {
+              if (id.includes("navbar") || id.includes("footer")) return "layout";
+              if (id.includes("hero") || id.includes("highlight")) return "hero";
+              if (id.includes("department") || id.includes("contest")) return "content";
+              return "components";
+            }
+
+            // Page and utility chunks
+            if (id.includes("src/pages/")) return "pages";
+            if (id.includes("src/i18n/") || id.includes("src/types/")) return "common";
+
+            return "main";
+          },
+        },
+      },
+    },
+
+    optimizeDeps: {
+      include: ["sharp"],
     },
   },
-  vite: {
-    plugins: [tailwindcss()],
+
+  server: {
+    port: 4321,
+    host: true,
   },
-  integrations: [mdx(), sitemap()],
-  trailingSlash: "always",
+
+  prefetch: {
+    defaultStrategy: "hover",
+  },
+
+  i18n: {
+    defaultLocale: "th",
+    locales: ["th", "en"],
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
+
+  outDir: "./dist",
+  publicDir: "./public",
 });

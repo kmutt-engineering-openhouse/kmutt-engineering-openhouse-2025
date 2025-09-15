@@ -1,24 +1,534 @@
 ---
 import "../styles/global.css";
+import Navbar from "../components/common/navbar/Navbar.astro";
+import Footer from "../components/common/footer/Footer.astro";
+
+interface Props {
+  t: any;
+  currentLang: string;
+  seo?: {
+    title?: string;
+    description?: string;
+    keywords?: string;
+    image?: string;
+    type?: string;
+    noIndex?: boolean;
+    canonicalUrl?: string;
+  };
+}
+
+const { t, currentLang, seo } = Astro.props;
+
+const siteName = "KMUTT Engineering Open House 2025";
+const defaultTitle = "KMUTT Engineering Open House 2025";
+
+const defaultDescription =
+  currentLang === "en"
+    ? "Join KMUTT Engineering Open House 2025 on October 10-12, 2025. Explore 10 engineering departments, workshops, exhibitions, and competitions at King Mongkut's University of Technology Thonburi (Bangmod Campus)."
+    : "ร่วมงานเปิดบ้านคณะวิศวกรรมศาสตร์ มจธ. 2568 วันที่ 10-12 ตุลาคม 2568 สำรวจ 10 ภาควิชาวิศวกรรม เวิร์คช็อป นิทรรศการ และการแข่งขันที่มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี (บางมด)";
+
+const defaultKeywords =
+  currentLang === "en"
+    ? "KMUTT, Engineering, Open House 2025, Faculty of Engineering, Bangmod, Workshop, Exhibition, Competition"
+    : "มจธ, คณะวิศวกรรมศาสตร์, เปิดบ้าน, 2568, บางมด, เวิร์คช็อป, นิทรรศการ, การแข่งขัน";
+
+const title = seo?.title || defaultTitle;
+const description = seo?.description || defaultDescription;
+const keywords = seo?.keywords || defaultKeywords;
+const ogImage = seo?.image || "https://bangmod.engineer/favicon.ico";
+const ogType = seo?.type || "website";
+const noIndex = seo?.noIndex || false;
+
+const baseUrl = "https://bangmod.engineer";
+const currentPath = Astro.url.pathname;
+const canonicalUrl = seo?.canonicalUrl || `${baseUrl}${currentPath}`;
+const altLang = currentLang === "en" ? "th" : "en";
+const altUrl = currentPath.replace(`/${currentLang}/`, `/${altLang}/`);
+
+const locale = currentLang === "en" ? "en_US" : "th_TH";
+const altLocale = currentLang === "en" ? "th_TH" : "en_US";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={currentLang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Font optimization -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Preload critical images -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;700&family=Prompt:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      href="/src/assets/logo/kmutt+65+eng+smo.webp"
+      as="image"
+      type="image/webp"
+      fetchpriority="high"
     />
+    <link
+      rel="preload"
+      href="/src/assets/logo/oph2025.webp"
+      as="image"
+      type="image/webp"
+      fetchpriority="high"
+    />
+
+    <!-- Async font loading -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;700&family=Prompt:wght@400;500;600;700;800&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;700&family=Prompt:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+
+    <!-- Performance hints -->
+    <link rel="preload" href="/favicon.ico" as="image" type="image/x-icon" />
+    <link rel="dns-prefetch" href="//bangmod.engineer" />
+    <link rel="prefetch" href={`/${altLang}${currentPath.replace(/^\/(th|en)/, "")}`} />
+
+    <!-- SEO meta tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="KMUTT Engineering Faculty" />
+    <meta name="robots" content={noIndex ? "noindex, nofollow" : "index, follow"} />
+    <meta name="googlebot" content={noIndex ? "noindex, nofollow" : "index, follow"} />
+
+    <!-- Canonical and hreflang -->
+    <link rel="canonical" href={canonicalUrl} />
+    <link
+      rel="alternate"
+      hreflang="th"
+      href={`${baseUrl}/th${currentPath.replace(/^\/(th|en)/, "")}`}
+    />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href={`${baseUrl}/en${currentPath.replace(/^\/(th|en)/, "")}`}
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href={`${baseUrl}${currentPath.replace(/^\/(th|en)/, "")}`}
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content={title} />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:locale" content={locale} />
+    <meta property="og:locale:alternate" content={altLocale} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalUrl} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={title} />
+
+    <!-- Theme and app config -->
+    <meta name="theme-color" content="#1e40af" />
+    <meta name="application-name" content={siteName} />
+    <meta name="msapplication-TileColor" content="#1e40af" />
+
+    <!-- Geographic meta -->
+    <meta name="geo.region" content="TH-10" />
+    <meta name="geo.placename" content="Bangkok, Thailand" />
+    <meta name="geo.position" content="13.6518;100.4933" />
+    <meta name="ICBM" content="13.6518, 100.4933" />
+
+    <!-- Critical CSS for above-the-fold content -->
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family:
+          "Prompt", "Bai Jamjuree", ui-sans-serif, system-ui, "Segoe UI", Roboto, "Helvetica Neue",
+          Arial, "Noto Sans Thai", sans-serif;
+      }
+
+      .antialiased {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      /* Critical navbar styles */
+      .fixed {
+        position: fixed;
+      }
+      .top-0 {
+        top: 0px;
+      }
+      .left-0 {
+        left: 0px;
+      }
+      .right-0 {
+        right: 0px;
+      }
+      .z-50 {
+        z-index: 50;
+      }
+      .bg-white {
+        background-color: rgb(255 255 255);
+      }
+      .shadow-sm {
+        box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      }
+
+      /* Critical hero section styles */
+      .min-h-screen {
+        min-height: 100vh;
+      }
+      .flex {
+        display: flex;
+      }
+      .items-center {
+        align-items: center;
+      }
+      .justify-center {
+        justify-content: center;
+      }
+      .text-center {
+        text-align: center;
+      }
+      .bg-gradient-to-br {
+        background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+      }
+      .from-primary {
+        --tw-gradient-from: #3a3e94;
+        --tw-gradient-to: rgb(58 62 148 / 0);
+        --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+      }
+      .to-primary-hover {
+        --tw-gradient-to: #69357c;
+      }
+
+      /* Hide non-critical content initially */
+      .scroll-animate {
+        opacity: 0;
+        will-change: opacity, transform;
+      }
+
+      .text-white {
+        color: rgb(255 255 255);
+      }
+      .font-bold {
+        font-weight: 700;
+      }
+      .text-4xl {
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+      }
+      .mb-4 {
+        margin-bottom: 1rem;
+      }
+      .mb-8 {
+        margin-bottom: 2rem;
+      }
+    </style>
+
+    <!-- Favicons -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-    <title>KMUTT Engineering Open House 2025</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico" />
+
+    <!-- Event structured data (homepage only) -->
+    {
+      currentPath === `/${currentLang}/` && (
+        <script type="application/ld+json" set:html={JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": ["Event", "EducationalEvent"],
+          name:
+            currentLang === "en"
+              ? "KMUTT Engineering Open House 2025"
+              : "งานเปิดบ้านคณะวิศวกรรมศาสตร์ มจธ. 2568",
+          alternateName:
+            currentLang === "en"
+              ? "งานเปิดบ้านคณะวิศวกรรมศาสตร์ มจธ. 2568"
+              : "KMUTT Engineering Open House 2025",
+          description: description,
+          startDate: "2025-10-10T09:00:00+07:00",
+          endDate: "2025-10-12T17:00:00+07:00",
+          eventStatus: "https://schema.org/EventScheduled",
+          eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+          location: {
+            "@type": "Place",
+            name: "King Mongkut's University of Technology Thonburi",
+            alternateName: "มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "126 Pracha Uthit Road, Bangmod",
+              addressLocality: "Thung Khru",
+              addressRegion: "Bangkok",
+              postalCode: "10140",
+              addressCountry: "TH",
+            },
+            geo: {
+              "@type": "GeoCoordinates",
+              latitude: 13.6518,
+              longitude: 100.4933,
+            },
+          },
+          organizer: {
+            "@type": "Organization",
+            name: "Faculty of Engineering, KMUTT",
+            alternateName: "คณะวิศวกรรมศาสตร์ มจธ.",
+            url: "https://bangmod.engineer",
+            sameAs: [
+              "https://www.facebook.com/100087709743668",
+              "https://www.instagram.com/samovidva_bangmod",
+            ],
+            logo: "https://bangmod.engineer/favicon.ico",
+          },
+          offers: {
+            "@type": "Offer",
+            price: "0",
+            priceCurrency: "THB",
+            availability: "https://schema.org/InStock",
+            validFrom: "2025-01-01T00:00:00+07:00",
+          },
+          image: [ogImage],
+          url: canonicalUrl,
+          inLanguage: currentLang === "en" ? "en-US" : "th-TH",
+          audience: {
+            "@type": "EducationalAudience",
+            educationalRole: "student",
+            audienceType: "high school students, parents, teachers",
+          },
+        })}>
+        </script>
+      )
+    }
+
+    <!-- Organization structured data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "Faculty of Engineering, KMUTT",
+      alternateName: "คณะวิศวกรรมศาสตร์ มจธ.",
+      url: "https://bangmod.engineer",
+      logo: "https://bangmod.engineer/favicon.ico",
+      description:
+        currentLang === "en"
+          ? "Faculty of Engineering at King Mongkut's University of Technology Thonburi (KMUTT) - Leading engineering education in Thailand"
+          : "คณะวิศวกรรมศาสตร์ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี - การศึกษาวิศวกรรมชั้นนำของประเทศไทย",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "126 Pracha Uthit Road, Bangmod",
+        addressLocality: "Thung Khru",
+        addressRegion: "Bangkok",
+        postalCode: "10140",
+        addressCountry: "TH",
+      },
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "customer service",
+        availableLanguage: ["Thai", "English"],
+      },
+      sameAs: [
+        "https://www.facebook.com/100087709743668",
+        "https://www.instagram.com/samovidva_bangmod",
+      ],
+    })}>
+    </script>
   </head>
   <body class="antialiased">
-    <main class="flex justify-center">
+    <Navbar t={t} currentLang={currentLang} />
+    
+    <main class="flex flex-col justify-center">
       <slot />
     </main>
+    
+    <Footer t={t} />
+
+    <!-- Scroll animations -->
+    <script>
+      interface ScrollAnimateOptions {
+        threshold?: number;
+        rootMargin?: string;
+        staggerDelay?: number;
+      }
+
+      class ScrollAnimationManager {
+        private observer: IntersectionObserver | null = null;
+        private options: ScrollAnimateOptions;
+        private animatedElements: Set<Element> = new Set();
+
+        constructor(options: ScrollAnimateOptions = {}) {
+          this.options = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px",
+            staggerDelay: 50,
+            ...options,
+          };
+        }
+
+        init(): void {
+          // Respect user preference for reduced motion
+          if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            this.showAllElements();
+            return;
+          }
+
+          this.observer = new IntersectionObserver((entries) => this.handleIntersection(entries), {
+            threshold: this.options.threshold,
+            rootMargin: this.options.rootMargin,
+          });
+
+          const earlyObserver = new IntersectionObserver(
+            (entries) => this.handleIntersection(entries),
+            {
+              threshold: this.options.threshold,
+              rootMargin: "0px 0px -200px 0px",
+            }
+          );
+
+          this.observeElements(earlyObserver);
+
+          document.addEventListener("visibilitychange", () => {
+            if (document.visibilityState === "visible") {
+              this.observeElements(earlyObserver);
+            }
+          });
+        }
+
+        private observeElements(customObserver?: IntersectionObserver): void {
+          const elements = document.querySelectorAll(".scroll-animate:not(.in-view)");
+          const earlyElements = document.querySelectorAll(".scroll-animate-early:not(.in-view)");
+
+          elements.forEach((element) => {
+            if (
+              !element.classList.contains("scroll-animate-early") &&
+              !this.animatedElements.has(element)
+            ) {
+              this.observer?.observe(element);
+            }
+          });
+
+          if (customObserver) {
+            this.setupSequentialHighlightAnimation();
+          }
+        }
+
+        private setupSequentialHighlightAnimation(): void {
+          const highlightCards = document.querySelectorAll(".scroll-animate-early");
+
+          if (highlightCards.length === 0) return;
+
+          const sequentialObserver = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  this.triggerSequentialAnimation();
+                  sequentialObserver.disconnect();
+                }
+              });
+            },
+            {
+              threshold: 0.1,
+              rootMargin: "0px 0px -100px 0px",
+            }
+          );
+
+          const firstCard = highlightCards[0];
+          if (firstCard && !this.animatedElements.has(firstCard)) {
+            sequentialObserver.observe(firstCard);
+          }
+        }
+
+        private triggerSequentialAnimation(): void {
+          const highlightCards = document.querySelectorAll(".scroll-animate-early:not(.in-view)");
+
+          highlightCards.forEach((card, index) => {
+            const htmlCard = card as HTMLElement;
+            const delay = index * 200;
+
+            setTimeout(() => {
+              htmlCard.classList.add("in-view");
+              this.animatedElements.add(card);
+            }, delay);
+          });
+        }
+
+        private handleIntersection(entries: IntersectionObserverEntry[]): void {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              this.animateElement(entry.target);
+              this.observer?.unobserve(entry.target);
+              this.animatedElements.add(entry.target);
+            }
+          });
+        }
+
+        private animateElement(element: Element): void {
+          const htmlElement = element as HTMLElement;
+
+          const delayAttr = htmlElement.dataset.delay;
+          const delay = delayAttr ? parseInt(delayAttr, 10) * 60 : 0;
+
+          setTimeout(() => {
+            htmlElement.classList.add("in-view");
+          }, delay);
+        }
+
+        private showAllElements(): void {
+          const elements = document.querySelectorAll(".scroll-animate");
+          elements.forEach((element) => {
+            (element as HTMLElement).classList.add("in-view");
+            (element as HTMLElement).style.opacity = "1";
+            (element as HTMLElement).style.transform = "none";
+          });
+        }
+
+        destroy(): void {
+          this.observer?.disconnect();
+          this.observer = null;
+          this.animatedElements.clear();
+        }
+      }
+
+      let scrollAnimationManager: ScrollAnimationManager | null = null;
+
+      function initScrollAnimations(): void {
+        if (scrollAnimationManager) {
+          scrollAnimationManager.destroy();
+        }
+
+        scrollAnimationManager = new ScrollAnimationManager({
+          threshold: 0.1,
+          rootMargin: "0px 0px -30px 0px",
+          staggerDelay: 60,
+        });
+
+        scrollAnimationManager.init();
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initScrollAnimations);
+      } else {
+        initScrollAnimations();
+      }
+    </script>
   </body>
 </html>

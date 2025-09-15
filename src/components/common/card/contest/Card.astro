@@ -1,0 +1,33 @@
+---
+import type { ContestCardProps } from "../../../../types/card.ts";
+import CardContent from "./CardContent.astro";
+
+export interface Props extends ContestCardProps {
+  "data-delay"?: number;
+}
+
+const { t, "data-delay": dataDelay } = Astro.props;
+---
+
+<article
+  class="scroll-animate animate-fade-up rounded-2xl border border-gray-300 bg-white shadow-md transition-shadow duration-300 hover:shadow-lg"
+  data-delay={dataDelay}
+>
+  {
+    t?.href ? (
+      <a
+        href={t.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="block rounded-2xl focus:outline-none"
+        aria-label={`View details for ${t.title} (opens in new tab)`}
+      >
+        <CardContent t={t} />
+      </a>
+    ) : (
+      <div>
+        <CardContent t={t} />
+      </div>
+    )
+  }
+</article>

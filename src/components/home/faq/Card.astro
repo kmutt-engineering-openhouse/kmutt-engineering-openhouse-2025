@@ -1,0 +1,71 @@
+---
+import type { FAQCardProps } from "../../../types/card.ts";
+
+export interface Props extends FAQCardProps {
+  "data-delay"?: number;
+}
+
+const { question, answer, open = false, "data-delay": dataDelay } = Astro.props;
+const accordionId = `faq-${Math.random().toString(36).substr(2, 9)}`;
+---
+
+<article
+  class="scroll-animate animate-fade-up group rounded-2xl border border-gray-300 bg-white"
+  data-delay={dataDelay}
+>
+  <details class="w-full" open={open}>
+    <summary
+      class="flex w-full cursor-pointer list-none items-center justify-between gap-3 rounded-2xl p-3 transition-colors duration-200 hover:bg-gray-50 focus:outline-none sm:p-4"
+      aria-expanded={open}
+      aria-controls={accordionId}
+    >
+      <h3
+        class="text-left font-prompt text-sm font-semibold leading-tight text-gray-900 sm:text-base"
+      >
+        {question}
+      </h3>
+      <svg
+        viewBox="0 0 20 20"
+        aria-hidden="true"
+        class="size-5 shrink-0 text-gray-600 transition-transform duration-300 group-open:rotate-180"
+      >
+        <path d="M5 7l5 5 5-5" fill="currentColor"></path>
+      </svg>
+    </summary>
+    <div
+      id={accordionId}
+      class="px-3 pb-3 text-gray-700 sm:px-4 sm:pb-4"
+      role="region"
+      aria-labelledby={`${accordionId}-trigger`}
+    >
+      <p class="whitespace-pre-line font-jamjuree text-sm leading-relaxed sm:text-base">
+        {answer}
+      </p>
+    </div>
+  </details>
+</article>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const summaries = document.querySelectorAll("details summary");
+
+    summaries.forEach((summary) => {
+      const details = summary.closest("details") as HTMLDetailsElement;
+
+      summary.addEventListener("keydown", (e) => {
+        const keyEvent = e as KeyboardEvent;
+        if (keyEvent.key === "Enter" || keyEvent.key === " ") {
+          keyEvent.preventDefault();
+          details.open = !details.open;
+          summary.setAttribute("aria-expanded", String(details.open));
+        }
+      });
+
+      summary.addEventListener("click", () => {
+        setTimeout(() => {
+          summary.setAttribute("aria-expanded", String(details.open));
+        }, 0);
+      });
+    });
+  });
+</script>

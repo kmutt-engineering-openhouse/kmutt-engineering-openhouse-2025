@@ -1,0 +1,147 @@
+---
+import type { HighlightCardProps } from "../../../types/card.ts";
+import { Image } from "astro:assets";
+
+export interface Props extends HighlightCardProps {
+  "data-delay"?: number;
+}
+
+const { src, alt, title, description, index, "data-delay": dataDelay } = Astro.props;
+const dialogId =
+  index !== undefined
+    ? `highlight-modal-${index}`
+    : `highlight-modal-${Math.random().toString(36).substr(2, 9)}`;
+---
+
+<article
+  class="scroll-animate scroll-animate-early animate-fade-right group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-300 hover:shadow-xl lg:h-full"
+  data-delay={dataDelay}
+>
+  <button
+    type="button"
+    onclick={`document.getElementById('${dialogId}').showModal()`}
+    class="card-button relative aspect-[3/4] w-full overflow-hidden rounded-t-2xl focus:outline-none"
+    aria-label={`View details for ${title}`}
+    aria-describedby={description ? `${dialogId}-description` : undefined}
+  >
+    <Image
+      src={src}
+      alt={alt}
+      class="group-hover:scale-103 h-full w-full object-cover transition-transform duration-300 will-change-transform"
+      sizes="(max-width: 640px) 70vw, (max-width: 768px) 50vw, (max-width: 1024px) 25vw, 400px"
+      loading="lazy"
+      width={600}
+      height={800}
+      quality={95}
+      decoding="async"
+    />
+  </button>
+</article>
+
+<!-- Enhanced Modal Popup -->
+<dialog
+  id={dialogId}
+  class="popup-modal backdrop:bg-black/50 backdrop:backdrop-blur-sm"
+  onclick="if (event.target === this) this.close()"
+  aria-labelledby={`${dialogId}-title`}
+  aria-describedby={description ? `${dialogId}-description` : undefined}
+  role="dialog"
+  aria-modal="true"
+>
+  <div class="popup-content" role="document">
+    <!-- Header with Image -->
+    <header class="popup-header">
+      <div class="popup-image-container">
+        <Image
+          src={src}
+          alt={alt}
+          class="popup-image"
+          sizes="(max-width: 640px) 100vw, 600px"
+          loading="eager"
+          width={1200}
+          height={800}
+          quality={98}
+        />
+        <div class="popup-gradient" aria-hidden="true"></div>
+        <button
+          onclick={`document.getElementById('${dialogId}').close()`}
+          class="popup-close-btn"
+          aria-label="Close dialog"
+          type="button"
+        >
+          <svg
+            class="h-6 w-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+        <h2 id={`${dialogId}-title`} class="popup-title">{title}</h2>
+      </div>
+    </header>
+
+    <!-- Content -->
+    <main class="popup-body">
+      {
+        description && (
+          <div class="popup-description">
+            <p
+              id={`${dialogId}-description`}
+              class="whitespace-pre-line font-jamjuree leading-relaxed text-gray-700"
+            >
+              {description}
+            </p>
+          </div>
+        )
+      }
+    </main>
+  </div>
+</dialog>
+
+<script>
+  // Handle Escape key and improve modal accessibility
+  document.addEventListener("DOMContentLoaded", function () {
+    const modals = document.querySelectorAll('[id^="highlight-modal-"]');
+
+    modals.forEach((modal) => {
+      const dialog = modal as HTMLDialogElement;
+
+      dialog.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          dialog.close();
+        }
+      });
+
+      // Focus management
+      dialog.addEventListener("open", () => {
+        const closeButton = dialog.querySelector(".popup-close-btn") as HTMLElement;
+        if (closeButton) {
+          closeButton.focus();
+        }
+      });
+
+      // Return focus when closed
+      let previousFocus: HTMLElement | null = null;
+
+      const buttons = document.querySelectorAll(`button[onclick*="${dialog.id}"]`);
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          previousFocus = button as HTMLElement;
+        });
+      });
+
+      dialog.addEventListener("close", () => {
+        if (previousFocus) {
+          previousFocus.focus();
+        }
+      });
+    });
+  });
+</script>

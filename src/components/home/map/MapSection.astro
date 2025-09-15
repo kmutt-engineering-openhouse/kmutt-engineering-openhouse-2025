@@ -1,0 +1,21 @@
+---
+import Heading from "../../common/Heading.astro";
+const { t } = Astro.props;
+---
+
+<section id="map" class="mx-auto flex w-full max-w-7xl flex-col gap-4 py-16">
+  <Heading t={t.map.title} />
+  <div class="px-4">
+    <div
+      class="relative h-[clamp(420px,133.33vw,500px)] w-full overflow-hidden rounded-2xl border border-gray-300 sm:h-[clamp(320px,56.25vw,720px)]"
+    >
+      <iframe
+        src="https://www.google.com/maps/d/embed?mid=1dL1sE3i9TCTaWxIHrJinynXS9T522fo&ehbc=2E312F"
+        title={t.map.title ?? "Map"}
+        class="absolute inset-0 h-full w-full"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen></iframe>
+    </div>
+  </div>
+</section>

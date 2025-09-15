@@ -1,0 +1,30 @@
+---
+import Heading from "../../common/Heading.astro";
+import Card from "./Card.astro";
+
+const { t } = Astro.props;
+const items = t.highlight.card.slice(0, 4);
+---
+
+<section id="highlight" class="mx-auto flex w-full max-w-7xl flex-col gap-4 py-16">
+  <Heading t={t.highlight.title} />
+  <div
+    class="scrollbar-hide flex w-full snap-x snap-mandatory scroll-px-4 gap-4 overflow-x-auto px-4 py-2 lg:grid lg:snap-none lg:scroll-pl-0 lg:grid-cols-4 lg:justify-items-center lg:overflow-visible lg:px-4"
+  >
+    {
+      items.map(
+        (c: { image: any; title: string; description: string; href: string }, index: number) => (
+          <div class="w-[240px] shrink-0 snap-start lg:w-full lg:min-w-0">
+            <Card
+              src={c.image}
+              alt={c.title}
+              title={c.title}
+              description={c.description}
+              index={index}
+            />
+          </div>
+        )
+      )
+    }
+  </div>
+</section>

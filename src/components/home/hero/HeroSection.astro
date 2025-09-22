@@ -1,6 +1,7 @@
 ---
 import KMUTTLogo from "./KMUTTLogo.astro";
 import AnimatedLogo from "./AnimatedLogo.astro";
+import BigSponsorLogo from "./BigSponsorLogo.astro";
 
 const { t } = Astro.props;
 ---
@@ -17,5 +18,8 @@ const { t } = Astro.props;
     <p class="whitespace-pre-line text-center font-jamjuree text-base" data-fade-up style="--i:1.5">
       {t.hero.place}
     </p>
+    <div class="flex flex-col items-center">
+      <BigSponsorLogo data-fade-up style="--i:0" />
+    </div>
   </div>
 </section>

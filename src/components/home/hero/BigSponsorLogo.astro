@@ -1,0 +1,24 @@
+---
+import { Image } from "astro:assets";
+import Big_Spon_Logo from "../../../assets/logo/sponsor/large/Website-BIG-Logo-Spon-OPH.svg";
+
+interface Props {
+  class?: string;
+  [key: string]: any;
+}
+
+const { class: className = "", ...attrs } = Astro.props;
+---
+
+<Image
+  src={Big_Spon_Logo}
+  alt="Big Sponsor Logo"
+  class={`px-6 select-none object-cover sm:px-0 ${className}`}
+  height={192}
+  sizes="(max-width: 360px) 100vw, auto"
+  loading="eager"
+  fetchpriority="high"
+  format="svg"
+  quality={100}
+  {...attrs}
+/>

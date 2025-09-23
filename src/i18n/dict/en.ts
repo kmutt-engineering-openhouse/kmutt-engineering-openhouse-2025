@@ -101,7 +101,7 @@ export default {
       {
         title: "Engi’s Idol Talk",
         description:
-          "Join us for one-on-one sessions with students from all 10 departments of the Faculty of Engineering! Get personalized advice and techniques on Portfolio preparation and university entrance exam strategies\nLearning Building 4 (S12), 1st Floor",
+          "Join us for one-on-one sessions with students from all 10 departments of the Faculty of Engineering! Get personalized advice and techniques on Portfolio preparation and university entrance exam strategies\nFaculty of Engineering Meeting Room, Classroom Building 4 (S12), 2nd floor",
         image: enIdol,
         href: "/",
       },
@@ -194,7 +194,7 @@ export default {
           },
           {
             text: "KMUTT Library Building, 1st Floor, LIB108",
-            href: "https://maps.app.goo.gl/hfSeMHNDbkmEZfGU6",
+            href: "https://maps.app.goo.gl/p1oFmS8yp9duxFRJA",
             icon: iconLOC,
           },
           {
@@ -210,13 +210,13 @@ export default {
         ],
       },
       {
-        title: "INNO-X",
+        title: "INNO-X Workshop",
         description:
           "Creative space for prototyping, innovation, and invention, equipped with cutting-edge tools such as 3D Printers, Laser Cutters, and Mini CNC machines. In the workshop, you will get hands-on experience using the 3D Printer and Laser Cutter up close and even create your own projects for real!",
         image: imgINNOX,
         location: [
           {
-            text: "Wissawa Wattana Building (S4)",
+            text: "Wissawa Wattana Building (S4), 1st Floor",
             href: "https://maps.app.goo.gl/w1h5V5dBoTa3UNr87",
             icon: iconLOC,
           },
@@ -261,11 +261,11 @@ export default {
     contest: [
       {
         title: "Science & Technology Idea Contest Engineering KMUTT",
-        description: `a competition for high school students or their equivalents to submit scientific and technological inventions under the theme "Engineering for Sustainability."\nOn October 10, 2025, you have been invited to participate in the final round of the competition and the all-day exhibition.`,
+        description: `A competition for high school students or their equivalents to submit scientific and technological inventions under the theme "Engineering for Sustainability." You have been invited to participate in the final round of the competition and the all-day exhibition.`,
         points: [
           "Seeing 40 teams’ innovative project concepts and inventions",
           "You can vote for your favorite idea for the Popular Vote from 9:30 am to 3:30 pm",
-          "Listening to presentations from the top five teams to decide the winner",
+          "Listening to presentations from the top 5 teams to decide the winner",
         ],
         image: imgIC,
         location: [
@@ -283,16 +283,20 @@ export default {
       {
         title: "Engineering Quest 2025",
         description:
-          "First, 350 teams, then 50 teams, and lastly, the top 5. On October 11, 2025, you can watch the semi-final and final rounds of the Engineering Academic Quiz Competition for students in high school or its equivalent in the Academic Year 2025. The competition will be live-streamed on the KMUTT Engineering Open House 2025 Facebook page, so you may follow, cheer, and support throughout.",
+          "The Engineering Academic Quiz Competition for High School Students (or equivalent), Academic Year 2025. 350 teams from across the country, you are invited to watch the semi-final and final rounds. The event will feature challenges based on science and mathematics. Join the live broadcast on the Facebook page to cheer for the teams and show your support throughout the day.",
         image: imgEQ,
         location: [
           {
-            text: "Preliminary Round:\nClassroom Building 2 (N17)",
+            text: "On October 11, 2025",
+            icon: iconLOC,
+          },
+          {
+            text: "Preliminary Round: Classroom Building 2 (N17)",
             href: "https://maps.app.goo.gl/MXUNduPtscmUkYj59",
             icon: iconLOC,
           },
           {
-            text: "Semi-Final & Final Rounds:\nKing Mongkut’s 190th Anniversary Memorial Building (S14)",
+            text: "Semi-Final & Final Rounds: King Mongkut's 190th Anniversary Memorial Building (S14), 3rd Floor",
             href: "https://maps.app.goo.gl/3TsAguSd91EkBRA59",
             icon: iconLOC,
           },
@@ -309,6 +313,10 @@ export default {
           "Bangmod Hackathon is a computer programming competition that allows high school and vocational students (or equivalents) to compete in a team-based C/C++ programming contest. The event's goal is to improve programming abilities, build teamwork, and provide participants with practical experience through real-world situations.",
         image: imgBH,
         location: [
+          {
+            text: "On October 11, 2025",
+            icon: iconLOC,
+          },
           {
             text: "Wissawa Wattana Building (S4), 11th Floor, King Mongkut’s University of Technology Thonburi",
             href: "https://maps.app.goo.gl/65YM3k6JdvKM1tLD8",
@@ -357,7 +365,7 @@ export default {
       {
         question: "Are certificates provided?",
         answer:
-          "Certificates are available in 3 types:\n1) Event Participation Certificate — awarded when you collect at least 5 points via E-stamps, as follows:\n- Exhibitions from 10 departments (total 10 stamps): 1 point/stamp\n- Workshops from 10 departments and INNO-X (total 11 stamps): 3 points/stamp\n- Engi's Journey (3 stamps): 3 points/stamp\n- Engineering Quest 2025 (1 stamp): 1 point/stamp\n- Science & Technology Idea Contest Engineering KMUTT (1 stamp): 1 point/stamp\n2) Workshop Participation Certificate — awarded upon attending any department or INNO-X workshop.\n3) Academic Competition Certificate — awarded according to each competition's rules.",
+          "Certificates are available in 3 types:\n1) Event Participation Certificate — awarded when you collect at least 5 points via E-stamps, as follows:\n- Exhibitions from 10 departments (total 10 stamps): 1 point/stamp\n- Workshops from 10 departments and INNO-X (total 11 stamps): 3 points/stamp\n- Engi's Journey (3 stamps): 3 points/stamp\n- Engineering Quest 2025 (1 stamp): 1 point/stamp\n- Science & Technology Idea Contest Engineering KMUTT (1 stamp): 1 point/stamp\n- Engi’s Idol talk (1 stamp): 1 point/stamp\n- Parent Guidance Session (1 stamp): 1 point/stamp\n2) Workshop Participation Certificate — awarded upon attending any department or INNO-X workshop.\n3) Academic Competition Certificate — awarded according to each competition's rules.\n",
       },
     ],
   },

@@ -7,11 +7,7 @@ const items = t.departments.departments;
 ---
 
 <section id="departments" class="mx-auto flex w-full max-w-7xl flex-col gap-4 py-16">
-  <div class="mx-4 rounded-2xl bg-gradient-to-r from-primary to-primary-hover px-8 py-6">
-    <h2 class="scroll-animate animate-fade-up text-center font-prompt text-3xl font-[800] text-white">
-      {t.departments.title || "Departments"}
-    </h2>
-  </div>
+  <Heading t={t.departments.title || "Departments"} />
   <div class="grid grid-cols-1 gap-4 px-4 sm:auto-rows-fr sm:grid-cols-2 lg:gap-6">
     {
       items.map((c: any, index: number) => {

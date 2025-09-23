@@ -7,11 +7,7 @@ const { t } = Astro.props;
 ---
 
 <section id="sponsor" class="mx-auto flex w-full max-w-7xl flex-col gap-4 py-16">
-  <div class="mx-4 rounded-2xl bg-gradient-to-r from-primary to-primary-hover px-8 py-6">
-    <h2 class="scroll-animate animate-fade-up text-center font-prompt text-3xl font-[800] text-white">
-      {t.sponsor.title}
-    </h2>
-  </div>
+  <Heading t={t.sponsor.title} />
   <div class="px-4">
     <div class="scroll-animate animate-fade-up flex flex-col items-center gap-6">
       <BigSponsorLogo />

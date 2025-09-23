@@ -352,6 +352,9 @@ export default {
       },
     ],
   },
+  sponsor: {
+    title: "Sponsors",
+  },
   footer: {
     faculty: "Faculty of Engineering,",
     university: "King Mongkut's University of Technology Thonburi (Bangmod)",

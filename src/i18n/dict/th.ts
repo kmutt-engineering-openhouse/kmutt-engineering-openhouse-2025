@@ -185,9 +185,14 @@ export default {
           "ระดับบัณฑิตศึกษา : ลงทะเบียนแจ้งความประสงค์เข้าศึกษาต่อได้ทันที",
         ],
         description2:
-          "รายละเอียดเพิ่มเติม\nสิทธิพิเศษเฉพาะผู้เข้าร่วม KMUTT Engineering Open House 2025\n\nสำหรับน้อง ๆ ที่สนใจสมัคร Early Admission for International Programs KMUTT (รับเฉพาะหลักสูตรนานาชาติ) สามารถเตรียม Portfolio และสมัครได้ทันที! <a href=\"https://mailkmuttacth-my.sharepoint.com/:b:/g/personal/patthitta_cho_kmutt_ac_th/EZhQ9gV3HPFOj5ojtMd38i8Bmoxiujg3qfs7FwNcfPlB5Q?e=vhRXWx\" target=\"_blank\" class=\"text-blue-600 hover:text-blue-800 underline\">เกณฑ์การรับสมัคร</a> พร้อมเตรียม Portfolio มาสมัครได้เลย \nสำหรับระดับบัณฑิตศึกษา เฉพาะผู้เข้าร่วมงานเท่านั้น หากสนใจเข้าศึกษาต่อ สามารถลงทะเบียนแจ้งความประสงค์ได้ทันที",
+          "รายละเอียดเพิ่มเติม\nสิทธิพิเศษเฉพาะผู้เข้าร่วม KMUTT Engineering Open House 2025\n\nสำหรับน้อง ๆ ที่สนใจสมัคร Early Admission for International Programs KMUTT (รับเฉพาะหลักสูตรนานาชาติ) สามารถเตรียม Portfolio และสมัครได้ทันที! ส่วนเกณฑ์การรับสมัครสามารถกดปุ่มด้านล่างเพื่อดูรายละเอียด พร้อมเตรียม Portfolio มาสมัครได้เลย \nสำหรับระดับบัณฑิตศึกษา เฉพาะผู้เข้าร่วมงานเท่านั้น หากสนใจเข้าศึกษาต่อ สามารถลงทะเบียนแจ้งความประสงค์ได้ทันที",
         image: imgAdmission,
         location: [
+          {
+            text: "ส่วนเกณฑ์การรับสมัคร",
+            href: "https://mailkmuttacth-my.sharepoint.com/:b:/g/personal/patthitta_cho_kmutt_ac_th/EZhQ9gV3HPFOj5ojtMd38i8Bmoxiujg3qfs7FwNcfPlB5Q?e=vhRXWx",
+            icon: iconWebsite,
+          },
           {
             text: "อาคารสำนักหอสมุด (N10) ชั้น 1 ห้อง LIB108",
             href: "https://maps.app.goo.gl/hfSeMHNDbkmEZfGU6",
@@ -261,13 +266,17 @@ export default {
           "โครงการแข่งขันนวัตกรรม สิ่งประดิษฐ์ทางด้านวิทยาศาสตร์และเทคโนโลยี ระดับมัธยมศึกษาตอนปลายหรือเทียบเท่าภายใต้แนวคิด ”วิศวกรรมเพื่อความยั่งยืน“ เชิญชวนร่วมชมการแสดงผลงานและแข่งขันรอบชิงชนะเลิศตลอดทั้งวัน ทั้ง",
         points: [
           "ชมการจัดแสดงแนวคิดโปรเจกต์ด้านนวัตกรรมและสิ่งประดิษฐ์จาก 40 ทีม",
-          "โหวต Popular Vote ให้กับผลงานของทีมที่ชอบ",
-          "ฟังการนำเสนอผลงานของ 5 ทีมที่ทำคะแนนสูงสุด เพื่อหาผู้ชนะ\nใน วันที่ 10 ตุลาคม 2568",
+          "โหวต Popular vote ให้กับผลงานที่ชื่นชอบ ได้ตั้งแต่เวลา 9.30-15.30 น.",
+          "ฟังการนำเสนอผลงานของ 5 ทีมที่ทำคะแนนสูงสุด เพื่อหาผู้ชนะ",
         ],
         image: imgIC,
         location: [
           {
-            text: "อาคารสำนักงานหอสมุด (N10) มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี",
+            text: "วันที่ 10 ตุลาคม 2568",
+            icon: iconLOC,
+          },
+          {
+            text: "อาคารสำนักหอสมุด (N10) ชั้น 1 ห้อง LIB108",
             href: "https://maps.app.goo.gl/p1oFmS8yp9duxFRJA",
             icon: iconLOC,
           },

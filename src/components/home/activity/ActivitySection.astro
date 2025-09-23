@@ -14,19 +14,13 @@ const items = t.highlight.card.slice(0, 4);
     {
       items.map((c: { image: any; title: string; description: string; href: string }) => (
         <div class="w-[240px] shrink-0 snap-start lg:w-full lg:min-w-0">
-          <Card
-            src={c.image}
-            alt={c.title}
-            title={c.title}
-            description={c.description}
-            href={c.href}
-          />
+          <Card src={c.image} alt={c.title} title={c.title} description={c.description} />
         </div>
       ))
     }
   </div>
   <button
-    class="mx-6 flex shrink-0 cursor-pointer snap-start items-center justify-center rounded-lg border bg-purple-600 px-4 py-2 font-bold text-white transition-colors duration-200 hover:opacity-30"
+    class="mx-6 flex shrink-0 cursor-pointer snap-start items-center justify-center rounded-lg border bg-gradient-to-r from-primary to-primary-hover px-4 py-2 font-bold text-white transition-colors duration-200 hover:opacity-30"
   >
     {t.activity.seeAll}
   </button>

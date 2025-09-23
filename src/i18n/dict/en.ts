@@ -188,7 +188,12 @@ export default {
         image: imgAdmission,
         location: [
           {
-            text: "Learning Building 4 (S12), 1st Floor, in front of ICE Center",
+            text: "Admission Criteria",
+            href: "https://mailkmuttacth-my.sharepoint.com/:b:/g/personal/patthitta_cho_kmutt_ac_th/EZhQ9gV3HPFOj5ojtMd38i8Bmoxiujg3qfs7FwNcfPlB5Q?e=vhRXWx",
+            icon: iconWebsite,
+          },
+          {
+            text: "KMUTT Library Building, 1st Floor, LIB108",
             href: "https://maps.app.goo.gl/hfSeMHNDbkmEZfGU6",
             icon: iconLOC,
           },
@@ -259,13 +264,17 @@ export default {
         description: `a competition for high school students or their equivalents to submit scientific and technological inventions under the theme "Engineering for Sustainability."\nOn October 10, 2025, you have been invited to participate in the final round of the competition and the all-day exhibition.`,
         points: [
           "Seeing 40 teams’ innovative project concepts and inventions",
-          "Vote for your preferred team in the popular vote",
+          "You can vote for your favorite idea for the Popular Vote from 9:30 am to 3:30 pm",
           "Listening to presentations from the top five teams to decide the winner",
         ],
         image: imgIC,
         location: [
           {
-            text: "KMUTT Library Building (N10), King Mongkut's University of Technology Thonburi",
+            text: "On October 10, 2025",
+            icon: iconLOC,
+          },
+          {
+            text: "KMUTT Library Building, 1st Floor, LIB1080",
             href: "https://maps.app.goo.gl/p1oFmS8yp9duxFRJA",
             icon: iconLOC,
           },
@@ -274,7 +283,7 @@ export default {
       {
         title: "Engineering Quest 2025",
         description:
-          "First, 350 teams, then 50 teams, and lastly, the top 5.\nOn October 11, 2025, you can watch the semi-final and final rounds of the Engineering Academic Quiz Competition for students in high school or its equivalent in the Academic Year 2025. The competition will be live-streamed on the KMUTT Engineering Open House 2025 Facebook page, so you may follow, cheer, and support throughout.",
+          "First, 350 teams, then 50 teams, and lastly, the top 5. On October 11, 2025, you can watch the semi-final and final rounds of the Engineering Academic Quiz Competition for students in high school or its equivalent in the Academic Year 2025. The competition will be live-streamed on the KMUTT Engineering Open House 2025 Facebook page, so you may follow, cheer, and support throughout.",
         image: imgEQ,
         location: [
           {

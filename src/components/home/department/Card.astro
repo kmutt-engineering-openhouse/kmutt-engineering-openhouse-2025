@@ -15,14 +15,14 @@ const { t, "data-delay": dataDelay } = Astro.props;
 >
   <a
     href={t.href}
-    class="block w-full rounded-2xl focus:outline-none"
+    class="group block w-full rounded-2xl focus:outline-none"
     aria-label={`View ${t.title} department details`}
   >
-    <div class="relative aspect-[2/1] w-full overflow-hidden">
+    <div class="relative aspect-[2/1] w-full overflow-hidden rounded-2xl">
       <Image
         src={t.image}
         alt=""
-        class="hover:scale-103 absolute inset-0 h-full w-full object-cover transition-transform duration-300"
+        class="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
         width={800}
         height={400}
         loading="lazy"
@@ -31,22 +31,27 @@ const { t, "data-delay": dataDelay } = Astro.props;
         quality={95}
         role="presentation"
       />
+      <div class="absolute inset-0 bg-white/90 transition-all duration-300 group-hover:bg-white/70">
+      </div>
+      <div
+        class="absolute inset-0 flex flex-col items-center justify-center gap-4 px-4 py-6 sm:px-6"
+      >
+        <Image
+          src={t.icon}
+          alt={t.iconAlt ?? ""}
+          width={80}
+          height={80}
+          class="h-16 w-16 flex-shrink-0 object-contain transition-transform duration-300 group-hover:scale-110 sm:h-20 sm:w-20"
+          loading="lazy"
+          decoding="async"
+          role="presentation"
+        />
+        <h3
+          class="text-center font-prompt text-xl font-bold leading-tight text-black transition-all duration-300 sm:text-2xl"
+        >
+          {t.title}
+        </h3>
+      </div>
     </div>
-
-    <header class="flex items-center gap-3 p-4 pt-3">
-      <Image
-        src={t.icon}
-        alt={t.iconAlt ?? ""}
-        width={48}
-        height={48}
-        class="h-6 w-6 flex-shrink-0 object-contain"
-        loading="lazy"
-        decoding="async"
-        role="presentation"
-      />
-      <h3 class="font-prompt text-base font-semibold leading-tight text-gray-900">
-        {t.title}
-      </h3>
-    </header>
   </a>
 </article>

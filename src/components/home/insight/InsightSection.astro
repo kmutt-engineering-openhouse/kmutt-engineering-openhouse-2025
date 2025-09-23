@@ -7,7 +7,7 @@ const insightData = t.insight.insight;
 ---
 
 <section id="insight" class="mx-auto flex w-full max-w-7xl flex-col gap-4 py-16">
-  <Heading t={t?.insight?.title} />
+  <Heading t={t?.insight?.title || "Insight"} />
   <div class="flex flex-col gap-4 px-4">
     {
       insightData.map((c: any) => (

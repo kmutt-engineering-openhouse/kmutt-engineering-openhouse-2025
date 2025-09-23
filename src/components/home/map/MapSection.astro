@@ -4,7 +4,7 @@ const { t } = Astro.props;
 ---
 
 <section id="map" class="mx-auto flex w-full max-w-7xl flex-col gap-4 py-16">
-  <Heading t={t.map.title} />
+  <Heading t={t.map.title || "Map"} />
   <div class="px-4">
     <div
       class="relative h-[clamp(420px,133.33vw,500px)] w-full overflow-hidden rounded-2xl border border-gray-300 sm:h-[clamp(320px,56.25vw,720px)]"

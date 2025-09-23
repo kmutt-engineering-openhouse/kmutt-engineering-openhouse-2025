@@ -8,9 +8,7 @@ export const onRequest = async (ctx) => {
 
     let lang = saved;
     if (!lang) {
-      const al = (ctx.request.headers.get("Accept-Language") || "").toLowerCase();
-      const primary = al.split(",")[0]?.split("-")[0] || "";
-      lang = primary === "en" ? "en" : "th";
+      lang = "th";
     }
 
     return Response.redirect(`${url.origin}/${lang}/`, 302);

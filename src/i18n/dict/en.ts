@@ -184,11 +184,11 @@ export default {
           "Graduate students: Register your intention to enroll immediately",
         ],
         description2:
-          "More details:\nExclusive benefits are available only to attendees of KMUTT Engineering Open House 2025.\n\nUndergraduates interested in Early Admission for International Programs at KMUTT (international programs only) can prepare their portfolio and apply on the spot! Admission criteria can be viewed via the button below, so you can get your portfolio ready.\n\nFor graduate students, participation in the event is required to register your intention to enroll immediately.",
+          "More details:\nExclusive benefits are available only to attendees of KMUTT Engineering Open House 2025.\n\nUndergraduates interested in Early Admission for International Programs at KMUTT (international programs only) can prepare their portfolio and apply on the spot! <a href=\"https://mailkmuttacth-my.sharepoint.com/:b:/g/personal/patthitta_cho_kmutt_ac_th/EZhQ9gV3HPFOj5ojtMd38i8Bmoxiujg3qfs7FwNcfPlB5Q?e=vhRXWx\" target=\"_blank\" class=\"text-blue-600 hover:text-blue-800 underline\">Admission criteria</a> so you can get your portfolio ready. For graduate students, participation in the event is required to register your intention to enroll immediately.",
         image: imgAdmission,
         location: [
           {
-            text: "Learning Building 4 (S12), 1st Floor, in front of ICE Center",
+            text: "KMUTT Library Building, 1st Floor, LIB108",
             href: "https://maps.app.goo.gl/hfSeMHNDbkmEZfGU6",
             icon: iconLOC,
           },

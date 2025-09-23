@@ -1,9 +1,9 @@
 ---
-const { t } = Astro.props;
+const { t, class: className } = Astro.props;
 ---
 
-<div class="mx-4 rounded-2xl bg-gradient-to-r from-primary to-primary-hover px-8 py-6">
-  <h2 class="scroll-animate animate-fade-up text-center font-prompt text-3xl font-[800] text-white">
+<div class={`mx-2 sm:mx-4 rounded-2xl bg-gradient-to-r from-primary to-primary-hover px-4 py-4 sm:px-8 sm:py-6 ${className || ''}`}>
+  <h2 class="scroll-animate animate-fade-up text-center font-prompt text-2xl sm:text-3xl font-[800] text-white">
     {t}
   </h2>
-</div>;
+</div>

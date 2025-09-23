@@ -7,11 +7,7 @@ const contestData = t.contest.contest;
 ---
 
 <section id="contest" class="mx-auto flex w-full max-w-7xl flex-col gap-4 py-16">
-  <div class="mx-4 rounded-2xl bg-gradient-to-r from-primary to-primary-hover px-8 py-6">
-    <h2 class="scroll-animate animate-fade-up text-center font-prompt text-3xl font-[800] text-white">
-      {t?.contest?.title}
-    </h2>
-  </div>
+  <Heading t={t?.contest?.title || "Contest"} />
   <div class="flex flex-col gap-4 px-4">
     {
       contestData.map((c: any, index: number) => (

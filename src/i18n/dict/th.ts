@@ -230,7 +230,7 @@ export default {
       },
     ],
   },
-  activity: {
+  workshop: {
     title: "กิจกรรม",
     seeAll: "กิจกรรมทั้งหมด",
     card: [

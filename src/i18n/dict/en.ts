@@ -229,9 +229,9 @@ export default {
       },
     ],
   },
-  activity: {
-    title: "Activity",
-    seeAll: "See All Activities",
+  workshop: {
+    title: "Workshop",
+    seeAll: "See All Workshops",
     card: [
       {
         title: "Workshop",

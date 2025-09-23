@@ -6,8 +6,8 @@ const { t } = Astro.props;
 const items = t.highlight.card.slice(0, 4);
 ---
 
-<section id="activity" class="mx-auto flex w-full max-w-7xl flex-col gap-4 py-16">
-  <Heading t={t.activity.title} />
+<section id="workshop" class="mx-auto flex w-full max-w-7xl flex-col gap-4 py-16">
+  <Heading t={t.workshop.title || "Workshops"} />
   <div
     class="scrollbar-hide flex w-full snap-x snap-mandatory scroll-px-4 gap-4 overflow-x-auto px-4 py-2 lg:grid lg:snap-none lg:scroll-pl-0 lg:grid-cols-4 lg:justify-items-center lg:overflow-visible lg:px-4"
   >
@@ -22,6 +22,6 @@ const items = t.highlight.card.slice(0, 4);
   <button
     class="mx-6 flex shrink-0 cursor-pointer snap-start items-center justify-center rounded-lg border bg-gradient-to-r from-primary to-primary-hover px-4 py-2 font-bold text-white transition-colors duration-200 hover:opacity-30"
   >
-    {t.activity.seeAll}
+    {t.workshop.seeAll}
   </button>
 </section>

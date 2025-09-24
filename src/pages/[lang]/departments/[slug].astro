@@ -35,6 +35,10 @@ if (data.image) {
   const imagePath = `../../../assets/images/departments/${data.image.split("/").pop()}`;
   imageSrc = (images[imagePath] as any)?.default || null;
 }
+
+const verifyCareerPath =  (s: { heading: string }) => {
+  return ["อาชีพในอนาคต", "Career Path"].includes(s.heading);
+};
 ---
 
 <Layout t={dict} currentLang={lang}>
@@ -112,8 +116,16 @@ if (data.image) {
                 </p>
               )}
               {s.list && (
-                <ul class="mt-2 list-disc pl-5 font-jamjuree text-sm leading-relaxed sm:text-base">
+                <ul
+                  class={
+                    `mt-2 pl-5 relative font-jamjuree text-sm leading-relaxed sm:text-base ` +
+                    (verifyCareerPath(s) ? "list-disc" : "list-none")
+                  }
+                >
                   {s.list.map((li) => (
+                    <>
+                      {verifyCareerPath(s) ? null : <span class="absolute left-1.5 ">-</span>}
+                    </>
                     <li set:html={li} />
                   ))}
                 </ul>

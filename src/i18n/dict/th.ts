@@ -185,11 +185,11 @@ export default {
           "ระดับบัณฑิตศึกษา : ลงทะเบียนแจ้งความประสงค์เข้าศึกษาต่อได้ทันที",
         ],
         description2:
-          "รายละเอียดเพิ่มเติม\nสิทธิพิเศษเฉพาะผู้เข้าร่วม KMUTT Engineering Open House 2025\n\nสำหรับน้อง ๆ ที่สนใจสมัคร Early Admission for International Programs KMUTT (รับเฉพาะหลักสูตรนานาชาติ) สามารถเตรียม Portfolio และสมัครได้ทันที! ส่วนเกณฑ์การรับสมัครสามารถกดปุ่มด้านล่างเพื่อดูรายละเอียด พร้อมเตรียม Portfolio มาสมัครได้เลย \nสำหรับระดับบัณฑิตศึกษา เฉพาะผู้เข้าร่วมงานเท่านั้น หากสนใจเข้าศึกษาต่อ สามารถลงทะเบียนแจ้งความประสงค์ได้ทันที",
+          "สิทธิพิเศษเฉพาะผู้เข้าร่วม KMUTT Engineering Open House 2025 \nสำหรับน้อง ๆ ที่สนใจสมัคร Early Admission for International Programs KMUTT (รับเฉพาะหลักสูตรนานาชาติ) สามารถเตรียม Portfolio และสมัครได้ทันที! ส่วนเกณฑ์การรับสมัครสามารถกดปุ่มด้านล่างเพื่อดูรายละเอียด พร้อมเตรียม Portfolio มาสมัครได้เลย สำหรับระดับบัณฑิตศึกษา เฉพาะผู้เข้าร่วมงานเท่านั้น หากสนใจเข้าศึกษาต่อ สามารถลงทะเบียนแจ้งความประสงค์ได้ทันที",
         image: imgAdmission,
         location: [
           {
-            text: "ส่วนเกณฑ์การรับสมัคร",
+            text: "เกณฑ์การรับสมัคร",
             href: "https://mailkmuttacth-my.sharepoint.com/:b:/g/personal/patthitta_cho_kmutt_ac_th/EZhQ9gV3HPFOj5ojtMd38i8Bmoxiujg3qfs7FwNcfPlB5Q?e=vhRXWx",
             icon: iconWebsite,
           },

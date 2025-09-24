@@ -36,7 +36,7 @@ import iconFacebook from "../../assets/icons/facebook.svg";
 import iconInstagram from "../../assets/icons/instagram.svg";
 import iconLOC from "../../assets/icons/location.svg";
 import iconWebsite from "../../assets/icons/website.svg";
-import { deselectScripts } from "astro/virtual-modules/transitions-swap-functions.js";
+import iconCalendar from "../../assets/icons/calendar.svg";
 
 export default {
   hero: {
@@ -273,7 +273,7 @@ export default {
         location: [
           {
             text: "วันที่ 10 ตุลาคม 2568",
-            icon: iconLOC,
+            icon: iconCalendar,
           },
           {
             text: "อาคารสำนักหอสมุด (N10) ชั้น 1 ห้อง LIB108",
@@ -290,7 +290,7 @@ export default {
         location: [
           {
             text: "วันที่ 11 ตุลาคม 2568",
-            icon: iconLOC,
+            icon: iconCalendar,
           },
           {
             text: "รอบคัดเลือก: อาคารเรียนรวม 2 (N17)",
@@ -317,7 +317,7 @@ export default {
         location: [
           {
             text: "วันที่ 11 ตุลาคม 2568",
-            icon: iconLOC,
+            icon: iconCalendar,
           },
           {
             text: "อาคารวิศววัฒนะ (S4) ชั้น 11  มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี",

@@ -273,7 +273,7 @@ export default {
         location: [
           {
             text: "วันที่ 10 ตุลาคม 2568",
-            icon: iconLOC,
+            icon: iconCalendar,
           },
           {
             text: "อาคารสำนักหอสมุด (N10) ชั้น 1 ห้อง LIB108",
@@ -290,7 +290,7 @@ export default {
         location: [
           {
             text: "วันที่ 11 ตุลาคม 2568",
-            icon: iconLOC,
+            icon: iconCalendar,
           },
           {
             text: "รอบคัดเลือก: อาคารเรียนรวม 2 (N17)",
@@ -317,7 +317,7 @@ export default {
         location: [
           {
             text: "วันที่ 11 ตุลาคม 2568",
-            icon: iconLOC,
+            icon: iconCalendar,
           },
           {
             text: "อาคารวิศววัฒนะ (S4) ชั้น 11  มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี",

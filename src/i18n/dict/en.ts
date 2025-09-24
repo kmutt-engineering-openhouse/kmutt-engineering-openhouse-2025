@@ -272,7 +272,7 @@ export default {
         location: [
           {
             text: "On October 10, 2025",
-            icon: iconLOC,
+            icon: iconCalendar,
           },
           {
             text: "KMUTT Library Building, 1st Floor, LIB1080",
@@ -289,7 +289,7 @@ export default {
         location: [
           {
             text: "On October 11, 2025",
-            icon: iconLOC,
+            icon: iconCalendar,
           },
           {
             text: "Preliminary Round: Classroom Building 2 (N17)",
@@ -316,7 +316,7 @@ export default {
         location: [
           {
             text: "On October 11, 2025",
-            icon: iconLOC,
+            icon: iconCalendar,
           },
           {
             text: "Wissawa Wattana Building (S4), 11th Floor, King Mongkut’s University of Technology Thonburi",

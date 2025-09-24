@@ -1,11 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import lactasoy_Logo from "../../../assets/logo/sponsor/small/hackathon_Lactasoy_svg.webp";
-import premier_Logo from "../../../assets/logo/sponsor/small/hackathon_พรีเมียร์_png.webp";
-import bangkokBank_Logo from "../../../assets/logo/sponsor/small/hactathon_ธนาคารกรุงเทพ_jpg.webp";
-import mondelez_Logo from "../../../assets/logo/sponsor/small/Mondelez_svg.webp";
-import usefulFood_Logo from "../../../assets/logo/sponsor/small/UsefulFood_png.webp";
-import bhaesajchakorn_Logo from "../../../assets/logo/sponsor/small/คิงเฮลร์แคร์-เภสัชกร_png.webp";
+import Small_Spon_Logo from "../../../assets/logo/sponsor/small/Website-Small-Logo-Spon-OPH.svg";
 
 interface Props {
   class?: string;
@@ -13,41 +8,17 @@ interface Props {
 }
 
 const { class: className = "", ...attrs } = Astro.props;
-
-const logos = [
-  { src: lactasoy_Logo, alt: "Lactasoy", height: 32, heightSm: 16, row: 1 },
-  { src: premier_Logo, alt: "Premier Marketing", height: 32, heightSm: 16, row: 1 },
-  { src: bangkokBank_Logo, alt: "Bangkok Bank", height: 32, heightSm: 16, row: 1 },
-  { src: mondelez_Logo, alt: "Mondelex", height: 32, heightSm: 16, row: 1 },
-  { src: usefulFood_Logo, alt: "Useful Food", height: 32, heightSm: 16, row: 1 },
-  { src: bhaesajchakorn_Logo, alt: "Bhaesajchakorn", height: 32, heightSm: 16, row: 1 },
-];
-
-const rows = Array.from(new Set(logos.map((l) => l.row))).sort((a, b) => a - b);
 ---
 
-<div class={`mx-auto w-full max-w-[480px] ${className}`} {...attrs}>
-  <div class="box-border flex h-full w-full flex-col items-stretch justify-center gap-4">
-    {
-      rows.map((r) => (
-        <div class="flex flex-1 flex-wrap items-center justify-center gap-4">
-          {logos
-            .filter((l) => l.row === r)
-            .map((logo) => (
-              <div
-                class="logo-container flex items-center justify-center"
-                style={`height: ${logo.height}px; @media (max-width: 480px) { height: ${logo.heightSm}px; }`}
-              >
-                <Image
-                  src={logo.src}
-                  alt={logo.alt}
-                  class="h-full w-auto max-w-full object-contain"
-                  loading="lazy"
-                />
-              </div>
-            ))}
-        </div>
-      ))
-    }
-  </div>
-</div>
+<Image
+  src={Small_Spon_Logo}
+  alt="Small Sponsor Logo"
+  class={`px-6 select-none object-cover sm:px-0 ${className}`}
+  width={460}
+  sizes="(max-width: 360px) 100vw, 460px"
+  loading="lazy"
+  fetchpriority="high"
+  format="svg"
+  quality={100}
+  {...attrs}
+/>

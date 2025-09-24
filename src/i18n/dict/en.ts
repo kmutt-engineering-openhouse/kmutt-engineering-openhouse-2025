@@ -184,7 +184,7 @@ export default {
           "Graduate students: Register your intention to enroll immediately",
         ],
         description2:
-          "More details:\nExclusive benefits are available only to attendees of KMUTT Engineering Open House 2025.\n\nUndergraduates interested in Early Admission for International Programs at KMUTT (international programs only) can prepare their portfolio and apply on the spot! Admission criteria can be viewed via the button below, so you can get your portfolio ready.\n\nFor graduate students, participation in the event is required to register your intention to enroll immediately.",
+          "Exclusive benefits are available only to attendees of KMUTT Engineering Open House 2025.\nUndergraduates interested in Early Admission for International Programs at KMUTT (international programs only) can prepare their portfolio and apply on the spot! Admission criteria can be viewed via the button below, so you can get your portfolio ready. For graduate students, participation in the event is required to register your intention to enroll immediately.",
         image: imgAdmission,
         location: [
           {

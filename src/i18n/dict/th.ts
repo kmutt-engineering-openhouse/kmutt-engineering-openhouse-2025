@@ -36,7 +36,7 @@ import iconFacebook from "../../assets/icons/facebook.svg";
 import iconInstagram from "../../assets/icons/instagram.svg";
 import iconLOC from "../../assets/icons/location.svg";
 import iconWebsite from "../../assets/icons/website.svg";
-import { deselectScripts } from "astro/virtual-modules/transitions-swap-functions.js";
+import iconCalendar from "../../assets/icons/calendar.svg";
 
 export default {
   hero: {

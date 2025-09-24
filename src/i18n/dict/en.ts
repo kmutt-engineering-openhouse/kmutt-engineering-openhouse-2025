@@ -367,6 +367,11 @@ export default {
         answer:
           "Certificates are available in 3 types:\n1) Event Participation Certificate — awarded when you collect at least 5 points via E-stamps, as follows:\n- Exhibitions from 10 departments (total 10 stamps): 1 point/stamp\n- Workshops from 10 departments and INNO-X (total 11 stamps): 3 points/stamp\n- Engi's Journey (3 stamps): 3 points/stamp\n- Engineering Quest 2025 (1 stamp): 1 point/stamp\n- Science & Technology Idea Contest Engineering KMUTT (1 stamp): 1 point/stamp\n- Engi’s Idol talk (1 stamp): 1 point/stamp\n- Parent Guidance Session (1 stamp): 1 point/stamp\n2) Workshop Participation Certificate — awarded upon attending any department or INNO-X workshop.\n3) Academic Competition Certificate — awarded according to each competition's rules.\n",
       },
+      {
+        question: "How do I register for the event?",
+        answer:
+          "You can register at <a href='https://openhouse.kmutt.ac.th/' target='_blank' class='text-primary hover:text-primary-hover underline'>openhouse.kmutt.ac.th</a>",
+      },
     ],
   },
   sponsor: {

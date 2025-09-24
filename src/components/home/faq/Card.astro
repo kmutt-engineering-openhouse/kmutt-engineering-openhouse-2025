@@ -38,9 +38,10 @@ const accordionId = `faq-${Math.random().toString(36).substr(2, 9)}`;
       role="region"
       aria-labelledby={`${accordionId}-trigger`}
     >
-      <p class="whitespace-pre-line font-jamjuree text-sm leading-relaxed sm:text-base">
-        {answer}
-      </p>
+      <p
+        class="whitespace-pre-line font-jamjuree text-sm leading-relaxed sm:text-base"
+        set:html={answer}
+      />
     </div>
   </details>
 </article>

@@ -5,9 +5,11 @@ import HeroSection from "../../components/home/hero/HeroSection.astro";
 import HighlightSection from "../../components/home/highlight/HighlightSection.astro";
 import DepartmentSection from "../../components/home/department/DepartmentSection.astro";
 import MapSection from "../../components/home/map/MapSection.astro";
+import SponsorSection from "../../components/home/sponsor/SponsorSection.astro";
 import FAQSection from "../../components/home/faq/FAQSection.astro";
 import ContestSection from "../../components/home/contest/ContestSection.astro";
 import InsightSection from "../../components/home/insight/InsightSection.astro";
+import ActivitySection from "../../components/home/activity/ActivitySection.astro";
 // import ActivitySection from "../../components/home/activity/ActivitySection.astro";
 
 export function getStaticPaths() {
@@ -40,4 +42,5 @@ const seo = {
   <ContestSection t={t} />
   <MapSection t={t} />
   <FAQSection t={t} />
+  <SponsorSection t={t} />
 </Layout>

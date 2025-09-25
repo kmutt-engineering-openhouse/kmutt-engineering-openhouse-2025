@@ -98,9 +98,15 @@ section[id] {
 .scroll-animate[data-delay="4"] {
   transition-delay: 0.24s;
 }
-.scroll-animate[data-delay="5"] {
+.scroll-animate[data-delay="5"],
+.scroll-animate[data-delay="6"],
+.scroll-animate[data-delay="7"],
+.scroll-animate[data-delay="8"],
+.scroll-animate[data-delay="9"],
+.scroll-animate[data-delay="10"] {
   transition-delay: 0.3s;
 }
+
 
 /* CSS-based fade animations */
 [data-fade],

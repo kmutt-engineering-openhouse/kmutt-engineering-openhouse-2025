@@ -64,8 +64,7 @@ const canonicalURL = "https://bangmod.engineer/";
       {
         (function () {
           var supported = ["th", "en"];
-          var browserLang = (navigator.language || navigator.browserLanguage || "th").split("-")[0].toLowerCase();
-          var lang = supported.indexOf(browserLang) !== -1 ? browserLang : "th";
+          var lang = "th";
           
           var storedLang = localStorage.getItem("preferred-language");
           if (storedLang && supported.indexOf(storedLang) !== -1) {

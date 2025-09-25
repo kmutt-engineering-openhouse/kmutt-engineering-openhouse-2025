@@ -7,7 +7,7 @@ const contestData = t.contest.contest;
 ---
 
 <section id="contest" class="mx-auto flex w-full max-w-7xl flex-col gap-4 py-16">
-  <Heading t={t?.contest?.title} class="pt-16" />
+  <Heading t={t?.contest?.title || "Contest"} />
   <div class="flex flex-col gap-4 px-4">
     {
       contestData.map((c: any, index: number) => (

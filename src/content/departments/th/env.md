@@ -24,7 +24,7 @@ sections:
     contract:
       - type: "facebook"
         title: "Environmental Engineering, KMUTT"
-        link: "https://www.facebook.com/inckmutt"
+        link: "https://www.facebook.com/p/Environmental-Engineering-KMUTT-100040198514250/"
       - type: "instagram"
         title: "envkmutt"
         link: "https://www.instagram.com/envkmutt"

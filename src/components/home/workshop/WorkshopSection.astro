@@ -1,8 +1,13 @@
 ---
+import type { TDict } from "../../../i18n/getDict";
 import Heading from "../../common/Heading.astro";
 import Card from "../highlight/Card.astro";
 
-const { t } = Astro.props;
+// interface Props {
+//   t: ReturnType<typeof getDict>;
+// }
+
+const { t } = Astro.props as { t: TDict };
 const items = t.highlight.card.slice(0, 4);
 ---
 

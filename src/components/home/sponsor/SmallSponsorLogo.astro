@@ -11,6 +11,7 @@ import casio_Logo from "../../../assets/logo/sponsor/small/Casio.webp";
 import ire_Logo from "../../../assets/logo/sponsor/small/IRE.webp";
 import tsb_Logo from "../../../assets/logo/sponsor/small/TSB.webp";
 import windChill_Logo from "../../../assets/logo/sponsor/small/windChill.webp";
+import royalD_Logo from "../../../assets/logo/sponsor/small/royalD.webp";
 
 interface Props {
   class?: string;
@@ -31,6 +32,7 @@ const logos = [
   { src: ire_Logo, alt: "IRE", height: 32, heightSm: 16, row: 1 },
   { src: tsb_Logo, alt: "TSB", height: 52, heightSm: 36, row: 1 },
   { src: windChill_Logo, alt: "WindChill", height: 32, heightSm: 16, row: 1 },
+  { src: royalD_Logo, alt: "Royal-D", height: 40, heightSm: 20, row: 1 },
 ];
 
 const rows = Array.from(new Set(logos.map((l) => l.row))).sort((a, b) => a - b);

@@ -1,0 +1,40 @@
+---
+import type { WorkshopCardProps } from "../../../../types/card.ts";
+import { Image } from "astro:assets";
+
+export interface Props extends WorkshopCardProps {
+  "data-delay"?: number;
+}
+
+const { src, alt, title, description, index, "data-delay": dataDelay } = Astro.props;
+const dialogId =
+  index !== undefined
+    ? `workshop-modal-${index}`
+    : `workshop-modal-${Math.random().toString(36).substr(2, 9)}`;
+---
+
+<article
+  class="scroll-animate scroll-animate-early animate-fade-right group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-300 hover:shadow-xl lg:h-full"
+  data-delay={dataDelay}
+>
+  <button
+    type="button"
+    onclick={`document.getElementById('${dialogId}').showModal()`}
+    class="card-button relative aspect-[3/4] w-full overflow-hidden rounded-t-2xl focus:outline-none"
+    aria-label={`View details for ${title}`}
+    aria-describedby={description ? `${dialogId}-description` : undefined}
+  >
+    <Image
+      src={src}
+      alt={alt}
+      class="h-full w-full object-cover transition-transform duration-500 ease-out will-change-transform group-hover:scale-105"
+      sizes="(max-width: 640px) 70vw, (max-width: 768px) 50vw, (max-width: 1024px) 25vw, 400px"
+      loading="lazy"
+      width={600}
+      height={800}
+      quality={95}
+      decoding="async"
+    />
+    <h2 class="popup-title">{title}</h2>
+  </button>
+</article>

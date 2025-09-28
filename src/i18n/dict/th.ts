@@ -3,6 +3,7 @@ import thWorkshop from "../../assets/images/highlight/th/workshop.webp";
 import thExhibition from "../../assets/images/highlight/th/exhibition.webp";
 import thJourney from "../../assets/images/highlight/th/engi-journey.webp";
 import thIdol from "../../assets/images/highlight/th/idol.webp";
+import thParent from "../../assets/images/highlight/th/parent-guidance.webp";
 // Department Section
 import imgCPE from "../../assets/images/departments/CPE.webp";
 import imgCHE from "../../assets/images/departments/CHE.webp";
@@ -104,6 +105,13 @@ export default {
         description:
           "น้อง ๆ จะได้จับเข่าคุย ขอคำปรึกษา และเทคนิคการจัดทำ Portfolio การเตรียมตัวสอบเข้าสาขาวิชาต่าง ๆ ในคณะวิศวกรรมศาสตร์ จากรุ่นพี่นักศึกษาจากทั้ง 10 ภาควิชา แบบตัวต่อตัวแล้วพบกันที่\nห้องประชุมคณะวิศวกรรมศาสตร์ อาคารเรียนรวม 4 (S12) ชั้น 2",
         image: thIdol,
+        href: "/",
+      },
+      {
+        title: "กิจกรรมแนะแนวผู้ปกครอง",
+        description: 
+          "กิจกรรมพิเศษที่เปิดโอกาสให้ผู้ปกครองได้รับฟังข้อมูลเกี่ยวกับการสมัครเข้าศึกษาต่อ การเรียนการสอน และเส้นทางสายอาชีพของสาขาวิชาต่าง ๆ ภายในคณะวิศวฯ มจธ. โดยอาจารย์ผู้สอนและกรรมการสอบสัมภาษณ์ตัวจริงวันที่  10 - 12 ตุลาคม 2568 เวลา 09.30 - 12.00 น. ห้องประชุมคณะวิศวกรรมศาสตร์ ชั้น 2 อาคารเรียนรวม 4 (S12)",
+        image: thParent,
         href: "/",
       },
     ],

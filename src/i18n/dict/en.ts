@@ -3,6 +3,7 @@ import enWorkshop from "../../assets/images/highlight/en/workshop.webp";
 import enExhibition from "../../assets/images/highlight/en/exhibition.webp";
 import enJourney from "../../assets/images/highlight/en/engi-journey.webp";
 import enIdol from "../../assets/images/highlight/en/idol.webp";
+import enParent from "../../assets/images/highlight/en/parent-guidance.webp";
 // Department Section
 import imgCPE from "../../assets/images/departments/CPE.webp";
 import imgCHE from "../../assets/images/departments/CHE.webp";
@@ -104,6 +105,13 @@ export default {
         description:
           "Join us for one-on-one sessions with students from all 10 departments of the Faculty of Engineering! Get personalized advice and techniques on Portfolio preparation and university entrance exam strategies\nFaculty of Engineering Meeting Room, Classroom Building 4 (S12), 2nd floor",
         image: enIdol,
+        href: "/",
+      },
+      {
+        title: "Parent Guidance Session",
+        description:
+          "A special event offering parents the opportunity to receive information on the admissions process, curriculum and instruction, and career paths for various programs within the Faculty of Engineering at KMUTT. Presentations will be given by our professor and actual members of the admissions interview committee. 10 - 12 October 2025 09.30 AM - 12.00 PM Faculty of Engineering Meeting Room, Classroom Building 4 (S12), 2nd floor",
+        image: enParent,
         href: "/",
       },
     ],

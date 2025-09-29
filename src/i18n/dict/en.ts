@@ -342,6 +342,31 @@ export default {
   },
   map: {
     title: "Location",
+    transportation: {
+      title: "Transportation",
+      choices: [
+        {
+          title: "Public Bus",
+          description:
+            "<b>1. Buses passing through the university</b>\n- Line 75 Hua Lamphong - Wat Phutthabucha\n- Line 21 Mahanak - Wat Khusang\n- Line 21E Chulalongkorn University - Wat Khusang\n- Line 88 BTS Talad Phlu - KMUTT Bang Khun Thian\n<b>2. Other buses (transfer required)</b>\n- Line 6 Phra Pradaeng - Bang Lamphoo\n- Line 20 Tha Din Daeng - Phra Samut Chedi\n- Line 37 Chulalongkorn University - Tha Nam Phra Pradaeng\n- Line 82 Bang Lamphoo - Tha Nam Phra Pradaeng\n- Line 140 Saen Dam - Victory Monument\n- Line 141 Saen Dam - Chulalongkorn University\n- Line 142 Saen Dam - Samut Prakan Crocodile Farm\n- Line 195 The Mall Tha Phra - Khlong Toei",
+        },
+        {
+          title: "Minibus",
+          description:
+            "- Line 77 BigC (Rat Burana) - Wat Phutthabucha\n- Line 88 BigC (Bang Pakok) - Thung Khru\n- Line 90 Bang Pakok Market - Wat Thung Khru\n- Line 99 Bang Pakok - Thung Khru\n- Red songthaew under Suksawat Expressway (Km.9) - Thung Khru Flat",
+        },
+        {
+          title: "Electric Train",
+          description:
+            "- BTS Saphan Taksin Station, transfer to Bus Line 75\n- MRT Hua Lamphong Station, transfer to Bus Line 75",
+        },
+        {
+          title: "Airport",
+          description:
+            "<b>1. Suvarnabhumi Airport</b> Take Airport Rail Link to Phaya Thai Station, transfer to BTS to Saphan Taksin Station, then transfer to Bus Line 75\n<b>2. Don Mueang Airport</b> Take Red Line to Bang Sue Station, transfer to MRT to Hua Lamphong Station, then transfer to Bus Line 75",
+        },
+      ],
+    },
   },
   faq: {
     title: "FAQ",

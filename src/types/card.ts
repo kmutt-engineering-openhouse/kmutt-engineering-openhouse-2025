@@ -53,6 +53,12 @@ export interface FAQCardProps {
   open?: boolean;
 }
 
+// Transportation card interface
+export interface TransportationCardProps {
+  title: string;
+  description: string;
+}
+
 // Generic card wrapper interface
 export interface CardWrapperProps {
   children: any;

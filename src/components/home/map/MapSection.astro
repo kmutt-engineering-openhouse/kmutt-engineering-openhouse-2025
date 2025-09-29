@@ -1,11 +1,13 @@
 ---
 import Heading from "../../common/Heading.astro";
+import TransportationCard from "./TransportationCard.astro";
 const { t } = Astro.props;
 ---
 
 <section id="map" class="mx-auto flex w-full max-w-7xl flex-col gap-4 py-16">
   <Heading t={t.map.title || "Map"} />
   <div class="px-4">
+    <!-- Map Section -->
     <div
       class="relative h-[clamp(420px,133.33vw,500px)] w-full overflow-hidden rounded-2xl border border-gray-300 sm:h-[clamp(320px,56.25vw,720px)]"
     >
@@ -17,5 +19,26 @@ const { t } = Astro.props;
         referrerpolicy="no-referrer-when-downgrade"
         allowfullscreen></iframe>
     </div>
+    <!-- Transportation Cards Section -->
+    {
+      t.map.transportation && t.map.transportation.choices && (
+        <div class="mb-8">
+          <h3 class="my-4 text-center font-prompt text-xl font-semibold text-gray-900 sm:text-2xl">
+            {t.map.transportation.title}
+          </h3>
+          <div class="flex flex-col gap-3">
+            {t.map.transportation.choices.map(
+              (choice: { title: string; description: string }, index: number) => (
+                <TransportationCard
+                  title={choice.title}
+                  description={choice.description}
+                  data-delay={index + 1}
+                />
+              )
+            )}
+          </div>
+        </div>
+      )
+    }
   </div>
 </section>

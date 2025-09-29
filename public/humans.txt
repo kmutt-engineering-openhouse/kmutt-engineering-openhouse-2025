@@ -12,7 +12,7 @@ Location: Bangkok, Thailand
 Standards: HTML5, CSS3, JavaScript ES2020+
 Components: Astro, TypeScript, Tailwind CSS
 Tools: VS Code, Git, GitHub
-Fonts: Prompt, Bai Jamjuree
+Fonts: Prompt, IBM Plex Sans Thai
 
 # SITE INFO
 Last Updated: 2025/09/15

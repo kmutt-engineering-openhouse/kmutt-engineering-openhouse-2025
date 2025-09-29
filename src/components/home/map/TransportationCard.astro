@@ -1,28 +1,28 @@
 ---
-import type { FAQCardProps } from "../../../types/card.ts";
+import type { TransportationCardProps } from "../../../types/card.ts";
 
-export interface Props extends FAQCardProps {
+export interface Props extends TransportationCardProps {
   "data-delay"?: number;
 }
 
-const { question, answer, open = false, "data-delay": dataDelay } = Astro.props;
-const accordionId = `faq-${Math.random().toString(36).substr(2, 9)}`;
+const { title, description, "data-delay": dataDelay } = Astro.props;
+const accordionId = `transportation-${Math.random().toString(36).substr(2, 9)}`;
 ---
 
 <article
   class="scroll-animate animate-fade-up group rounded-2xl border border-gray-300 bg-white"
   data-delay={dataDelay}
 >
-  <details class="w-full" open={open}>
+  <details class="w-full">
     <summary
       class="flex w-full cursor-pointer list-none items-center justify-between gap-3 rounded-2xl p-3 transition-colors duration-200 hover:bg-gray-50 focus:outline-none sm:p-4"
-      aria-expanded={open}
+      aria-expanded="false"
       aria-controls={accordionId}
     >
       <h3
         class="text-left font-prompt text-sm font-semibold leading-tight text-gray-900 sm:text-base"
       >
-        {question}
+        {title}
       </h3>
       <svg
         viewBox="0 0 20 20"
@@ -40,7 +40,7 @@ const accordionId = `faq-${Math.random().toString(36).substr(2, 9)}`;
     >
       <p
         class="whitespace-pre-line font-ibm text-sm leading-relaxed sm:text-base"
-        set:html={answer}
+        set:html={description}
       />
     </div>
   </details>

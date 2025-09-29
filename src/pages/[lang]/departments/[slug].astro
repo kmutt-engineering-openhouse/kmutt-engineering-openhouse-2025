@@ -77,7 +77,7 @@ const verifyCareerPath =  (s: { heading: string }) => {
       )
     }
 
-    <p class="whitespace-pre-line text-center font-jamjuree text-sm leading-relaxed sm:text-base">
+    <p class="whitespace-pre-line text-center font-ibm text-sm leading-relaxed sm:text-base">
       {data.description}
     </p>
 
@@ -87,7 +87,7 @@ const verifyCareerPath =  (s: { heading: string }) => {
           s.contract ? (
             <section class="rounded-2xl border border-gray-300 bg-white p-4">
               <h2 class="font-prompt text-lg font-semibold text-primary sm:text-xl">{s.heading}</h2>
-              <ul class="mt-2 space-y-1 font-jamjuree text-sm sm:text-base">
+              <ul class="mt-2 space-y-1 font-ibm text-sm sm:text-base">
                 {s.contract.map((item) => (
                   <li class="flex items-center gap-2">
                     {item.type === "facebook" && <FacebookIcon class="inline h-5 w-5" />}
@@ -111,14 +111,14 @@ const verifyCareerPath =  (s: { heading: string }) => {
             <section class="rounded-2xl border border-gray-300 bg-white p-4">
               <h2 class="font-prompt text-lg font-semibold text-primary sm:text-xl">{s.heading}</h2>
               {s.body && (
-                <p class="mt-2 whitespace-pre-line font-jamjuree text-sm leading-relaxed sm:text-base">
+                <p class="mt-2 whitespace-pre-line font-ibm text-sm leading-relaxed sm:text-base">
                   {s.body}
                 </p>
               )}
               {s.list && (
                 <ul
                   class={
-                    `mt-2 pl-5 relative font-jamjuree text-sm leading-relaxed sm:text-base ` +
+                    `mt-2 pl-5 relative font-ibm text-sm leading-relaxed sm:text-base ` +
                     (verifyCareerPath(s) ? "list-disc" : "list-none")
                   }
                 >

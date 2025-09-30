@@ -51,17 +51,5 @@ export default {
       description: "🎵 Track 1: Bad Foundry – Dance in Front of the Foundry Opening the show with the fascinating world of metal casting",
       date: "2024-07-15",
     },
-    {
-      code: "me",
-      title: "Mechanical Engineering Workshop",
-      description: "Discover mechanical engineering principles and applications.",
-      date: "2024-07-17",
-    },
-    {
-      code: "ee",
-      title: "Electrical Engineering Workshop",
-      description: "Learn about electrical systems and power engineering.",
-      date: "2024-07-18",
-    },
   ],
 };

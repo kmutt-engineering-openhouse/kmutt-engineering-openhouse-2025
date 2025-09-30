@@ -3,6 +3,7 @@ import thWorkshop from "../../assets/images/highlight/th/workshop.webp";
 import thExhibition from "../../assets/images/highlight/th/exhibition.webp";
 import thJourney from "../../assets/images/highlight/th/engi-journey.webp";
 import thIdol from "../../assets/images/highlight/th/idol.webp";
+import thParent from "../../assets/images/highlight/th/parent-guidance.webp";
 // Department Section
 import imgCPE from "../../assets/images/departments/CPE.webp";
 import imgCHE from "../../assets/images/departments/CHE.webp";
@@ -36,7 +37,7 @@ import iconFacebook from "../../assets/icons/facebook.svg";
 import iconInstagram from "../../assets/icons/instagram.svg";
 import iconLOC from "../../assets/icons/location.svg";
 import iconWebsite from "../../assets/icons/website.svg";
-import { deselectScripts } from "astro/virtual-modules/transitions-swap-functions.js";
+import iconCalendar from "../../assets/icons/calendar.svg";
 
 export default {
   hero: {
@@ -102,8 +103,15 @@ export default {
       {
         title: "Engi’s Idol Talk",
         description:
-          "น้อง ๆ จะได้จับเข่าคุย ขอคำปรึกษา และเทคนิคการจัดทำ Portfolio การเตรียมตัวสอบเข้าสาขาวิชาต่าง ๆ ในคณะวิศวกรรมศาสตร์ จากรุ่นพี่นักศึกษาจากทั้ง 10 ภาควิชา แบบตัวต่อตัว\nแล้วพบกันที่ อาคารเรียนรวม 4 (S12) ชั้น 1",
+          "น้อง ๆ จะได้จับเข่าคุย ขอคำปรึกษา และเทคนิคการจัดทำ Portfolio การเตรียมตัวสอบเข้าสาขาวิชาต่าง ๆ ในคณะวิศวกรรมศาสตร์ จากรุ่นพี่นักศึกษาจากทั้ง 10 ภาควิชา แบบตัวต่อตัวแล้วพบกันที่\nห้องประชุมคณะวิศวกรรมศาสตร์ อาคารเรียนรวม 4 (S12) ชั้น 2",
         image: thIdol,
+        href: "/",
+      },
+      {
+        title: "กิจกรรมแนะแนวผู้ปกครอง",
+        description:
+          "กิจกรรมพิเศษที่เปิดโอกาสให้ผู้ปกครองได้รับฟังข้อมูลเกี่ยวกับการสมัครเข้าศึกษาต่อ การเรียนการสอน และเส้นทางสายอาชีพของสาขาวิชาต่าง ๆ ภายในคณะวิศวฯ มจธ. โดยอาจารย์ผู้สอนและกรรมการสอบสัมภาษณ์ตัวจริงวันที่  10 - 12 ตุลาคม 2568 เวลา 09.30 - 12.00 น. ห้องประชุมคณะวิศวกรรมศาสตร์ ชั้น 2 อาคารเรียนรวม 4 (S12)",
+        image: thParent,
         href: "/",
       },
     ],
@@ -185,17 +193,17 @@ export default {
           "ระดับบัณฑิตศึกษา : ลงทะเบียนแจ้งความประสงค์เข้าศึกษาต่อได้ทันที",
         ],
         description2:
-          "รายละเอียดเพิ่มเติม\nสิทธิพิเศษเฉพาะผู้เข้าร่วม KMUTT Engineering Open House 2025\n\nสำหรับน้อง ๆ ที่สนใจสมัคร Early Admission for International Programs KMUTT (รับเฉพาะหลักสูตรนานาชาติ) สามารถเตรียม Portfolio และสมัครได้ทันที! ส่วนเกณฑ์การรับสมัครสามารถกดปุ่มด้านล่างเพื่อดูรายละเอียด พร้อมเตรียม Portfolio มาสมัครได้เลย \nสำหรับระดับบัณฑิตศึกษา เฉพาะผู้เข้าร่วมงานเท่านั้น หากสนใจเข้าศึกษาต่อ สามารถลงทะเบียนแจ้งความประสงค์ได้ทันที",
+          "สิทธิพิเศษเฉพาะผู้เข้าร่วม KMUTT Engineering Open House 2025 \nสำหรับน้อง ๆ ที่สนใจสมัคร Early Admission for International Programs KMUTT (รับเฉพาะหลักสูตรนานาชาติ) สามารถเตรียม Portfolio และสมัครได้ทันที! ส่วนเกณฑ์การรับสมัครสามารถกดปุ่มด้านล่างเพื่อดูรายละเอียด พร้อมเตรียม Portfolio มาสมัครได้เลย สำหรับระดับบัณฑิตศึกษา เฉพาะผู้เข้าร่วมงานเท่านั้น หากสนใจเข้าศึกษาต่อ สามารถลงทะเบียนแจ้งความประสงค์ได้ทันที",
         image: imgAdmission,
         location: [
           {
-            text: "ส่วนเกณฑ์การรับสมัคร",
+            text: "เกณฑ์การรับสมัคร",
             href: "https://mailkmuttacth-my.sharepoint.com/:b:/g/personal/patthitta_cho_kmutt_ac_th/EZhQ9gV3HPFOj5ojtMd38i8Bmoxiujg3qfs7FwNcfPlB5Q?e=vhRXWx",
             icon: iconWebsite,
           },
           {
             text: "อาคารสำนักหอสมุด (N10) ชั้น 1 ห้อง LIB108",
-            href: "https://maps.app.goo.gl/hfSeMHNDbkmEZfGU6",
+            href: "https://maps.app.goo.gl/p1oFmS8yp9duxFRJA",
             icon: iconLOC,
           },
           {
@@ -211,13 +219,13 @@ export default {
         ],
       },
       {
-        title: "INNO-X",
+        title: "Work shop ที่ศูนย์ INNO-X",
         description:
           "พื้นที่สร้างสรรค์ชิ้นงานต้นแบบ นวัตกรรม และสิ่งประดิษฐ์ ด้วยเครื่องมือสุดล้ำอย่าง 3D Printer, Laser Cutter และ Mini CNC  โดยในกิจกรรมเวิร์กช็อปน้อง ๆ จะได้สัมผัสการใช้งาน 3D Printer และ Laser Cutter แบบใกล้ชิด พร้อมลงมือทำของจริงด้วยตัวเอง",
         image: imgINNOX,
         location: [
           {
-            text: "อาคารวิศววัฒนะ (S4)",
+            text: "อาคารวิศววัฒนะ (S4) ชั้น 1",
             href: "https://maps.app.goo.gl/w1h5V5dBoTa3UNr87",
             icon: iconLOC,
           },
@@ -273,7 +281,7 @@ export default {
         location: [
           {
             text: "วันที่ 10 ตุลาคม 2568",
-            icon: iconLOC,
+            icon: iconCalendar,
           },
           {
             text: "อาคารสำนักหอสมุด (N10) ชั้น 1 ห้อง LIB108",
@@ -285,16 +293,20 @@ export default {
       {
         title: "Engineering Quest 2025",
         description:
-          "จาก 350 ทีม สู่ 50 ทีม และสุดท้าย 5 ทีมสุดท้าย ร่วมชมการแข่งขันรอบรองชนะเลิศ และรอบชิงชนะเลิศ การแข่งขันตอบปัญหาวิชาการทางด้านวิศวกรรม ระดับมัธยมศึกษาตอนปลายหรือเทียบเท่า ปีการศึกษา 2568 ในวันที่ 11 ตุลาคม 2568 ภายใต้โจทย์ปัญหาที่ใช้เนื้อหาเกี่ยวกับ วิทยาศาสตร์และคณิตศาสตร์ ผ่านทางการถ่ายทดสดที่ เพจ Facebook KMUTT Engineering Open House 2025 สามารถช่วยลุ้น ร่วมเชียร์ และให้กำลังใจได้ตลอดทั้งวัน",
+          "การแข่งขันตอบปัญหาวิชาการทางด้านวิศวกรรม ระดับมัธยมศึกษาตอนปลายหรือเทียบเท่า ปีการศึกษา 2568 จากนักเรียนกว่า 350 ทีมทั่วประเทศ สามารถเข้าร่วมรับชมการแข่งขันรอบรองชนะเลิศและรอบชิงชนะเลิศ  ภายใต้โจทย์ปัญหาที่ใช้เนื้อหาเกี่ยวกับวิทยาศาสตร์และคณิตศาสตร์ ผ่านทางการถ่ายทอดสดที่ เพจ Facebook KMUTT Engineering Open House 2025 สามารถช่วยลุ้น ร่วมเชียร์ และให้กำลังใจได้ตลอดทั้งวัน",
         image: imgEQ,
         location: [
           {
-            text: "รอบคัดเลือก:\nอาคารเรียนรวม 2 (N17)",
+            text: "วันที่ 11 ตุลาคม 2568",
+            icon: iconCalendar,
+          },
+          {
+            text: "รอบคัดเลือก: อาคารเรียนรวม 2 (N17)",
             href: "https://maps.app.goo.gl/MXUNduPtscmUkYj59",
             icon: iconLOC,
           },
           {
-            text: "รอบรองชนะเลิศ & รอบชิงชนะเลิศ:\nโรงพละศึกษา อาคารพระจอมเกล้าราชานุสรณ์ 190 ปี (S14)",
+            text: "รอบรองชนะเลิศ & รอบชิงชนะเลิศ: โรงฝึกพลศึกษา อาคารพระจอมเกล้าราชานุสรณ์ 190 ปี (S14) ชั้น 3",
             href: "https://maps.app.goo.gl/3TsAguSd91EkBRA59",
             icon: iconLOC,
           },
@@ -312,6 +324,10 @@ export default {
         image: imgBH,
         location: [
           {
+            text: "วันที่ 11 ตุลาคม 2568",
+            icon: iconCalendar,
+          },
+          {
             text: "อาคารวิศววัฒนะ (S4) ชั้น 11  มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี",
             href: "https://maps.app.goo.gl/65YM3k6JdvKM1tLD8",
             icon: iconLOC,
@@ -327,6 +343,31 @@ export default {
   },
   map: {
     title: "สถานที่จัดงาน",
+    transportation: {
+      title: "วิธีการเดินทาง",
+      choices: [
+        {
+          title: "รถโดยสารประจำทาง",
+          description:
+            "<b>1. รถโดยสารที่ผ่านมหาวิทยาลัย</b>\n- สาย 75 หัวลำโพง-วัดพุทธบูชา\n- สาย 21 มหานาค-วัดคู่สร้าง\n- สาย 21E จุฬาฯ-วัดคู่สร้าง\n- สาย 88 BTS ตลาดพลู-มจธ.บางขุนเทียน\n<b>2. รถโดยสารอื่นๆ (ต่อสาย)</b>\n- สาย 6 พระประแดง-บางลำพู\n- สาย 20 ท่าดินแดง-พระสมุทรเจดีย์\n- สาย 37 จุฬาฯ-ท่าน้ำพระประแดง\n- สาย 82 บางลำพู-ท่าน้ำพระประแดง\n- สาย 140 แสมดำ-อนุสาวรีย์ชัยสมรภูมิ\n- สาย 141 แสมดำ-จุฬาฯ\n- สาย 142 แสมดำ-ฟาร์มจระเข้สมุทรปราการ\n- สาย 195 เดอะมอลล์ท่าพระ-คลองเตย",
+        },
+        {
+          title: "รถโดยสารขนาดเล็ก (กระป้อ)",
+          description:
+            "- สาย 77 เส้นทางเดินรถ บิ๊กซี (ราษฎร์บูรณะ)-วัดพุทธบูชา\n- สาย 88 เส้นทางเดินรถ บิ๊กซี (บางปะกอก)-ทุ่งครุ\n- สาย 90 ตลาดบางปะกอก-วัดทุ่งครุ\n- สาย 99 บางปะกอก-ทุ่งครุ\n- รถสองแถวแดง ใต้ทางด่วนสุขสวัสดิ์ (กม.9)-แฟลตทุ่งครุ",
+        },
+        {
+          title: "รถไฟฟ้า",
+          description:
+            "- BTS สถานีสะพานตากสิน ต่อรถโดยสารสาย 75\n- MRT สถานีหัวลำโพง ต่อรถโดยสารสาย 75",
+        },
+        {
+          title: "สนามบิน",
+          description:
+            "<b>1. สนามบินสุวรรณภูมิ</b> ขึ้นรถไฟฟ้า Airport Rail Link ลงที่สถานีพญาไท ต่อ BTS ลงสถานีสะพานตากสิน ต่อรถโดยสารสาย 75\n<b>2. สนามบินดอนเมือง</b>å ขึ้นรถไฟฟ้าสายสีแดงลงที่สถานีบางซื่อ ต่อ MRT ลงสถานีหัวลำโพง ต่อรถโดยสารสาย 75",
+        },
+      ],
+    },
   },
   faq: {
     title: "คำถามที่พบบ่อย",
@@ -357,9 +398,14 @@ export default {
           "ผู้ปกครอง คุณครู หรือบุคคลภายนอกที่สนใจ สามารถลงทะเบียนเพื่อเข้าร่วมกิจกรรมต่าง ๆ ได้",
       },
       {
-        question: " มีเกียรติบัตรไหม ?",
+        question: "มีเกียรติบัตรไหม ?",
         answer:
-          "ภายในงานแบ่งเกียรติบัตรออกเป็น 3 ประเภท\n1. เกียรติบัตรการเข้าร่วมงาน จะได้รับเมื่อสะสม E-stamp จากการเข้าร่วมกิจกรรมต่าง ๆ ครบ 5 คะแนนขึ้นไป ดังนี้ \nนิทรรศการของ 10 ภาควิชา รวม 10 ดวง 1 คะแนน/ดวง \nWorkshop จาก 10 ภาควิชา และ INNO-X รวม 11 ดวง  3 คะแนน/ดวง\nEngi’s Journey จำนวน 3 ดวง 3 คะแนน/ดวง \nEngineering Quest 2025 1 ดวง 1 คะแนน/ดวง \nScience & Technology Idea Contest Engineering KMUTT 1 ดวง 1 คะแนน/ดวง\n2. เกียรติบัตรการเข้าร่วม Workshop จะได้รับเมื่อเข้าร่วม Workshop กับภาควิชาต่าง ๆ หรือ INNO-X\n3. เกียรติบัตรการแข่งขันทางวิชาการ จะได้รับตามเงื่อนไขของแต่ละการแข่งขัน",
+          "ภายในงานแบ่งเกียรติบัตรออกเป็น 3 ประเภท\n1. เกียรติบัตรการเข้าร่วมงาน จะได้รับเมื่อสะสม E-stamp จากการเข้าร่วมกิจกรรมต่าง ๆ ครบ 5 คะแนนขึ้นไป ดังนี้\n - นิทรรศการของ 10 ภาควิชา รวม 10 ดวง 1 คะแนน/ดวง \n - Workshop จาก 10 ภาควิชา และ INNO-X รวม 11 ดวง  3 คะแนน/ดวง\n - Engi’s Journey จำนวน 3 ดวง 3 คะแนน/ดวง\n - Engineering Quest 2025 1 ดวง 1 คะแนน/ดวง\n - Science & Technology Idea Contest Engineering KMUTT 1 ดวง 1 คะแนน/ดวง\n - Engi’s Idol talk 1 ดวง 1 คะแนน/ดวง\n - กิจกรรมแนะแนวผู้ปกครอง 1 ดวง 1 คะแนน/ดวง\n2. เกียรติบัตรการเข้าร่วม Workshop จะได้รับเมื่อเข้าร่วม Workshop กับภาควิชาต่าง ๆ หรือ INNO-X\n3. เกียรติบัตรการแข่งขันทางวิชาการ จะได้รับตามเงื่อนไขของแต่ละการแข่งขัน",
+      },
+      {
+        question: "ลงทะเบียนเข้าร่วมกิจกรรมยังไง ?",
+        answer:
+          "ลงทะเบียนได้ที่ <a href='https://openhouse.kmutt.ac.th/' target='_blank' class='text-primary hover:text-primary-hover underline'>openhouse.kmutt.ac.th</a>",
       },
     ],
   },

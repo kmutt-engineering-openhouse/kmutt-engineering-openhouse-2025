@@ -12,7 +12,7 @@ export default {
       fontFamily: {
         sans: [
           "Prompt",
-          "Bai Jamjuree",
+          "IBM Plex Sans Thai",
           "ui-sans-serif",
           "system-ui",
           "Segoe UI",
@@ -23,7 +23,7 @@ export default {
           "sans-serif",
         ],
         prompt: ["Prompt", "sans-serif"],
-        jamjuree: ["Bai Jamjuree", "sans-serif"],
+        ibm: ["IBM Plex Sans Thai", "sans-serif"],
       },
     },
   },

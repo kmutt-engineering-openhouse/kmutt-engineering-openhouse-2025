@@ -118,10 +118,13 @@ const seo = {
                   <span class="text-sm font-medium text-gray-500">
                     {lang === "en" ? "Workshop" : "เวิร์คช็อป"}
                   </span>
-                  <button class="group/btn flex items-center gap-2 rounded-xl bg-gradient-to-r from-primary to-primary-hover px-6 py-3 font-prompt font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 hover:scale-105">
+                  <a 
+                    href={`/${lang}/workshop/${workshop.code}/`}
+                    class="group/btn flex items-center gap-2 rounded-xl bg-gradient-to-r from-primary to-primary-hover px-6 py-3 font-prompt font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 hover:scale-105"
+                  >
                     <span>{lang === "en" ? "Learn More" : "เรียนรู้เพิ่มเติม"}</span>
                     <img src="/src/assets/icons/arrow-right.svg" alt="Arrow" class="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" style="filter: brightness(0) invert(1);" />
-                  </button>
+                  </a>
                 </div>
               </div>
             </article>

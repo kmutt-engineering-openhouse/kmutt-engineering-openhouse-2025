@@ -51,6 +51,8 @@ export interface WorkshopCardProps {
   alt: string;
   title: string;
   description?: string;
+  code?: string;
+  lang?: string;
   index?: number;
 }
 

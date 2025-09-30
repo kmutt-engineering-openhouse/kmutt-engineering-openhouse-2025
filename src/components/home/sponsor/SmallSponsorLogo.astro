@@ -1,6 +1,17 @@
 ---
 import { Image } from "astro:assets";
-import Small_Spon_Logo from "../../../assets/logo/sponsor/small/Website-Small-Logo-Spon-OPH.svg";
+import lactasoy_Logo from "../../../assets/logo/sponsor/small/Lactasoy.webp";
+import premier_Logo from "../../../assets/logo/sponsor/small/Premier.webp";
+import bangkokBank_Logo from "../../../assets/logo/sponsor/small/Bangkok_Bank.webp";
+import mondelez_Logo from "../../../assets/logo/sponsor/small/Mondelez.webp";
+import usefulFood_Logo from "../../../assets/logo/sponsor/small/UsefulFood.webp";
+import pocariSweat_Logo from "../../../assets/logo/sponsor/large/PocariSweat.webp";
+import bhaesajchakorn_Logo from "../../../assets/logo/sponsor/small/Bhaesajchakorn.webp";
+import casio_Logo from "../../../assets/logo/sponsor/small/Casio.webp";
+import ire_Logo from "../../../assets/logo/sponsor/small/IRE.webp";
+import tsb_Logo from "../../../assets/logo/sponsor/small/TSB.webp";
+import windChill_Logo from "../../../assets/logo/sponsor/small/windChill.webp";
+import royalD_Logo from "../../../assets/logo/sponsor/small/royalD.webp";
 
 interface Props {
   class?: string;
@@ -8,17 +19,47 @@ interface Props {
 }
 
 const { class: className = "", ...attrs } = Astro.props;
+
+const logos = [
+  { src: lactasoy_Logo, alt: "Lactasoy", height: 32, heightSm: 16, row: 1 },
+  { src: premier_Logo, alt: "Premier Marketing", height: 32, heightSm: 16, row: 1 },
+  { src: bangkokBank_Logo, alt: "Bangkok Bank", height: 32, heightSm: 16, row: 1 },
+  { src: mondelez_Logo, alt: "Mondelex", height: 32, heightSm: 16, row: 1 },
+  { src: usefulFood_Logo, alt: "Useful Food", height: 32, heightSm: 16, row: 1 },
+  { src: bhaesajchakorn_Logo, alt: "Bhaesajchakorn", height: 32, heightSm: 16, row: 1 },
+  { src: pocariSweat_Logo, alt: "Pocari Sweat", height: 32, heightSm: 16, row: 1 },
+  { src: casio_Logo, alt: "Casio", height: 20, heightSm: 12, row: 1 },
+  { src: ire_Logo, alt: "IRE", height: 32, heightSm: 16, row: 1 },
+  { src: tsb_Logo, alt: "TSB", height: 52, heightSm: 36, row: 1 },
+  { src: windChill_Logo, alt: "WindChill", height: 32, heightSm: 16, row: 1 },
+  { src: royalD_Logo, alt: "Royal-D", height: 40, heightSm: 20, row: 1 },
+];
+
+const rows = Array.from(new Set(logos.map((l) => l.row))).sort((a, b) => a - b);
 ---
 
-<Image
-  src={Small_Spon_Logo}
-  alt="Small Sponsor Logo"
-  class={`px-6 select-none object-cover sm:px-0 ${className}`}
-  width={460}
-  sizes="(max-width: 360px) 100vw, 460px"
-  loading="lazy"
-  fetchpriority="high"
-  format="svg"
-  quality={100}
-  {...attrs}
-/>
+<div class={`mx-auto w-full max-w-[560px] ${className}`} {...attrs}>
+  <div class="box-border flex h-full w-full flex-col items-stretch justify-center gap-4">
+    {
+      rows.map((r) => (
+        <div class="flex flex-1 flex-wrap items-center justify-center gap-4">
+          {logos
+            .filter((l) => l.row === r)
+            .map((logo) => (
+              <div
+                class="logo-container flex items-center justify-center"
+                style={`height: ${logo.height}px; @media (max-width: 560px) { height: ${logo.heightSm}px; }`}
+              >
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  class="h-full w-auto max-w-full object-contain"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+        </div>
+      ))
+    }
+  </div>
+</div>

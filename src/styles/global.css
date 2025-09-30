@@ -15,8 +15,8 @@ body {
   font-display: swap;
 }
 
-.font-jamjuree {
-  font-family: theme("fontFamily.jamjuree") !important;
+.font-ibm {
+  font-family: theme("fontFamily.ibm") !important;
   font-display: swap;
 }
 
@@ -106,7 +106,6 @@ section[id] {
 .scroll-animate[data-delay="10"] {
   transition-delay: 0.3s;
 }
-
 
 /* CSS-based fade animations */
 [data-fade],

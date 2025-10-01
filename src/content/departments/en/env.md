@@ -3,7 +3,7 @@ title: "Environmental"
 description: "🌎✨ Ever wondered what it’s like to study Environmental Engineering and become a cool, eco-loving engineer? 😎\nThen don’t miss the KMUTT Engineering Open House 2025 at the Department of Environmental Engineering! 🚀\nWe’ve got exciting hands-on activities 👩‍🔬, fun and interactive workshops 🔧, and booths that will show you that “the environment” isn’t all doom and gloom 🌱 — it's exciting, impactful, and totally worth exploring.\nYou’ll also get to meet our seniors — real students, real stories — ready to share what it’s like to study and have fun in our department! 🍀\n📌 Spoiler alert: You’ll leave with knowledge, laughs, snacks, and maybe even a surprise or two 😉"
 image: "ENV.webp"
 sections:
-  - heading: "Activities at KMUTT Engineering Open House 2025 – Environmental Engineering"
+  - heading: "Activities at KMUTT Engineering Open House 2025"
     list:
       - "<b>Check-in Point</b>"
     chips:

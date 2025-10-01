@@ -103,7 +103,7 @@ export default {
       {
         title: "Engi’s Idol Talk",
         description:
-          "Join us for one-on-one sessions with students from all 10 departments of the Faculty of Engineering! Get personalized advice and techniques on Portfolio preparation and university entrance exam strategies\nFaculty of Engineering Meeting Room, Classroom Building 4 (S12), 2nd floor",
+          "Join us for one-on-one sessions with students from all 10 departments of the Faculty of Engineering! Get personalized advice and techniques on Portfolio preparation and university entrance exam strategies\nFaculty of Engineering Meeting Room, Classroom Building 4 (S12), 2nd floor\n 10 - 12 October 2025 01.00 PM - 04.00 PM",
         image: enIdol,
         href: "/",
       },
@@ -202,13 +202,13 @@ export default {
             icon: iconLOC,
           },
           {
-            text: "ICE KMUTT",
-            href: "https://www.facebook.com/InternationalCenterforEngineeringKMUTT",
+            text: "Modmee Gear",
+            href: "https://www.facebook.com/modmeegear/",
             icon: iconFacebook,
           },
           {
-            text: "kmutt.ice",
-            href: "https://www.instagram.com/kmutt.ice/",
+            text: "modmeegear.kmutt",
+            href: "https://www.instagram.com/modmeegear.kmutt/",
             icon: iconInstagram,
           },
         ],

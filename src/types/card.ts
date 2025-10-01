@@ -51,6 +51,8 @@ export interface WorkshopCardProps {
   alt: string;
   title: string;
   description?: string;
+  code?: string;
+  lang?: string;
   index?: number;
 }
 
@@ -59,6 +61,12 @@ export interface FAQCardProps {
   question: string;
   answer: string;
   open?: boolean;
+}
+
+// Transportation card interface
+export interface TransportationCardProps {
+  title: string;
+  description: string;
 }
 
 // Generic card wrapper interface

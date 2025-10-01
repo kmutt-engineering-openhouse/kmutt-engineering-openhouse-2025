@@ -49,6 +49,8 @@ const getImageByCode = (code: string): ImageMetadata | undefined => {
               alt={c.title} 
               title={c.title} 
               description={c.description}
+              code={c.code}
+              lang={lang}
               data-delay={index + 1}
             />
           </div>

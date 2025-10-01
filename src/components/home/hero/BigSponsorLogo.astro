@@ -1,24 +1,52 @@
 ---
 import { Image } from "astro:assets";
-import Big_Spon_Logo from "../../../assets/logo/sponsor/large/Website-BIG-Logo-Spon-OPH.svg";
+import be_engineer_Logo from "../../../assets/logo/sponsor/large/be-engineer.webp";
+import camphub_Logo from "../../../assets/logo/sponsor/large/Camphub.webp";
+import major_Logo from "../../../assets/logo/sponsor/large/Major_Cineplex.webp";
+import cpac_Logo from "../../../assets/logo/sponsor/large/cpac-scg.webp";
+import murata_Logo from "../../../assets/logo/sponsor/large/murata.webp";
+import syntec_Logo from "../../../assets/logo/sponsor/large/syntec.webp";
 
 interface Props {
   class?: string;
   [key: string]: any;
 }
-
 const { class: className = "", ...attrs } = Astro.props;
+
+const logos = [
+  { src: syntec_Logo, alt: "Syntec", height: 60, heightSm: 36, row: 1 },
+  { src: cpac_Logo, alt: "CPAC-SCG", height: 60, heightSm: 36, row: 1 },
+  { src: major_Logo, alt: "Major Cineplex", height: 80, heightSm: 40, row: 1 },
+  { src: murata_Logo, alt: "Murata", height: 52, heightSm: 32, row: 1 },
+  { src: be_engineer_Logo, alt: "Be Engineer", height: 40, heightSm: 28, row: 2 },
+  { src: camphub_Logo, alt: "Camphub", height: 40, heightSm: 28, row: 2 },
+];
+
+const rows = Array.from(new Set(logos.map((l) => l.row))).sort((a, b) => a - b);
 ---
 
-<Image
-  src={Big_Spon_Logo}
-  alt="Big Sponsor Logo"
-  class={`px-6 select-none object-cover sm:px-0 ${className}`}
-  width={460}
-  sizes="(max-width: 360px) 100vw, 460px"
-  loading="eager"
-  fetchpriority="high"
-  format="svg"
-  quality={100}
-  {...attrs}
-/>
+<div class={`mx-auto w-full max-w-[480px] ${className}`} {...attrs}>
+  <div class="box-border flex h-full w-full flex-col items-stretch justify-center gap-4">
+    {
+      rows.map((r) => (
+        <div class="flex flex-1 flex-wrap items-center justify-center gap-4">
+          {logos
+            .filter((l) => l.row === r)
+            .map((logo) => (
+              <div
+                class="logo-container flex items-center justify-center"
+                style={`height: ${logo.height}px; @media (max-width: 480px) { height: ${logo.heightSm}px; }`}
+              >
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  class="h-full w-auto max-w-full object-contain"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+        </div>
+      ))
+    }
+  </div>
+</div>

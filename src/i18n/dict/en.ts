@@ -3,6 +3,7 @@ import enWorkshop from "../../assets/images/highlight/en/workshop.webp";
 import enExhibition from "../../assets/images/highlight/en/exhibition.webp";
 import enJourney from "../../assets/images/highlight/en/engi-journey.webp";
 import enIdol from "../../assets/images/highlight/en/idol.webp";
+import enParent from "../../assets/images/highlight/en/parent-guidance.webp";
 // Department Section
 import imgCPE from "../../assets/images/departments/CPE.webp";
 import imgCHE from "../../assets/images/departments/CHE.webp";
@@ -36,6 +37,7 @@ import iconFacebook from "../../assets/icons/facebook.svg";
 import iconInstagram from "../../assets/icons/instagram.svg";
 import iconLOC from "../../assets/icons/location.svg";
 import iconWebsite from "../../assets/icons/website.svg";
+import iconCalendar from "../../assets/icons/calendar.svg";
 
 export default {
   hero: {
@@ -101,8 +103,15 @@ export default {
       {
         title: "Engi’s Idol Talk",
         description:
-          "Join us for one-on-one sessions with students from all 10 departments of the Faculty of Engineering! Get personalized advice and techniques on Portfolio preparation and university entrance exam strategies\nLearning Building 4 (S12), 1st Floor",
+          "Join us for one-on-one sessions with students from all 10 departments of the Faculty of Engineering! Get personalized advice and techniques on Portfolio preparation and university entrance exam strategies\nFaculty of Engineering Meeting Room, Classroom Building 4 (S12), 2nd floor",
         image: enIdol,
+        href: "/",
+      },
+      {
+        title: "Parent Guidance Session",
+        description:
+          "A special event offering parents the opportunity to receive information on the admissions process, curriculum and instruction, and career paths for various programs within the Faculty of Engineering at KMUTT. Presentations will be given by our professor and actual members of the admissions interview committee. 10 - 12 October 2025 09.30 AM - 12.00 PM Faculty of Engineering Meeting Room, Classroom Building 4 (S12), 2nd floor",
+        image: enParent,
         href: "/",
       },
     ],
@@ -184,7 +193,7 @@ export default {
           "Graduate students: Register your intention to enroll immediately",
         ],
         description2:
-          "More details:\nExclusive benefits are available only to attendees of KMUTT Engineering Open House 2025.\n\nUndergraduates interested in Early Admission for International Programs at KMUTT (international programs only) can prepare their portfolio and apply on the spot! Admission criteria can be viewed via the button below, so you can get your portfolio ready.\n\nFor graduate students, participation in the event is required to register your intention to enroll immediately.",
+          "Exclusive benefits are available only to attendees of KMUTT Engineering Open House 2025.\nUndergraduates interested in Early Admission for International Programs at KMUTT (international programs only) can prepare their portfolio and apply on the spot! Admission criteria can be viewed via the button below, so you can get your portfolio ready. For graduate students, participation in the event is required to register your intention to enroll immediately.",
         image: imgAdmission,
         location: [
           {
@@ -194,7 +203,7 @@ export default {
           },
           {
             text: "KMUTT Library Building, 1st Floor, LIB108",
-            href: "https://maps.app.goo.gl/hfSeMHNDbkmEZfGU6",
+            href: "https://maps.app.goo.gl/p1oFmS8yp9duxFRJA",
             icon: iconLOC,
           },
           {
@@ -210,13 +219,13 @@ export default {
         ],
       },
       {
-        title: "INNO-X",
+        title: "INNO-X Workshop",
         description:
           "Creative space for prototyping, innovation, and invention, equipped with cutting-edge tools such as 3D Printers, Laser Cutters, and Mini CNC machines. In the workshop, you will get hands-on experience using the 3D Printer and Laser Cutter up close and even create your own projects for real!",
         image: imgINNOX,
         location: [
           {
-            text: "Wissawa Wattana Building (S4)",
+            text: "Wissawa Wattana Building (S4), 1st Floor",
             href: "https://maps.app.goo.gl/w1h5V5dBoTa3UNr87",
             icon: iconLOC,
           },
@@ -234,17 +243,17 @@ export default {
     contest: [
       {
         title: "Science & Technology Idea Contest Engineering KMUTT",
-        description: `a competition for high school students or their equivalents to submit scientific and technological inventions under the theme "Engineering for Sustainability."\nOn October 10, 2025, you have been invited to participate in the final round of the competition and the all-day exhibition.`,
+        description: `A competition for high school students or their equivalents to submit scientific and technological inventions under the theme "Engineering for Sustainability." You have been invited to participate in the final round of the competition and the all-day exhibition.`,
         points: [
           "Seeing 40 teams’ innovative project concepts and inventions",
           "You can vote for your favorite idea for the Popular Vote from 9:30 am to 3:30 pm",
-          "Listening to presentations from the top five teams to decide the winner",
+          "Listening to presentations from the top 5 teams to decide the winner",
         ],
         image: imgIC,
         location: [
           {
             text: "On October 10, 2025",
-            icon: iconLOC,
+            icon: iconCalendar,
           },
           {
             text: "KMUTT Library Building, 1st Floor, LIB1080",
@@ -256,16 +265,20 @@ export default {
       {
         title: "Engineering Quest 2025",
         description:
-          "First, 350 teams, then 50 teams, and lastly, the top 5. On October 11, 2025, you can watch the semi-final and final rounds of the Engineering Academic Quiz Competition for students in high school or its equivalent in the Academic Year 2025. The competition will be live-streamed on the KMUTT Engineering Open House 2025 Facebook page, so you may follow, cheer, and support throughout.",
+          "The Engineering Academic Quiz Competition for High School Students (or equivalent), Academic Year 2025. 350 teams from across the country, you are invited to watch the semi-final and final rounds. The event will feature challenges based on science and mathematics. Join the live broadcast on the Facebook page to cheer for the teams and show your support throughout the day.",
         image: imgEQ,
         location: [
           {
-            text: "Preliminary Round:\nClassroom Building 2 (N17)",
+            text: "On October 11, 2025",
+            icon: iconCalendar,
+          },
+          {
+            text: "Preliminary Round: Classroom Building 2 (N17)",
             href: "https://maps.app.goo.gl/MXUNduPtscmUkYj59",
             icon: iconLOC,
           },
           {
-            text: "Semi-Final & Final Rounds:\nKing Mongkut’s 190th Anniversary Memorial Building (S14)",
+            text: "Semi-Final & Final Rounds: King Mongkut's 190th Anniversary Memorial Building (S14), 3rd Floor",
             href: "https://maps.app.goo.gl/3TsAguSd91EkBRA59",
             icon: iconLOC,
           },
@@ -283,6 +296,10 @@ export default {
         image: imgBH,
         location: [
           {
+            text: "On October 11, 2025",
+            icon: iconCalendar,
+          },
+          {
             text: "Wissawa Wattana Building (S4), 11th Floor, King Mongkut’s University of Technology Thonburi",
             href: "https://maps.app.goo.gl/65YM3k6JdvKM1tLD8",
             icon: iconLOC,
@@ -298,6 +315,31 @@ export default {
   },
   map: {
     title: "Location",
+    transportation: {
+      title: "Transportation",
+      choices: [
+        {
+          title: "Public Bus",
+          description:
+            "<b>1. Buses passing through the university</b>\n- Line 75 Hua Lamphong - Wat Phutthabucha\n- Line 21 Mahanak - Wat Khusang\n- Line 21E Chulalongkorn University - Wat Khusang\n- Line 88 BTS Talad Phlu - KMUTT Bang Khun Thian\n<b>2. Other buses (transfer required)</b>\n- Line 6 Phra Pradaeng - Bang Lamphoo\n- Line 20 Tha Din Daeng - Phra Samut Chedi\n- Line 37 Chulalongkorn University - Tha Nam Phra Pradaeng\n- Line 82 Bang Lamphoo - Tha Nam Phra Pradaeng\n- Line 140 Saen Dam - Victory Monument\n- Line 141 Saen Dam - Chulalongkorn University\n- Line 142 Saen Dam - Samut Prakan Crocodile Farm\n- Line 195 The Mall Tha Phra - Khlong Toei",
+        },
+        {
+          title: "Minibus",
+          description:
+            "- Line 77 BigC (Rat Burana) - Wat Phutthabucha\n- Line 88 BigC (Bang Pakok) - Thung Khru\n- Line 90 Bang Pakok Market - Wat Thung Khru\n- Line 99 Bang Pakok - Thung Khru\n- Red songthaew under Suksawat Expressway (Km.9) - Thung Khru Flat",
+        },
+        {
+          title: "Electric Train",
+          description:
+            "- BTS Saphan Taksin Station, transfer to Bus Line 75\n- MRT Hua Lamphong Station, transfer to Bus Line 75",
+        },
+        {
+          title: "Airport",
+          description:
+            "<b>1. Suvarnabhumi Airport</b> Take Airport Rail Link to Phaya Thai Station, transfer to BTS to Saphan Taksin Station, then transfer to Bus Line 75\n<b>2. Don Mueang Airport</b> Take Red Line to Bang Sue Station, transfer to MRT to Hua Lamphong Station, then transfer to Bus Line 75",
+        },
+      ],
+    },
   },
   faq: {
     title: "FAQ",
@@ -330,7 +372,12 @@ export default {
       {
         question: "Are certificates provided?",
         answer:
-          "Certificates are available in 3 types:\n1) Event Participation Certificate — awarded when you collect at least 5 points via E-stamps, as follows:\n- Exhibitions from 10 departments (total 10 stamps): 1 point/stamp\n- Workshops from 10 departments and INNO-X (total 11 stamps): 3 points/stamp\n- Engi's Journey (3 stamps): 3 points/stamp\n- Engineering Quest 2025 (1 stamp): 1 point/stamp\n- Science & Technology Idea Contest Engineering KMUTT (1 stamp): 1 point/stamp\n2) Workshop Participation Certificate — awarded upon attending any department or INNO-X workshop.\n3) Academic Competition Certificate — awarded according to each competition's rules.",
+          "Certificates are available in 3 types:\n1) Event Participation Certificate — awarded when you collect at least 5 points via E-stamps, as follows:\n- Exhibitions from 10 departments (total 10 stamps): 1 point/stamp\n- Workshops from 10 departments and INNO-X (total 11 stamps): 3 points/stamp\n- Engi's Journey (3 stamps): 3 points/stamp\n- Engineering Quest 2025 (1 stamp): 1 point/stamp\n- Science & Technology Idea Contest Engineering KMUTT (1 stamp): 1 point/stamp\n- Engi’s Idol talk (1 stamp): 1 point/stamp\n- Parent Guidance Session (1 stamp): 1 point/stamp\n2) Workshop Participation Certificate — awarded upon attending any department or INNO-X workshop.\n3) Academic Competition Certificate — awarded according to each competition's rules.\n",
+      },
+      {
+        question: "How do I register for the event?",
+        answer:
+          "You can register at <a href='https://openhouse.kmutt.ac.th/' target='_blank' class='text-primary hover:text-primary-hover underline'>openhouse.kmutt.ac.th</a>",
       },
     ],
   },

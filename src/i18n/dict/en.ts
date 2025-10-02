@@ -107,7 +107,7 @@ export default {
       {
         title: "Engi’s Idol Talk",
         description:
-          "Join us for one-on-one sessions with students from all 10 departments of the Faculty of Engineering! Get personalized advice and techniques on Portfolio preparation and university entrance exam strategies\nFaculty of Engineering Meeting Room, Classroom Building 4 (S12), 2nd floor",
+          "Join us for one-on-one sessions with students from all 10 departments of the Faculty of Engineering! Get personalized advice and techniques on Portfolio preparation and university entrance exam strategies\nFaculty of Engineering Meeting Room, Classroom Building 4 (S12), 2nd floor\n 10 - 12 October 2025 01.00 PM - 04.00 PM",
         image: enIdol,
         href: "/",
       },
@@ -197,27 +197,22 @@ export default {
           "Graduate students: Register your intention to enroll immediately",
         ],
         description2:
-          "Exclusive benefits are available only to attendees of KMUTT Engineering Open House 2025.\nUndergraduates interested in Early Admission for International Programs at KMUTT (international programs only) can prepare their portfolio and apply on the spot! Admission criteria can be viewed via the button below, so you can get your portfolio ready. For graduate students, participation in the event is required to register your intention to enroll immediately.",
+          "Exclusive benefits are available only to attendees of KMUTT Engineering Open House 2025.\nUndergraduates interested in Early Admission for International Programs at KMUTT (international programs only) can prepare their portfolio and apply on the spot! For graduate students, participation in the event is required to register your intention to enroll immediately.",
         image: imgAdmission,
         location: [
-          {
-            text: "Admission Criteria",
-            href: "https://mailkmuttacth-my.sharepoint.com/:b:/g/personal/patthitta_cho_kmutt_ac_th/EZhQ9gV3HPFOj5ojtMd38i8Bmoxiujg3qfs7FwNcfPlB5Q?e=vhRXWx",
-            icon: iconWebsite,
-          },
           {
             text: "KMUTT Library Building, 1st Floor, LIB108",
             href: "https://maps.app.goo.gl/p1oFmS8yp9duxFRJA",
             icon: iconLOC,
           },
           {
-            text: "ICE KMUTT",
-            href: "https://www.facebook.com/InternationalCenterforEngineeringKMUTT",
+            text: "Modmee Gear",
+            href: "https://www.facebook.com/modmeegear/",
             icon: iconFacebook,
           },
           {
-            text: "kmutt.ice",
-            href: "https://www.instagram.com/kmutt.ice/",
+            text: "modmeegear.kmutt",
+            href: "https://www.instagram.com/modmeegear.kmutt/",
             icon: iconInstagram,
           },
         ],

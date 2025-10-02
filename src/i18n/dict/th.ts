@@ -107,7 +107,7 @@ export default {
       {
         title: "Engi’s Idol Talk",
         description:
-          "น้อง ๆ จะได้จับเข่าคุย ขอคำปรึกษา และเทคนิคการจัดทำ Portfolio การเตรียมตัวสอบเข้าสาขาวิชาต่าง ๆ ในคณะวิศวกรรมศาสตร์ จากรุ่นพี่นักศึกษาจากทั้ง 10 ภาควิชา แบบตัวต่อตัวแล้วพบกันที่\nห้องประชุมคณะวิศวกรรมศาสตร์ อาคารเรียนรวม 4 (S12) ชั้น 2",
+          "น้อง ๆ จะได้จับเข่าคุย ขอคำปรึกษา และเทคนิคการจัดทำ Portfolio การเตรียมตัวสอบเข้าสาขาวิชาต่าง ๆ ในคณะวิศวกรรมศาสตร์ จากรุ่นพี่นักศึกษาจากทั้ง 10 ภาควิชา แบบตัวต่อตัวแล้วพบกันที่\nห้องประชุมคณะวิศวกรรมศาสตร์ อาคารเรียนรวม 4 (S12) ชั้น 2\nวันที่  10 - 12 ตุลาคม 2568 เวลา 13.00 - 17.00 น.",
         image: thIdol,
         href: "/",
       },
@@ -197,27 +197,22 @@ export default {
           "ระดับบัณฑิตศึกษา : ลงทะเบียนแจ้งความประสงค์เข้าศึกษาต่อได้ทันที",
         ],
         description2:
-          "สิทธิพิเศษเฉพาะผู้เข้าร่วม KMUTT Engineering Open House 2025 \nสำหรับน้อง ๆ ที่สนใจสมัคร Early Admission for International Programs KMUTT (รับเฉพาะหลักสูตรนานาชาติ) สามารถเตรียม Portfolio และสมัครได้ทันที! ส่วนเกณฑ์การรับสมัครสามารถกดปุ่มด้านล่างเพื่อดูรายละเอียด พร้อมเตรียม Portfolio มาสมัครได้เลย สำหรับระดับบัณฑิตศึกษา เฉพาะผู้เข้าร่วมงานเท่านั้น หากสนใจเข้าศึกษาต่อ สามารถลงทะเบียนแจ้งความประสงค์ได้ทันที",
+          "สิทธิพิเศษเฉพาะผู้เข้าร่วม KMUTT Engineering Open House 2025 \nสำหรับน้อง ๆ ที่สนใจสมัคร Early Admission for International Programs KMUTT (รับเฉพาะหลักสูตรนานาชาติ) สามารถเตรียม Portfolio และสมัครได้ทันที! สำหรับระดับบัณฑิตศึกษา เฉพาะผู้เข้าร่วมงานเท่านั้น หากสนใจเข้าศึกษาต่อ สามารถลงทะเบียนแจ้งความประสงค์ได้ทันที",
         image: imgAdmission,
         location: [
-          {
-            text: "เกณฑ์การรับสมัคร",
-            href: "https://mailkmuttacth-my.sharepoint.com/:b:/g/personal/patthitta_cho_kmutt_ac_th/EZhQ9gV3HPFOj5ojtMd38i8Bmoxiujg3qfs7FwNcfPlB5Q?e=vhRXWx",
-            icon: iconWebsite,
-          },
           {
             text: "อาคารสำนักหอสมุด (N10) ชั้น 1 ห้อง LIB108",
             href: "https://maps.app.goo.gl/p1oFmS8yp9duxFRJA",
             icon: iconLOC,
           },
           {
-            text: "ICE KMUTT",
-            href: "https://www.facebook.com/InternationalCenterforEngineeringKMUTT",
+            text: "มดมีเกียร์kmutt",
+            href: "https://www.facebook.com/modmeegear/",
             icon: iconFacebook,
           },
           {
-            text: "kmutt.ice",
-            href: "https://www.instagram.com/kmutt.ice/",
+            text: "modmeegear.kmutt",
+            href: "https://www.instagram.com/modmeegear.kmutt/",
             icon: iconInstagram,
           },
         ],

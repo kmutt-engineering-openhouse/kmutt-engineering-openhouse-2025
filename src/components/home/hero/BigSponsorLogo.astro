@@ -6,6 +6,7 @@ import major_Logo from "../../../assets/logo/sponsor/large/Major_Cineplex.webp";
 import cpac_Logo from "../../../assets/logo/sponsor/large/cpac-scg.webp";
 import murata_Logo from "../../../assets/logo/sponsor/large/murata.webp";
 import syntec_Logo from "../../../assets/logo/sponsor/large/syntec.webp";
+import tsb_Logo from "../../../assets/logo/sponsor/small/TSB.webp";
 
 interface Props {
   class?: string;
@@ -17,6 +18,7 @@ const logos = [
   { src: syntec_Logo, alt: "Syntec", height: 60, heightSm: 36, row: 1 },
   { src: cpac_Logo, alt: "CPAC-SCG", height: 60, heightSm: 36, row: 1 },
   { src: major_Logo, alt: "Major Cineplex", height: 80, heightSm: 40, row: 1 },
+  { src: tsb_Logo, alt: "TSB", height: 84, heightSm: 44, row: 1 },
   { src: murata_Logo, alt: "Murata", height: 52, heightSm: 32, row: 1 },
   { src: be_engineer_Logo, alt: "Be Engineer", height: 40, heightSm: 28, row: 2 },
   { src: camphub_Logo, alt: "Camphub", height: 40, heightSm: 28, row: 2 },
@@ -25,7 +27,7 @@ const logos = [
 const rows = Array.from(new Set(logos.map((l) => l.row))).sort((a, b) => a - b);
 ---
 
-<div class={`mx-auto w-full max-w-[480px] ${className}`} {...attrs}>
+<div class={`mx-auto w-full max-w-[560px] ${className}`} {...attrs}>
   <div class="box-border flex h-full w-full flex-col items-stretch justify-center gap-4">
     {
       rows.map((r) => (
@@ -35,7 +37,7 @@ const rows = Array.from(new Set(logos.map((l) => l.row))).sort((a, b) => a - b);
             .map((logo) => (
               <div
                 class="logo-container flex items-center justify-center"
-                style={`height: ${logo.height}px; @media (max-width: 480px) { height: ${logo.heightSm}px; }`}
+                style={`height: ${logo.height}px; @media (max-width: 560px) { height: ${logo.heightSm}px; }`}
               >
                 <Image
                   src={logo.src}

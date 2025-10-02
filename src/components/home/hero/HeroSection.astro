@@ -12,6 +12,14 @@ const { t } = Astro.props;
       <KMUTTLogo data-fade-up style="--i:0" />
       <AnimatedLogo data-fade-up style="--i:0.5" />
     </div>
+    <button>
+      <a
+        href={t.nav.register.href}
+        class="inline-flex items-center justify-center whitespace-nowrap rounded-2xl border-0 bg-gradient-to-r from-primary to-primary-hover px-8 py-3 text-lg font-bold text-white shadow-lg transition-all duration-200 hover:scale-105 hover:opacity-90 hover:shadow-xl active:scale-95 md:py-4 md:text-xl"
+      >
+        {t.nav.register.title}
+      </a>
+    </button>
     <h1 class="text-center font-prompt text-2xl font-[800] sm:text-3xl" data-fade-up style="--i:1">
       {t.hero.date}
     </h1>

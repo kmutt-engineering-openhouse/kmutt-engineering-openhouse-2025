@@ -57,7 +57,7 @@ const menu = [
       }
     </div>
 
-    <div class="absolute right-4 flex items-center gap-2 lg:relative lg:right-auto">
+    <div class="absolute right-4 flex items-center gap-2 lg:relative lg:right-auto lg:gap-4">
       <a
         href={currentLang === "th" ? "/en/" : "/th/"}
         class="flex items-center gap-0.5 text-xs font-normal leading-none transition-colors duration-200"
@@ -71,6 +71,13 @@ const menu = [
         <span class={currentLang === "en" ? "text-primary" : "text-gray-500"}>
           {t.nav.language.en}
         </span>
+      </a>
+
+      <a
+        href={t.nav.register.href}
+        class="hidden cursor-pointer items-center justify-center whitespace-nowrap rounded-2xl border-0 bg-gradient-to-r from-primary to-primary-hover px-4 py-2.5 text-center font-bold text-white shadow-lg transition-all duration-200 hover:scale-105 hover:opacity-90 hover:shadow-xl active:scale-95 lg:inline-flex"
+      >
+        {t.nav.register.title}
       </a>
 
       <button
@@ -124,6 +131,14 @@ const menu = [
             </a>
           ))
         }
+        <button>
+          <a
+            href={t.nav.register.href}
+            class="inline-flex items-center justify-center whitespace-nowrap rounded-2xl border-0 bg-gradient-to-r from-primary to-primary-hover px-4 py-2.5 font-bold text-white shadow-lg transition-all duration-200 hover:scale-105 hover:opacity-90 hover:shadow-xl active:scale-95"
+          >
+            {t.nav.register.title}
+          </a>
+        </button>
       </div>
     </div>
   </div>

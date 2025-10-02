@@ -71,6 +71,10 @@ export default {
         href: "#faq",
       },
     },
+    register: {
+      title: "Register",
+      href: "https://openhouse.kmutt.ac.th/login",
+    },
     language: {
       th: "TH",
       en: "EN",

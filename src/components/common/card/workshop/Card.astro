@@ -1,5 +1,6 @@
 ---
 import type { WorkshopCardProps } from "../../../../types/card.ts";
+import iconEYE from "../../../../assets/icons/eye.svg";
 import { Image } from "astro:assets";
 
 export interface Props extends WorkshopCardProps {
@@ -59,7 +60,7 @@ const dialogId =
     <div
       class="absolute right-4 top-4 flex h-8 w-8 scale-75 transform items-center justify-center rounded-full bg-white/20 opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:scale-100 group-hover:opacity-100"
     >
-      <img src="/src/assets/icons/eye.svg" alt="View" class="h-4 w-4 text-white" />
+      <Image src={iconEYE} alt="View" class="h-4 w-4 text-white" />
     </div>
   </a>
 </article>

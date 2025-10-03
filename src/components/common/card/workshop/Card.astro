@@ -1,0 +1,65 @@
+---
+import type { WorkshopCardProps } from "../../../../types/card.ts";
+import { Image } from "astro:assets";
+
+export interface Props extends WorkshopCardProps {
+  "data-delay"?: number;
+}
+
+const { src, alt, title, description, code, index, lang, "data-delay": dataDelay } = Astro.props;
+const dialogId =
+  index !== undefined
+    ? `workshop-modal-${index}`
+    : `workshop-modal-${Math.random().toString(36).substr(2, 9)}`;
+---
+
+<article
+  class="scroll-animate animate-fade-up group flex flex-col overflow-hidden rounded-2xl bg-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl lg:h-full"
+  data-delay={dataDelay}
+>
+  <a
+    href={`#`}
+    class="card-button relative block aspect-[3/4] w-full overflow-hidden rounded-t-2xl focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+    aria-label={`View details for ${title}`}
+    aria-describedby={description ? `${dialogId}-description` : undefined}
+  >
+    <Image
+      src={src}
+      alt={alt}
+      class="h-full w-full object-cover transition-transform duration-500 ease-out will-change-transform group-hover:scale-110"
+      sizes="(max-width: 640px) 70vw, (max-width: 768px) 50vw, (max-width: 1024px) 25vw, 400px"
+      loading="lazy"
+      width={600}
+      height={800}
+      quality={95}
+      decoding="async"
+    />
+
+    <!-- Gradient Overlay -->
+    <div
+      class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+    >
+    </div>
+
+    <!-- Content Overlay -->
+    <div class="absolute inset-0 flex flex-col justify-end p-4">
+      <div
+        class="translate-y-2 transform transition-transform duration-300 group-hover:translate-y-0"
+      >
+        <h2 class="mb-2 font-prompt text-lg font-bold text-white drop-shadow-lg">
+          {title}
+        </h2>
+        <p class="font-jamjuree line-clamp-2 text-sm text-white/90 drop-shadow-md">
+          {description}
+        </p>
+      </div>
+    </div>
+
+    <!-- Hover Icon -->
+    <div
+      class="absolute right-4 top-4 flex h-8 w-8 scale-75 transform items-center justify-center rounded-full bg-white/20 opacity-0 backdrop-blur-sm transition-all duration-300 group-hover:scale-100 group-hover:opacity-100"
+    >
+      <img src="/src/assets/icons/eye.svg" alt="View" class="h-4 w-4 text-white" />
+    </div>
+  </a>
+</article>

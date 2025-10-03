@@ -71,6 +71,10 @@ export default {
         href: "#faq",
       },
     },
+    register: {
+      title: "ลงทะเบียน",
+      href: "https://openhouse.kmutt.ac.th/login",
+    },
     language: {
       th: "TH",
       en: "EN",
@@ -103,7 +107,7 @@ export default {
       {
         title: "Engi’s Idol Talk",
         description:
-          "น้อง ๆ จะได้จับเข่าคุย ขอคำปรึกษา และเทคนิคการจัดทำ Portfolio การเตรียมตัวสอบเข้าสาขาวิชาต่าง ๆ ในคณะวิศวกรรมศาสตร์ จากรุ่นพี่นักศึกษาจากทั้ง 10 ภาควิชา แบบตัวต่อตัวแล้วพบกันที่\nห้องประชุมคณะวิศวกรรมศาสตร์ อาคารเรียนรวม 4 (S12) ชั้น 2",
+          "น้อง ๆ จะได้จับเข่าคุย ขอคำปรึกษา และเทคนิคการจัดทำ Portfolio การเตรียมตัวสอบเข้าสาขาวิชาต่าง ๆ ในคณะวิศวกรรมศาสตร์ จากรุ่นพี่นักศึกษาจากทั้ง 10 ภาควิชา แบบตัวต่อตัวแล้วพบกันที่\nห้องประชุมคณะวิศวกรรมศาสตร์ อาคารเรียนรวม 4 (S12) ชั้น 2\nวันที่  10 - 12 ตุลาคม 2568 เวลา 13.00 - 17.00 น.",
         image: thIdol,
         href: "/",
       },
@@ -202,13 +206,13 @@ export default {
             icon: iconLOC,
           },
           {
-            text: "ICE KMUTT",
-            href: "https://www.facebook.com/InternationalCenterforEngineeringKMUTT",
+            text: "มดมีเกียร์kmutt",
+            href: "https://www.facebook.com/modmeegear/",
             icon: iconFacebook,
           },
           {
-            text: "kmutt.ice",
-            href: "https://www.instagram.com/kmutt.ice/",
+            text: "modmeegear.kmutt",
+            href: "https://www.instagram.com/modmeegear.kmutt/",
             icon: iconInstagram,
           },
         ],
@@ -233,7 +237,7 @@ export default {
       },
     ],
   },
-  activity: {
+  workshop: {
     title: "กิจกรรม",
     seeAll: "กิจกรรมทั้งหมด",
     card: [

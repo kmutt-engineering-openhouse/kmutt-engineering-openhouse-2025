@@ -11,6 +11,12 @@ const contractItemSchema = z.object({
   link: z.string().url(),
 });
 
+const galleryItemSchema = z.object({
+  image: z.string(),
+  alt: z.string(),
+  title: z.string(),
+});
+
 const sectionSchema = z.union([
   z.object({
     heading: z.string(),
@@ -45,4 +51,15 @@ const departments = defineCollection({
   }),
 });
 
-export const collections = { departments };
+const workshops = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    image: z.string().optional(),
+    gallery: z.array(galleryItemSchema).optional(),
+    sections: z.array(sectionSchema),
+  }),
+});
+
+export const collections = { departments, workshops };

@@ -1,0 +1,67 @@
+---
+import { getWorkshopDict } from "../../../i18n/getDict";
+import Card from "../../common/card/workshop/Card.astro";
+import Heading from "../../common/Heading.astro";
+
+import type { ImageMetadata } from "astro";
+
+const { lang } = Astro.props as { lang: "th" | "en" };
+const t = getWorkshopDict(lang === "en" ? "en" : "th");
+
+const items = t.workshops.slice(0, 4);
+
+const images = await import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/images/workshops/cover/*.{webp,jpg,png}",
+  {
+    eager: true,
+  }
+);
+
+const imageMap = new Map<string, ImageMetadata>();
+Object.entries(images).forEach(([path, module]) => {
+  const filename = path
+    .split("/")
+    .pop()
+    ?.replace(/\.(webp|jpg|png)$/, "");
+  if (filename) {
+    imageMap.set(filename, module.default);
+    console.log(`Mapped: ${filename} -> ${path}`);
+  }
+});
+
+const getImageByCode = (code: string): ImageMetadata | undefined => {
+  return imageMap.get(code);
+};
+---
+
+<section id="workshop" class="mx-auto flex w-full max-w-7xl flex-col gap-4 py-16">
+  <Heading t={t.title || "Workshops"} />
+  <div
+    class="scrollbar-hide flex w-full snap-x snap-mandatory scroll-px-4 gap-4 overflow-x-auto px-4 py-2 lg:grid lg:snap-none lg:scroll-pl-0 lg:grid-cols-4 lg:justify-items-center lg:overflow-visible lg:px-4"
+  >
+    {
+      items.map((c, index) => {
+        const workshopImage = getImageByCode(c.code);
+        return workshopImage ? (
+          <div class="w-[240px] shrink-0 snap-start lg:w-full lg:min-w-0">
+            <Card 
+              src={workshopImage} 
+              alt={c.title} 
+              title={c.title} 
+              description={c.description}
+              code={c.code}
+              lang={lang}
+              data-delay={index + 1}
+            />
+          </div>
+        ) : null;
+      })
+    }
+  </div>
+  <a
+    href={`/${lang}/workshop/`}
+    class="mx-auto w-1/2 shrink-0 cursor-pointer snap-start rounded-2xl border bg-gradient-to-r from-primary to-primary-hover px-4 py-2 font-bold text-white transition-colors duration-200 hover:opacity-60 text-center"
+  >
+    {t.seeAll}
+  </a>
+</section>

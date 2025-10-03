@@ -1,0 +1,279 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import { getDict } from "../../../i18n/getDict";
+import { Image } from "astro:assets";
+import FacebookIcon from "../../../assets/icons/facebook.svg";
+import InstagramIcon from "../../../assets/icons/instagram.svg";
+import WebsiteIcon from "../../../assets/icons/website.svg";
+import EmailIcon from "../../../assets/icons/email.svg";
+import TiktokIcon from "../../../assets/icons/tiktok.svg";
+
+export async function getStaticPaths() {
+  const all = await getCollection("workshops");
+  return all.map((e) => {
+    const [lang, file] = e.id.split("/");
+    return { params: { lang, slug: file.replace(/\.(md|mdx)$/i, "") } };
+  });
+}
+
+const { lang, slug } = Astro.params;
+const dict = getDict(lang as "th" | "en");
+
+const entry = (await getCollection("workshops")).find((e) => {
+  const [eLang, file] = e.id.split("/");
+  return eLang === lang && file.replace(/\.(md|mdx)$/i, "") === slug;
+});
+if (!entry) throw new Error(`Workshop not found: ${lang}/${slug}`);
+
+const { data } = entry;
+
+const images = import.meta.glob("../../../assets/images/workshops/cover/*", { eager: true });
+
+let imageSrc = null;
+if (data.image) {
+  const imagePath = `../../../assets/images/workshops/cover/${data.image.split("/").pop()}`;
+  imageSrc = (images[imagePath] as any)?.default || null;
+}
+
+// Dynamic gallery images based on workshop data
+let galleryImages: Array<{ src: any; alt: string; title: string }> = [];
+
+// Check if workshop has gallery images defined
+if (data.gallery && Array.isArray(data.gallery) && data.gallery.length > 0) {
+  galleryImages = data.gallery
+    .map((galleryItem: { image: string; alt: string; title: string }) => {
+      const imagePath = `../../../assets/images/workshops/cover/${galleryItem.image}`;
+      const image = (images[imagePath] as any)?.default;
+      return image ? { 
+        src: image, 
+        alt: galleryItem.alt || galleryItem.image.replace(/\.(jpg|jpeg|png|webp)$/i, ''),
+        title: galleryItem.title || galleryItem.alt || galleryItem.image.replace(/\.(jpg|jpeg|png|webp)$/i, '')
+      } : null;
+    })
+    .filter((item): item is { src: any; alt: string; title: string } => item !== null);
+}
+---
+
+<Layout t={dict} currentLang={lang}>
+  <section class="mx-auto flex w-full max-w-7xl flex-col gap-4 px-4 py-4">
+    {
+      galleryImages.length > 0 ? (
+        <div class="relative">
+          <div class="gallery-container overflow-hidden rounded-2xl">
+            <div class="gallery-slider flex transition-transform duration-500 ease-in-out" style={`width: ${galleryImages.length * 100}%`}>
+              {galleryImages.map((img: { src: any; alt: string; title: string }, index: number) => (
+                <div class="gallery-slide flex-shrink-0 w-full" style={`width: ${100 / galleryImages.length}%`}>
+                  <div class="relative aspect-[2/1] overflow-hidden sm:aspect-[16/6]">
+                    <Image
+                      src={img.src}
+                      alt={img.alt}
+                      class="w-full h-full object-cover"
+                      loading="eager"
+                      decoding="async"
+                      quality={100}
+                      format="webp"
+                      width={1280}
+                      sizes="(max-width: 1280px) 100vw, (max-width: 1280px) 100vw, 1280px"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                      <h3 class="text-lg font-semibold text-white mb-1">{img.title}</h3>
+                      <p class="text-sm text-white/90">{img.alt}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          <!-- Navigation Dots -->
+          <div class="flex justify-center mt-4 space-x-2">
+            {galleryImages.map((_, index: number) => (
+              <button 
+                class="gallery-dot w-3 h-3 rounded-full bg-gray-300 transition-all duration-300 hover:bg-gray-400"
+                data-slide={index}
+                aria-label={`Go to slide ${index + 1}`}
+              ></button>
+            ))}
+          </div>
+          
+          <!-- Navigation Arrows -->
+          <button 
+            class="gallery-prev absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110"
+            aria-label="Previous image"
+          >
+            <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+          </button>
+          <button 
+            class="gallery-next absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110"
+            aria-label="Next image"
+          >
+            <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+      ) : imageSrc ? (
+        <Image
+          src={imageSrc}
+          alt={data.title}
+          class="aspect-[2/1] w-full select-none rounded-2xl object-cover sm:aspect-[16/6]"
+          loading="eager"
+          decoding="async"
+          quality={100}
+          format="webp"
+          width={1280}
+          sizes="(max-width: 1280px) 100vw, (max-width: 1280px) 100vw, 1280px"
+        />
+      ) : null
+    }
+
+    {
+      lang === "th" ? (
+        <h1 class="text-center font-prompt text-xl">
+          เวิร์คช็อป
+          <br />
+          <span class="text-4xl font-extrabold">{data.title}</span>
+        </h1>
+      ) : (
+        <h1 class="text-center font-prompt text-xl">
+          <>
+            <span class="text-4xl font-extrabold">{data.title}</span>
+            <br />
+          </>
+          Workshop
+        </h1>
+      )
+    }
+
+    <p class="whitespace-pre-line text-center font-jamjuree text-sm leading-relaxed sm:text-base">
+      {data.description}
+    </p>
+
+    <div class="mt-4 flex flex-col gap-4">
+      {
+        data.sections?.map((s) =>
+          s.contract ? (
+            <section class="rounded-2xl border border-gray-300 bg-white p-4">
+              <h2 class="font-prompt text-lg font-semibold text-primary sm:text-xl">{s.heading}</h2>
+              <ul class="mt-2 space-y-1 font-jamjuree text-sm sm:text-base">
+                {s.contract.map((item) => (
+                  <li class="flex items-center gap-2">
+                    {item.type === "facebook" && <FacebookIcon class="inline h-5 w-5" />}
+                    {item.type === "instagram" && <InstagramIcon class="inline h-5 w-5" />}
+                    {item.type === "website" && <WebsiteIcon class="inline h-5 w-5" />}
+                    {item.type === "email" && <EmailIcon class="inline h-5 w-5" />}
+                    {item.type === "tiktok" && <TiktokIcon class="inline h-5 w-5" />}
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Visit ${item.title} - Opens in new window`}
+                    >
+                      {item.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ) : (
+            <section class="rounded-2xl border border-gray-300 bg-white p-4">
+              <h2 class="font-prompt text-lg font-semibold text-primary sm:text-xl">{s.heading}</h2>
+              {s.body && (
+                <p class="mt-2 whitespace-pre-line font-jamjuree text-sm leading-relaxed sm:text-base">
+                  {s.body}
+                </p>
+              )}
+              {s.list && (
+                <ul class="mt-2 list-disc pl-5 font-jamjuree text-sm leading-relaxed sm:text-base">
+                  {s.list.map((li) => (
+                    <li set:html={li} />
+                  ))}
+                </ul>
+              )}
+              {s.chips && (
+                <div class="mt-3 flex flex-wrap gap-2">
+                  {s.chips.map((chip) => (
+                    <a
+                      href={chip.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Visit ${chip.title} - Opens in new window`}
+                      class="inline-flex items-center rounded-full bg-gray-100 px-3 py-2 text-xs font-medium no-underline transition-colors duration-200 hover:bg-gray-200"
+                      style="color: var(--color-primary)"
+                    >
+                      {chip.title}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </section>
+          )
+        )
+      }
+    </div>
+  </section>
+
+  <script>
+    // Gallery Carousel Functionality
+    document.addEventListener('DOMContentLoaded', () => {
+      const slider = document.querySelector('.gallery-slider') as HTMLElement;
+      const dots = document.querySelectorAll('.gallery-dot');
+      const prevBtn = document.querySelector('.gallery-prev') as HTMLElement;
+      const nextBtn = document.querySelector('.gallery-next') as HTMLElement;
+      
+      if (!slider || dots.length === 0) return;
+      
+      let currentSlide = 0;
+      const totalSlides = dots.length;
+      
+      const updateSlider = () => {
+        const translateX = -currentSlide * (100 / totalSlides);
+        slider.style.transform = `translateX(${translateX}%)`;
+        
+        // Update dots
+        dots.forEach((dot, index) => {
+          if (index === currentSlide) {
+            dot.classList.remove('bg-gray-300');
+            dot.classList.add('bg-primary');
+          } else {
+            dot.classList.remove('bg-primary');
+            dot.classList.add('bg-gray-300');
+          }
+        });
+      };
+      
+      const goToSlide = (slideIndex: number) => {
+        currentSlide = slideIndex;
+        updateSlider();
+      };
+      
+      const nextSlide = () => {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateSlider();
+      };
+      
+      const prevSlide = () => {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateSlider();
+      };
+      
+      // Event listeners
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => goToSlide(index));
+      });
+      
+      if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+      if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+      
+      // Auto-play (optional)
+      setInterval(nextSlide, 5000);
+      
+      // Initialize
+      updateSlider();
+    });
+  </script>
+</Layout>

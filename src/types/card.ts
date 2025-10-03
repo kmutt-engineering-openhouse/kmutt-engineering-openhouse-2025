@@ -46,6 +46,16 @@ export interface HighlightCardProps {
   index?: number;
 }
 
+export interface WorkshopCardProps {
+  src: ImageMetadata;
+  alt: string;
+  title: string;
+  description?: string;
+  code?: string;
+  lang?: string;
+  index?: number;
+}
+
 // FAQ card interface
 export interface FAQCardProps {
   question: string;

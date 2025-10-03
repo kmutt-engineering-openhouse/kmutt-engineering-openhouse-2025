@@ -1,0 +1,36 @@
+---
+title: "PRO(DUCT)X1E 1st MINI ALBUM"
+description: "🎵 Track 1: Bad Foundry – Dance in Front of the Foundry\nOpening the show with the fascinating world of metal casting 🏭\n• Introduction to what casting is\n• Guided tour of the foundry + real product showcase\n• Live demo & hands-on activity for participants\n👉 To understand the importance of casting in producing industrial components\n\n🎵 Track 2: Next Welding – Shall We Weld Together?\nThe second stage brings you to the world of electric welding 🔥\n• Basics of welding techniques\n• Demonstrations of multiple welding styles\n👉 To see how welding is essential in assembling industrial parts\n\n🎵 Track 3: Last Machine – Can We Turn It Tomorrow?\nDive into the machining vibes 🛠️\n• Introduction to machine tools such as lathes and milling machines\n• Demonstration of creating a real product, e.g., a C-Clamp\n👉 To learn how machining, shaping, and finishing are fundamental in engineering\n\n🎵 Track 4: I am Mecha – Always Better with Mecha\nClosing the concert with futuristic Mechatronics 🤖⚙️\n• Introduction to Pneumatics and PLC systems\n• Live demo of automation systems\n• Hands-on opportunity to control the system yourself\n👉 To see how automation is applied and why it is crucial in modern engineering"
+image: "productx1e.jpg"
+gallery:
+  - image: "Bad Foundry.jpg"
+    alt: "Bad Foundry"
+    title: "Track 1: Bad Foundry"
+  - image: "Next Welding.jpg"
+    alt: "Next Welding"
+    title: "Track 2: Next Welding"
+  - image: "Last Machine.jpg"
+    alt: "Last Machine"
+    title: "Track 3: Last Machine"
+  - image: "I-am-Mecha.jpg"
+    alt: "I am Mecha"
+    title: "Track 4: I am Mecha"
+sections:
+  - heading: "Registration Point"
+    body: "1st floor, Wissawa Wattana Building (S4)"
+  - heading: "Activity Schedule"
+    list:
+      - "Round 1: 10:30 AM - 12:30 PM"
+      - "Round 2: 1:30 PM - 3:30 PM"
+      - "Round 3: 3:30 PM - 5:30 PM"
+  - heading: "Number of Participants"
+    body: "30 people per round"
+  - heading: "Follow Us"
+    contract:
+      - type: "facebook"
+        title: "ภาควิชาวิศวกรรมอุตสาหการ มจธ."
+        link: "https://www.facebook.com/IndustrialEngineeringKMUTT"
+      - type: "instagram"
+        title: "pe_mce.kmutt"
+        link: "https://www.instagram.com/pe_mce.kmutt"
+---

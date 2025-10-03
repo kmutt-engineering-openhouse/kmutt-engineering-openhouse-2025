@@ -1,8 +1,12 @@
 ---
 import Heading from "../../../components/common/Heading.astro";
 import { getDict, getWorkshopDict } from "../../../i18n/getDict";
+import iconEYE from "../../../assets/icons/eye.svg";
+import iconARROWRIGHT from "../../../assets/icons/arrow-right.svg";
+import iconBACKARROW from "../../../assets/icons/back-arrow.svg";
 import Layout from "../../../layouts/Layout.astro";
 import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
 
 // Define static paths for the [lang] parameter
 export function getStaticPaths() {
@@ -81,12 +85,14 @@ const seo = {
           return workshopImage ? (
             <article 
               class="scroll-animate animate-fade-up group flex flex-col overflow-hidden rounded-3xl bg-white shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl h-full"
-              data-delay={index + 1}
+              data-delay={
+                (index % 9) + 1
+              }
             >
               <!-- Image Container -->
               <div class="relative aspect-[4/3] overflow-hidden">
-                <img
-                  src={workshopImage.src}
+                <Image
+                  src={workshopImage}
                   alt={workshop.title}
                   class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
@@ -100,7 +106,7 @@ const seo = {
                 
                 <!-- Hover Icon -->
                 <div class="absolute top-4 right-4 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-75 group-hover:scale-100">
-                  <img src="/src/assets/icons/eye.svg" alt="View" class="w-5 h-5 text-white" />
+                  <Image src={iconEYE} alt="View" class="w-5 h-5 text-white" />
                 </div>
               </div>
               
@@ -123,7 +129,7 @@ const seo = {
                     class="group/btn flex items-center gap-2 rounded-xl bg-gradient-to-r from-primary to-primary-hover px-6 py-3 font-prompt font-semibold text-white transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 hover:scale-105"
                   >
                     <span>{lang === "en" ? "Coming Soon" : "เร็วๆนี้"}</span>
-                    <img src="/src/assets/icons/arrow-right.svg" alt="Arrow" class="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" style="filter: brightness(0) invert(1);" />
+                    <Image src={iconARROWRIGHT} alt="Arrow" class="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1" style="filter: brightness(0) invert(1);" />
                   </a>
                 </div>
               </div>
@@ -140,7 +146,7 @@ const seo = {
         class="scroll-animate animate-fade-up inline-flex items-center gap-2 rounded-2xl border-2 border-primary bg-white px-8 py-4 font-prompt font-semibold text-primary transition-all duration-300 hover:bg-primary hover:text-white hover:shadow-lg"
         data-delay="1"
       >
-        <img src="/src/assets/icons/back-arrow.svg" alt="Back" class="w-5 h-5" />
+        <Image src={iconBACKARROW} alt="Back" class="w-5 h-5" />
         <span>{lang === "en" ? "Back to Home" : "กลับหน้าแรก"}</span>
       </a>
     </div>

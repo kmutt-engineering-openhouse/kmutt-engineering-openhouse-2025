@@ -32,6 +32,15 @@ import imgINNOX from "../../assets/images/insight/innox.webp";
 import imgIC from "../../assets/images/contest/ic.webp";
 import imgEQ from "../../assets/images/contest/eq.webp";
 import imgBH from "../../assets/images/contest/bh.webp";
+// Map Section
+import imgBUS from "../../assets/images/map/bus.webp";
+import imgCAR from "../../assets/images/map/car.webp";
+import imgPLANE from "../../assets/images/map/plane.webp";
+import imgTRAIN from "../../assets/images/map/train.webp";
+import imgBUSbg from "../../assets/images/map/bus-bg.webp";
+import imgCARbg from "../../assets/images/map/car-bg.webp";
+import imgPLANEbg from "../../assets/images/map/plane-bg.webp";
+import imgTRAINbg from "../../assets/images/map/train-bg.webp";
 // Icons
 import iconFacebook from "../../assets/icons/facebook.svg";
 import iconInstagram from "../../assets/icons/instagram.svg";
@@ -71,6 +80,10 @@ export default {
         href: "#faq",
       },
     },
+    register: {
+      title: "Register",
+      href: "https://openhouse.kmutt.ac.th/login",
+    },
     language: {
       th: "TH",
       en: "EN",
@@ -103,7 +116,7 @@ export default {
       {
         title: "Engi’s Idol Talk",
         description:
-          "Join us for one-on-one sessions with students from all 10 departments of the Faculty of Engineering! Get personalized advice and techniques on Portfolio preparation and university entrance exam strategies\nFaculty of Engineering Meeting Room, Classroom Building 4 (S12), 2nd floor",
+          "Join us for one-on-one sessions with students from all 10 departments of the Faculty of Engineering! Get personalized advice and techniques on Portfolio preparation and university entrance exam strategies\nFaculty of Engineering Meeting Room, Classroom Building 4 (S12), 2nd floor\n 10 - 12 October 2025 01.00 PM - 04.00 PM",
         image: enIdol,
         href: "/",
       },
@@ -202,13 +215,13 @@ export default {
             icon: iconLOC,
           },
           {
-            text: "ICE KMUTT",
-            href: "https://www.facebook.com/InternationalCenterforEngineeringKMUTT",
+            text: "Modmee Gear",
+            href: "https://www.facebook.com/modmeegear/",
             icon: iconFacebook,
           },
           {
-            text: "kmutt.ice",
-            href: "https://www.instagram.com/kmutt.ice/",
+            text: "modmeegear.kmutt",
+            href: "https://www.instagram.com/modmeegear.kmutt/",
             icon: iconInstagram,
           },
         ],
@@ -230,33 +243,6 @@ export default {
             icon: iconFacebook,
           },
         ],
-      },
-    ],
-  },
-  activity: {
-    title: "Activity",
-    seeAll: "See All Activities",
-    card: [
-      {
-        title: "Workshop",
-        description:
-          "An exciting workshop that gives you a full-scale view of Engineering Bangmod This is an exclusive chance to learn by doing rather than simply sitting to lectures. You will get to interact with professors, real staff, and university students from many departments of the institution. They'll be sharing knowledge, tips, and demonstrating cutting-edge tools that engineering students actually use.This is a perfect season to explore your passions, skills, and even fresh ideas that can impact your future. There is no reason why you can miss this event, which is full of fun, education, and a warm vibe!",
-        image: enWorkshop,
-        href: "/",
-      },
-      {
-        title: "Exhibition",
-        description:
-          "Get ready! We're taking you on a journey to explore the creative projects and innovations from the talented students of KMUTT Engineering. This event isn't just about checking out projects, you will also get a behind-the-scenes look at the thought process and development behind each one. You'll have the chance to discover all 10 departments, learn about their programs, study paths, and career opportunities after graduation, almost like experiencing life as an engineering student in advance. university students from every department will be sharing real experiences and answering all your questions about studies, activities, student life, and future opportunities. It's fun, informative, and full of inspiration, you won't want to miss it!",
-        image: enExhibition,
-        href: "/",
-      },
-      {
-        title: "Engi's Journey",
-        description:
-          "A special event you can't miss! From observing real laboratory settings and seeing the actual tools used in classes from actual engineering students, we're taking you on a tour to get a close-up look at every department at Bangmod Engineering. This is more than simply a department introduction; it's a chance to find your passion and your ideal career path. Expect a fun, warm atmosphere filled with knowledge, friendships, and unforgettable experiences.",
-        image: enJourney,
-        href: "/",
       },
     ],
   },
@@ -342,21 +328,25 @@ export default {
       choices: [
         {
           title: "Public Bus",
+          images: [imgBUS, imgBUSbg],
           description:
             "<b>1. Buses passing through the university</b>\n- Line 75 Hua Lamphong - Wat Phutthabucha\n- Line 21 Mahanak - Wat Khusang\n- Line 21E Chulalongkorn University - Wat Khusang\n- Line 88 BTS Talad Phlu - KMUTT Bang Khun Thian\n<b>2. Other buses (transfer required)</b>\n- Line 6 Phra Pradaeng - Bang Lamphoo\n- Line 20 Tha Din Daeng - Phra Samut Chedi\n- Line 37 Chulalongkorn University - Tha Nam Phra Pradaeng\n- Line 82 Bang Lamphoo - Tha Nam Phra Pradaeng\n- Line 140 Saen Dam - Victory Monument\n- Line 141 Saen Dam - Chulalongkorn University\n- Line 142 Saen Dam - Samut Prakan Crocodile Farm\n- Line 195 The Mall Tha Phra - Khlong Toei",
         },
         {
           title: "Minibus",
+          images: [imgCAR, imgCARbg],
           description:
             "- Line 77 BigC (Rat Burana) - Wat Phutthabucha\n- Line 88 BigC (Bang Pakok) - Thung Khru\n- Line 90 Bang Pakok Market - Wat Thung Khru\n- Line 99 Bang Pakok - Thung Khru\n- Red songthaew under Suksawat Expressway (Km.9) - Thung Khru Flat",
         },
         {
           title: "Electric Train",
+          images: [imgTRAIN, imgTRAINbg],
           description:
             "- BTS Saphan Taksin Station, transfer to Bus Line 75\n- MRT Hua Lamphong Station, transfer to Bus Line 75",
         },
         {
           title: "Airport",
+          images: [imgPLANE, imgPLANEbg],
           description:
             "<b>1. Suvarnabhumi Airport</b> Take Airport Rail Link to Phaya Thai Station, transfer to BTS to Saphan Taksin Station, then transfer to Bus Line 75\n<b>2. Don Mueang Airport</b> Take Red Line to Bang Sue Station, transfer to MRT to Hua Lamphong Station, then transfer to Bus Line 75",
         },

@@ -1,0 +1,95 @@
+---
+import type { TransportationCardProps } from "../../../types/card.ts";
+import imgBG from "../../../assets/images/map/bg.webp";
+import { Image } from "astro:assets";
+
+const { title, images, description, "data-delay": dataDelay } = Astro.props;
+// Dialog ID for accessibility and focus management
+const dialogId = `map-modal-${Math.random().toString(36).substr(2, 9)}`;
+const dialogIdTitle = dialogId + "-title";
+const dialogIdDesc = dialogId + "-description";
+---
+
+<article
+  class="scroll-animate animate-fade-up group rounded-2xl border border-gray-300 bg-white transition-all duration-300 hover:shadow-2xl"
+  data-delay={dataDelay}
+>
+  <button
+    type="button"
+    onclick={`document.getElementById('${dialogId}').showModal()`}
+    class="bg-inherited relative flex h-[230px] w-full flex-col items-center justify-center overflow-hidden rounded-t-2xl p-4 text-white focus:outline-none"
+    aria-label={`View details for ${title}`}
+    aria-describedby={description ? `${dialogIdDesc}` : undefined}
+    data-dialog-id={`${dialogId}`}
+  >
+    <Image
+      src={images[0]}
+      alt="Transportation icon"
+      class="pointer-events-none h-[150px] w-[230px] object-cover object-center transition-transform duration-300 group-hover:-translate-y-2 group-hover:scale-[1.2]"
+    />
+    <h3 class="absolute bottom-5 w-full p-5 text-center font-bold">{title}</h3>
+    <Image
+      src={imgBG}
+      alt="Transportation background"
+      class="pointer-events-none absolute inset-0 z-[-2] h-full w-full select-none rounded-xl object-cover transition-all duration-300 group-hover:scale-90"
+    />
+    <div
+      class="pointer-events-none absolute inset-0 z-[-1] rounded-xl bg-black/40 transition-all duration-300 group-hover:scale-90 group-hover:bg-black/20"
+    >
+    </div>
+  </button>
+</article>
+
+<dialog
+  id={`${dialogId}`}
+  class="popup-modal backdrop:bg-black/50 backdrop:backdrop-blur-sm"
+  onclick="if (event.target === this) this.close()"
+  aria-labelledby={`${dialogIdTitle}`}
+  aria-describedby={description ? `${dialogIdDesc}` : undefined}
+  role="dialog"
+  aria-modal="true"
+>
+  <div class="popup-content" role="document">
+    <header class="popup-header">
+      <div class="popup-image-container">
+        <Image src={images[1]} alt="Transportation icon" class="popup-image" width={600} height={400} />
+        <div class="popup-gradient" aria-hidden="true"></div>
+        <button
+          type="button"
+          class="popup-close-btn"
+          aria-label="Close dialog"
+          onclick={`document.getElementById('${dialogId}').close()`}
+        >
+          <svg
+            class="h-6 w-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+        <h2 id={`${dialogIdTitle}`} class="popup-title">{title}</h2>
+      </div>
+    </header>
+    <main class="popup-body">
+      {
+        description && (
+          <div class="popup-description">
+            <p
+              id={`${dialogIdDesc}`}
+              class="whitespace-pre-line font-ibm leading-relaxed text-gray-700 px-1"
+              set:html={description}
+            >
+            </p>
+          </div>
+        )
+      }
+    </main>
+  </div>
+</dialog>

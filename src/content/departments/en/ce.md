@@ -3,7 +3,7 @@ title: "Civil"
 description: "Discover a new experience with the Civil Engineering Workshop Series at KMUTT. Explore five specialized fields where you can learn by doing, gain hands-on experience, and understand civil engineering from fundamental principles to practical applications, while getting an up-close look at career paths in each discipline."
 image: "CE.webp"
 sections:
-  - heading: "Activities at KMUTT Engineering Open House 2025 – Civil Engineering"
+  - heading: "Activities at KMUTT Engineering Open House 2025"
     list:
       - "<b>The Six Main Branches of Civil Engineering</b>"
     chips:

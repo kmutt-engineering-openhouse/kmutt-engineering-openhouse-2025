@@ -32,6 +32,15 @@ import imgINNOX from "../../assets/images/insight/innox.webp";
 import imgIC from "../../assets/images/contest/ic.webp";
 import imgEQ from "../../assets/images/contest/eq.webp";
 import imgBH from "../../assets/images/contest/bh.webp";
+// Map Section
+import imgBUS from "../../assets/images/map/bus.webp";
+import imgCAR from "../../assets/images/map/car.webp";
+import imgPLANE from "../../assets/images/map/plane.webp";
+import imgTRAIN from "../../assets/images/map/train.webp";
+import imgBUSbg from "../../assets/images/map/bus-bg.webp";
+import imgCARbg from "../../assets/images/map/car-bg.webp";
+import imgPLANEbg from "../../assets/images/map/plane-bg.webp";
+import imgTRAINbg from "../../assets/images/map/train-bg.webp";
 // Icons
 import iconFacebook from "../../assets/icons/facebook.svg";
 import iconInstagram from "../../assets/icons/instagram.svg";
@@ -343,21 +352,25 @@ export default {
       choices: [
         {
           title: "รถโดยสารประจำทาง",
+          images: [imgBUS, imgBUSbg],
           description:
             "<b>1. รถโดยสารที่ผ่านมหาวิทยาลัย</b>\n- สาย 75 หัวลำโพง-วัดพุทธบูชา\n- สาย 21 มหานาค-วัดคู่สร้าง\n- สาย 21E จุฬาฯ-วัดคู่สร้าง\n- สาย 88 BTS ตลาดพลู-มจธ.บางขุนเทียน\n<b>2. รถโดยสารอื่นๆ (ต่อสาย)</b>\n- สาย 6 พระประแดง-บางลำพู\n- สาย 20 ท่าดินแดง-พระสมุทรเจดีย์\n- สาย 37 จุฬาฯ-ท่าน้ำพระประแดง\n- สาย 82 บางลำพู-ท่าน้ำพระประแดง\n- สาย 140 แสมดำ-อนุสาวรีย์ชัยสมรภูมิ\n- สาย 141 แสมดำ-จุฬาฯ\n- สาย 142 แสมดำ-ฟาร์มจระเข้สมุทรปราการ\n- สาย 195 เดอะมอลล์ท่าพระ-คลองเตย",
         },
         {
           title: "รถโดยสารขนาดเล็ก (กระป้อ)",
+          images: [imgCAR, imgCARbg],
           description:
             "- สาย 77 เส้นทางเดินรถ บิ๊กซี (ราษฎร์บูรณะ)-วัดพุทธบูชา\n- สาย 88 เส้นทางเดินรถ บิ๊กซี (บางปะกอก)-ทุ่งครุ\n- สาย 90 ตลาดบางปะกอก-วัดทุ่งครุ\n- สาย 99 บางปะกอก-ทุ่งครุ\n- รถสองแถวแดง ใต้ทางด่วนสุขสวัสดิ์ (กม.9)-แฟลตทุ่งครุ",
         },
         {
           title: "รถไฟฟ้า",
+          images: [imgTRAIN, imgTRAINbg],
           description:
             "- BTS สถานีสะพานตากสิน ต่อรถโดยสารสาย 75\n- MRT สถานีหัวลำโพง ต่อรถโดยสารสาย 75",
         },
         {
           title: "สนามบิน",
+          images: [imgPLANE, imgPLANEbg],
           description:
             "<b>1. สนามบินสุวรรณภูมิ</b> ขึ้นรถไฟฟ้า Airport Rail Link ลงที่สถานีพญาไท ต่อ BTS ลงสถานีสะพานตากสิน ต่อรถโดยสารสาย 75\n<b>2. สนามบินดอนเมือง</b>å ขึ้นรถไฟฟ้าสายสีแดงลงที่สถานีบางซื่อ ต่อ MRT ลงสถานีหัวลำโพง ต่อรถโดยสารสาย 75",
         },

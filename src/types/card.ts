@@ -56,6 +56,7 @@ export interface FAQCardProps {
 // Transportation card interface
 export interface TransportationCardProps {
   title: string;
+  images: ImageMetadata[];
   description: string;
 }
 

@@ -1,6 +1,6 @@
 ---
 import Heading from "../../common/Heading.astro";
-import TransportationCard from "./TransportationCard.astro";
+import Card from "./Card.astro";
 const { t } = Astro.props;
 ---
 
@@ -22,16 +22,20 @@ const { t } = Astro.props;
     <!-- Transportation Cards Section -->
     {
       t.map.transportation && t.map.transportation.choices && (
-        <div class="mb-8">
+        <div class="my-8">
           <h3 class="my-4 text-center font-prompt text-xl font-semibold text-gray-900 sm:text-2xl">
             {t.map.transportation.title}
           </h3>
-          <div class="flex flex-col gap-3">
+          <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {t.map.transportation.choices.map(
-              (choice: { title: string; description: string }, index: number) => (
-                <TransportationCard
+              (
+                choice: { title: string; images: ImageMetadata[]; description: string },
+                index: number
+              ) => (
+                <Card
                   title={choice.title}
                   description={choice.description}
+                  images={choice.images}
                   data-delay={index + 1}
                 />
               )

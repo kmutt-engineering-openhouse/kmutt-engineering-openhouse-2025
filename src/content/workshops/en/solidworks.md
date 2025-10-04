@@ -15,7 +15,7 @@ sections:
     contract:
       - type: "facebook"
         title: "ภาควิชาวิศวกรรมเครื่องกล มจธ."
-        link: "https://www.facebook.com/MechanicalEngineeringKMUTT"
+        link: "https://www.facebook.com/mee.kmutt/?locale=th_TH"
       - type: "instagram"
         title: "kmutt_me"
         link: "https://www.instagram.com/kmutt_me"

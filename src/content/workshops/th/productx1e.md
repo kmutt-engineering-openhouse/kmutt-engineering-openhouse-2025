@@ -29,7 +29,7 @@ sections:
     contract:
       - type: "facebook"
         title: "ภาควิชาวิศวกรรมอุตสาหการ มจธ."
-        link: "https://www.facebook.com/IndustrialEngineeringKMUTT"
+        link: "https://www.facebook.com/profile.php?id=100063531941398"
       - type: "instagram"
         title: "pe_mce.kmutt"
         link: "https://www.instagram.com/pe_mce.kmutt"

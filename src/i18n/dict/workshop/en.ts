@@ -155,13 +155,15 @@ export default {
     {
       code: "motorlab",
       title: "⚙️ Motor Control Lab ",
-      description: "Understand the fundamentals of motor control circuits and the devices used in control systems.",
+      description:
+        "Understand the fundamentals of motor control circuits and the devices used in control systems.",
       date: "October 10-12, 2025",
     },
     {
       code: "sensorlab",
       title: "Sensors Lab – “The Rhythm of Precision”",
-      description: "Explore a variety of industrial sensors, their uses, differences, and applications in production processes.",
+      description:
+        "Explore a variety of industrial sensors, their uses, differences, and applications in production processes.",
       date: "October 10-12, 2025",
     },
     {
@@ -178,8 +180,8 @@ export default {
     },
     {
       code: "che",
-      title: "Water Flow Control (PID) Lab – “Melody of Flow”",
-      description: "Learn about flow and pressure control principles, valve usage, and PID tuning.",
+      title: "CHEMENG IDOL",
+      description: "Discover the Chemical Engineering program",
       date: "October 10-12, 2025",
     },
   ],

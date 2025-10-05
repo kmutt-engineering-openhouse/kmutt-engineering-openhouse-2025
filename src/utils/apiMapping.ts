@@ -1,6 +1,79 @@
 import type { ActivityData, WorkshopWithAPIData } from '../types/card';
 
 /**
+ * Workshop to API mapping table
+ * Maps workshop titles to API activity titles
+ */
+const WORKSHOP_API_MAPPING: Record<string, string[]> = {
+  // Computer Engineering
+  'kimi no logical': ['workshop 1: kimi no logical'],
+  'aitagorithm': ['workshop 2: aitagorithm'],
+  'cmd fortune': ['workshop 3: cmd เสี่ยงทาย'],
+  'cmd เสี่ยงทาย': ['workshop 3: cmd เสี่ยงทาย'],
+  'river no cybe': ['workshop 4: river no cyber'],
+  'ai rotation': ['workshop 5: ai rotation'],
+  
+  // Mechanical Engineering
+  'hands on me': ['hands on me'],
+  'solidworks': ['hands on me'],
+  'me lab tour': ['me lab tour'],
+  
+  // Production Engineering
+  'pro(duct)x1e 1st mini album': ['pro(duct)x1e 1st mini album', 'pro(duct)x1e 1st mini album '],
+  
+  // Tool and Materials Engineering
+  'star stamp station': ['star stamp station'],
+  'butter bear bookmark': ['butter bear bookmark'],
+  
+  // Civil Engineering
+  'geotechnical engineering': ['geotechnical'],
+  'geo': ['geotechnical'],
+  'ธรณี': ['geotechnical'],
+  'concrete engineering': ['concrete'],
+  'concrete': ['concrete'],
+  'คอนกรีต': ['concrete'],
+  'structural engineering': ['structural'],
+  'structural': ['structural'],
+  'โครงสร้าง': ['structural'],
+  'water resources engineering': ['water resources'],
+  'water resources': ['water resources'],
+  'ทรัพยากรน้ำ': ['water resources'],
+  'survey': ['survey'],
+  'เซอร์เวย์': ['survey'],
+  
+  // Environmental Engineering
+  'dream fo green': ['envi dream stage : เส้นทางความฝัน วิศวกรรมสิ่งแวดล้อม'],
+  'dream for green': ['envi dream stage : เส้นทางความฝัน วิศวกรรมสิ่งแวดล้อม'],
+  'escape room': ['envi mission (ปริศนาไอดอลพิทักษ์โลก)'],
+  'envi mission': ['envi mission (ปริศนาไอดอลพิทักษ์โลก)'],
+  
+  // Chemical Engineering
+  'จุดเริ่มต้น chemeng idol': ['จุดเริ่มต้น chemeng idol'],
+  'โปรแกรมลับก่อนเดบิวต์': ['โปรแกรมลับก่อนเดบิวต์'],
+  'ลานฝึกคอมโบเวท': ['ลานฝึกคอมโบเวท'],
+  'สกัดพลังเสียง': ['สกัดพลังเสียง'],
+  'หอกลั่นเสน่ห์': ['หอกลั่นเสน่ห์'],
+  'เชื่อมหัวใจเมมเบอร์': ['เชื่อมหัวใจเมมเบอร์'],
+  'เวทีกรองใจ': ['เวทีกรองใจ'],
+  
+  // Electrical Engineering
+  'motor control lab': ['motor control'],
+  'measurement lab': ['measurement lab'],
+  'melody of electricity lab': ['the melody of electricity- เสียงดนตรีจากวง(โค)จร'],
+  'melody lab': ['the melody of electricity- เสียงดนตรีจากวง(โค)จร'],
+  
+  // Electronics Engineering
+  'cooltech': ['cooltech: ปลุกลมอัจฉริยะด้วยอุณหภูมิ'],
+  'cool tech': ['cooltech: ปลุกลมอัจฉริยะด้วยอุณหภูมิ'],
+  
+  // Instrumentation and Control
+  'sensors lab': ['sensors lab'],
+  'plc lab': ['program logic control (plc) lab'],
+  'pid lab': ['water flow control (pid) lab'],
+  'water flow control': ['water flow control (pid) lab'],
+};
+
+/**
  * Extract key terms from a title for better matching
  */
 function extractKeyTerms(title: string): string[] {
@@ -15,20 +88,9 @@ function extractKeyTerms(title: string): string[] {
 
 /**
  * Calculate similarity score between two title arrays
- * Prioritizes consecutive word matches and exact matches
  */
 function calculateSimilarity(terms1: string[], terms2: string[]): number {
   if (terms1.length === 0 || terms2.length === 0) return 0;
-  
-  // Check for consecutive word sequences (higher weight)
-  let consecutiveMatches = 0;
-  for (let i = 0; i <= terms1.length - 2; i++) {
-    for (let j = 0; j <= terms2.length - 2; j++) {
-      if (terms1[i] === terms2[j] && terms1[i + 1] === terms2[j + 1]) {
-        consecutiveMatches += 2; // Weight consecutive matches higher
-      }
-    }
-  }
   
   // Check for individual word matches
   const individualMatches = terms1.filter(term1 => 
@@ -39,60 +101,58 @@ function calculateSimilarity(terms1: string[], terms2: string[]): number {
     )
   );
   
-  // Special case: if shorter array is completely contained in longer array
-  const shorterArray = terms1.length <= terms2.length ? terms1 : terms2;
-  const longerArray = terms1.length > terms2.length ? terms1 : terms2;
-  
-  if (shorterArray.length > 0 && longerArray.length > shorterArray.length) {
-    const allShorterTermsMatch = shorterArray.every(shortTerm => 
-      longerArray.some(longTerm => shortTerm === longTerm)
-    );
-    
-    if (allShorterTermsMatch) {
-      // If all terms from shorter array match, give high score
-      return 0.9; // 90% similarity for complete containment
-    }
-  }
-  
   // Calculate weighted score
   const totalPossibleMatches = Math.max(terms1.length, terms2.length);
-  const weightedScore = (consecutiveMatches + individualMatches.length) / totalPossibleMatches;
+  const weightedScore = individualMatches.length / totalPossibleMatches;
   
   return weightedScore;
 }
 
 /**
  * Map API activities to workshop content by matching titles
- * This function attempts to match workshop titles with API activity titles
  */
 export function mapAPIDataToWorkshop(
   workshopData: any, // Original workshop content
   apiActivities: ActivityData[]
 ): WorkshopWithAPIData {
   const workshopTitle = workshopData.title;
-  const workshopTerms = extractKeyTerms(workshopTitle);
+  const workshopTitleLower = workshopTitle.toLowerCase();
   
-  // Find matching activities from API
-  const matchingActivities = apiActivities.filter(activity => {
-    const apiTitle = activity.title.trim();
-    const apiTerms = extractKeyTerms(apiTitle);
-    
-    // Calculate similarity score
-    const similarity = calculateSimilarity(workshopTerms, apiTerms);
-    
-    // Debug logging for specific workshops
-    if ((workshopTitle.toLowerCase().includes('motor') || 
-         workshopTitle.toLowerCase().includes('sensors')) && similarity > 0.1) {
-      console.log(`🔍 Debug: "${workshopTitle}" vs "${apiTitle}"`);
-      console.log(`   Workshop terms: [${workshopTerms.join(', ')}]`);
-      console.log(`   API terms: [${apiTerms.join(', ')}]`);
-      console.log(`   Similarity: ${(similarity * 100).toFixed(1)}%`);
+  // First, try exact mapping from table
+  let matchingActivities: ActivityData[] = [];
+  
+  for (const [workshopKey, apiTitles] of Object.entries(WORKSHOP_API_MAPPING)) {
+    if (workshopTitleLower.includes(workshopKey) || workshopKey.includes(workshopTitleLower)) {
+      matchingActivities = apiActivities.filter(activity => 
+        apiTitles.some(apiTitle => 
+          activity.title.toLowerCase().includes(apiTitle.toLowerCase()) ||
+          apiTitle.toLowerCase().includes(activity.title.toLowerCase())
+        )
+      );
+      break;
     }
+  }
+  
+  // If no exact mapping found, try similarity matching
+  if (matchingActivities.length === 0) {
+    const workshopTerms = extractKeyTerms(workshopTitle);
     
-    // If similarity is high enough, consider it a match
-    // Higher threshold to avoid false positives
-    return similarity >= 0.6; // 60% similarity threshold
-  });
+    matchingActivities = apiActivities.filter(activity => {
+      const apiTitle = activity.title.trim();
+      const apiTerms = extractKeyTerms(apiTitle);
+      const similarity = calculateSimilarity(workshopTerms, apiTerms);
+      
+      // Debug logging
+      if (similarity > 0.3) {
+        console.log(`🔍 Similarity Match: "${workshopTitle}" vs "${apiTitle}"`);
+        console.log(`   Workshop terms: [${workshopTerms.join(', ')}]`);
+        console.log(`   API terms: [${apiTerms.join(', ')}]`);
+        console.log(`   Similarity: ${(similarity * 100).toFixed(1)}%`);
+      }
+      
+      return similarity >= 0.6; // 60% similarity threshold
+    });
+  }
   
   if (matchingActivities.length === 0) {
     return {

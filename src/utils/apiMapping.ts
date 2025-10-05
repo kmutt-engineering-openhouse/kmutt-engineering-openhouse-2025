@@ -10,23 +10,55 @@ function extractKeyTerms(title: string): string[] {
     .replace(/[^\w\s\u0E00-\u0E7F]/g, ' ') // Keep only letters, numbers, spaces, and Thai chars
     .split(/\s+/)
     .filter(term => term.length > 2) // Filter out short terms
-    .filter(term => !['the', 'and', 'or', 'of', 'in', 'on', 'at', 'to', 'for', 'with', 'by'].includes(term)); // Remove common words
+    .filter(term => !['the', 'and', 'or', 'of', 'in', 'on', 'at', 'to', 'for', 'with', 'by', 'lab', 'workshop'].includes(term)); // Remove common words
 }
 
 /**
  * Calculate similarity score between two title arrays
+ * Prioritizes consecutive word matches and exact matches
  */
 function calculateSimilarity(terms1: string[], terms2: string[]): number {
   if (terms1.length === 0 || terms2.length === 0) return 0;
   
-  const matches = terms1.filter(term1 => 
+  // Check for consecutive word sequences (higher weight)
+  let consecutiveMatches = 0;
+  for (let i = 0; i <= terms1.length - 2; i++) {
+    for (let j = 0; j <= terms2.length - 2; j++) {
+      if (terms1[i] === terms2[j] && terms1[i + 1] === terms2[j + 1]) {
+        consecutiveMatches += 2; // Weight consecutive matches higher
+      }
+    }
+  }
+  
+  // Check for individual word matches
+  const individualMatches = terms1.filter(term1 => 
     terms2.some(term2 => 
-      term1.includes(term2) || term2.includes(term1) || 
-      term1 === term2
+      term1 === term2 || // Exact match (highest priority)
+      (term1.length > 3 && term2.length > 3 && // Only for longer words
+       (term1.includes(term2) || term2.includes(term1)))
     )
   );
   
-  return matches.length / Math.max(terms1.length, terms2.length);
+  // Special case: if shorter array is completely contained in longer array
+  const shorterArray = terms1.length <= terms2.length ? terms1 : terms2;
+  const longerArray = terms1.length > terms2.length ? terms1 : terms2;
+  
+  if (shorterArray.length > 0 && longerArray.length > shorterArray.length) {
+    const allShorterTermsMatch = shorterArray.every(shortTerm => 
+      longerArray.some(longTerm => shortTerm === longTerm)
+    );
+    
+    if (allShorterTermsMatch) {
+      // If all terms from shorter array match, give high score
+      return 0.9; // 90% similarity for complete containment
+    }
+  }
+  
+  // Calculate weighted score
+  const totalPossibleMatches = Math.max(terms1.length, terms2.length);
+  const weightedScore = (consecutiveMatches + individualMatches.length) / totalPossibleMatches;
+  
+  return weightedScore;
 }
 
 /**
@@ -48,8 +80,18 @@ export function mapAPIDataToWorkshop(
     // Calculate similarity score
     const similarity = calculateSimilarity(workshopTerms, apiTerms);
     
+    // Debug logging for specific workshops
+    if ((workshopTitle.toLowerCase().includes('motor') || 
+         workshopTitle.toLowerCase().includes('sensors')) && similarity > 0.1) {
+      console.log(`🔍 Debug: "${workshopTitle}" vs "${apiTitle}"`);
+      console.log(`   Workshop terms: [${workshopTerms.join(', ')}]`);
+      console.log(`   API terms: [${apiTerms.join(', ')}]`);
+      console.log(`   Similarity: ${(similarity * 100).toFixed(1)}%`);
+    }
+    
     // If similarity is high enough, consider it a match
-    return similarity >= 0.3; // 30% similarity threshold
+    // Higher threshold to avoid false positives
+    return similarity >= 0.6; // 60% similarity threshold
   });
   
   if (matchingActivities.length === 0) {

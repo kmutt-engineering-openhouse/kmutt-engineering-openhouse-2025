@@ -1,6 +1,35 @@
 import type { ActivityData, WorkshopWithAPIData } from '../types/card';
 
 /**
+ * Extract key terms from a title for better matching
+ */
+function extractKeyTerms(title: string): string[] {
+  return title
+    .toLowerCase()
+    .replace(/^(workshop|เวิร์คช็อป|workshop\s*\d*:?\s*)/i, '') // Remove workshop prefix
+    .replace(/[^\w\s\u0E00-\u0E7F]/g, ' ') // Keep only letters, numbers, spaces, and Thai chars
+    .split(/\s+/)
+    .filter(term => term.length > 2) // Filter out short terms
+    .filter(term => !['the', 'and', 'or', 'of', 'in', 'on', 'at', 'to', 'for', 'with', 'by'].includes(term)); // Remove common words
+}
+
+/**
+ * Calculate similarity score between two title arrays
+ */
+function calculateSimilarity(terms1: string[], terms2: string[]): number {
+  if (terms1.length === 0 || terms2.length === 0) return 0;
+  
+  const matches = terms1.filter(term1 => 
+    terms2.some(term2 => 
+      term1.includes(term2) || term2.includes(term1) || 
+      term1 === term2
+    )
+  );
+  
+  return matches.length / Math.max(terms1.length, terms2.length);
+}
+
+/**
  * Map API activities to workshop content by matching titles
  * This function attempts to match workshop titles with API activity titles
  */
@@ -9,60 +38,18 @@ export function mapAPIDataToWorkshop(
   apiActivities: ActivityData[]
 ): WorkshopWithAPIData {
   const workshopTitle = workshopData.title;
+  const workshopTerms = extractKeyTerms(workshopTitle);
   
   // Find matching activities from API
   const matchingActivities = apiActivities.filter(activity => {
-    // Try different matching strategies
     const apiTitle = activity.title.trim();
-    const workshopTitleLower = workshopTitle.toLowerCase();
-    const apiTitleLower = apiTitle.toLowerCase();
+    const apiTerms = extractKeyTerms(apiTitle);
     
-    // Strategy 1: Exact match (case insensitive)
-    if (apiTitleLower === workshopTitleLower) {
-      return true;
-    }
+    // Calculate similarity score
+    const similarity = calculateSimilarity(workshopTerms, apiTerms);
     
-    // Strategy 2: Check if workshop title is contained in API title
-    if (apiTitleLower.includes(workshopTitleLower)) {
-      return true;
-    }
-    
-    // Strategy 3: Check if API title is contained in workshop title
-    if (workshopTitleLower.includes(apiTitleLower)) {
-      return true;
-    }
-    
-    // Strategy 4: Remove common prefixes/suffixes and match
-    const cleanWorkshopTitle = workshopTitleLower
-      .replace(/^(workshop|เวิร์คช็อป|workshop\s*\d*:?\s*)/i, '')
-      .replace(/\s+/g, ' ')
-      .trim();
-    
-    const cleanApiTitle = apiTitleLower
-      .replace(/^(workshop|เวิร์คช็อป|workshop\s*\d*:?\s*)/i, '')
-      .replace(/\s+/g, ' ')
-      .trim();
-    
-    if (cleanApiTitle === cleanWorkshopTitle) {
-      return true;
-    }
-    
-    // Strategy 5: Check for key words match (for complex titles)
-    const workshopKeywords = cleanWorkshopTitle.split(' ').filter((word: string) => word.length > 2);
-    const apiKeywords = cleanApiTitle.split(' ').filter((word: string) => word.length > 2);
-    
-    const matchingKeywords = workshopKeywords.filter((keyword: string) => 
-      apiKeywords.some((apiKeyword: string) => 
-        apiKeyword.includes(keyword) || keyword.includes(apiKeyword)
-      )
-    );
-    
-    // If more than 50% of keywords match, consider it a match
-    if (workshopKeywords.length > 0 && matchingKeywords.length / workshopKeywords.length > 0.5) {
-      return true;
-    }
-    
-    return false;
+    // If similarity is high enough, consider it a match
+    return similarity >= 0.3; // 30% similarity threshold
   });
   
   if (matchingActivities.length === 0) {
@@ -157,54 +144,19 @@ export function getWorkshopMappingSuggestions(
   apiActivities: ActivityData[]
 ): Array<{ activity: ActivityData; similarity: number; reason: string }> {
   const suggestions: Array<{ activity: ActivityData; similarity: number; reason: string }> = [];
+  const workshopTerms = extractKeyTerms(workshopTitle);
   
   apiActivities.forEach(activity => {
     const apiTitle = activity.title.trim();
-    const workshopTitleLower = workshopTitle.toLowerCase();
-    const apiTitleLower = apiTitle.toLowerCase();
+    const apiTerms = extractKeyTerms(apiTitle);
+    const similarity = calculateSimilarity(workshopTerms, apiTerms);
     
-    let similarity = 0;
-    let reason = '';
-    
-    // Calculate similarity score
-    if (apiTitleLower === workshopTitleLower) {
-      similarity = 100;
-      reason = 'Exact match';
-    } else if (apiTitleLower.includes(workshopTitleLower)) {
-      similarity = 80;
-      reason = 'API title contains workshop title';
-    } else if (workshopTitleLower.includes(apiTitleLower)) {
-      similarity = 80;
-      reason = 'Workshop title contains API title';
-    } else {
-      // Calculate keyword similarity
-      const cleanWorkshopTitle = workshopTitleLower
-        .replace(/^(workshop|เวิร์คช็อป|workshop\s*\d*:?\s*)/i, '')
-        .replace(/\s+/g, ' ')
-        .trim();
-      
-      const cleanApiTitle = apiTitleLower
-        .replace(/^(workshop|เวิร์คช็อป|workshop\s*\d*:?\s*)/i, '')
-        .replace(/\s+/g, ' ')
-        .trim();
-      
-      const workshopKeywords = cleanWorkshopTitle.split(' ').filter(word => word.length > 2);
-      const apiKeywords = cleanApiTitle.split(' ').filter(word => word.length > 2);
-      
-      const matchingKeywords = workshopKeywords.filter(keyword => 
-        apiKeywords.some(apiKeyword => 
-          apiKeyword.includes(keyword) || keyword.includes(apiKeyword)
-        )
-      );
-      
-      if (workshopKeywords.length > 0) {
-        similarity = (matchingKeywords.length / workshopKeywords.length) * 100;
-        reason = `Keyword similarity: ${matchingKeywords.length}/${workshopKeywords.length}`;
-      }
-    }
-    
-    if (similarity > 20) { // Only include suggestions with >20% similarity
-      suggestions.push({ activity, similarity, reason });
+    if (similarity > 0.1) { // Only include suggestions with >10% similarity
+      suggestions.push({ 
+        activity, 
+        similarity, 
+        reason: `Similarity: ${(similarity * 100).toFixed(1)}%` 
+      });
     }
   });
   

@@ -210,6 +210,11 @@ export default {
         image: imgAdmission,
         location: [
           {
+            text: "เกณฑ์การรับสมัคร",
+            href: "https://admission.kmutt.ac.th/apply/bachelor",
+            icon: iconWebsite,
+          },
+          {
             text: "อาคารสำนักหอสมุด (N10) ชั้น 1 ห้อง LIB108",
             href: "https://maps.app.goo.gl/p1oFmS8yp9duxFRJA",
             icon: iconLOC,

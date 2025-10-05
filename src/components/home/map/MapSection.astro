@@ -1,24 +1,180 @@
 ---
 import Heading from "../../common/Heading.astro";
+import imgMAP_EN from "../../../assets/images/map/map.webp";
+import imgMAP_TH from "../../../assets/images/map/map.webp";
 import Card from "./Card.astro";
+import { Image } from "astro:assets";
 const { t } = Astro.props;
+
+const imgMAP = Astro.props.lang === "th" ? imgMAP_TH : imgMAP_EN;
 ---
 
 <section id="map" class="mx-auto flex w-full max-w-7xl flex-col gap-4 py-16">
   <Heading t={t.map.title || "Map"} />
   <div class="px-4">
-    <!-- Map Section -->
-    <div
-      class="relative h-[clamp(420px,133.33vw,500px)] w-full overflow-hidden rounded-2xl border border-gray-300 sm:h-[clamp(320px,56.25vw,720px)]"
-    >
-      <iframe
-        src="https://www.google.com/maps/d/embed?mid=1dL1sE3i9TCTaWxIHrJinynXS9T522fo&ehbc=2E312F"
-        title={t.map.title ?? "Map"}
-        class="absolute inset-0 h-full w-full"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        allowfullscreen></iframe>
+    <div class="h-fit flex flex-col lg:flex-row gap-5">
+      <!-- Map Section -->
+      <div
+        class="relative w-full overflow-hidden rounded-2xl border border-gray-300 h-[clamp(420px,133.33vw,500px)] sm:h-[clamp(320px,56.25vw,720px)]"
+      >
+        <iframe
+          src="https://www.google.com/maps/d/embed?mid=1dL1sE3i9TCTaWxIHrJinynXS9T522fo&ehbc=2E312F"
+          title={t.map.title ?? "Map"}
+          class="absolute inset-0 h-full w-full"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen></iframe>
+      </div>
+      <!-- Map Image -->
+        <div class="group relative cursor-pointer rounded-xl overflow-hidden h-full w-fit lg:h-[clamp(320px,56.25vw,720px)]">
+          <Image
+            src={imgMAP}
+            alt={t.map.title ?? "Map"}
+            class="h-full w-full lg:aspect-square transition-all duration-300"
+          />
+          <div
+            class="pointer-events-none absolute inset-0 rounded-2xl opacity-70 transition-opacity duration-300 group-hover:bg-black/40 group-hover:opacity-80"
+          >
+          </div>
+          <span
+            class="pointer-events-none absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 select-none text-3xl font-bold text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+            >Preview</span
+          >
+          <button
+            type="button"
+            class="absolute inset-0 z-20 h-full w-full rounded-2xl focus:outline-none"
+            aria-label="Preview map image"
+            onclick="document.getElementById('map-modal').showModal()"
+            style="background:transparent;"></button>
+      </div>
     </div>
+    <!-- Modal for zoomable image -->
+    <dialog
+      id="map-modal"
+      class="z-50 bg-transparent p-0 backdrop:bg-black/70"
+      style="max-width:100vw;max-height:100vh;"
+    >
+      <div class="relative w-full overflow-hidden bg-transparent">
+        <button
+          type="button"
+          class="absolute right-4 top-4 z-20 rounded-full bg-white/80 p-2 text-black hover:bg-white"
+          aria-label="Close preview"
+          onclick="document.getElementById('map-modal').close()"
+        >
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            ><path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"></path></svg
+          >
+        </button>
+        <a
+          href={imgMAP.src}
+          download
+          class="absolute left-4 top-4 z-20 inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 font-semibold text-white shadow transition hover:bg-primary/90 focus:outline-none"
+          aria-label="Download map image"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            class="h-5 w-5"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4"></path>
+          </svg>
+        </a>
+        <div
+          id="zoom-container"
+          class="relative flex min-h-[100vh] min-w-[100vw] items-center justify-center bg-transparent"
+          style="overflow:hidden;touch-action:none;"
+        >
+          <img
+            src={imgMAP.src}
+            alt={t.map.title ?? "Map"}
+            id="zoom-img"
+            class="max-h-[80vh] max-w-[80vw] select-none object-contain cursor-zoom-in"
+            draggable="false"
+            style="transition:transform 0.2s;"
+          />
+        </div>
+        <script type="text/javascript" is:inline>
+          // Only enable zoom/pan on desktop
+          if (window.matchMedia('(pointer: fine)').matches) {
+            const img = document.getElementById('zoom-img');
+            const container = document.getElementById('zoom-container');
+            let scale = 1;
+            let origin = { x: 0, y: 0 };
+            let pan = { x: 0, y: 0 };
+            let isPanning = false;
+            let start = { x: 0, y: 0 };
+
+            function setTransform() {
+              img.style.transform = `scale(${scale}) translate(${pan.x / scale}px, ${pan.y / scale}px)`;
+              img.style.cursor = scale > 1 ? 'grab' : 'zoom-in';
+            }
+
+
+            img.addEventListener('click', function (e) {
+              if (scale === 1) {
+                // Zoom in to clicked point
+                const rect = img.getBoundingClientRect();
+                const cx = e.clientX - rect.left;
+                const cy = e.clientY - rect.top;
+                scale = 2.2;
+                // Center the clicked point
+                pan.x = (container.clientWidth / 2 - cx * scale);
+                pan.y = (container.clientHeight / 2 - cy * scale);
+                setTransform();
+              }
+              // Do nothing if already zoomed (zoom out is handled by dblclick)
+            });
+
+            img.addEventListener('dblclick', function (e) {
+              if (scale > 1) {
+                // Reset zoom on double click
+                scale = 1;
+                pan.x = 0;
+                pan.y = 0;
+                setTransform();
+              }
+            });
+
+            img.addEventListener('mousedown', function (e) {
+              if (scale === 1) return;
+              isPanning = true;
+              start.x = e.clientX - pan.x;
+              start.y = e.clientY - pan.y;
+              img.style.cursor = 'grabbing';
+            });
+            window.addEventListener('mousemove', function (e) {
+              if (!isPanning) return;
+              pan.x = e.clientX - start.x;
+              pan.y = e.clientY - start.y;
+              setTransform();
+            });
+            window.addEventListener('mouseup', function () {
+              isPanning = false;
+              setTransform();
+            });
+
+            // Reset zoom when modal closes
+            document.getElementById('map-modal').addEventListener('close', function () {
+              scale = 1;
+              pan.x = 0;
+              pan.y = 0;
+              setTransform();
+            });
+          }
+        </script>
+      </div>
+    </dialog>
+
     <!-- Transportation Cards Section -->
     {
       t.map.transportation && t.map.transportation.choices && (

@@ -58,6 +58,24 @@ export default {
       date: "October 10-12, 2025",
     },
     {
+      code: "river-no-cybe",
+      title: "🎶 Stage 4 | River no Cybe 🚩",
+      description: 'The ultimate thrilling challenge stage!Take on the role of a \"White Hat Hacker\"',
+      date: "October 10-12, 2025",
+    },
+    {
+      code: "ai-rotation",
+      title: "🎶 Stage 5 | AI Rotation 🤖",
+      description: "How does AI distinguish between a person and a tree? Come learn the way AI sees the world!",
+      date: "October 10-12, 2025",
+    },
+    {
+      code: "mini-ai-hack",
+      title: "🎶 Special Stage | Mini AI Hackathon 🔥",
+      description: "Join us for a challenging AI problem-solving competition with real-world applications 🚀",
+      date: "October 10-12, 2025",
+    },
+    {
       code: "drawing",
       title: "Drawing",
       description:
@@ -178,11 +196,11 @@ export default {
       description: "Learn about flow and pressure control principles, valve usage, and PID tuning.",
       date: "October 10-12, 2025",
     },
-    {
-      code: "che",
-      title: "CHEMENG IDOL",
-      description: "Discover the Chemical Engineering program",
-      date: "October 10-12, 2025",
-    },
+    // {
+    //   code: "che",
+    //   title: "CHEMENG IDOL",
+    //   description: "Discover the Chemical Engineering program",
+    //   date: "October 10-12, 2025",
+    // },
   ],
 };

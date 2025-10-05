@@ -4,7 +4,8 @@ description: "Learn how to use electrical measuring instruments in everyday appl
 image: "measurement.jpg"
 sections:
   - heading: "Check-in Point"
-    body: "1st floor, Classroom Building 4 (S12)"
+    body: "10 October 2025 : Classroom Building 4 (S12) CB40406 Room\n
+    11-12 October 2025 : 1st floor, Classroom Building 4 (S12)"
   - heading: "Schedule"
     list:
       - "Round 1: 9.00 AM - 10.30 AM"

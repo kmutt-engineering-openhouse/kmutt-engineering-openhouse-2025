@@ -210,6 +210,11 @@ export default {
         image: imgAdmission,
         location: [
           {
+            text: "Admission Criteria",
+            href: "https://admission.kmutt.ac.th/apply/bachelor",
+            icon: iconWebsite,
+          },
+          {
             text: "KMUTT Library Building, 1st Floor, LIB108",
             href: "https://maps.app.goo.gl/p1oFmS8yp9duxFRJA",
             icon: iconLOC,

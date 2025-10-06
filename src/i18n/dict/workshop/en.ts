@@ -55,6 +55,24 @@ export default {
       title: "CMD Fortune",
       description:
         'The most thrilling stage! Step into the role of a "hacker" and use basic Linux commands',
+      date: "October 11, 2025",
+    },
+    {
+      code: "river-no-cybe",
+      title: "🎶 Stage 4 | River no Cybe 🚩",
+      description: 'The ultimate thrilling challenge stage!Take on the role of a \"White Hat Hacker\"',
+      date: "October 10-12, 2025",
+    },
+    {
+      code: "ai-rotation",
+      title: "🎶 Stage 5 | AI Rotation 🤖",
+      description: "How does AI distinguish between a person and a tree? Come learn the way AI sees the world!",
+      date: "October 10-12, 2025",
+    },
+    {
+      code: "mini-ai-hack",
+      title: "🎶 Special Stage | Mini AI Hackathon 🔥",
+      description: "Join us for a challenging AI problem-solving competition with real-world applications 🚀",
       date: "October 10-12, 2025",
     },
     {
@@ -69,6 +87,13 @@ export default {
       title: "Solidworks",
       description:
         "SolidWorks Workshop: Learn how to use various functions and modes in SolidWorks",
+      date: "October 10-12, 2025",
+    },
+    {
+      code: "melabtour",
+      title: "🏭 ME Lab Tour",
+      description:
+        "  Take a tour inside our ME labs—you’ll see mechanical engineering is way more than just cars. We’re talking next-level tech!",
       date: "October 10-12, 2025",
     },
     {
@@ -155,13 +180,15 @@ export default {
     {
       code: "motorlab",
       title: "⚙️ Motor Control Lab ",
-      description: "Understand the fundamentals of motor control circuits and the devices used in control systems.",
+      description:
+        "Understand the fundamentals of motor control circuits and the devices used in control systems.",
       date: "October 10-12, 2025",
     },
     {
       code: "sensorlab",
       title: "Sensors Lab – “The Rhythm of Precision”",
-      description: "Explore a variety of industrial sensors, their uses, differences, and applications in production processes.",
+      description:
+        "Explore a variety of industrial sensors, their uses, differences, and applications in production processes.",
       date: "October 10-12, 2025",
     },
     {
@@ -176,11 +203,11 @@ export default {
       description: "Learn about flow and pressure control principles, valve usage, and PID tuning.",
       date: "October 10-12, 2025",
     },
-    {
-      code: "che",
-      title: "Water Flow Control (PID) Lab – “Melody of Flow”",
-      description: "Learn about flow and pressure control principles, valve usage, and PID tuning.",
-      date: "October 10-12, 2025",
-    },
+    // {
+    //   code: "che",
+    //   title: "CHEMENG IDOL",
+    //   description: "Discover the Chemical Engineering program",
+    //   date: "October 10-12, 2025",
+    // },
   ],
 };

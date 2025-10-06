@@ -41,14 +41,14 @@ export default {
       title: "Kimi no Logical",
       description:
         "A bright debut single that invites everyone to discover the world of Logic Gates",
-      date: "October 10-12, 2025",
+      date: "October 10 & 12, 2025",
     },
     {
       code: "aitagorithm",
       title: "Aitagorithm",
       description:
         "A special performance packed with Algorithm moves from Sorting and B-Tree to Shortest Path",
-      date: "October 10-12, 2025",
+      date: "October 10 & 12, 2025",
     },
     {
       code: "cmd-fortune",
@@ -60,20 +60,23 @@ export default {
     {
       code: "river-no-cybe",
       title: "🎶 Stage 4 | River no Cybe 🚩",
-      description: 'The ultimate thrilling challenge stage!Take on the role of a \"White Hat Hacker\"',
-      date: "October 10-12, 2025",
+      description:
+        'The ultimate thrilling challenge stage!Take on the role of a \"White Hat Hacker\"',
+      date: "October 10 & 12, 2025",
     },
     {
       code: "ai-rotation",
       title: "🎶 Stage 5 | AI Rotation 🤖",
-      description: "How does AI distinguish between a person and a tree? Come learn the way AI sees the world!",
-      date: "October 10-12, 2025",
+      description:
+        "How does AI distinguish between a person and a tree? Come learn the way AI sees the world!",
+      date: "October 10 & 12, 2025",
     },
     {
       code: "mini-ai-hack",
       title: "🎶 Special Stage | Mini AI Hackathon 🔥",
-      description: "Join us for a challenging AI problem-solving competition with real-world applications 🚀",
-      date: "October 10-12, 2025",
+      description:
+        "Join us for a challenging AI problem-solving competition with real-world applications 🚀",
+      date: "October 10 & 12, 2025",
     },
     {
       code: "drawing",
@@ -101,7 +104,7 @@ export default {
       title: "PRO(DUCT)X1E 1st MINI ALBUM",
       description:
         "🎵 Track 1: Bad Foundry – Dance in Front of the Foundry Opening the show with the fascinating world of metal casting",
-      date: "October 10-12, 2025",
+      date: "October 12, 2025",
     },
     {
       code: "star-stamp",

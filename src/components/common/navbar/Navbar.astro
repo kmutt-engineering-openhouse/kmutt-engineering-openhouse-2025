@@ -6,6 +6,7 @@ const menu = [
   t.nav.menu.highlight,
   t.nav.menu.departments,
   t.nav.menu.insight,
+  t.nav.menu.activity,
   t.nav.menu.contests,
   t.nav.menu.map,
   t.nav.menu.faq,
@@ -49,7 +50,7 @@ const menu = [
         menu.map((m) => (
           <a
             href={m.href}
-            class="font-prompt text-base font-bold leading-none text-primary transition-colors duration-200 hover:text-primary-hover"
+            class="font-prompt text-base font-bold leading-none text-nowrap  text-primary transition-colors duration-200 hover:text-primary-hover"
           >
             {m.title}
           </a>

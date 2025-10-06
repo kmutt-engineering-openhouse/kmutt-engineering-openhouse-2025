@@ -1,14 +1,15 @@
 ---
-title: "Solidworks"
-description: "SolidWorks Workshop: You will learn how to use various functions and modes in SolidWorks. The workshop will cover the creation of Parts using commands such as Extrude, Cut, Loft, Swept, Geometric Plane, and Fillet, as well as how to create an Assembly."
-image: "solidworks.jpg"
+title: "🏭 ME Lab Tour"
+description: "🏭 Lab Adventures\nบอกเลยว่า “ Take a tour inside our ME labs—you’ll see mechanical engineering is way more than just cars. We’re talking next-level tech!\n- ESC LAB\n-Astronergy lab\n-FUTURE Lab\n-AMeF Lab\n-CERL Lab\n-Medical Robotics and Biomechanics Laboratory\n-SMART Lab"
+image: "melabtour.jpg"
 sections:
   - heading: "Registration Point"
     body: "Mechanical Engineering side, Wissawa Wattana Building (S4)"
   - heading: "Activity Schedule"
     list:
-      - "Round 1: 12:30 PM - 3:30 PM"
-      - "Round 2: 3:30 PM - 5:30 PM"
+      - "Round 1: 10.30 AM - 12.30 PM"
+      - "Round 2: 12:30 PM - 3:30 PM"
+      - "Round 3: 3:30 PM - 5:30 PM"
   - heading: "Number of Participants"
     body: "30 people per round"
   - heading: "Follow Us"

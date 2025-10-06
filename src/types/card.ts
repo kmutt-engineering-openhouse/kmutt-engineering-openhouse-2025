@@ -56,6 +56,70 @@ export interface WorkshopCardProps {
   index?: number;
 }
 
+// API Activity interface
+export interface ActivityData {
+  id: number;
+  title: string;
+  description: string;
+  date: string;
+  start_time: string;
+  end_time: string;
+  location: string;
+  point: number;
+  max_participants: number | "unlimited";
+  current_register_participants: number;
+  department: {
+    id: number;
+    name_th: string;
+    name_en: string;
+    faculty: {
+      id: number;
+      name_th: string;
+      name_en: string;
+    };
+  };
+  faculty: {
+    id: number;
+    name_th: string;
+    name_en: string;
+  };
+  display: boolean;
+}
+
+// Workshop with API data interface
+export interface WorkshopWithAPIData {
+  // Original workshop data
+  title: string;
+  description: string;
+  image?: string;
+  gallery?: Array<{ image: string; alt: string; title: string }>;
+  sections?: Array<{
+    heading: string;
+    body?: string;
+    list?: string[];
+    chips?: Array<{ title: string; link: string }>;
+    contract?: Array<{ type: string; title: string; link: string }>;
+  }>;
+  
+  // API data
+  apiData?: {
+    timeSlots: Array<{
+      date: string;
+      start_time: string;
+      end_time: string;
+      location: string;
+      max_participants: number | "unlimited";
+      current_register_participants: number;
+      isFull: boolean;
+      availableSlots: number;
+    }>;
+    totalParticipants: number;
+    totalMaxParticipants: number | "unlimited";
+    isFullyBooked: boolean;
+    department: string;
+  };
+}
+
 // FAQ card interface
 export interface FAQCardProps {
   question: string;

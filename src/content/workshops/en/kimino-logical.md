@@ -1,6 +1,6 @@
 ---
 title: "Kimi no Logical"
-description: "🎶 First Stage | Kimi no Logical 🔣\nA bright debut single that invites everyone to discover the world of Logic Gates\n(AND, OR, NOT, XOR, etc.) and how computers think"
+description: "🎶 Stage 1 | Kimi no Logical 🔣\nOur cheerful debut single!\nStep into the world of Logic Gates (AND, OR, NOT, XOR, etc.)\nand discover how computers really think."
 image: "kimino-logical.jpg"
 sections:
   - heading: "Registration Point"

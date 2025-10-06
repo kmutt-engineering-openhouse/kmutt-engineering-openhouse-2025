@@ -7,9 +7,9 @@ sections:
     body: "The elevator lobby, 11th Floor, Wissawa Wattana Building (S4)"
   - heading: "Schedule"
     list:
-      - "Round 1 : 08.30 AM - 10.30 AM"
-      - "Round 2 : 10.30 AM - 12.30 PM"
-      - "Round 3 : 1.30 PM - 3.30 PM"
+      - "Round 1 : 08.30 AM - 10.30 AM (10 & 12 October)"
+      - "Round 2 : 10.30 AM - 12.30 PM (10 & 12 October)"
+      - "Round 3 : 1.30 PM - 3.30 PM "
   - heading: "Participants"
     body: "30 people/round"
   - heading: "Follow us"

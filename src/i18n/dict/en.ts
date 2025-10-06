@@ -67,6 +67,10 @@ export default {
         title: "Faculty Insight",
         href: "#insight",
       },
+      activity: {
+        title: "Activity",
+        href: "#activity",
+      },
       contests: {
         title: "Contest",
         href: "#contest",

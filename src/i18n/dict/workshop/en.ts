@@ -55,7 +55,7 @@ export default {
       title: "CMD Fortune",
       description:
         'The most thrilling stage! Step into the role of a "hacker" and use basic Linux commands',
-      date: "October 10-12, 2025",
+      date: "October 11, 2025",
     },
     {
       code: "river-no-cybe",
@@ -87,6 +87,13 @@ export default {
       title: "Solidworks",
       description:
         "SolidWorks Workshop: Learn how to use various functions and modes in SolidWorks",
+      date: "October 10-12, 2025",
+    },
+    {
+      code: "melabtour",
+      title: "🏭 ME Lab Tour",
+      description:
+        "  Take a tour inside our ME labs—you’ll see mechanical engineering is way more than just cars. We’re talking next-level tech!",
       date: "October 10-12, 2025",
     },
     {

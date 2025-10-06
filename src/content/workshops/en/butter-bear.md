@@ -1,21 +1,20 @@
 ---
-title: "🎪 STAGE 2 : Butter Bear Bookmark"
-description: "เพราะพวกเราจะเป็นที่ตั้งให้เธอพักฮีลใจ~\n
-- น้องๆจะได้โชว์สกิลสายช่าง! มาลองตะไบ เจาะ แผ่นอะลูมิเนียม\n
-- มาทำเป็น ที่คั่นหนังสือเจ้าหมี ที่ทั้งน่ารักและใช้งานได้จริง!\n
-(🤎)ใครทำได้ = เก่ง ปลดล็อกสกิลช่างในตัวคุณ"
+title: "🎪 STAGE 2: Butter Bear Standy"
+description: "Because we’ll be the stand to rest your heart~\n
+- Show off your engineering skills! Try filing, drilling, and bending aluminum sheets.\n
+- Make your very own cute and functional bear-shaped phone stand!\n(🤎) Successfully finish it = unlock your inner engineer."
 image: "butter-bear.jpg"
 sections:
-  - heading: "จุดลงทะเบียน"
-    body: "อาคารวิศววัฒนะ (S4) ชั้น 1"
-  - heading: "รอบเวลากิจกรรม"
+  - heading: "Check-in Point"
+    body: "1st floor, Wissawa Wattana Building (S4)"
+  - heading: "Schedule"
     list:
-      - "รอบที่ 1 : 10.30 - 12.30 น."
-      - "รอบที่ 2 : 13.30 - 15.30 น."
-      - "รอบที่ 3 : 15.30 - 17.30 น."
-  - heading: "จำนวนผู้เข้าร่วม"
-    body: "เปิดรับรอบละ 30 คน"
-  - heading: "ช่องทางติดตามข่าวสาร"
+      - "Round 1: 10.30 AM - 12.30 PM"
+      - "Round 2: 1.30 PM - 3.30 PM."
+      - "Round 3: 3.30 PM - 5.30 PM"
+  - heading: "Participants"
+    body: "30 people/round"
+  - heading: "Follow us"
     contract:
       - type: "facebook"
         title: "Tool & Materials Engineering, KMUTT"

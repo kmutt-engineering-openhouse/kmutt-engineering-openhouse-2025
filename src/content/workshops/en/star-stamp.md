@@ -1,22 +1,21 @@
 ---
-title: "🎪 STAGE 1 : Star Stamp Station"
-description: "“ ปั๊มหัวใจลงแม่พิมพ์! ”\n
-- มาสัมผัสโลกของวัสดุแบบคูลๆ แถมยังได้เรียนรู้การขึ้นรูปยาง ในรูปเเบบต่าง ๆ\n
-- ได้ลงมือผสมยางและปั๊มลงแม่พิมพ์ด้วยตัวเองเหมือนกับการปั๊มความรักลงใจเธอ!
-(🤎) ได้ทั้งของที่ระลึกสุดยูนีค + ความรู้สุดว้าว"
+title: "🎪 STAGE 1: Star Stamp Station"
+description: "“ Stamp your heart into the mold ”\n
+- Explore the world of materials in a fun, hands-on way and learn how rubber is formed into different shapes.\n
+- Mix the rubber yourself and stamp it into a mold—just like stamping love straight from your heart! \n(🤎) (🤎) Take home a unique souvenir along with some wow-worthy knowledge."
 
 image: "star-stamp.jpg"
 sections:
-  - heading: "จุดลงทะเบียน"
-    body: "อาคารวิศววัฒนะ (S4) ชั้น 1"
-  - heading: "รอบเวลากิจกรรม"
+  - heading: "Registration Point"
+    body: "1st floor, Wissawa Wattana Building (S4)"
+  - heading: "Registration Point"
     list:
-      - "รอบที่ 1 : 10.30 - 12.30 น."
-      - "รอบที่ 2 : 13.30 - 15.30 น."
-      - "รอบที่ 3 : 15.30 - 17.30 น."
-  - heading: "จำนวนผู้เข้าร่วม"
-    body: "เปิดรับรอบละ 30 คน"
-  - heading: "ช่องทางติดตามข่าวสาร"
+      - "Round 1: 10.30 AM - 12.30 PM"
+      - "Round 2: 1.30 PM - 3.30 PM."
+      - "Round 3: 3.30 PM - 5.30 PM"
+  - heading: "Number of Participants"
+    body: "30 people/round"
+  - heading: "Follow Us"
     contract:
       - type: "facebook"
         title: "Tool & Materials Engineering, KMUTT"

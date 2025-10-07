@@ -55,7 +55,7 @@ export default {
       title: "CMD Fortune",
       description:
         'The most thrilling stage! Step into the role of a "hacker" and use basic Linux commands',
-      date: "October 11, 2025",
+      date: "October 10-12, 2025",
     },
     {
       code: "river-no-cybe",

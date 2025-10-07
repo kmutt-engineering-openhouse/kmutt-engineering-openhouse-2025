@@ -41,7 +41,7 @@ export default {
       code: "cmd-fortune",
       title: "CMD เสี่ยงทาย",
       description: 'สเตจสุดท้าทายที่จะให้น้อง ๆ สวมบท "แฮ็กเกอร์" ใช้คำสั่งพื้นฐานของ Linux',
-      date: "11 ตุลาคม 2568",
+      date: "10-12 ตุลาคม 2568",
     },
     {
       code: "river-no-cybe",

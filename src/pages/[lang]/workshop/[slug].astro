@@ -31,8 +31,8 @@ const { data } = entry;
 
 // Fetch API data and map to workshop
 const apiActivities = await fetchActivities();
-// const workshopWithAPIData = mapAPIDataToWorkshop(data, apiActivities);
-const workshopWithAPIData = {}; // Temporarily disable API data mapping due to CORS issues
+const workshopWithAPIData = mapAPIDataToWorkshop(data, apiActivities);
+// const workshopWithAPIData = {}; // Temporarily disable API data mapping due to CORS issues
 
 const images = import.meta.glob("../../../assets/images/workshops/cover/*", { eager: true });
 

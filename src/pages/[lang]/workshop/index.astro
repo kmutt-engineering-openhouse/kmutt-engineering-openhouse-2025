@@ -7,6 +7,7 @@ import iconBACKARROW from "../../../assets/icons/back-arrow.svg";
 import Layout from "../../../layouts/Layout.astro";
 import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
+import { workshopDepartments } from "../../../i18n/dict/workshop/workshop-departments";
 
 // Define static paths for the [lang] parameter
 export function getStaticPaths() {
@@ -57,6 +58,17 @@ const seo = {
 ---
 
 <Layout t={t} currentLang={lang} seo={seo}>
+  <style>
+    /* WebKit: thin thumb, transparent track, remove arrows/corner */
+    #custom-select-list::-webkit-scrollbar-track, #custom-select-list::-webkit-scrollbar-track-piece { background: transparent; }
+    #custom-select-list::-webkit-scrollbar-thumb { background-color: rgb(58 62 148 ); border-radius: 9999px; border: 1px solid transparent; background-clip: padding-box; }
+    #custom-select-list:hover::-webkit-scrollbar-thumb { background-color: rgb(58 62 148 ); }
+    #custom-select-list::-webkit-scrollbar-button { display: none; width: 0; height: 0; }
+    #custom-select-list::-webkit-scrollbar-corner { background: transparent; }
+
+    /* Firefox: thin + transparent track */
+    #custom-select-list { scrollbar-width: thin; scrollbar-color: rgb(58 62 148 ) transparent; }
+  </style>
   <!-- Hero Section -->
   <section class="relative bg-gradient-to-br from-primary via-primary to-primary-hover py-20">
     <div class="absolute inset-0 bg-black/10"></div>
@@ -78,12 +90,32 @@ const seo = {
 
   <!-- Workshops Grid -->
   <main class="mx-auto max-w-7xl px-4 py-16">
+    <!-- Custom Filter Selector -->
+    <div class="mb-8 flex  flex-col items-start sm:flex-row sm:items-center gap-3">
+      <label id="workshop-filter-label" class="font-prompt font-semibold text-sm text-primary">{lang === "en" ? "Filter by department:" : "กรองตามภาควิชา:"}</label>
+
+      <div id="custom-workshop-select" class="relative inline-block text-left">
+        <button id="custom-select-button" type="button" aria-haspopup="listbox" aria-expanded="false" class="inline-flex w-fit items-center justify-between gap-2 rounded-lg border border-gray-200 bg-white py-2 px-3 text-sm text-primary font-semibold shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/30">
+          <span id="custom-select-value">{lang === "en" ? workshopDepartments[0].label_en : workshopDepartments[0].label_th}</span>
+          <svg class="h-4 w-4 text-primary" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd" /></svg>
+        </button>
+
+        <ul id="custom-select-list" role="listbox" tabindex="-1" aria-labelledby="workshop-filter-label" class="absolute left-0 z-10 mt-2 w-[300px] origin-top-left divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none hidden max-h-56 overflow-auto">
+          {
+            workshopDepartments.map((d) => (
+              <li role="option" data-value={d.code} class="cursor-pointer px-3 py-2 text-sm font-medium text-primary hover:bg-primary/10 focus:bg-primary/10" tabindex="0">{lang === "en" ? d.label_en : d.label_th}</li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
       {
         workshopT.workshops.map((workshop, index) => {
           const workshopImage = getImageByCode(workshop.code);
           return workshopImage ? (
             <article 
+              data-depart={workshop.depart_code}
               class="scroll-animate animate-fade-up group flex flex-col overflow-hidden rounded-3xl bg-white shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl h-full"
               data-delay={
                 (index) % 3 + 4
@@ -121,8 +153,8 @@ const seo = {
                 
                 <!-- Action Button -->
                 <div class="flex items-center justify-between">
-                  <span class="text-sm font-medium text-gray-500">
-                    {lang === "en" ? "Workshop" : "เวิร์คช็อป"}
+                  <span class="text-sm font-bold text-primary">
+                    {workshop.department}
                   </span>
                   <a 
                     href={`/${lang}/workshop/${workshop.code}`}
@@ -159,6 +191,128 @@ const seo = {
           (window as any).scrollAnimationManager.observeElements();
         }
       }, 100);
+    });
+  </script>
+  <script>
+    // Workshop filter functionality (select dropdown)
+    document.addEventListener('DOMContentLoaded', () => {
+    const articles = Array.from(document.querySelectorAll('main article[data-depart]')) as HTMLElement[];
+      // Ensure articles have animation-ready classes
+      articles.forEach(a => {
+        a.classList.add('transform', 'transition-all', 'duration-300', 'ease-out');
+        a.classList.remove('opacity-0', 'scale-95');
+      });
+
+      function showArticle(a: HTMLElement) {
+        // Make visible and animate in
+        a.style.display = '';
+        // allow DOM update then remove hidden classes
+        requestAnimationFrame(() => {
+          a.classList.remove('opacity-0', 'scale-95');
+          a.classList.add('opacity-100', 'scale-100');
+        });
+      }
+
+      function hideArticle(a: HTMLElement) {
+        // animate out then set display none
+        a.classList.remove('opacity-100', 'scale-100');
+        a.classList.add('opacity-0', 'scale-95');
+        setTimeout(() => {
+          // only hide if still hidden (prevent race)
+          if (a.classList.contains('opacity-0')) {
+            a.style.display = 'none';
+          }
+        }, 300);
+      }
+
+      function applyFilter(depart: string) {
+        articles.forEach(a => {
+          const aDepart = (a.getAttribute('data-depart') || '').toLowerCase();
+          if (depart === 'all' || aDepart === depart.toLowerCase()) {
+            // show
+            showArticle(a);
+          } else {
+            // hide
+            hideArticle(a);
+          }
+        });
+      }
+
+      // Setup custom select interactions
+      const customSelect = document.getElementById('custom-workshop-select');
+      const button = document.getElementById('custom-select-button') as HTMLButtonElement | null;
+      const list = document.getElementById('custom-select-list') as HTMLElement | null;
+      const valueEl = document.getElementById('custom-select-value') as HTMLElement | null;
+
+      if (!customSelect || !button || !list || !valueEl) {
+        // Fallback: if custom select missing, do nothing
+        return;
+      }
+
+      const options = Array.from(list.querySelectorAll('li[role="option"]')) as HTMLElement[];
+
+      function closeList() {
+        list!.classList.add('hidden');
+        button!.setAttribute('aria-expanded', 'false');
+      }
+
+      function openList() {
+        list!.classList.remove('hidden');
+        button!.setAttribute('aria-expanded', 'true');
+        // focus first option
+        const first = options[0];
+        if (first) first.focus();
+      }
+
+      function selectOption(opt: HTMLElement) {
+        const code = opt.dataset.value || 'all';
+        const label = opt.textContent || '';
+        valueEl!.textContent = label;
+        closeList();
+        // small pulse on label to emphasize change
+        const topLabel = document.getElementById('workshop-filter-label');
+        if (topLabel) {
+          topLabel.classList.add('animate-pulse');
+          setTimeout(() => topLabel.classList.remove('animate-pulse'), 300);
+        }
+        applyFilter(code);
+      }
+
+      // Click handlers
+      button.addEventListener('click', (e) => {
+        const expanded = button.getAttribute('aria-expanded') === 'true';
+        if (expanded) closeList(); else openList();
+      });
+
+      options.forEach(opt => {
+        opt.addEventListener('click', () => selectOption(opt));
+        opt.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            selectOption(opt);
+          } else if (e.key === 'ArrowDown') {
+            const next = opt.nextElementSibling as HTMLElement | null;
+            if (next) next.focus();
+          } else if (e.key === 'ArrowUp') {
+            const prev = opt.previousElementSibling as HTMLElement | null;
+            if (prev) prev.focus();
+            else button.focus();
+          } else if (e.key === 'Escape') {
+            closeList();
+            button.focus();
+          }
+        });
+      });
+
+      // Close on outside click
+      document.addEventListener('click', (ev) => {
+        if (!customSelect.contains(ev.target as Node)) {
+          closeList();
+        }
+      });
+
+      // Initialize: show all
+      applyFilter('all');
     });
   </script>
 </Layout>

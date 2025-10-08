@@ -9,6 +9,7 @@ import WebsiteIcon from "../../../assets/icons/website.svg";
 import EmailIcon from "../../../assets/icons/email.svg";
 import TiktokIcon from "../../../assets/icons/tiktok.svg";
 import { fetchActivities, mapAPIDataToWorkshop } from "../../../utils/apiMapping";
+import RegisterButton from "../../../components/common/RegisterButton.astro";
 
 export async function getStaticPaths() {
   const all = await getCollection("workshops");
@@ -32,7 +33,6 @@ const { data } = entry;
 // Fetch API data and map to workshop
 const apiActivities = await fetchActivities();
 const workshopWithAPIData = mapAPIDataToWorkshop(data, apiActivities);
-// const workshopWithAPIData = {}; // Temporarily disable API data mapping due to CORS issues
 
 const images = import.meta.glob("../../../assets/images/workshops/cover/*", { eager: true });
 
@@ -165,8 +165,6 @@ if (data.gallery && Array.isArray(data.gallery) && data.gallery.length > 0) {
         <h2 class="font-prompt text-lg font-semibold text-blue-800 sm:text-xl mb-4">
           📊 {lang === "th" ? "สถานะการลงทะเบียน" : "Registration Status"}
         </h2>
-        
-
         <!-- Time Slots -->
         <div class="space-y-3">
           <h3 class="font-prompt text-md font-semibold text-blue-800">
@@ -204,6 +202,8 @@ if (data.gallery && Array.isArray(data.gallery) && data.gallery.length > 0) {
         </div>
       </section>
     )}
+
+    <RegisterButton t={dict} />
 
     <div class="mt-4 flex flex-col gap-4">
       {

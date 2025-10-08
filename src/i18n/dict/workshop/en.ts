@@ -21,6 +21,8 @@ export default {
       description:
         "An event that gives a chance to get to know the departments within the Faculty of Engineering",
       date: "October 10-12, 2025",
+      department:"Engineering",
+      depart_code:"engi"
     },
     {
       code: "engi-sustain",
@@ -28,6 +30,8 @@ export default {
       description:
         "An event that gives a chance to get to know the departments within the Faculty of Engineering",
       date: "October 10-12, 2025",
+      department:"Engineering",
+      depart_code:"engi"
     },
     {
       code: "engi-elec",
@@ -35,6 +39,8 @@ export default {
       description:
         "An event that gives a chance to get to know the departments within the Faculty of Engineering",
       date: "October 10-12, 2025",
+      department:"Engineering",
+      depart_code:"engi"
     },
     {
       code: "kimino-logical",
@@ -42,6 +48,8 @@ export default {
       description:
         "A bright debut single that invites everyone to discover the world of Logic Gates",
       date: "October 10 & 12, 2025",
+      department:"Computer",
+      depart_code:"cpe"
     },
     {
       code: "aitagorithm",
@@ -49,6 +57,8 @@ export default {
       description:
         "A special performance packed with Algorithm moves from Sorting and B-Tree to Shortest Path",
       date: "October 10 & 12, 2025",
+      department:"Computer",
+      depart_code:"cpe"
     },
     {
       code: "cmd-fortune",
@@ -56,6 +66,8 @@ export default {
       description:
         'The most thrilling stage! Step into the role of a "hacker" and use basic Linux commands',
       date: "October 10-12, 2025",
+      department:"Computer",
+      depart_code:"cpe"
     },
     {
       code: "river-no-cybe",
@@ -63,6 +75,8 @@ export default {
       description:
         'The ultimate thrilling challenge stage!Take on the role of a \"White Hat Hacker\"',
       date: "October 10 & 12, 2025",
+      department:"Computer",
+      depart_code:"cpe"
     },
     {
       code: "ai-rotation",
@@ -70,6 +84,8 @@ export default {
       description:
         "How does AI distinguish between a person and a tree? Come learn the way AI sees the world!",
       date: "October 10 & 12, 2025",
+      department:"Computer",
+      depart_code:"cpe"
     },
     {
       code: "mini-ai-hack",
@@ -77,6 +93,8 @@ export default {
       description:
         "Join us for a challenging AI problem-solving competition with real-world applications 🚀",
       date: "October 10 & 12, 2025",
+      department:"Computer",
+      depart_code:"cpe"
     },
     {
       code: "drawing",
@@ -84,6 +102,8 @@ export default {
       description:
         "Manual Drafting Workshop: Learn the fundamentals of engineering drawing, covering 2D and 3D drafting",
       date: "October 10-12, 2025",
+      department:"Mechanical",
+      depart_code:"me"
     },
     {
       code: "solidworks",
@@ -91,6 +111,8 @@ export default {
       description:
         "SolidWorks Workshop: Learn how to use various functions and modes in SolidWorks",
       date: "October 10-12, 2025",
+      department:"Mechanical",
+      depart_code:"me"
     },
     {
       code: "melabtour",
@@ -98,6 +120,8 @@ export default {
       description:
         "  Take a tour inside our ME labs—you’ll see mechanical engineering is way more than just cars. We’re talking next-level tech!",
       date: "October 10-12, 2025",
+      department:"Mechanical",
+      depart_code:"me"
     },
     {
       code: "productx1e",
@@ -105,24 +129,32 @@ export default {
       description:
         "🎵 Track 1: Bad Foundry – Dance in Front of the Foundry Opening the show with the fascinating world of metal casting",
       date: "October 12, 2025",
+      department:"Production",
+      depart_code:"pe"
     },
     {
       code: "star-stamp",
       title: "Star Stamp Station",
       description: "Stamp your heart into the mold!",
       date: "October 10-12, 2025",
+      department:"Tool and Materials",
+      depart_code:"tme"
     },
     {
       code: "butter-bear",
       title: "Butter Bear Bookmark",
       description: "Because we will be the place for you to rest and heal your heart~",
       date: "October 10-12, 2025",
+      department:"Tool and Materials",
+      depart_code:"tme"
     },
     {
       code: "geo",
       title: "Geotechnical Engineering 🌍",
       description: "Introduction to Geotechnical Engineering at KMUTT",
       date: "October 10-12, 2025",
+      department:"Civil",
+      depart_code:"ce"
     },
     {
       code: "concrete",
@@ -130,24 +162,32 @@ export default {
       description:
         "Learn the fundamentals of concrete, including its components and real-world applications.",
       date: "October 10-12, 2025",
+      department:"Civil",
+      depart_code:"ce"
     },
     {
       code: "structural",
       title: "Structural Engineering 🏗️",
       description: "Get introduced to the basics of structural engineering.",
       date: "October 10-12, 2025",
+      department:"Civil",
+      depart_code:"ce"
     },
     {
       code: "water-resources",
       title: "Workshop 4: Water Resources Engineering 💧",
       description: "Learn the fundamentals of hydraulics and water resource engineering.",
       date: "October 10-12, 2025",
+      department:"Civil",
+      depart_code:"ce"
     },
     {
       code: "survey",
       title: "Survey 🛠️📷",
       description: "Try surveying tools and learn field survey techniques",
       date: "October 10-12, 2025",
+      department:"Civil",
+      depart_code:"ce"
     },
     {
       code: "dream-for-green",
@@ -155,30 +195,40 @@ export default {
       description:
         "💧 Have you ever wonder what it takes to make our drinking and bathing water safe?",
       date: "October 10-12, 2025",
+      department:"Environmental",
+      depart_code:"env"
     },
     {
       code: "escape-room",
       title: "🧩 Workshop 2: Escape Room – ENVI Mission",
       description: "🌍 Are you ready to test your brainpower and courage?",
       date: "October 10-12, 2025",
+      department:"Environmental",
+      depart_code:"env"
     },
     {
       code: "melody-lab",
       title: "🎶 The Melody of Electricity Lab",
       description: "✨ “When code turns into melody, dreams shine like an idol.” ✨",
       date: "October 10-12, 2025",
+      department:"Electronics",
+      depart_code:"ene"
     },
     {
       code: "cooltech",
       title: "🌌🎶 CoolTech: Awakening the Smart Breeze with Temperature",
       description: "✨ “As the temperature changes, the rhythm of the breeze shines on stage.” ✨",
       date: "October 10-12, 2025",
+      department:"Electronics",
+      depart_code:"ene"
     },
     {
       code: "measurement",
       title: "🔧 Measurement Lab",
       description: "Learn how to use electrical measuring instruments in everyday applications.",
       date: "October 10-12, 2025",
+      department:"Electricals",
+      depart_code:"ee"
     },
     {
       code: "motorlab",
@@ -186,6 +236,8 @@ export default {
       description:
         "Understand the fundamentals of motor control circuits and the devices used in control systems.",
       date: "October 10-12, 2025",
+      department:"Electricals",
+      depart_code:"ee"
     },
     {
       code: "sensorlab",
@@ -193,18 +245,24 @@ export default {
       description:
         "Explore a variety of industrial sensors, their uses, differences, and applications in production processes.",
       date: "October 10-12, 2025",
+      department:"Control Systems",
+      depart_code:"inc"
     },
     {
       code: "plc",
       title: "PLC Lab – “Hook of Control”",
       description: "Practice programming control systems using PLCs through Ladder Diagrams.",
       date: "October 10-12, 2025",
+      department:"Control Systems",
+      depart_code:"inc"
     },
     {
       code: "pid",
       title: "Water Flow Control (PID) Lab – “Melody of Flow”",
       description: "Learn about flow and pressure control principles, valve usage, and PID tuning.",
       date: "October 10-12, 2025",
+      department:"Control Systems",
+      depart_code:"inc"
     },
     // {
     //   code: "che",

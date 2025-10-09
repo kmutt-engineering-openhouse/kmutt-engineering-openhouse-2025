@@ -1,7 +1,7 @@
 ---
 title: "💧 Water Flow Control (PID) Lab – The Melody of Flow"
 description: "Learn how to control water flow and pressure, adjust valves, and fine-tune PID for a perfectly balanced system.\nLike a smooth melody, it keeps the whole performance flowing in harmony."
-image: "pid.jpg"
+image: "pid.webp"
 sections:
   - heading: "Check-in Point"
     body: "6th floor, Classroom Building 4 (S12)"

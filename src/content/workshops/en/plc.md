@@ -1,7 +1,7 @@
 ---
 title: "💻 PLC Lab – The Hook of Control"
 description: "Practice programming with PLCs using Ladder Diagrams and apply them to real automation processes.\nJust like a catchy hook in a song, PLCs keep the entire performance in sync and under control."
-image: "plc.jpg"
+image: "plc.webp"
 sections:
   - heading: "Check-in Point"
     body: "6th floor, Classroom Building 4 (S12)"

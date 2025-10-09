@@ -3,7 +3,7 @@ title: "🎪 STAGE 2: Butter Bear Standy"
 description: "Because we’ll be the stand to rest your heart~\n
 - Show off your engineering skills! Try filing, drilling, and bending aluminum sheets.\n
 - Make your very own cute and functional bear-shaped phone stand!\n(🤎) Successfully finish it = unlock your inner engineer."
-image: "butter-bear.jpg"
+image: "butter-bear.webp"
 sections:
   - heading: "Check-in Point"
     body: "1st floor, Wissawa Wattana Building (S4)"

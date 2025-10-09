@@ -1,7 +1,7 @@
 ---
 title: "⚙️ Motor Control Lab"
 description: "Understand the fundamentals of motor control circuits and the devices used in control systems.\nYou'll also get the chance to assemble and test real motor circuits yourself."
-image: "motorlab.jpg"
+image: "motorlab.webp"
 sections:
   - heading: "Check-in Point"
     body: "5th floor, Classroom Building 4 (S12)"

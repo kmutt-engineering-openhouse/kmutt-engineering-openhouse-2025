@@ -1,7 +1,7 @@
 ---
 title: "Solidworks"
 description: "SolidWorks Workshop: You will learn how to use various functions and modes in SolidWorks. The workshop will cover the creation of Parts using commands such as Extrude, Cut, Loft, Swept, Geometric Plane, and Fillet, as well as how to create an Assembly."
-image: "solidworks.jpg"
+image: "solidworks.webp"
 sections:
   - heading: "Registration Point"
     body: "Mechanical Engineering side, Wissawa Wattana Building (S4)"

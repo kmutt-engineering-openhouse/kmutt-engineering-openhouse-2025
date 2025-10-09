@@ -1,7 +1,7 @@
 ---
 title: "🏭 ME Lab Tour"
 description: "🏭 Lab Adventures\nบอกเลยว่า “ Take a tour inside our ME labs—you’ll see mechanical engineering is way more than just cars. We’re talking next-level tech!\n- ESC LAB\n-Astronergy lab\n-FUTURE Lab\n-AMeF Lab\n-CERL Lab\n-Medical Robotics and Biomechanics Laboratory\n-SMART Lab"
-image: "melabtour.jpg"
+image: "melabtour.webp"
 sections:
   - heading: "Registration Point"
     body: "Mechanical Engineering side, Wissawa Wattana Building (S4)"

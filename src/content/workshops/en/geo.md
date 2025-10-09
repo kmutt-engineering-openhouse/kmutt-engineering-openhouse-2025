@@ -1,7 +1,7 @@
 ---
 title: "Geotechnical Engineering 🌍"
 description: "Introduction to Geotechnical Engineering at KMUTT\nGain insight into career paths in geotechnical fields and understand the importance of foundation work in engineering careers.\n\n📌 Activity Highlights:\n• Introduction to geotechnical engineering and related career opportunities\n• Learn about soil reinforcement techniques\n• Study and understand pile foundation systems"
-image: "geo.jpg"
+image: "geo.webp"
 sections:
   - heading: "Check-in Point"
     body: "1st floor, Classroom Building 5 (S11)"

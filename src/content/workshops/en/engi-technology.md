@@ -1,7 +1,7 @@
 ---
 title: "Engi's Journey: Technology Route"
 description: "An event that gives a chance to get to know the departments within the Faculty of Engineering, KMUTT, through tours along various routes, along with mini-workshops to experience the learning of each department."
-image: "engi-technology.jpg"
+image: "engi-technology.webp"
 sections:
   - heading: "Check-in Point"
     body: "Registration for the Engi's Journey event and the tour will begin at the area behind INNO-X, next to the Learning Garden."

@@ -1,7 +1,7 @@
 ---
 title: "🔧 Measurement Lab"
 description: "Learn how to use electrical measuring instruments in everyday applications.\nParticipants will get hands-on practice in testing and analyzing electrical systems — a vital foundation for solving real-life electrical problems."
-image: "measurement.jpg"
+image: "measurement.webp"
 sections:
   - heading: "Check-in Point"
     body: "10 October 2025 : Classroom Building 4 (S12) CB40406 Room\n

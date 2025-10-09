@@ -1,7 +1,7 @@
 ---
 title: "AI Rotation"
 description: "🎶 Stage 5 | AI Rotation 🤖 How does AI distinguish between a person and a tree? Come learn the way AI sees the world! A workshop where you'll grasp the theory and get hands-on experience with Image Classification."
-image: "ai-rotation.jpg"
+image: "ai-rotation.webp"
 sections:
   - heading: "Check-in Point"
     body: "The elevator lobby, 11th Floor, Wissawa Wattana Building (S4)"

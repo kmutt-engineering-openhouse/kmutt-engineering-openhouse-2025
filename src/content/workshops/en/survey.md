@@ -1,7 +1,7 @@
 ---
 title: "Survey 🛠️📷"
 description: "Try surveying tools and learn field survey techniques.\nEngage in practical fieldwork using real survey equipment.\n\n📌 Activity Highlights:\n• Try out surveying instruments and measurement tools\n• Learn field data collection techniques\n• Understand real-world field survey workflow"
-image: "survey.jpg"
+image: "survey.webp"
 sections:
   - heading: "Check-in Point"
     body: "1st floor, Classroom Building 5 (S11)"

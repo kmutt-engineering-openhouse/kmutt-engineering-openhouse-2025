@@ -1,7 +1,7 @@
 ---
 title: "Drawing"
 description: "Workshop การเขียนแบบด้วยมือ น้อง ๆ จะได้เรียนรู้การเขียนแบบทางวิศวกรรม การเขียนแบบใน 2 มิติ การเขียนแบบใน 3 มิติ หรือ รูป Isometric"
-image: "drawing.jpg"
+image: "drawing.webp"
 sections:
   - heading: "จุดลงทะเบียน"
     body: "ฝั่งภาควิชาวิศวกรรมเครื่องกล อาคารวิศววัฒนะ (S4)"

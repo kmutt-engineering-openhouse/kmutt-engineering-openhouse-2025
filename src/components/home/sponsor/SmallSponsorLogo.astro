@@ -5,12 +5,14 @@ import premier_Logo from "../../../assets/logo/sponsor/small/Premier.webp";
 import bangkokBank_Logo from "../../../assets/logo/sponsor/small/Bangkok_Bank.webp";
 import mondelez_Logo from "../../../assets/logo/sponsor/small/Mondelez.webp";
 import usefulFood_Logo from "../../../assets/logo/sponsor/small/UsefulFood.webp";
-import pocariSweat_Logo from "../../../assets/logo/sponsor/large/PocariSweat.webp";
+import pocariSweat_Logo from "../../../assets/logo/sponsor/small/PocariSweat.webp";
 import bhaesajchakorn_Logo from "../../../assets/logo/sponsor/small/Bhaesajchakorn.webp";
 import casio_Logo from "../../../assets/logo/sponsor/small/Casio.webp";
 import ire_Logo from "../../../assets/logo/sponsor/small/IRE.webp";
 import windChill_Logo from "../../../assets/logo/sponsor/small/windChill.webp";
 import royalD_Logo from "../../../assets/logo/sponsor/small/royalD.webp";
+import APF_Logo from "../../../assets/logo/sponsor/small/APF.webp";
+import ip_one_Logo from "../../../assets/logo/sponsor/small/ip-one.webp";
 
 interface Props {
   class?: string;
@@ -31,6 +33,8 @@ const logos = [
   { src: ire_Logo, alt: "IRE", height: 32, heightSm: 16, row: 1 },
   { src: windChill_Logo, alt: "WindChill", height: 32, heightSm: 16, row: 1 },
   { src: royalD_Logo, alt: "Royal-D", height: 40, heightSm: 20, row: 1 },
+  { src: APF_Logo, alt: "APF", height: 32, heightSm: 16, row: 1 },
+  { src: ip_one_Logo, alt: "IP-ONE", height: 32, heightSm: 16, row: 1 },
 ];
 
 const rows = Array.from(new Set(logos.map((l) => l.row))).sort((a, b) => a - b);

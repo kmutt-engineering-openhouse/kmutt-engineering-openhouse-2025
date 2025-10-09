@@ -120,14 +120,14 @@ export default {
       {
         title: "Engi’s Idol Talk",
         description:
-          "Join us for one-on-one sessions with students from all 10 departments of the Faculty of Engineering! Get personalized advice and techniques on Portfolio preparation and university entrance exam strategies\nFaculty of Engineering Meeting Room, Classroom Building 4 (S12), 2nd floor\n 10 - 12 October 2025 01.00 PM - 04.00 PM",
+          "Join us for one-on-one sessions with students from all 10 departments of the Faculty of Engineering! Get personalized advice and techniques on Portfolio preparation and university entrance exam strategies Faculty of Engineering Meeting Room, Classroom Building 4 (S12), 2nd floor 10 - 12 October 2025 01.00 - 04.00 PM Registration: 09.00 - 11.00 AM Classroom Building 4 (S12), 1st floor",
         image: enIdol,
         href: "/",
       },
       {
         title: "Parent Guidance Session",
         description:
-          "A special event offering parents the opportunity to receive information on the admissions process, curriculum and instruction, and career paths for various programs within the Faculty of Engineering at KMUTT. Presentations will be given by our professor and actual members of the admissions interview committee. 10 - 12 October 2025 09.30 AM - 12.00 PM Faculty of Engineering Meeting Room, Classroom Building 4 (S12), 2nd floor",
+          "A special event offering parents the opportunity to receive information on the admissions process, curriculum and instruction, and career paths for various programs within the Faculty of Engineering at KMUTT. Presentations will be given by our professor and actual members of the admissions interview committee. 10 - 12 October 2025 09.30 AM - 12.00 PM Faculty of Engineering Meeting Room, Classroom Building 4 (S12), 2nd floor Registration: 09.00-09.45 AM Classroom Building 4 (S12), 1st floor",
         image: enParent,
         href: "/",
       },

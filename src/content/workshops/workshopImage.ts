@@ -1,5 +1,5 @@
 // import TMEw1m from "/src/images/home/events/tme/w1/TMEw1m.webp";
-import CenImg from "../../assets/images/workshops/engi/engi.jpg";
+import CenImg from "../../assets/images/workshops/engi/engi.webp";
 
 export interface IWorkshopImage {
   code: string;

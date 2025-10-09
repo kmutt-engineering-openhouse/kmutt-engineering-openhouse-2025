@@ -1,7 +1,7 @@
 ---
 title: "⚙️ Motor Control Lab"
 description: "ปูพื้นฐานการควบคุมการทำงานของมอเตอร์ และอุปกรณ์ต่าง ๆ ที่ใช้ในงานควบคุม พร้อมให้น้อง ๆ ได้ ลงมือประกอบวงจรจริง"
-image: "motorlab.jpg"
+image: "motorlab.webp"
 sections:
   - heading: "จุดลงทะเบียน"
     body: "อาคารเรียนรวม 4 (S12) ชั้น 5"

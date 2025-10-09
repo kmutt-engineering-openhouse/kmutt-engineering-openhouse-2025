@@ -1,7 +1,7 @@
 ---
 title: "Drawing"
 description: "Manual Drafting Workshop: In this workshop, students will be introduced to the fundamentals of engineering drawing, covering 2D drafting, 3D drafting, and isometric projection."
-image: "drawing.jpg"
+image: "drawing.webp"
 sections:
   - heading: "Registration Point"
     body: "Mechanical Engineering side, Wissawa Wattana Building (S4)"

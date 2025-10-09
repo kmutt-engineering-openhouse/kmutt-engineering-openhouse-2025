@@ -1,7 +1,7 @@
 ---
 title: "Structural Engineering 🏗️"
 description: "Get introduced to the basics of structural engineering.\nLearn about the tools and equipment used, with explanations on structural systems and real-world applications.\n\n📌 Activity Highlights:\n• Get familiar with tools and software used in structural engineering\n• Analyze real-life case studies presented by the speakers\n• Understand the principles of design and practical applications in engineering"
-image: "structural.jpg"
+image: "structural.webp"
 sections:
   - heading: "Check-in Point"
     body: "1st floor, Classroom Building 5 (S11)"

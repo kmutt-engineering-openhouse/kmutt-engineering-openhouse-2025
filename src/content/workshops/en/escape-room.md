@@ -1,7 +1,7 @@
 ---
 title: "🧩 Escape Room – ENVI Mission"
 description: "� Are you ready to test your brainpower and courage?\nStep into a simulated world full of environmental crises: water pollution, air contamination, waste overflow, and global warming. Your mission? Solve puzzles, crack clues, and work together to \"escape\" the room before time runs out!\n\n🔐 Escape Room: Mission to Save the Earth\n\n✨ Highlight: It's more than just escaping the room — it's about learning that saving the planet takes teamwork. 🌱🎤"
-image: "escape-room.jpg"
+image: "escape-room.webp"
 sections:
   - heading: "Check-in Point"
     body: "1st floor, Classroom Building 5 (S11)"

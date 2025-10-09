@@ -1,7 +1,7 @@
 ---
 title: "Solidworks"
 description: "Workshop การเขียนแบบด้วย Solidworks น้องๆจะได้เรียนรู้วิธีการใช้ Function และ Mode ต่างๆใน Solidworks เช่น การสร้าง Parts การ Extrude, Cut, Loft, Swept, Geometric Plane และ Fillet รวมไปถึงการทำ Assembly!"
-image: "solidworks.jpg"
+image: "solidworks.webp"
 sections:
   - heading: "จุดลงทะเบียน"
     body: "ฝั่งภาควิชาวิศวกรรมเครื่องกล อาคารวิศววัฒนะ (S4)"

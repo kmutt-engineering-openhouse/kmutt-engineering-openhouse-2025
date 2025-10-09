@@ -1,18 +1,18 @@
 ---
 title: "PRO(DUCT)X1E 1st MINI ALBUM"
 description: "🎵 Track 1 : Bad Foundry – ดูเธอเต้นหน้าโรงหล่อ\nเปิดโชว์ด้วยการพาน้องๆ ไปรู้จักโลกของงานหล่อ 🏭\n• แนะนำว่าการหล่อคืออะไร\n• พาชมโรงหล่อ + ชมผลงานจริง\n• มีสาธิต และให้น้องๆ ได้ลองทำเอง\n👉 เพื่อให้เข้าใจความสำคัญของงานหล่อในการผลิตชิ้นส่วนอุตสาหกรรม\n\n🎵 Track 2 : Next Welding – ลองเชื่อมกันดีไหม\nขึ้นเพลงที่สองกับเวทีเชื่อมไฟฟ้า 🔥\n• แนะนำพื้นฐานงานเชื่อม\n• สาธิตเทคนิคการเชื่อมหลายรูปแบบ\n👉 ให้เห็นว่างานเชื่อมสำคัญแค่ไหนต่อการประกอบชิ้นส่วน\n\n🎵 Track 3 : Last Machine – พรุ่งนี้ค่อยกลึงได้ไหม\nเข้าสู่บรรยากาศสายแมชซีน 🛠️\n• อธิบายการใช้เครื่องจักร เช่น เครื่องกลึง เครื่องกัด\n• สาธิตการสร้างชิ้นงาน เช่น C-Clamp\n👉 ให้เข้าใจความสำคัญของการกลึง ขัดแต่ง และการขึ้นรูปที่เป็นพื้นฐานของวิศวฯ\n\n🎵 Track 4 : I am Mecha – ดีอยู่แล้วที่เมคคา\nปิดท้ายคอนเสิร์ตด้วยความล้ำสมัยของ เมคคาทรอนิกส์ 🤖⚙️\n• แนะนำระบบ Pneumatics และ PLC\n• สาธิตการทำงานของระบบอัตโนมัติ\n• เปิดโอกาสให้น้องๆ ได้ลองควบคุมจริง\n👉 เพื่อเห็นความสำคัญของระบบอัตโนมัติและการประยุกต์ใช้ในงานวิศวฯ"
-image: "productx1e.jpg"
+image: "productx1e.webp"
 gallery:
-  - image: "Bad Foundry.jpg"
+  - image: "Bad Foundry.webp"
     alt: "Bad Foundry"
     title: "Track 1: Bad Foundry"
-  - image: "Next Welding.jpg"
+  - image: "Next Welding.webp"
     alt: "Next Welding"
     title: "Track 2: Next Welding"
-  - image: "Last Machine.jpg"
+  - image: "Last Machine.webp"
     alt: "Last Machine"
     title: "Track 3: Last Machine"
-  - image: "I-am-Mecha.jpg"
+  - image: "I-am-Mecha.webp"
     alt: "I am Mecha"
     title: "Track 4: I am Mecha"
 sections:

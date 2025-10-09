@@ -1,7 +1,7 @@
 ---
 title: "Mini AI Hackathon"
 description: "🎶 Special Stage | Mini AI Hackathon 🔥\nThe ultimate showdown!\nPut your Artificial Intelligence (AI) knowledge\nto the test with challenging and practical problems 🚀\nLimited spots available! And a cash prize awaits the winner 💵\n✍️ Registration : 1 - 7 October 2025 👇\nIG: cpe_studentunion และ FB: องค์กรนักศึกษาวิศวกรรมคอมพิวเตอร์ (KMUTT)"
-image: "mini-ai-hack.jpg"
+image: "mini-ai-hack.webp"
 sections:
   - heading: "Check-in Point"
     body: "The elevator lobby, 11th Floor, Wissawa Wattana Building (S4)"

@@ -10,4 +10,5 @@ export const workshopDepartments = [
   { code: "ene", label_th: "วิศวกรรมอิเล็กทรอนิกส์", label_en: "Electronic Engineering" },
   { code: "ee", label_th: "วิศวกรรมไฟฟ้า", label_en: "Electrical Engineering" },
   { code: "inc", label_th: "วิศวกรรมระบบควบคุมและเครื่องมือวัด", label_en: "Instrumentation/Control Systems Engineering" },
+  { code: "che", label_th: "วิศวกรรมเคมี", label_en: "Chemical Engineering" },
 ] as const;

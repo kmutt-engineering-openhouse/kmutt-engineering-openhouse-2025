@@ -1,7 +1,7 @@
 ---
 title: "River no Cybe"
 description: "🎶 Stage 4 | River no Cybe 🚩\nThe ultimate thrilling challenge stage!\nTake on the role of a \"White Hat Hacker\"\nEnter the actual field in a Capture The Flag (CTF) format.\nSimulate Ethical Hacking scenarios to find vulnerabilities,\ndecode encrypted messages, and conquer the hidden flag.\nLearn about Cybersecurity from real-world experience!"
-image: "river-no-cybe.jpg"
+image: "river-no-cybe.webp"
 sections:
   - heading: "Check-in Point"
     body: "The elevator lobby, 11th Floor, Wissawa Wattana Building (S4)"

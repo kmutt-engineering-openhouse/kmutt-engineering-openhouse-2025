@@ -1,7 +1,7 @@
 ---
 title: "Concrete Engineering 🧱"
 description: "Learn the fundamentals of concrete, including its components and real-world applications.\nUnderstand the mix ratios, alternative materials, and new innovations.\n\n📌 Activity Highlights:\n• Understand concrete composition and mix proportions\n• Explore innovative materials and methods, such as 3D printing\n• Tour real-life concrete applications with professional explanations"
-image: "concrete.jpg"
+image: "concrete.webp"
 sections:
   - heading: "Check-in Point"
     body: "1st floor, Classroom Building 5 (S11)"

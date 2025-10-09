@@ -1,7 +1,7 @@
 ---
 title: "Aitagorithm"
 description: "🎶 Stage 2 | Aitagorithm 🧩\nA special performance packed with Algorithm moves –\nfrom Sorting and B-Tree to Shortest Path.\nExperience how Computer Engineering solves real-life problems."
-image: "aitagorithm.jpg"
+image: "aitagorithm.webp"
 sections:
   - heading: "Registration Point"
     body: "The elevator lobby, 11th Floor, Wissawa Wattana Building (S4)"

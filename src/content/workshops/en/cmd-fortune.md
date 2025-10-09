@@ -1,7 +1,7 @@
 ---
 title: "CMD Fortune"
 description: "🎶 Stage 3 | CMD Fortune 🖥️\nThe most thrilling stage!\nStep into the role of a \"hacker\" and use basic Linux commands\n(such as ls, cat) to clear each challenge, unlock hidden hints,\nand solve puzzles until you reach the final output 🎯"
-image: "cmd-fortune.jpg"
+image: "cmd-fortune.webp"
 sections:
   - heading: "Registration Point"
     body: "The elevator lobby, 11th Floor, Wissawa Wattana Building (S4)"

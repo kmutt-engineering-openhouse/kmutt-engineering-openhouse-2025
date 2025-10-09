@@ -1,7 +1,7 @@
 ---
 title: "Engi's Journey: Technology Route"
 description: "กิจกรรมที่เปิดโอกาสให้น้อง ๆ ได้รู้จักภาควิชาใน คณะวิศวกรรมศาสตร์ มจธ. อย่างใกล้ชิด ผ่านการเดินทัวร์ภาควิชา ตามเส้นทางแต่ละสาย พร้อมทั้งมี Mini-Workshop เล็ก ๆ ให้ลองสัมผัสบรรยากาศการเรียนรู้ของแต่ละภาควิชา"
-image: "engi-technology.jpg"
+image: "engi-technology.webp"
 sections:
   - heading: "จุดลงทะเบียน"
     body: "กิจกรรม Engi's Journey จะลงทะเบียน และเริ่มเดินจากบริเวณหลัง INNO-X ติดกับ Learning Garden"

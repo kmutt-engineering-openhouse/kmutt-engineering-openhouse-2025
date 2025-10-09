@@ -1,7 +1,7 @@
 ---
 title: "Kimi no Logical"
 description: "🎶 Stage 1 | Kimi no Logical 🔣\nOur cheerful debut single!\nStep into the world of Logic Gates (AND, OR, NOT, XOR, etc.)\nand discover how computers really think."
-image: "kimino-logical.jpg"
+image: "kimino-logical.webp"
 sections:
   - heading: "Registration Point"
     body: "The elevator lobby, 11th Floor, Wissawa Wattana Building (S4)"

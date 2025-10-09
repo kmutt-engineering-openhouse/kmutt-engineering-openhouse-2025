@@ -4,7 +4,7 @@ description: "“ Stamp your heart into the mold ”\n
 - Explore the world of materials in a fun, hands-on way and learn how rubber is formed into different shapes.\n
 - Mix the rubber yourself and stamp it into a mold—just like stamping love straight from your heart! \n(🤎) (🤎) Take home a unique souvenir along with some wow-worthy knowledge."
 
-image: "star-stamp.jpg"
+image: "star-stamp.webp"
 sections:
   - heading: "Registration Point"
     body: "1st floor, Wissawa Wattana Building (S4)"

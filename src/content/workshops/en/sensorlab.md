@@ -1,7 +1,7 @@
 ---
 title: "🔧 Sensors Lab – The Rhythm of Precision"
 description: "Explore a variety of industrial sensors, their uses, differences, and applications in production processes.\nSensors are like the 'ears' of the band, ensuring every note is accurate and on time."
-image: "sensorlab.jpg"
+image: "sensorlab.webp"
 sections:
   - heading: "Check-in Point"
     body: "6th floor, Classroom Building 4 (S12)"

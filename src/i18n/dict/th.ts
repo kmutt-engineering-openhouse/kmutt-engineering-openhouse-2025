@@ -88,6 +88,10 @@ export default {
       title: "ลงทะเบียน",
       href: "https://openhouse.kmutt.ac.th/login",
     },
+    certificate: {
+      title: "ดาวน์โหลดเกียรติบัตร ✨",
+      href: "https://survey.bangmod.engineer/",
+    },
     language: {
       th: "TH",
       en: "EN",
